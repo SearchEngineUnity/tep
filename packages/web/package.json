@@ -1,0 +1,33 @@
+{
+  "name": "@siteBuilderV2/web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "web",
+  "author": "sc-searchengineunity",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "gatsby": "^5.5.0",
+    "gatsby-plugin-emotion": "^8.5.0",
+    "gatsby-plugin-google-analytics": "^5.5.0",
+    "gatsby-plugin-image": "^3.5.0",
+    "gatsby-plugin-manifest": "^5.5.0",
+    "gatsby-plugin-sharp": "^5.5.0",
+    "gatsby-plugin-sitemap": "^6.5.0",
+    "gatsby-source-filesystem": "^5.5.0",
+    "gatsby-source-sanity": "^7.6.2",
+    "gatsby-transformer-sharp": "^5.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
