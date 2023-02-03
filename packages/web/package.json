@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "web",
-  "author": "sc-searchengineunity",
+  "author": "SEU Dev",
   "keywords": [
     "gatsby"
   ],
@@ -28,6 +28,7 @@
     "gatsby-source-sanity": "^7.6.2",
     "gatsby-transformer-sharp": "^5.5.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-player": "^2.11.0"
   }
 }
