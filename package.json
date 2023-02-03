@@ -21,6 +21,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "sanity:dev": "lerna run dev",
+    "sanity:deploy": "lerna run deploy",
+    "gatsby:dev": "lerna run develop",
+    "gatsby:clean": "lerna run clean",
     "clean": "lerna clean -y",
     "postinstall": "lerna bootstrap",
     "lint": "eslint .",

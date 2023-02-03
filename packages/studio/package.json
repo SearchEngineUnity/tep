@@ -8,8 +8,9 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
+    "deploy-graphql": "sanity graphql deploy",
+    "sanity-deploy": "sanity deploy"
   },
   "keywords": [
     "sanity"
