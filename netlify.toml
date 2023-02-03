@@ -1,5 +1,5 @@
 [build]
-  base = "web/"
+  base = "packages/web/"
   command = "npm run build"
   publish = "public"
   environment = { NODE_VERSION = "18.13.0" }
