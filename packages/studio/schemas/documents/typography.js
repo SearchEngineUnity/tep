@@ -222,7 +222,7 @@ export default {
     prepare() {
       return {
         title: `Typography`,
-      }
+      };
     },
   },
-}
+};

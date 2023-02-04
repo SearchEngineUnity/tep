@@ -50,55 +50,55 @@ export default {
       name: 'black',
       title: 'Common Dark Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'common',
     },
     {
       name: 'white',
       title: 'Common Light Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'common',
     },
     {
       name: 'primaryText',
       title: 'Text Primary Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'text',
     },
     {
       name: 'secondaryText',
       title: 'Text Secondary Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'text',
     },
     {
       name: 'disabledText',
       title: 'Text Disabled Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'text',
     },
     {
       name: 'divider',
       title: 'Divider Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'paper',
       title: 'Background Paper Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'background',
     },
     {
       name: 'default',
       title: 'Background Default Color Setting',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'background',
     },
     {
@@ -151,7 +151,7 @@ export default {
     prepare() {
       return {
         title: `Palette`,
-      }
+      };
     },
   },
-}
+};

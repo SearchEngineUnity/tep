@@ -1,5 +1,5 @@
-import {MdWeb} from 'react-icons/md'
-import * as sections from '../sections'
+import { MdWeb } from 'react-icons/md';
+import * as sections from '../sections';
 
 export default {
   name: 'page',
@@ -85,7 +85,7 @@ export default {
       of: [
         ...Object.values(sections)
           .filter((section) => section.name !== 'paginatedListingSection')
-          .map(({name, title}) => ({
+          .map(({ name, title }) => ({
             type: name,
             title,
           })),
@@ -130,13 +130,13 @@ export default {
       fbImg: 'facebookShareMetaPack.image',
       twitterImg: 'twitterShareMetaPack.image',
     },
-    prepare({title, slug, fbImg, twitterImg}) {
-      const currentSlug = slug === '/' ? '/' : `/${slug}`
+    prepare({ title, slug, fbImg, twitterImg }) {
+      const currentSlug = slug === '/' ? '/' : `/${slug}`;
       return {
         title,
         subtitle: currentSlug,
         media: fbImg || twitterImg,
-      }
+      };
     },
   },
-}
+};

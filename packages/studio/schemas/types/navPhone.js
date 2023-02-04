@@ -1,4 +1,4 @@
-import {FiPhoneCall} from 'react-icons/fi'
+import { FiPhoneCall } from 'react-icons/fi';
 
 export default {
   title: 'Call us',
@@ -25,11 +25,11 @@ export default {
       name: 'text',
       number: 'phoneNumber',
     },
-    prepare({name, number}) {
+    prepare({ name, number }) {
       return {
         title: name,
         subtitle: `Dials ${number}`,
-      }
+      };
     },
   },
-}
+};

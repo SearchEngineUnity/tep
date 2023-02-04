@@ -1,6 +1,6 @@
-import {MdColorize} from 'react-icons/md'
-import React from 'react'
-import {determineColor} from '../../lib/helperFunctions'
+import { MdColorize } from 'react-icons/md';
+import React from 'react';
+import { determineColor } from '../../lib/helperFunctions';
 
 export default {
   name: 'colorOption',
@@ -32,7 +32,7 @@ export default {
       label: 'label',
       color: 'color',
     },
-    prepare({label, color}) {
+    prepare({ label, color }) {
       return {
         title: label,
         // need to add back
@@ -49,7 +49,7 @@ export default {
         //     }}
         //   />
         // ),
-      }
+      };
     },
   },
-}
+};

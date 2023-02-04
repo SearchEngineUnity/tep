@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default {
   name: 'customSpacing',
@@ -60,7 +60,7 @@ export default {
     prepare() {
       return {
         title: `Spacing`,
-      }
+      };
     },
   },
-}
+};

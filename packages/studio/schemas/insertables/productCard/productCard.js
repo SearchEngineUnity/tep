@@ -1,4 +1,4 @@
-import {BiNews} from 'react-icons/bi'
+import { BiNews } from 'react-icons/bi';
 
 export default {
   name: 'productCard',
@@ -29,10 +29,10 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'H2', value: 'h2'},
-          {title: 'H3', value: 'h3'},
-          {title: 'H4', value: 'h4'},
-          {title: 'Non-Heading', value: 'p'},
+          { title: 'H2', value: 'h2' },
+          { title: 'H3', value: 'h3' },
+          { title: 'H4', value: 'h4' },
+          { title: 'Non-Heading', value: 'p' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -60,14 +60,14 @@ export default {
       title: 'Special Tag Color',
       name: 'tagColor',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       fieldset: 'essentials',
     },
     {
       title: 'Info Item List',
       name: 'infoList',
       type: 'array',
-      of: [{type: 'infoItem'}],
+      of: [{ type: 'infoItem' }],
       fieldset: 'essentials',
     },
     {
@@ -80,7 +80,7 @@ export default {
       title: 'Product Card Flex Segment Stack',
       name: 'segments',
       type: 'array',
-      of: [{type: 'productCardFlexSegment'}, {type: 'productCardDividerSegment'}],
+      of: [{ type: 'productCardFlexSegment' }, { type: 'productCardDividerSegment' }],
     },
   ],
   preview: {
@@ -88,12 +88,12 @@ export default {
       title: 'name',
       media: 'image.asset',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title,
         subtitle: 'Product Card',
         media,
-      }
+      };
     },
   },
-}
+};

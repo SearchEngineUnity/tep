@@ -1,4 +1,4 @@
-import {BsCardImage} from 'react-icons/bs'
+import { BsCardImage } from 'react-icons/bs';
 
 export default {
   name: 'clickableImage',
@@ -27,11 +27,11 @@ export default {
       description: 'Only one link can be added.',
       type: 'array',
       of: [
-        {type: 'internalLocal'},
-        {type: 'internalGlobal'},
-        {type: 'externalLink'},
-        {type: 'affiliateLink'},
-        {type: 'jumpLink'},
+        { type: 'internalLocal' },
+        { type: 'internalGlobal' },
+        { type: 'externalLink' },
+        { type: 'affiliateLink' },
+        { type: 'jumpLink' },
       ],
       validation: (Rule) => [
         Rule.length(1).error('Must contain only one item'),
@@ -44,9 +44,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Left', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
-          {title: 'Right', value: 'flex-end'},
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'flex-end' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -69,12 +69,12 @@ export default {
       title: 'image.alt',
       media: 'image.asset',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title,
         media,
         subtitle: 'Clickable Image',
-      }
+      };
     },
   },
-}
+};

@@ -28,11 +28,11 @@ export default {
       title: 'alt',
       media: 'asset',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title: `Alt text: ${title}`,
         media,
-      }
+      };
     },
   },
-}
+};

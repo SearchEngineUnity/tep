@@ -1,4 +1,4 @@
-import {TbNewSection} from 'react-icons/tb'
+import { TbNewSection } from 'react-icons/tb';
 
 export default {
   title: 'Product Card Grid PT Tile',
@@ -17,10 +17,10 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'H2', value: 'h2'},
-          {title: 'H3', value: 'h3'},
-          {title: 'H4', value: 'h4'},
-          {title: 'Non-Heading', value: 'p'},
+          { title: 'H2', value: 'h2' },
+          { title: 'H3', value: 'h3' },
+          { title: 'H4', value: 'h4' },
+          { title: 'Non-Heading', value: 'p' },
         ],
       },
     },
@@ -34,10 +34,10 @@ export default {
     select: {
       title: 'title',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: title || 'Product Card Grid PT Tile',
-      }
+      };
     },
   },
-}
+};

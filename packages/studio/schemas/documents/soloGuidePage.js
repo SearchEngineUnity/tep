@@ -1,4 +1,4 @@
-import {RiPagesLine} from 'react-icons/ri'
+import { RiPagesLine } from 'react-icons/ri';
 
 export default {
   name: 'soloGuidePage',
@@ -111,7 +111,7 @@ export default {
       title: 'Tile Image',
       type: 'tileImage',
       fieldset: 'tile',
-      validation: (Rule) => Rule.custom(({asset}) => (asset ? true : 'An image is required')),
+      validation: (Rule) => Rule.custom(({ asset }) => (asset ? true : 'An image is required')),
     },
     {
       name: 'tileText',
@@ -138,13 +138,13 @@ export default {
       title: 'Hero Image',
       type: 'imageBlock',
       fieldset: 'hero',
-      validation: (Rule) => Rule.custom(({asset}) => (asset ? true : 'An image is required')),
+      validation: (Rule) => Rule.custom(({ asset }) => (asset ? true : 'An image is required')),
     },
     {
       name: 'toc',
       title: 'Table of Contents',
       type: 'array',
-      of: [{type: 'tocLink'}],
+      of: [{ type: 'tocLink' }],
       description: 'The order should match the in content appearance.',
       fieldset: 'mainContent',
     },
@@ -201,12 +201,12 @@ export default {
       fbImg: 'facebookShareMetaPack.image',
       twitterImg: 'twitterShareMetaPack.image',
     },
-    prepare({title, slug, media, fbImg, twitterImg}) {
+    prepare({ title, slug, media, fbImg, twitterImg }) {
       return {
         title,
         subtitle: `/${slug}`,
         media: media || fbImg || twitterImg,
-      }
+      };
     },
   },
-}
+};

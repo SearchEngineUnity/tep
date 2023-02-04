@@ -1,10 +1,10 @@
-import {FaExternalLinkAlt, FaLink} from 'react-icons/fa'
-import {GiLinkedRings} from 'react-icons/gi'
-import {TbFileDollar} from 'react-icons/tb'
-import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer'
-import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer'
-import InternalLocalRenderer from '../components/previews/InternalLocalRenderer'
-import InternalGlobalRenderer from '../components/previews/InternalGlobalRenderer'
+import { FaExternalLinkAlt, FaLink } from 'react-icons/fa';
+import { GiLinkedRings } from 'react-icons/gi';
+import { TbFileDollar } from 'react-icons/tb';
+import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer';
+import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer';
+import InternalLocalRenderer from '../components/previews/InternalLocalRenderer';
+import InternalGlobalRenderer from '../components/previews/InternalGlobalRenderer';
 
 export default {
   title: 'Block Content',
@@ -14,14 +14,14 @@ export default {
     {
       type: 'block',
       styles: [
-        {title: 'Normal', value: 'normal'},
-        {title: 'Quote', value: 'blockquote'},
+        { title: 'Normal', value: 'normal' },
+        { title: 'Quote', value: 'blockquote' },
       ],
       marks: {
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
-          {title: 'Underline', value: 'underline'},
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Underline', value: 'underline' },
         ],
         annotations: [
           {
@@ -42,7 +42,7 @@ export default {
                 name: 'reference',
                 type: 'reference',
                 title: 'Reference',
-                to: [{type: 'page'}, {type: 'soloGuidePage'}, {type: 'flexListingPage'}],
+                to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
               },
               {
                 name: 'hashId',
@@ -156,11 +156,11 @@ export default {
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
-    {type: 'illustration'},
-    {type: 'clickableImage'},
-    {type: 'btnBlockMui'},
-    {type: 'videoEmbed'},
-    {type: 'smartGrid'},
-    {type: 'smartUnorderedList'},
+    { type: 'illustration' },
+    { type: 'clickableImage' },
+    { type: 'btnBlockMui' },
+    { type: 'videoEmbed' },
+    { type: 'smartGrid' },
+    { type: 'smartUnorderedList' },
   ],
-}
+};

@@ -1,4 +1,4 @@
-import {BsCardImage} from 'react-icons/bs'
+import { BsCardImage } from 'react-icons/bs';
 
 export default {
   name: 'imageBlock',
@@ -51,12 +51,12 @@ export default {
       title: 'alt',
       media: 'asset',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title,
         media,
         subtitle: 'Image Block',
-      }
+      };
     },
   },
-}
+};

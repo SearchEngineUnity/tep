@@ -5,7 +5,7 @@ export default {
     {
       name: 'rows',
       type: 'array',
-      of: [{type: 'rowPlus'}],
+      of: [{ type: 'rowPlus' }],
     },
   ],
-}
+};

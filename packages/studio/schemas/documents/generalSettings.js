@@ -1,6 +1,6 @@
 // this is currently not in use but is kept should we ever work on this feature
 
-import {FaBullseye} from 'react-icons/fa'
+import { FaBullseye } from 'react-icons/fa';
 
 export default {
   name: 'generalSettings',
@@ -42,7 +42,7 @@ export default {
     prepare() {
       return {
         title: `General Settings`,
-      }
+      };
     },
   },
-}
+};

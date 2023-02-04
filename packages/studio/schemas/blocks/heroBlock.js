@@ -1,4 +1,4 @@
-import {BsCardText} from 'react-icons/bs'
+import { BsCardText } from 'react-icons/bs';
 
 export default {
   name: 'heroBlock',
@@ -78,10 +78,10 @@ export default {
     select: {
       title: 'header.title',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: title || 'Hero Block',
-      }
+      };
     },
   },
-}
+};

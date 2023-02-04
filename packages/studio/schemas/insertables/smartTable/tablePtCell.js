@@ -14,20 +14,20 @@ export default {
       content: 'copy',
       subtitle: '_type',
     },
-    prepare({content, subtitle}) {
+    prepare({ content, subtitle }) {
       switch (content[0]._type) {
         case 'block':
           return {
             title: content[0].children[0].text,
             subtitle,
-          }
+          };
 
         default:
           return {
             title: `This list item start with '${content[0]._type}''`,
             subtitle,
-          }
+          };
       }
     },
   },
-}
+};

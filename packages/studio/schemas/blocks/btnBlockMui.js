@@ -1,4 +1,4 @@
-import {BsBootstrap} from 'react-icons/bs'
+import { BsBootstrap } from 'react-icons/bs';
 
 export default {
   name: 'btnBlockMui',
@@ -34,11 +34,11 @@ export default {
       description: 'Only one link can be added.',
       type: 'array',
       of: [
-        {type: 'internalLocal'},
-        {type: 'internalGlobal'},
-        {type: 'externalLink'},
-        {type: 'affiliateLink'},
-        {type: 'jumpLink'},
+        { type: 'internalLocal' },
+        { type: 'internalGlobal' },
+        { type: 'externalLink' },
+        { type: 'affiliateLink' },
+        { type: 'jumpLink' },
       ],
       validation: (Rule) => [
         Rule.length(1).error('Must contain only one item'),
@@ -51,9 +51,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Left', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
-          {title: 'Right', value: 'flex-end'},
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'flex-end' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -66,7 +66,7 @@ export default {
       name: 'design', // fix to btnDesign for V2
       title: 'Button Design Option',
       type: 'reference',
-      to: [{type: 'btnDesignMui'}],
+      to: [{ type: 'btnDesignMui' }],
       fieldset: 'presentation',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -76,11 +76,11 @@ export default {
       text: 'text',
       id: 'idTag',
     },
-    prepare({text, id}) {
+    prepare({ text, id }) {
       return {
         title: text,
         subtitle: `ID: ${id}`,
-      }
+      };
     },
   },
-}
+};

@@ -6,15 +6,15 @@ export default {
       name: 'cells',
       type: 'array',
       of: [
-        {type: 'tablePtCell'},
-        {type: 'emptyCell'},
-        {type: 'splitCell'},
-        {type: 'illustration'},
-        {type: 'clickableImage'},
-        {type: 'btnBlockMui'},
-        {type: 'videoEmbed'},
-        {type: 'smartOrderedList'},
-        {type: 'smartUnorderedList'},
+        { type: 'tablePtCell' },
+        { type: 'emptyCell' },
+        { type: 'splitCell' },
+        { type: 'illustration' },
+        { type: 'clickableImage' },
+        { type: 'btnBlockMui' },
+        { type: 'videoEmbed' },
+        { type: 'smartOrderedList' },
+        { type: 'smartUnorderedList' },
       ],
     },
   ],
@@ -23,7 +23,7 @@ export default {
     prepare() {
       return {
         title: `row`,
-      }
+      };
     },
   },
-}
+};

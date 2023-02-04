@@ -1,4 +1,4 @@
-import {ImBooks} from 'react-icons/im'
+import { ImBooks } from 'react-icons/im';
 
 export default {
   name: 'paginatedListingSection',
@@ -96,7 +96,7 @@ export default {
       name: 'designSettings',
       title: 'Design Settings',
       type: 'reference',
-      to: [{type: 'sectionDesignSet'}],
+      to: [{ type: 'sectionDesignSet' }],
       fieldset: 'presentation',
     },
   ],
@@ -105,11 +105,11 @@ export default {
       subtitle: '_type',
       id: 'seuID',
     },
-    prepare({id, subtitle}) {
+    prepare({ id, subtitle }) {
       return {
         subtitle,
         title: `ID: ${id}`,
-      }
+      };
     },
   },
-}
+};

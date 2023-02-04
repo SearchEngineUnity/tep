@@ -1,4 +1,4 @@
-import {FaRegImages} from 'react-icons/fa'
+import { FaRegImages } from 'react-icons/fa';
 
 export default {
   name: 'companyLogo',
@@ -36,4 +36,4 @@ export default {
       media: 'logo',
     },
   },
-}
+};

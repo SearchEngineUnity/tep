@@ -1,6 +1,6 @@
-import {BsViewStacked} from 'react-icons/bs'
+import { BsViewStacked } from 'react-icons/bs';
 
-import * as blocks from '../blocks'
+import * as blocks from '../blocks';
 
 export default {
   name: 'stackFlex',
@@ -39,7 +39,7 @@ export default {
       of: [
         ...Object.values(blocks)
           .filter((block) => block.name !== 'heroBlock')
-          .map(({name, title}) => ({
+          .map(({ name, title }) => ({
             type: name,
             title,
           })),
@@ -59,10 +59,10 @@ export default {
       description: 'This determines the width of the blocks in this section.',
       options: {
         list: [
-          {title: 'full width', value: '12'},
-          {title: '10/12', value: '10'},
-          {title: '8/12', value: '8'},
-          {title: '6/12', value: '6'},
+          { title: 'full width', value: '12' },
+          { title: '10/12', value: '10' },
+          { title: '8/12', value: '8' },
+          { title: '6/12', value: '6' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -102,7 +102,7 @@ export default {
       name: 'designSettings',
       title: 'Design Settings',
       type: 'reference',
-      to: [{type: 'sectionDesignSet'}],
+      to: [{ type: 'sectionDesignSet' }],
       fieldset: 'presentation',
     },
   ],
@@ -111,11 +111,11 @@ export default {
       subtitle: '_type',
       id: 'idTag',
     },
-    prepare({id, subtitle}) {
+    prepare({ id, subtitle }) {
       return {
         subtitle,
         title: `ID: ${id}`,
-      }
+      };
     },
   },
-}
+};

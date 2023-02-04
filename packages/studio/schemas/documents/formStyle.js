@@ -1,4 +1,4 @@
-import {HiOutlineColorSwatch} from 'react-icons/hi'
+import { HiOutlineColorSwatch } from 'react-icons/hi';
 
 export default {
   name: 'formStyle',
@@ -20,9 +20,9 @@ export default {
         'This determines the field variant that is used for Input, Textarea, and Select.',
       options: {
         list: [
-          {title: 'Underlined', value: 'standard'},
-          {title: 'Filled', value: 'filled'},
-          {title: 'Outlined', value: 'outlined'},
+          { title: 'Underlined', value: 'standard' },
+          { title: 'Filled', value: 'filled' },
+          { title: 'Outlined', value: 'outlined' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -43,7 +43,7 @@ export default {
       description:
         'Sets the color of the input borders, the checkbox label, the select label and the radio label color when one clicks into the field/fieldset.',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -51,7 +51,7 @@ export default {
       title: 'Background Color',
       description: 'Sets the background color for filled variant and outlined variant.',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -59,7 +59,7 @@ export default {
       title: 'Background Hover Color',
       description: 'Sets the background color for filled variant on hover.',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -68,7 +68,7 @@ export default {
       description:
         'Sets the label text color, helper text color and the outline color of checkbox and radio icons.',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -77,7 +77,7 @@ export default {
       type: 'reference',
       description:
         'Sets the input text color, placeholder text color, and the border color on hover.',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -85,7 +85,7 @@ export default {
       title: 'Selector Color',
       description: 'This would apply to the radio button and the checkbox.',
       type: 'reference',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -104,7 +104,7 @@ export default {
       name: 'btnStyle', // fix to btnDesign for V2
       title: 'Button Design Option',
       type: 'reference',
-      to: [{type: 'btnDesignMui'}],
+      to: [{ type: 'btnDesignMui' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],
@@ -113,15 +113,15 @@ export default {
       name: 'name',
       variant: 'fieldVariant',
     },
-    prepare({name, variant}) {
-      let normalizedVariant = variant
+    prepare({ name, variant }) {
+      let normalizedVariant = variant;
       if (variant === 'standard') {
-        normalizedVariant = 'underlined'
+        normalizedVariant = 'underlined';
       }
       return {
         title: name,
         subtitle: `Variant: ${normalizedVariant}`,
-      }
+      };
     },
   },
-}
+};

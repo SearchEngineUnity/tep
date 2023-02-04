@@ -1,4 +1,4 @@
-import {AiOutlineLine} from 'react-icons/ai'
+import { AiOutlineLine } from 'react-icons/ai';
 
 export default {
   title: 'Product Card Divider Segment',
@@ -18,7 +18,7 @@ export default {
     prepare() {
       return {
         title: 'Product Card Divider Segment',
-      }
+      };
     },
   },
-}
+};

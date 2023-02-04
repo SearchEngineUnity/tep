@@ -1,4 +1,4 @@
-import {FiGrid} from 'react-icons/fi'
+import { FiGrid } from 'react-icons/fi';
 
 export default {
   name: 'smartGrid',
@@ -21,14 +21,14 @@ export default {
       title: 'Tile Set',
       type: 'array',
       of: [
-        {type: 'smartGridPtTile'},
-        {type: 'productCardGridPtTile'},
-        {type: 'illustration'},
-        {type: 'clickableImage'},
-        {type: 'btnBlockMui'},
-        {type: 'videoEmbed'},
-        {type: 'smartOrderedList'},
-        {type: 'smartUnorderedList'},
+        { type: 'smartGridPtTile' },
+        { type: 'productCardGridPtTile' },
+        { type: 'illustration' },
+        { type: 'clickableImage' },
+        { type: 'btnBlockMui' },
+        { type: 'videoEmbed' },
+        { type: 'smartOrderedList' },
+        { type: 'smartUnorderedList' },
       ],
       validation: (Rule) => Rule.min(1).error('Must contain at least 1 item'),
     },
@@ -43,7 +43,7 @@ export default {
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.regex(/^(1|2|3|4|6|12)(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))$/).error(
-          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.'
+          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.',
         ),
       ],
     },
@@ -52,7 +52,7 @@ export default {
     prepare() {
       return {
         title: 'Smart Grid',
-      }
+      };
     },
   },
-}
+};

@@ -1,4 +1,4 @@
-import {FiNavigation2} from 'react-icons/fi'
+import { FiNavigation2 } from 'react-icons/fi';
 
 export default {
   name: 'navSet',
@@ -35,11 +35,11 @@ export default {
     select: {
       menuGroup: 'menuGroup',
     },
-    prepare({menuGroup}) {
+    prepare({ menuGroup }) {
       return {
         title: 'Navigation Set',
         subtitle: `# of items in set: ${menuGroup.length}`,
-      }
+      };
     },
   },
-}
+};

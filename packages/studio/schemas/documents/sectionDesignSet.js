@@ -1,5 +1,5 @@
-import React from 'react'
-import {HiOutlineColorSwatch} from 'react-icons/hi'
+import React from 'react';
+import { HiOutlineColorSwatch } from 'react-icons/hi';
 
 export default {
   name: 'sectionDesignSet',
@@ -44,7 +44,7 @@ export default {
       type: 'reference',
       fieldset: 'background',
       description: 'This will apply a background color',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'bgImage',
@@ -76,49 +76,49 @@ export default {
       title: 'Foreground Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'link',
       title: 'Link Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'heading',
       title: 'Heading Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'subheading',
       title: 'Subheading Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'subtitle',
       title: 'Subtitle Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'footer',
       title: 'Footer Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'caption',
       title: 'Image Caption Color',
       type: 'reference',
       fieldset: 'foreground',
-      to: [{type: 'colorOption'}],
+      to: [{ type: 'colorOption' }],
     },
     {
       name: 'outerPadding',
@@ -175,7 +175,7 @@ export default {
       //     </a>
       //   </>
       // ),
-      hidden: ({document}) => !!document?.bleed,
+      hidden: ({ document }) => !!document?.bleed,
     },
   ],
   preview: {
@@ -183,4 +183,4 @@ export default {
       title: 'name',
     },
   },
-}
+};

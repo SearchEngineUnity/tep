@@ -1,6 +1,6 @@
 /* eslint-disable no-plusplus */
-import React from 'react'
-import {FiLink2} from 'react-icons/fi'
+import React from 'react';
+import { FiLink2 } from 'react-icons/fi';
 
 export default {
   name: 'navItem',
@@ -32,26 +32,26 @@ export default {
       //     for an icon.
       //   </>
       // ),
-      hidden: ({document, parent}) => {
+      hidden: ({ document, parent }) => {
         if (document.type === 'mainFooter') {
-          return true
+          return true;
         }
         for (let i = 0; i < document.menuArray.length; i++) {
           for (let j = 0; j < document.menuArray[i].menuGroup.length; j++) {
             if (document.menuArray[i].menuGroup[j]._key === parent._key) {
-              return true
+              return true;
             }
           }
         }
 
-        return false
+        return false;
       },
     },
     {
       name: 'nav',
       title: 'Navigate to',
       type: 'reference',
-      to: [{type: 'page'}, {type: 'soloGuidePage'}, {type: 'flexListingPage'}],
+      to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -67,11 +67,11 @@ export default {
       title: 'title',
       slug: 'nav.slug.current',
     },
-    prepare({title, slug}) {
+    prepare({ title, slug }) {
       return {
         title,
         subtitle: slug === '/' ? `Links to root` : `Links to /${slug}`,
-      }
+      };
     },
   },
-}
+};

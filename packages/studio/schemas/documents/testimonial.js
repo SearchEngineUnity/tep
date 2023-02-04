@@ -1,4 +1,4 @@
-import {BsChatQuote} from 'react-icons/bs'
+import { BsChatQuote } from 'react-icons/bs';
 
 export default {
   name: 'testimonial',
@@ -41,11 +41,11 @@ export default {
       company: 'company',
       role: 'role',
     },
-    prepare({name, media}) {
+    prepare({ name, media }) {
       return {
         title: name,
         media,
-      }
+      };
     },
   },
-}
+};

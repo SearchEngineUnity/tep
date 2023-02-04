@@ -25,7 +25,7 @@ export default {
       name: 'options',
       title: 'Options',
       type: 'array',
-      of: [{type: 'option'}],
+      of: [{ type: 'option' }],
       validation: (Rule) => Rule.min(2).error('Must contain at least two item'),
     },
     {
@@ -41,14 +41,14 @@ export default {
       title: 'label',
       subtitle: '_type',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: title || 'Select label',
         subtitle,
-      }
+      };
     },
   },
-}
+};
 
 // id for select (add '-label' for use as input label)
 // input label - string

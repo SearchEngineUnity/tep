@@ -14,9 +14,9 @@ export default {
         'This determines how the L and R blocks align vertically to each other. Center is recommended.',
       options: {
         list: [
-          {title: 'Top', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
-          {title: 'Bottom', value: 'flex-end'},
+          { title: 'Top', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Bottom', value: 'flex-end' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -32,9 +32,9 @@ export default {
         'This determines how the image aligns horizontally within the right block. Center is recommended',
       options: {
         list: [
-          {title: 'Left', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
-          {title: 'Right', value: 'flex-end'},
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Right', value: 'flex-end' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -48,7 +48,7 @@ export default {
     prepare() {
       return {
         title: `SPG Hero Layout`,
-      }
+      };
     },
   },
-}
+};

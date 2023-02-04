@@ -1,4 +1,4 @@
-import {FaWpforms} from 'react-icons/fa'
+import { FaWpforms } from 'react-icons/fa';
 
 export default {
   title: 'Form Netlify',
@@ -23,11 +23,11 @@ export default {
       title: 'Form Fields',
       type: 'array',
       of: [
-        {type: 'textInput'},
-        {type: 'textarea'},
-        {type: 'select'},
-        {type: 'checkbox'},
-        {type: 'radio'},
+        { type: 'textInput' },
+        { type: 'textarea' },
+        { type: 'select' },
+        { type: 'checkbox' },
+        { type: 'radio' },
       ],
     },
     {
@@ -47,10 +47,10 @@ export default {
     select: {
       title: 'name',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title,
-      }
+      };
     },
   },
-}
+};

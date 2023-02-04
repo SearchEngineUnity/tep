@@ -1,4 +1,4 @@
-import {FiNavigation2} from 'react-icons/fi'
+import { FiNavigation2 } from 'react-icons/fi';
 
 export default {
   name: 'navMenu',
@@ -13,8 +13,8 @@ export default {
       description: 'There should only ever be one published copy of each type',
       options: {
         list: [
-          {title: 'Main Header', value: 'mainNav'},
-          {title: 'Main Footer', value: 'mainFooter'},
+          { title: 'Main Header', value: 'mainNav' },
+          { title: 'Main Footer', value: 'mainFooter' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -35,15 +35,15 @@ export default {
     select: {
       type: 'type',
     },
-    prepare({type}) {
+    prepare({ type }) {
       switch (type) {
         case 'mainNav':
-          return {title: 'Main Header'}
+          return { title: 'Main Header' };
         case 'mainFooter':
-          return {title: 'Main Footer'}
+          return { title: 'Main Footer' };
         default:
-          return {title: 'Error: Type not found.'}
+          return { title: 'Error: Type not found.' };
       }
     },
   },
-}
+};

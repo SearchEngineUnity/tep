@@ -7,7 +7,7 @@ export default {
       name: 'reference',
       type: 'reference',
       title: 'Reference',
-      to: [{type: 'page'}, {type: 'soloGuidePage'}, {type: 'flexListingPage'}],
+      to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
     },
     {
       name: 'hashId',
@@ -35,10 +35,10 @@ export default {
       id: 'hashId',
       parameter: 'parameter',
     },
-    prepare({link, id, parameter}) {
+    prepare({ link, id, parameter }) {
       return {
         title: `/${link}${id ? `#${id}` : ''}${parameter ? `?${parameter}` : ''}`,
-      }
+      };
     },
   },
-}
+};

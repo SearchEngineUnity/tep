@@ -1,4 +1,4 @@
-import {GrTableAdd} from 'react-icons/gr'
+import { GrTableAdd } from 'react-icons/gr';
 
 export default {
   name: 'smartTable',
@@ -47,7 +47,7 @@ export default {
       type: 'array',
       title: 'Column Width Settings',
       description: `Sets the column widths in order from left to right. This must be set in px.`,
-      of: [{type: 'colWidth'}],
+      of: [{ type: 'colWidth' }],
     },
     {
       name: 'table',
@@ -59,4 +59,4 @@ export default {
       title: 'title',
     },
   },
-}
+};

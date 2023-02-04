@@ -1,4 +1,4 @@
-import {MdBusiness} from 'react-icons/md'
+import { MdBusiness } from 'react-icons/md';
 
 export default {
   name: 'contactInfo',
@@ -67,7 +67,7 @@ export default {
     prepare() {
       return {
         title: `Contact Info`,
-      }
+      };
     },
   },
-}
+};

@@ -7,7 +7,7 @@ export default {
       name: 'brand',
       title: 'Brand',
       type: 'reference',
-      to: [{type: 'companyLogo'}],
+      to: [{ type: 'companyLogo' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -16,9 +16,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Desktop', value: 'desktop'},
-          {title: 'Tablet', value: 'tablet'},
-          {title: 'Mobile', value: 'mobile'},
+          { title: 'Desktop', value: 'desktop' },
+          { title: 'Tablet', value: 'tablet' },
+          { title: 'Mobile', value: 'mobile' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -35,4 +35,4 @@ export default {
       media: 'brand.logo',
     },
   },
-}
+};

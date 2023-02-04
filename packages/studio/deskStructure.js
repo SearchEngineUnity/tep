@@ -1,7 +1,7 @@
-import {FaPalette} from 'react-icons/fa'
-import {MdSettings, MdBusiness} from 'react-icons/md'
-import {BsType, BsViewList} from 'react-icons/bs'
-import {HiOutlineOfficeBuilding, HiOutlineColorSwatch} from 'react-icons/hi'
+import { FaPalette } from 'react-icons/fa';
+import { MdSettings, MdBusiness } from 'react-icons/md';
+import { BsType, BsViewList } from 'react-icons/bs';
+import { HiOutlineOfficeBuilding, HiOutlineColorSwatch } from 'react-icons/hi';
 
 export default (S) =>
   S.list()
@@ -30,8 +30,8 @@ export default (S) =>
                   S.documentTypeList('sectionDesignSet')
                     .title('Section Color Sets')
                     .child((documentId) =>
-                      S.document().documentId(documentId).schemaType('sectionDesignSet')
-                    )
+                      S.document().documentId(documentId).schemaType('sectionDesignSet'),
+                    ),
                 ),
               S.listItem()
                 .title('Button Design Options - MUI')
@@ -40,8 +40,8 @@ export default (S) =>
                   S.documentTypeList('btnDesignMui')
                     .title('Button Design Sets')
                     .child((documentId) =>
-                      S.document().documentId(documentId).schemaType('btnDesignMui')
-                    )
+                      S.document().documentId(documentId).schemaType('btnDesignMui'),
+                    ),
                 ),
               S.listItem()
                 .title('Form Design Options')
@@ -53,10 +53,10 @@ export default (S) =>
                       S.document()
                         .documentId(documentId)
                         .schemaType('formStyle')
-                        .views([S.view.form()])
-                    )
+                        .views([S.view.form()]),
+                    ),
                 ),
-            ])
+            ]),
         ),
       S.listItem()
         .title('Site Settings')
@@ -85,7 +85,7 @@ export default (S) =>
                 .title('Solo Guide Page Hero Layout')
                 .icon(MdSettings)
                 .child(S.document().schemaType('layoutSpg').documentId('layoutSpg')),
-            ])
+            ]),
         ),
       S.listItem()
         .title('Company Info')
@@ -100,7 +100,7 @@ export default (S) =>
                 .child(S.document().schemaType('contactInfo').documentId('contactInfo')),
               S.documentTypeListItem('socialInfo').title('Social Info'),
               S.documentTypeListItem('companyLogo').title('Company Logos'),
-            ])
+            ]),
         ),
       S.divider(),
-    ])
+    ]);

@@ -19,7 +19,7 @@ export default {
     prepare() {
       return {
         title: `Split Cell`,
-      }
+      };
     },
   },
-}
+};

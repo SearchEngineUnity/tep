@@ -1,4 +1,4 @@
-import {HiOutlineColorSwatch} from 'react-icons/hi'
+import { HiOutlineColorSwatch } from 'react-icons/hi';
 
 export default {
   name: 'btnDesignMui',
@@ -28,7 +28,7 @@ export default {
       name: 'bgImage',
       title: 'Background Image',
       type: 'image',
-      hidden: ({document}) => document?.settings?.variant !== 'contained',
+      hidden: ({ document }) => document?.settings?.variant !== 'contained',
     },
     {
       name: 'typography',
@@ -41,11 +41,11 @@ export default {
       name: 'name',
       variant: 'settings.variant',
     },
-    prepare({name, variant}) {
+    prepare({ name, variant }) {
       return {
         title: name,
         subtitle: `Variant: ${variant}`,
-      }
+      };
     },
   },
-}
+};

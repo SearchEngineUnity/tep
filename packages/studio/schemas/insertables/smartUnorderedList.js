@@ -1,4 +1,4 @@
-import {AiOutlineUnorderedList} from 'react-icons/ai'
+import { AiOutlineUnorderedList } from 'react-icons/ai';
 
 export default {
   name: 'smartUnorderedList',
@@ -10,7 +10,7 @@ export default {
       name: 'listItems',
       title: 'List Items',
       type: 'array',
-      of: [{type: 'smartUnorderedListItem'}],
+      of: [{ type: 'smartUnorderedListItem' }],
       validation: (Rule) => Rule.min(1).error('Must contain at least one item'),
     },
     {
@@ -24,11 +24,11 @@ export default {
     select: {
       type: 'type',
     },
-    prepare({type}) {
+    prepare({ type }) {
       return {
         title: 'Smart Unordered list',
         subtitle: type,
-      }
+      };
     },
   },
-}
+};

@@ -1,4 +1,4 @@
-import {BsBootstrap} from 'react-icons/bs'
+import { BsBootstrap } from 'react-icons/bs';
 
 export default {
   name: 'submitBtn',
@@ -24,11 +24,11 @@ export default {
       title: 'text',
       subtitle: 'idTag',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title,
         subtitle,
-      }
+      };
     },
   },
-}
+};

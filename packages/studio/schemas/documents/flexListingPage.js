@@ -1,5 +1,5 @@
-import {MdWeb} from 'react-icons/md'
-import * as sections from '../sections'
+import { MdWeb } from 'react-icons/md';
+import * as sections from '../sections';
 
 export default {
   name: 'flexListingPage',
@@ -83,7 +83,7 @@ export default {
       fieldset: 'sections',
       title: 'Sections',
       of: [
-        ...Object.values(sections).map(({name, title}) => ({
+        ...Object.values(sections).map(({ name, title }) => ({
           type: name,
           title,
         })),
@@ -128,13 +128,13 @@ export default {
       fbImg: 'facebookShareMetaPack.image',
       twitterImg: 'twitterShareMetaPack.image',
     },
-    prepare({title, slug, fbImg, twitterImg}) {
-      const currentSlug = slug === '/' ? '/' : `/${slug}`
+    prepare({ title, slug, fbImg, twitterImg }) {
+      const currentSlug = slug === '/' ? '/' : `/${slug}`;
       return {
         title,
         subtitle: currentSlug,
         media: fbImg || twitterImg,
-      }
+      };
     },
   },
-}
+};

@@ -1,4 +1,4 @@
-import {CgQuoteO} from 'react-icons/cg'
+import { CgQuoteO } from 'react-icons/cg';
 
 export default {
   name: 'testimonialGrid',
@@ -25,7 +25,7 @@ export default {
       name: 'testimonialList',
       type: 'array',
       title: 'Testimonial List',
-      of: [{type: 'reference', to: [{type: 'testimonial'}]}],
+      of: [{ type: 'reference', to: [{ type: 'testimonial' }] }],
     },
     {
       name: 'footer',
@@ -39,8 +39,8 @@ export default {
       fieldset: 'presentation',
       options: {
         list: [
-          {title: 'Testimonial with Image', value: '1'},
-          {title: 'Plain Testimonial', value: '2'},
+          { title: 'Testimonial with Image', value: '1' },
+          { title: 'Plain Testimonial', value: '2' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -56,7 +56,7 @@ export default {
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.regex(/^(1|2|3|4|6|12)(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))$/).error(
-          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.'
+          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.',
         ),
       ],
     },
@@ -95,21 +95,21 @@ export default {
       subheading: 'header.subheading',
       tileOption: 'tileOption',
     },
-    prepare({heading, subheading, tileOption}) {
+    prepare({ heading, subheading, tileOption }) {
       switch (tileOption) {
         case '1':
           return {
             title: heading || subheading || 'Testimonial Grid',
             subtitle: 'display: Testimonial with Image',
-          }
+          };
         case '2':
           return {
             title: heading || subheading || 'Testimonial Grid',
             subtitle: 'display: Plain Testimonial',
-          }
+          };
         default:
-          return {title: 'Error'}
+          return { title: 'Error' };
       }
     },
   },
-}
+};

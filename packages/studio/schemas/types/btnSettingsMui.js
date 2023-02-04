@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default {
   name: 'btnSettingsMui',
@@ -11,9 +11,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Filled', value: 'contained'},
-          {title: 'Outlined', value: 'outlined'},
-          {title: 'Text only', value: 'text'},
+          { title: 'Filled', value: 'contained' },
+          { title: 'Outlined', value: 'outlined' },
+          { title: 'Text only', value: 'text' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -90,4 +90,4 @@ export default {
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],
-}
+};

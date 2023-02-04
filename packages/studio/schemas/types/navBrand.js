@@ -1,4 +1,4 @@
-import {FaRegImages} from 'react-icons/fa'
+import { FaRegImages } from 'react-icons/fa';
 
 export default {
   name: 'navBrand',
@@ -10,7 +10,7 @@ export default {
       name: 'brandGroup',
       title: 'Brand Group',
       type: 'array',
-      of: [{type: 'brandItem'}],
+      of: [{ type: 'brandItem' }],
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
@@ -23,7 +23,7 @@ export default {
     prepare() {
       return {
         title: 'Nav Brand Group',
-      }
+      };
     },
   },
-}
+};

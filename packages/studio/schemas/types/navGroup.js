@@ -1,5 +1,5 @@
-import React from 'react'
-import {BsFillMenuButtonWideFill} from 'react-icons/bs'
+import React from 'react';
+import { BsFillMenuButtonWideFill } from 'react-icons/bs';
 
 export default {
   name: 'navGroup',
@@ -17,7 +17,7 @@ export default {
       title: 'Group',
       name: 'group',
       type: 'array',
-      of: [{type: 'navItem'}],
+      of: [{ type: 'navItem' }],
       validation: (Rule) => [Rule.min(1).error('Must contain at least oen item')],
     },
   ],
@@ -26,10 +26,10 @@ export default {
       title: 'title',
       slug: 'nav.slug.current',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title,
-      }
+      };
     },
   },
-}
+};

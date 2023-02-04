@@ -25,7 +25,7 @@ export default {
       name: 'options',
       title: 'Options',
       type: 'array',
-      of: [{type: 'option'}],
+      of: [{ type: 'option' }],
     },
     {
       name: 'required',
@@ -40,11 +40,11 @@ export default {
       title: 'label',
       subtitle: '_type',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: title || 'Radio label',
         subtitle,
-      }
+      };
     },
   },
-}
+};

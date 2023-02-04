@@ -1,4 +1,4 @@
-import {FaWpforms} from 'react-icons/fa'
+import { FaWpforms } from 'react-icons/fa';
 
 export default {
   title: 'Form Block',
@@ -34,9 +34,9 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'H2', value: 'h2'},
-          {title: 'H3', value: 'h3'},
-          {title: 'H4', value: 'h4'},
+          { title: 'H2', value: 'h2' },
+          { title: 'H3', value: 'h3' },
+          { title: 'H4', value: 'h4' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -70,7 +70,7 @@ export default {
       name: 'formStyle',
       title: 'Form Style',
       type: 'reference',
-      to: [{type: 'formStyle'}],
+      to: [{ type: 'formStyle' }],
       fieldset: 'presentation',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -81,4 +81,4 @@ export default {
       subtitle: 'formNetlify.name',
     },
   },
-}
+};

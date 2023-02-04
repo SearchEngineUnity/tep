@@ -1,12 +1,12 @@
-import {FaExternalLinkAlt, FaLink} from 'react-icons/fa'
-import {GiLinkedRings} from 'react-icons/gi'
-import {MdLink} from 'react-icons/md'
-import {TbFileDollar} from 'react-icons/tb'
-import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer'
-import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer'
-import InternalLocalRenderer from '../components/previews/InternalLocalRenderer'
-import InternalGlobalRenderer from '../components/previews/InternalGlobalRenderer'
-import JumpLinkRenderer from '../components/previews/JumpLinkRenderer'
+import { FaExternalLinkAlt, FaLink } from 'react-icons/fa';
+import { GiLinkedRings } from 'react-icons/gi';
+import { MdLink } from 'react-icons/md';
+import { TbFileDollar } from 'react-icons/tb';
+import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer';
+import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer';
+import InternalLocalRenderer from '../components/previews/InternalLocalRenderer';
+import InternalGlobalRenderer from '../components/previews/InternalGlobalRenderer';
+import JumpLinkRenderer from '../components/previews/JumpLinkRenderer';
 
 export default {
   name: 'highlightBoxPT',
@@ -17,9 +17,9 @@ export default {
       styles: [],
       marks: {
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
-          {title: 'Underline', value: 'underline'},
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Underline', value: 'underline' },
         ],
         annotations: [
           {
@@ -40,7 +40,7 @@ export default {
                 name: 'reference',
                 type: 'reference',
                 title: 'Reference',
-                to: [{type: 'page'}, {type: 'soloGuidePage'}, {type: 'flexListingPage'}],
+                to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
               },
               {
                 name: 'hashId',
@@ -169,8 +169,8 @@ export default {
         ],
       },
     },
-    {type: 'illustration'},
-    {type: 'clickableImage'},
-    {type: 'btnBlockMui'},
+    { type: 'illustration' },
+    { type: 'clickableImage' },
+    { type: 'btnBlockMui' },
   ],
-}
+};

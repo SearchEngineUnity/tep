@@ -1,4 +1,4 @@
-import {BsCardText} from 'react-icons/bs'
+import { BsCardText } from 'react-icons/bs';
 
 export default {
   name: 'sectionBlock',
@@ -79,10 +79,10 @@ export default {
       heading: 'header.heading',
       subheading: 'header.subheading',
     },
-    prepare({heading, subheading}) {
+    prepare({ heading, subheading }) {
       return {
         title: heading || subheading || 'Section PT Block',
-      }
+      };
     },
   },
-}
+};

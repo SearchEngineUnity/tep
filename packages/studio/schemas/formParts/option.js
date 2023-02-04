@@ -21,11 +21,11 @@ export default {
       title: 'label',
       subtitle: 'value',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: title || 'Option label',
         subtitle,
-      }
+      };
     },
   },
-}
+};

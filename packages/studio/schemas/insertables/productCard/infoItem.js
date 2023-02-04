@@ -1,4 +1,4 @@
-import {BsInfoSquare} from 'react-icons/bs'
+import { BsInfoSquare } from 'react-icons/bs';
 
 export default {
   title: 'Info Item',
@@ -23,4 +23,4 @@ export default {
       subtitle: 'text',
     },
   },
-}
+};

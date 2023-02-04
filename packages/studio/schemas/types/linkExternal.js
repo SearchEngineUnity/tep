@@ -32,10 +32,10 @@ export default {
     select: {
       link: 'href',
     },
-    prepare({link}) {
+    prepare({ link }) {
       return {
         title: link,
-      }
+      };
     },
   },
-}
+};

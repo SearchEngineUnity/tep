@@ -1,4 +1,4 @@
-import {MdSimCardAlert} from 'react-icons/md'
+import { MdSimCardAlert } from 'react-icons/md';
 
 export default {
   name: 'highlightBox',
@@ -12,11 +12,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          {title: 'Pro Tip', value: 'Pro Tip'},
-          {title: 'Important', value: 'Important'},
-          {title: 'Warning', value: 'Warning'},
-          {title: 'Did You Know', value: 'Did You Know'},
-          {title: 'Definition', value: 'Definition'},
+          { title: 'Pro Tip', value: 'Pro Tip' },
+          { title: 'Important', value: 'Important' },
+          { title: 'Warning', value: 'Warning' },
+          { title: 'Did You Know', value: 'Did You Know' },
+          { title: 'Definition', value: 'Definition' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -32,11 +32,11 @@ export default {
     select: {
       type: 'type',
     },
-    prepare({type}) {
+    prepare({ type }) {
       return {
         title: type,
         subtitle: 'Highlight Box',
-      }
+      };
     },
   },
-}
+};

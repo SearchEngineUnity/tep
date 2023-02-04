@@ -1,4 +1,4 @@
-import {AiOutlineColumnWidth} from 'react-icons/ai'
+import { AiOutlineColumnWidth } from 'react-icons/ai';
 
 export default {
   name: 'colWidth',
@@ -17,4 +17,4 @@ export default {
       title: 'width',
     },
   },
-}
+};

@@ -1,4 +1,4 @@
-import {FiGrid} from 'react-icons/fi'
+import { FiGrid } from 'react-icons/fi';
 
 export default {
   name: 'smartGridBlock',
@@ -26,12 +26,12 @@ export default {
       title: 'Tile Set',
       type: 'array',
       of: [
-        {type: 'smartGridPtTile'},
-        {type: 'illustration'},
-        {type: 'smartUnorderedList'},
-        {type: 'videoEmbed'},
-        {type: 'btnBlockMui'},
-        {type: 'clickableImage'},
+        { type: 'smartGridPtTile' },
+        { type: 'illustration' },
+        { type: 'smartUnorderedList' },
+        { type: 'videoEmbed' },
+        { type: 'btnBlockMui' },
+        { type: 'clickableImage' },
       ],
       validation: (Rule) => Rule.min(1).error('Must contain at least 1 item'),
     },
@@ -51,7 +51,7 @@ export default {
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.regex(/^(1|2|3|4|6|12)(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))$/).error(
-          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.'
+          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.',
         ),
       ],
     },
@@ -89,11 +89,11 @@ export default {
       heading: 'header.heading',
       subheading: 'header.subheading',
     },
-    prepare({heading, subheading}) {
+    prepare({ heading, subheading }) {
       return {
         title: heading || subheading || 'Smart Grid Block',
         subtitle: heading && subheading,
-      }
+      };
     },
   },
-}
+};

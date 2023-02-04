@@ -1,4 +1,4 @@
-import {FiGrid} from 'react-icons/fi'
+import { FiGrid } from 'react-icons/fi';
 
 export default {
   name: 'gridFlex',
@@ -25,7 +25,7 @@ export default {
       name: 'tiles',
       title: 'Tile Set',
       type: 'array',
-      of: [{type: 'tileInfo'}],
+      of: [{ type: 'tileInfo' }],
       validation: (Rule) => Rule.min(1).error('Must contain at least 1 item'),
     },
     {
@@ -40,11 +40,11 @@ export default {
       fieldset: 'presentation',
       options: {
         list: [
-          {title: 'Rectangle Image', value: '1'},
-          {title: 'Circle Image', value: '2'},
-          {title: 'Bordered Rectangle Image then Title', value: '3'},
-          {title: 'Bordered Full Image then Title then Text', value: '4'},
-          {title: 'Small Image and Title then Text', value: '5'},
+          { title: 'Rectangle Image', value: '1' },
+          { title: 'Circle Image', value: '2' },
+          { title: 'Bordered Rectangle Image then Title', value: '3' },
+          { title: 'Bordered Full Image then Title then Text', value: '4' },
+          { title: 'Small Image and Title then Text', value: '5' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -60,7 +60,7 @@ export default {
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.regex(/^(1|2|3|4|6|12)(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))$/).error(
-          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.'
+          'Accepted pattern is value/value/vale/value. Accepted values are 1, 2, 3, 4, 6, 12.',
         ),
       ],
     },
@@ -99,30 +99,30 @@ export default {
       subheading: 'header.subheading',
       tileOption: 'tileOption',
     },
-    prepare({heading, subheading, tileOption}) {
+    prepare({ heading, subheading, tileOption }) {
       switch (tileOption) {
         case '1':
-          return {title: heading || subheading || 'Flex Grid', subtitle: 'Grid: Rectangle Image'}
+          return { title: heading || subheading || 'Flex Grid', subtitle: 'Grid: Rectangle Image' };
         case '2':
-          return {title: heading || subheading || 'Flex Grid', subtitle: 'Grid: Circle Image'}
+          return { title: heading || subheading || 'Flex Grid', subtitle: 'Grid: Circle Image' };
         case '3':
           return {
             title: heading || subheading || 'Flex Grid',
             subtitle: 'Grid: Bordered Rectangle Image then Title',
-          }
+          };
         case '4':
           return {
             title: heading || subheading || 'Flex Grid',
             subtitle: 'Grid: Bordered Full Image then Title then Text',
-          }
+          };
         case '5':
           return {
             title: heading || subheading || 'Flex Grid',
             subtitle: 'Grid: Small Image and Title then Text',
-          }
+          };
         default:
-          return {title: 'Error'}
+          return { title: 'Error' };
       }
     },
   },
-}
+};

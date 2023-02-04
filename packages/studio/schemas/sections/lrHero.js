@@ -1,5 +1,5 @@
-import {BiHeading} from 'react-icons/bi'
-import * as blocks from '../blocks'
+import { BiHeading } from 'react-icons/bi';
+import * as blocks from '../blocks';
 
 export default {
   name: 'lrHero',
@@ -38,7 +38,7 @@ export default {
       of: [
         ...Object.values(blocks)
           .filter((block) => block.name !== 'sectionBlock')
-          .map(({name, title}) => ({
+          .map(({ name, title }) => ({
             type: name,
             title,
           })),
@@ -57,13 +57,13 @@ export default {
       fieldset: 'presentation',
       options: {
         list: [
-          {title: '3:1', value: '9:3'},
-          {title: '2:1', value: '8:4'},
-          {title: '7:5', value: '7:5'},
-          {title: '1:1', value: '6:6'},
-          {title: '5:7', value: '5:7'},
-          {title: '1:2', value: '4:8'},
-          {title: '1:3', value: '3:9'},
+          { title: '3:1', value: '9:3' },
+          { title: '2:1', value: '8:4' },
+          { title: '7:5', value: '7:5' },
+          { title: '1:1', value: '6:6' },
+          { title: '5:7', value: '5:7' },
+          { title: '1:2', value: '4:8' },
+          { title: '1:3', value: '3:9' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -86,9 +86,9 @@ export default {
       description: 'This determines how the L and R blocks align to each other.',
       options: {
         list: [
-          {title: 'Top', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
-          {title: 'Bottom', value: 'flex-end'},
+          { title: 'Top', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
+          { title: 'Bottom', value: 'flex-end' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -129,7 +129,7 @@ export default {
       name: 'designSettings',
       title: 'Design Settings',
       type: 'reference',
-      to: [{type: 'sectionDesignSet'}],
+      to: [{ type: 'sectionDesignSet' }],
       fieldset: 'presentation',
     },
   ],
@@ -138,11 +138,11 @@ export default {
       subtitle: '_type',
       id: 'idTag',
     },
-    prepare({id, subtitle}) {
+    prepare({ id, subtitle }) {
       return {
         subtitle,
         title: `ID: ${id}`,
-      }
+      };
     },
   },
-}
+};

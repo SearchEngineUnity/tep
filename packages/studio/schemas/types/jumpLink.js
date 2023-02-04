@@ -15,10 +15,10 @@ export default {
     select: {
       id: 'hashId',
     },
-    prepare({id}) {
+    prepare({ id }) {
       return {
         title: `#${id}`,
-      }
+      };
     },
   },
-}
+};

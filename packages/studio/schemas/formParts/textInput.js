@@ -48,11 +48,11 @@ export default {
       title: 'label',
       subtitle: '_type',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: title || 'Text input label',
         subtitle,
-      }
+      };
     },
   },
-}
+};

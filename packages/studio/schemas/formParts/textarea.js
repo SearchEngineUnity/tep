@@ -45,11 +45,11 @@ export default {
       title: 'label',
       subtitle: '_type',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: title || 'Textarea label',
         subtitle,
-      }
+      };
     },
   },
-}
+};

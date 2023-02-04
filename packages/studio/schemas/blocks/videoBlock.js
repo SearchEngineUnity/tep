@@ -1,4 +1,4 @@
-import {FaYoutube} from 'react-icons/fa'
+import { FaYoutube } from 'react-icons/fa';
 
 export default {
   title: 'Video Block',
@@ -30,8 +30,8 @@ export default {
       description: `Please select based on your video's aspect ratio. Youtube is always 16:0 and Vimeo could be in either size.`,
       options: {
         list: [
-          {title: 'Youtube (16:9)', value: '56.25%'},
-          {title: 'Vimeo (21:9)', value: '42.86%'},
+          { title: 'Youtube (16:9)', value: '56.25%' },
+          { title: 'Vimeo (21:9)', value: '42.86%' },
         ],
       },
       initialValue: '56.25%',
@@ -43,11 +43,11 @@ export default {
       title: 'title',
       url: 'url',
     },
-    prepare({title, url}) {
+    prepare({ title, url }) {
       return {
         title: title || 'Video Block',
         subtitle: url,
-      }
+      };
     },
   },
-}
+};

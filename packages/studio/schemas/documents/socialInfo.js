@@ -1,4 +1,4 @@
-import {MdAlternateEmail} from 'react-icons/md'
+import { MdAlternateEmail } from 'react-icons/md';
 
 export default {
   name: 'socialInfo',
@@ -27,23 +27,23 @@ export default {
     select: {
       title: 'social',
     },
-    prepare({title}) {
+    prepare({ title }) {
       switch (title) {
         case 'facebook':
-          return {title: 'Facebook'}
+          return { title: 'Facebook' };
         case 'twitter':
-          return {title: 'Twitter'}
+          return { title: 'Twitter' };
         case 'instagram':
-          return {title: 'Instagram'}
+          return { title: 'Instagram' };
         case 'pinterest':
-          return {title: 'Pinterest'}
+          return { title: 'Pinterest' };
         case 'linkedin':
-          return {title: 'LinkedIn'}
+          return { title: 'LinkedIn' };
         case 'youtube':
-          return {title: 'Youtube'}
+          return { title: 'Youtube' };
         default:
-          return {title: 'Error'}
+          return { title: 'Error' };
       }
     },
   },
-}
+};

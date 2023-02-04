@@ -1,4 +1,4 @@
-import {BsCardImage} from 'react-icons/bs'
+import { BsCardImage } from 'react-icons/bs';
 
 export default {
   name: 'illustration',
@@ -50,8 +50,8 @@ export default {
       title: 'Horizontal Alignment',
       options: {
         list: [
-          {title: 'Left', value: 'flex-start'},
-          {title: 'Center', value: 'center'},
+          { title: 'Left', value: 'flex-start' },
+          { title: 'Center', value: 'center' },
         ],
         layout: 'radio',
         direction: 'horizontal',
@@ -65,11 +65,11 @@ export default {
       title: 'alt',
       media: 'asset',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title: `Alt text: ${title}`,
         media,
-      }
+      };
     },
   },
-}
+};

@@ -33,11 +33,11 @@ export default {
       title: 'Tile link',
       type: 'array',
       of: [
-        {type: 'internalLocal'},
-        {type: 'internalGlobal'},
-        {type: 'externalLink'},
-        {type: 'affiliateLink'},
-        {type: 'jumpLink'},
+        { type: 'internalLocal' },
+        { type: 'internalGlobal' },
+        { type: 'externalLink' },
+        { type: 'affiliateLink' },
+        { type: 'jumpLink' },
       ],
     },
   ],
@@ -46,11 +46,11 @@ export default {
       title: 'title',
       media: 'tileImage.asset',
     },
-    prepare({media, title}) {
+    prepare({ media, title }) {
       return {
         title: title || `tile`,
         media,
-      }
+      };
     },
   },
-}
+};
