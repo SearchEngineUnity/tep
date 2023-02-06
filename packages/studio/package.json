@@ -8,7 +8,7 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "npm run graphql-deploy && npm run sanity-deploy",
+    "deploy": "npm run deploy-graphql && npm run sanity-deploy",
     "deploy-graphql": "sanity graphql deploy",
     "sanity-deploy": "sanity deploy"
   },
@@ -16,9 +16,12 @@
     "sanity"
   ],
   "dependencies": {
+    "@sanity/color-input": "^3.0.2",
     "@sanity/vision": "^3.0.0",
+    "get-video-id": "^3.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "sanity": "^3.0.0",
     "styled-components": "^5.2.0"
@@ -30,9 +33,10 @@
     "typescript": "^4.0.0"
   },
   "prettier": {
-    "semi": false,
     "printWidth": 100,
-    "bracketSpacing": false,
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
     "singleQuote": true
   }
 }

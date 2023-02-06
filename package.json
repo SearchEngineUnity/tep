@@ -23,7 +23,7 @@
   "scripts": {
     "sanity:dev": "lerna run dev",
     "sanity:deploy": "lerna run deploy",
-    "gatsby:dev": "lerna run develop",
+    "gatsby:dev": "cd packages/web && gatsby develop",
     "gatsby:clean": "lerna run clean",
     "clean": "lerna clean -y",
     "postinstall": "lerna bootstrap",
