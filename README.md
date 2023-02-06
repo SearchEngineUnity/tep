@@ -27,9 +27,9 @@ lerna add a --scope=b
 lerna add a --scope=b --scope=c --scope=d  
 ```
 
-Here’s a concrete example installing **@supercharge/strings** as a dependency to the **@supercharge/session** package:
+Here’s a concrete example installing **dotenv** as a dependency to the **@siteBuilderV2/web** package:
 ```
-lerna add @supercharge/strings --scope=@supercharge/session  
+lerna add dotenv --scope=@siteBuilderV2/web  
 ```
 
 Run `npm run clean` should you accidentally installed a dependency inside the package itself then rerun `npm install --legacy-peer-deps` from the root folder.
