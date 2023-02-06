@@ -13,9 +13,6 @@ export default {
       title: 'Alt',
       description: 'Clickable image destination should be self-evident in alt text.',
       validation: (Rule) => [Rule.required().error('Field is required')],
-      options: {
-        isHighlighted: true, // <-- make this field easily accessible
-      },
     },
   ],
   preview: {

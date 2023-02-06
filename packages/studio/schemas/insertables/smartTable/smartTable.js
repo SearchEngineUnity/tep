@@ -1,10 +1,10 @@
-import { GrTableAdd } from 'react-icons/gr';
+import { BsTable } from 'react-icons/bs';
 
 export default {
   name: 'smartTable',
   title: 'Smart Table',
   type: 'object',
-  icon: GrTableAdd,
+  icon: BsTable,
   fields: [
     {
       name: 'title',

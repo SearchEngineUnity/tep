@@ -1,4 +1,5 @@
 export default {
+  title: 'Table Plus',
   name: 'tablePlus',
   type: 'object',
   fields: [

@@ -30,6 +30,8 @@ export default {
   ],
   preview: {
     select: { url: 'url' },
-    component: Player,
+  },
+  components: {
+    preview: Player,
   },
 };

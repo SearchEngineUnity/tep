@@ -2,7 +2,6 @@ export default {
   name: 'palette',
   type: 'document',
   title: 'Palette',
-  __experimental_actions: ['create', 'update', 'publish'],
   fieldsets: [
     {
       name: 'common',

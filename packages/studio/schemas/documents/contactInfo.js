@@ -4,7 +4,6 @@ export default {
   name: 'contactInfo',
   title: 'Contact Info',
   type: 'document',
-  __experimental_actions: ['create', 'update', 'publish'],
   icon: MdBusiness,
   fields: [
     {

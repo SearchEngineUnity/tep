@@ -125,56 +125,53 @@ export default {
       title: 'Section Outer Padding',
       type: 'paddingSet',
       fieldset: 'spacing',
-      // need to add back
-      // description: (
-      //   <>
-      //     Accept string as per padding CSS variable.{' '}
-      //     <a
-      //       href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
-      //       target="_blank"
-      //       rel="noreferrer"
-      //     >
-      //       Resource link
-      //     </a>
-      //   </>
-      // ),
+      description: (
+        <>
+          Accept string as per padding CSS variable.{' '}
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resource link
+          </a>
+        </>
+      ),
     },
     {
       name: 'innerPadding',
       title: 'Section Inner Padding',
       type: 'paddingSet',
       fieldset: 'spacing',
-      // need to add back
-      // description: (
-      //   <>
-      //     Accept string as per padding CSS variable.{' '}
-      //     <a
-      //       href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
-      //       target="_blank"
-      //       rel="noreferrer"
-      //     >
-      //       Resource link
-      //     </a>
-      //   </>
-      // ),
+      description: (
+        <>
+          Accept string as per padding CSS variable.{' '}
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resource link
+          </a>
+        </>
+      ),
     },
     {
       name: 'borderRadius',
       title: 'Section Border Radius',
       type: 'string',
-      // need to add back
-      // description: (
-      //   <>
-      //     Accept string as per border-radius CSS variable.{' '}
-      //     <a
-      //       href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"
-      //       target="_blank"
-      //       rel="noreferrer"
-      //     >
-      //       Resource link
-      //     </a>
-      //   </>
-      // ),
+      description: (
+        <>
+          Accept string as per border-radius CSS variable.{' '}
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-radius"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Resource link
+          </a>
+        </>
+      ),
       hidden: ({ document }) => !!document?.bleed,
     },
   ],
