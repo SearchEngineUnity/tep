@@ -18,9 +18,6 @@ All the common commands can be accessed directly via the root folder via `npm ru
 **Breaking change for Studio script**
 Sanity has repurposed the [start] command. [sanity start] will now start a preview for the static builds. To run a development server from the studio folder, use the [npm run dev] or [sanity dev] command instead.
 
-**Note about [npm run gatsby:dev]**
-Running the command [npm run gatsby:dev] from the root folder omits many gatsby generated messages including the server link. The local gatsby server address is http://localhost:8000.
-
 ## Using Lerna^6.4.1
 
 ### Clean up node modules
