@@ -33,10 +33,8 @@ export default {
             name: 'internalLocal',
             type: 'object',
             title: 'Internal Local Link',
-
             icon: FaLink,
             component: InternalLocalRenderer,
-
             options: {
               modal: {
                 width: 'medium',
@@ -75,10 +73,8 @@ export default {
             name: 'internalGlobal',
             type: 'object',
             title: 'Internal Global Link',
-
             icon: GiLinkedRings,
             component: InternalGlobalRenderer,
-
             fields: [
               {
                 title: 'URL',
@@ -103,10 +99,8 @@ export default {
             title: 'External Link',
             name: 'externalLink',
             type: 'object',
-
             icon: FaExternalLinkAlt,
             component: ExternalLinkRenderer,
-
             fields: [
               {
                 title: 'URL',
@@ -138,10 +132,8 @@ export default {
             title: 'Affiliate Link',
             name: 'affiliateLink',
             type: 'object',
-
             icon: TbFileDollar,
             component: AffiliateLinkRenderer,
-
             fields: [
               {
                 title: 'URL',
@@ -159,10 +151,8 @@ export default {
             name: 'jumpLink',
             type: 'object',
             title: 'Page Jump Link',
-
             icon: MdLink,
             component: JumpLinkRenderer,
-
             fields: [
               {
                 name: 'hashId',
