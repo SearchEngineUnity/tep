@@ -26,22 +26,19 @@ export default defineConfig({
   document: {
     newDocumentOptions: (prev, { creationContext }) => {
       if (creationContext.type === 'global') {
-        const noContactInfo = prev.filter(
-          (templateItem) => templateItem.templateId !== 'contactInfo',
-        );
-        const noCustomSpacing = noContactInfo.filter(
-          (templateItem) => templateItem.templateId !== 'customSpacing',
-        );
-        const noGeneralSettings = noCustomSpacing.filter(
-          (templateItem) => templateItem.templateId !== 'generalSettings',
-        );
-        const noLayoutSpg = noGeneralSettings.filter(
-          (templateItem) => templateItem.templateId !== 'layoutSpg',
-        );
-        const noPalette = noLayoutSpg.filter(
-          (templateItem) => templateItem.templateId !== 'palette',
-        );
-        return noPalette.filter((templateItem) => templateItem.templateId !== 'typography');
+        return prev.filter((templateItem) => {
+          if (
+            templateItem.templateId === 'contactInfo' ||
+            templateItem.templateId === 'customSpacing' ||
+            templateItem.templateId === 'generalSettings' ||
+            templateItem.templateId === 'layoutSpg' ||
+            templateItem.templateId === 'palette' ||
+            templateItem.templateId === 'typography'
+          ) {
+            return false;
+          }
+          return true;
+        });
       }
       return prev;
     },
