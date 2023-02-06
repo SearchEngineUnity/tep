@@ -6,7 +6,6 @@ export default {
   name: 'generalSettings',
   type: 'document',
   title: 'General Settings',
-  __experimental_actions: ['create', 'update', 'publish'],
   icon: FaBullseye,
   fields: [
     // {

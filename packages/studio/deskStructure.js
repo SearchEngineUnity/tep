@@ -28,7 +28,7 @@ export default (S) =>
                 .schemaType('sectionDesignSet')
                 .child(
                   S.documentTypeList('sectionDesignSet')
-                    .title('Section Color Sets')
+                    .title('Section Design Sets')
                     .child((documentId) =>
                       S.document().documentId(documentId).schemaType('sectionDesignSet'),
                     ),

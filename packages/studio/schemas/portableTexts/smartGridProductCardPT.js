@@ -7,7 +7,7 @@ import InternalLocalRenderer from '../components/previews/InternalLocalRenderer'
 import InternalGlobalRenderer from '../components/previews/InternalGlobalRenderer';
 
 export default {
-  title: 'Block Content',
+  title: 'Smart Grid PT for Product Card',
   name: 'smartGridProductCardPT',
   type: 'array',
   of: [
@@ -28,10 +28,10 @@ export default {
             name: 'internalLocal',
             type: 'object',
             title: 'Internal Local Link',
-            blockEditor: {
-              icon: FaLink,
-              render: InternalLocalRenderer,
-            },
+
+            icon: FaLink,
+            component: InternalLocalRenderer,
+
             options: {
               modal: {
                 width: 'medium',
@@ -70,10 +70,10 @@ export default {
             name: 'internalGlobal',
             type: 'object',
             title: 'Internal Global Link',
-            blockEditor: {
-              icon: GiLinkedRings,
-              render: InternalGlobalRenderer,
-            },
+
+            icon: GiLinkedRings,
+            component: InternalGlobalRenderer,
+
             fields: [
               {
                 title: 'URL',
@@ -98,10 +98,10 @@ export default {
             title: 'External Link',
             name: 'externalLink',
             type: 'object',
-            blockEditor: {
-              icon: FaExternalLinkAlt,
-              render: ExternalLinkRenderer,
-            },
+
+            icon: FaExternalLinkAlt,
+            component: ExternalLinkRenderer,
+
             fields: [
               {
                 title: 'URL',
@@ -133,10 +133,10 @@ export default {
             title: 'Affiliate Link',
             name: 'affiliateLink',
             type: 'object',
-            blockEditor: {
-              icon: TbFileDollar,
-              render: AffiliateLinkRenderer,
-            },
+
+            icon: TbFileDollar,
+            component: AffiliateLinkRenderer,
+
             fields: [
               {
                 title: 'URL',

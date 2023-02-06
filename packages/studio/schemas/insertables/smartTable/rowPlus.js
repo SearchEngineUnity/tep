@@ -1,4 +1,5 @@
 export default {
+  title: 'Row Plus',
   name: 'rowPlus',
   type: 'object',
   fields: [

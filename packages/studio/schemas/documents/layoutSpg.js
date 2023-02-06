@@ -4,7 +4,6 @@ export default {
   name: 'layoutSpg',
   title: 'SPG layout',
   type: 'document',
-  __experimental_actions: ['create', 'update', 'publish'],
   fields: [
     {
       name: 'heroLrAlignment',

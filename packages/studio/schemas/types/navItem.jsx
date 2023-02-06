@@ -18,20 +18,19 @@ export default {
       name: 'icon',
       Title: 'Icon',
       type: 'string',
-      // need to add back
-      // description: (
-      //   <>
-      //     Search{' '}
-      //     <a
-      //       href="https://fonts.google.com/icons?selected=Material+Icons"
-      //       target="_blank"
-      //       rel="noreferrer"
-      //     >
-      //       here
-      //     </a>{' '}
-      //     for an icon.
-      //   </>
-      // ),
+      description: (
+        <>
+          Search{' '}
+          <a
+            href="https://fonts.google.com/icons?selected=Material+Icons"
+            target="_blank"
+            rel="noreferrer"
+          >
+            here
+          </a>{' '}
+          for an icon.
+        </>
+      ),
       hidden: ({ document, parent }) => {
         if (document.type === 'mainFooter') {
           return true;

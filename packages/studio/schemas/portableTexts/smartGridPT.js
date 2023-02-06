@@ -9,7 +9,7 @@ import InternalGlobalRenderer from '../components/previews/InternalGlobalRendere
 import JumpLinkRenderer from '../components/previews/JumpLinkRenderer';
 
 export default {
-  title: 'Block Content',
+  title: 'Smart Grid PT',
   name: 'smartGridPT',
   type: 'array',
   of: [
@@ -33,10 +33,10 @@ export default {
             name: 'internalLocal',
             type: 'object',
             title: 'Internal Local Link',
-            blockEditor: {
-              icon: FaLink,
-              render: InternalLocalRenderer,
-            },
+
+            icon: FaLink,
+            component: InternalLocalRenderer,
+
             options: {
               modal: {
                 width: 'medium',
@@ -75,10 +75,10 @@ export default {
             name: 'internalGlobal',
             type: 'object',
             title: 'Internal Global Link',
-            blockEditor: {
-              icon: GiLinkedRings,
-              render: InternalGlobalRenderer,
-            },
+
+            icon: GiLinkedRings,
+            component: InternalGlobalRenderer,
+
             fields: [
               {
                 title: 'URL',
@@ -103,10 +103,10 @@ export default {
             title: 'External Link',
             name: 'externalLink',
             type: 'object',
-            blockEditor: {
-              icon: FaExternalLinkAlt,
-              render: ExternalLinkRenderer,
-            },
+
+            icon: FaExternalLinkAlt,
+            component: ExternalLinkRenderer,
+
             fields: [
               {
                 title: 'URL',
@@ -138,10 +138,10 @@ export default {
             title: 'Affiliate Link',
             name: 'affiliateLink',
             type: 'object',
-            blockEditor: {
-              icon: TbFileDollar,
-              render: AffiliateLinkRenderer,
-            },
+
+            icon: TbFileDollar,
+            component: AffiliateLinkRenderer,
+
             fields: [
               {
                 title: 'URL',
@@ -159,10 +159,10 @@ export default {
             name: 'jumpLink',
             type: 'object',
             title: 'Page Jump Link',
-            blockEditor: {
-              icon: MdLink,
-              render: JumpLinkRenderer,
-            },
+
+            icon: MdLink,
+            component: JumpLinkRenderer,
+
             fields: [
               {
                 name: 'hashId',

@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React from 'react';
 import getVideoId from 'get-video-id';
+import PropTypes from 'prop-types';
 
 const getEmbedCode = (value) => {
-  const videoId = value && value.url ? getVideoId(value.url) : '';
+  const videoId = value ? getVideoId(value) : '';
 
   if (!videoId) {
     return <span />;
@@ -14,8 +15,10 @@ const getEmbedCode = (value) => {
       return (
         <iframe
           src={`https://www.youtube.com/embed/${videoId.id}?rel=0`}
-          frameBorder="0"
-          allowFullScreen
+          style={{
+            border: 'none',
+            width: '100%',
+          }}
         />
       );
     }
@@ -24,11 +27,10 @@ const getEmbedCode = (value) => {
       return (
         <iframe
           src={`https://player.vimeo.com/video/${videoId.id}`}
-          width="640"
-          frameBorder="0"
-          webkitallowfullscreen
-          mozallowfullscreen
-          allowFullScreen
+          style={{
+            border: 'none',
+            width: '100%',
+          }}
         />
       );
     }
@@ -38,6 +40,10 @@ const getEmbedCode = (value) => {
   }
 };
 
-const YoutubeVideo = ({ value }) => <div style={{ minHeight: '2em' }}>{getEmbedCode(value)}</div>;
+const YoutubeVideo = ({ url }) => <div>{getEmbedCode(url)}</div>;
+
+YoutubeVideo.propTypes = {
+  url: PropTypes.string.isRequired,
+};
 
 export default YoutubeVideo;

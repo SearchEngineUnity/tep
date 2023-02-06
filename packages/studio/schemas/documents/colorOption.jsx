@@ -35,20 +35,19 @@ export default {
     prepare({ label, color }) {
       return {
         title: label,
-        // need to add back
-        // media: (
-        //   <div
-        //     style={{
-        //       display: 'flex',
-        //       justifyContent: 'center',
-        //       width: '100%',
-        //       height: '100%',
-        //       backgroundColor: determineColor(color),
-        //       fontSize: '24px',
-        //       alignItems: 'center',
-        //     }}
-        //   />
-        // ),
+        media: (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              height: '100%',
+              backgroundColor: determineColor(color),
+              fontSize: '24px',
+              alignItems: 'center',
+            }}
+          />
+        ),
       };
     },
   },
