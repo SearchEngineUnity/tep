@@ -1,6 +1,9 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
+import { media } from 'sanity-plugin-media';
+import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/dashboard';
+import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify';
 import { colorInput } from '@sanity/color-input';
 import { schemaTypes } from './schemas';
 import deskStructure from './deskStructure';
@@ -15,6 +18,25 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: deskStructure,
+    }),
+    media(),
+    dashboardTool({
+      widgets: [
+        projectInfoWidget(),
+        projectUsersWidget(),
+        netlifyWidget({
+          title: 'My Netlify deploys',
+          sites: [
+            {
+              title: 'Site Builder V2',
+              apiId: 'e978dfee-c169-45df-9cea-aa427232a7f8',
+              buildHookId: '63e28e14258d2d0fddde9ef4',
+              name: 'sitebuilderv2',
+            },
+          ],
+          layout: { width: 'small', height: 'small' },
+        }),
+      ],
     }),
     visionTool(),
     colorInput(),
