@@ -2,9 +2,16 @@
 
 ## Setup Notes
 
+Please use node 18.13.0 and npm 8.19.3.
+
 This is a lerna mono repo, to install for all packages run `npm install --legacy-peer-deps` from the root folder. Refer to the **Script Overview** section below for details.
 
 This project is set up with eslint and prettier following Airbnb template + custom rules. The code will be auto linted and fixed precommit (set up via husky + lint-staged). This [ref for precommit linting](https://laurieontech.com/posts/husky/) is used for set up. The difference is that we have used a .lintstagedrc file for the lint-staged configuration instead of putting the instructions directly in the package.json file. The prettier command is not included as it is integrated in to eslint already.
+
+### Important Package Versions
+
+* "sanity": "^3.0.0"
+* "gatsby": "^5.5.0"
 
 ## Scripts Overview
 
