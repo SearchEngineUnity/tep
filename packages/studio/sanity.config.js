@@ -6,15 +6,15 @@ import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/da
 import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify';
 import { colorInput } from '@sanity/color-input';
 import { schemaTypes } from './schemas';
+
 import deskStructure from './deskStructure';
+import { GatsbyPreviewAction } from './actions';
 
 export default defineConfig({
   name: 'default',
   title: 'siteBuilderV2',
-
   projectId: 'ki8bqxrw',
   dataset: 'production',
-
   plugins: [
     deskTool({
       structure: deskStructure,
@@ -74,6 +74,13 @@ export default defineConfig({
         schemaType === 'typography'
       ) {
         return prev.filter(({ action }) => !['unpublish', 'delete', 'duplicate'].includes(action));
+      }
+      if (
+        schemaType === 'page' ||
+        schemaType === 'soloGuidePage' ||
+        schemaType === 'flexListingPage'
+      ) {
+        return [GatsbyPreviewAction, ...prev];
       }
       return prev;
     },
