@@ -24,6 +24,35 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-5GLG7DW',
+        enableWebVitalsTracking: true,
+      },
+    },
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Material+Icons`,
+              },
+              {
+                family: `Roboto`,
+                variants: [`100`, `300`, `400`, `500`, `700`, `900`],
+              },
+              {
+                family: `Open+Sans`,
+                variants: [`300`, `400`, `500`, `600`, `700`, `800`],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'ki8bqxrw',
@@ -37,12 +66,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-emotion',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'production',
-      },
-    },
     'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -57,6 +80,34 @@ module.exports = {
         path: './src/images/',
       },
       __key: 'images',
+    },
+    `gatsby-plugin-netlify`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*', disallow: ['/404'] }],
+            sitemap: `${siteUrl}/sitemap.xml`,
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
     },
   ],
 };
