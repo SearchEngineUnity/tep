@@ -23,13 +23,13 @@ module.exports = {
     siteUrl,
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-tagmanager',
-      options: {
-        id: 'GTM-5GLG7DW',
-        enableWebVitalsTracking: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-google-tagmanager',
+    //   options: {
+    //     id: 'GTM-5GLG7DW',
+    //     enableWebVitalsTracking: true,
+    //   },
+    // },
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
