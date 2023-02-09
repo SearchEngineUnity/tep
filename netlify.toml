@@ -9,3 +9,8 @@
 
 [context.preview.environment]
   NODE_ENV = "development"
+
+[build.processing]
+  skip_processing = true
+
+  
