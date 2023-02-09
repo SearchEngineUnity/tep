@@ -21,6 +21,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "lerna": "lerna",
+    "bootstrap:ci": "yarn --ignore-scripts --silent && lerna bootstrap -- --ignore-scripts && yarn build:ci",
     "sanity:dev": "lerna run dev",
     "sanity:deploy": "lerna run deploy",
     "gatsby:dev": "cd packages/web && gatsby develop",
