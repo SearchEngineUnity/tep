@@ -26,7 +26,7 @@
     "gatsby:dev": "cd packages/web && gatsby develop",
     "gatsby:clean": "lerna run clean",
     "clean": "lerna clean -y",
-    "postinstall": "lerna bootstrap --ignore-scripts",
+    "postinstall": "npm --ignore-scripts",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write .",
