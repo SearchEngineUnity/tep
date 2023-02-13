@@ -1,9 +1,7 @@
 {
   "name": "site-builder-v2",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
+
   "devDependencies": {
     "eslint": "^8.33.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -26,10 +24,10 @@
     "gatsby:dev": "cd packages/web && gatsby develop",
     "gatsby:clean": "lerna run clean",
     "clean": "lerna clean -y",
-    "postinstall": "lerna bootstrap -- --legacy-peer-deps",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "format": "prettier --write .",
+    "postinstall": "lerna bootstrap -- --legacy-peer-deps",
     "precommit": "lint-staged",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
