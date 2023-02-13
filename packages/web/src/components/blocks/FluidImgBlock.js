@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../lib/sanityConfig';
 import CaptionContent from '../portableText/serializer/CaptionSerializer';
 
 function FluidImgBlock({ image, alt, loading, maxHeight, maxWidth, caption }) {

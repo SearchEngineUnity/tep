@@ -3,7 +3,7 @@ import { Box, Typography, Card, CardContent, Grid } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { CardActionArea } from 'gatsby-theme-material-ui';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../lib/sanityConfig';
 
 function TileImageRecSqr({ image, alt, url, title, text, date }) {
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;

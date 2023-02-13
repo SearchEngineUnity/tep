@@ -7,7 +7,7 @@ import { makeStyles } from 'tss-react/mui';
 import Modal from '@mui/material/Modal';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../../../lib/sanityConfig';
 import ProductCardFlexSegment from './ProductCardFlexSegment';
 import ProductCardDividerSegment from './ProductCardDividerSegment';
 import ProductInfoList from './ProductInfoList';

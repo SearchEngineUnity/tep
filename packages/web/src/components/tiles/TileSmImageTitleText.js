@@ -8,7 +8,7 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
 export default function TileSmImageTitleText({ image, alt, link, title, text }) {
