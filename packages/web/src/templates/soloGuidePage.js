@@ -97,11 +97,11 @@ function SoloGuidePage({ data, location }) {
 
 export default SoloGuidePage;
 
-export function Head({ data }) {
-  return (
-    <>
-      <html lang="en" />
-      <Seo {...mapSeoToProps(data.page, type)} heroImage={data.guide.heroImage.asset.url} />
-    </>
-  );
-}
+// export function Head({ data }) {
+//   return (
+//     <>
+//       <html lang="en" />
+//       <Seo {...mapSeoToProps(data.page, type)} heroImage={data.guide.heroImage.asset.url} />
+//     </>
+//   );
+// }

@@ -2016,11 +2016,11 @@ function FlexListingPage({ data, location, pageContext }) {
 
 export default FlexListingPage;
 
-export function Head({ data }) {
-  return (
-    <>
-      <html lang="en" />
-      <Seo {...mapSeoToProps(data.page, type)} />
-    </>
-  );
-}
+// export function Head({ data }) {
+//   return (
+//     <>
+//       <html lang="en" />
+//       <Seo {...mapSeoToProps(data.page, type)} />
+//     </>
+//   );
+// }

@@ -1864,11 +1864,11 @@ function StructuredPage({ data, location }) {
 
 export default StructuredPage;
 
-export function Head({ data }) {
-  return (
-    <>
-      <html lang="en" />
-      <Seo {...mapSeoToProps(data.page, type)} />
-    </>
-  );
-}
+// export function Head({ data }) {
+//   return (
+//     <>
+//       <html lang="en" />
+//       <Seo {...mapSeoToProps(data.page, type)} />
+//     </>
+//   );
+// }
