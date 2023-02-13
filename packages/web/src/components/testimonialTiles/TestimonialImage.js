@@ -3,7 +3,7 @@ import { Card, Grid, CardContent, Typography, Avatar } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { styled } from '@mui/material/styles';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../lib/sanityConfig';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   borderLeft: `4px solid ${theme.palette.primary.main}`,

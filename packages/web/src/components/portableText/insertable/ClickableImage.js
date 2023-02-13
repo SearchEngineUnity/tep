@@ -3,7 +3,7 @@ import { makeStyles } from 'tss-react/mui';
 import { Box, Card } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../../lib/sanityConfig';
 import ConditionalCardActionArea from '../../cardActionArea/ConditionalCardActionArea';
 
 const useStyles = makeStyles()((theme, { borderRadius, height, width }) => ({

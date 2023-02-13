@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '@siteBuilderV2/studio/sanity.config';
+import sanityConfig from '../../../lib/sanityConfig';
 import ConditionalCardActionArea from '../../cardActionArea/ConditionalCardActionArea';
 
 function NavClickableImage({ image, link }) {
