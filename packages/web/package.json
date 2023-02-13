@@ -21,7 +21,6 @@
     "@mui/material": "^5.11.8",
     "@mui/utils": "^5.11.7",
     "@portabletext/react": "^2.0.1",
-    "@siteBuilderV2/studio": "*",
     "dotenv": "^16.0.3",
     "gatsby": "^5.5.0",
     "gatsby-plugin-emotion": "^8.5.0",
