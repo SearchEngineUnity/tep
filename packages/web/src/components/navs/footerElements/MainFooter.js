@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import { Box, Container, Divider, Grid, Toolbar, Hidden } from '@mui/material';
 import { Link } from 'gatsby-theme-material-ui';
 import NavBrand from '../headerElements/NavBrand';
@@ -9,9 +8,10 @@ import FooterGroup from './FooterGroup';
 import FooterItem from './FooterItem';
 import NavPhone from '../headerElements/NavPhone';
 import { mapNavBrandToProps, mapNavItemToProps, mapNavGroupToProps } from '../../../lib/mapToProps';
+import { useFooter } from '../../../hooks/useFooter';
 
-function MainFooter({ data }) {
-  const { sanityContactInfo: contactInfo, sanityNavMenu: footerMenu } = data;
+export default function MainFooter() {
+  const { contactInfo, footerMenu } = useFooter();
   const { menuArray } = footerMenu;
 
   if (footerMenu) {
@@ -87,108 +87,4 @@ function MainFooter({ data }) {
     );
   }
   return null;
-}
-
-export default function Footer(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          sanityNavMenu(type: { eq: "mainFooter" }) {
-            type
-            menuArray {
-              _key
-              menuGroup {
-                ... on SanityNavBrand {
-                  _key
-                  _type
-                  alt
-                  brandGroup {
-                    _key
-                    height
-                    type
-                    brand {
-                      _id
-                      logo {
-                        asset {
-                          url
-                          metadata {
-                            dimensions {
-                              aspectRatio
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                ... on SanityNavGroup {
-                  _key
-                  _type
-                  title
-                  group {
-                    title
-                    isButton
-                    icon
-                    nav {
-                      ... on SanityPage {
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanitySoloGuidePage {
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanityFlexListingPage {
-                        slug {
-                          current
-                        }
-                      }
-                    }
-                    _key
-                  }
-                }
-                ... on SanityNavItem {
-                  _key
-                  _type
-                  isButton
-                  title
-                  nav {
-                    ... on SanityPage {
-                      slug {
-                        current
-                      }
-                    }
-                    ... on SanitySoloGuidePage {
-                      slug {
-                        current
-                      }
-                    }
-                    ... on SanityFlexListingPage {
-                      slug {
-                        current
-                      }
-                    }
-                  }
-                }
-                ... on SanityNavPhone {
-                  _key
-                  _type
-                  text
-                  phoneNumber
-                }
-              }
-            }
-          }
-          sanityContactInfo {
-            name
-            homePage
-          }
-        }
-      `}
-      render={(data) => <MainFooter data={data} {...props} />}
-    />
-  );
 }

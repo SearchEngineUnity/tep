@@ -1,5 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import { AppBar, Box, Container, Toolbar } from '@mui/material';
 import NavItem from './NavItem';
 import NavGroup from './NavGroup';
@@ -8,9 +7,12 @@ import NavPhone from './NavPhone';
 import NavClickableImage from './NavClickableImage';
 import MainNavHamburger from './MainNavHamburger';
 import { mapNavBrandToProps, mapNavItemToProps, mapNavGroupToProps } from '../../../lib/mapToProps';
+import { useMainNav } from '../../../hooks/useMainNav';
 
-function MainNav({ data, location }) {
-  if (data.sanityNavMenu) {
+export default function MainNav({ location }) {
+  const { menu, contactInfo } = useMainNav();
+
+  if (menu) {
     return (
       <AppBar
         position="relative"
@@ -18,7 +20,7 @@ function MainNav({ data, location }) {
         sx={{ bgcolor: 'common.white', color: 'common.black' }}
       >
         <Container maxWidth="lg" component="nav" aria-label="main navigation header">
-          {data.sanityNavMenu.menuArray.map((menuRow, menuIndex) => {
+          {menu.menuArray.map((menuRow, menuIndex) => {
             // menu group is not a nav group. it is the top level menu item.
             const { menuGroup, _key } = menuRow;
 
@@ -63,7 +65,7 @@ function MainNav({ data, location }) {
                         return (
                           <NavBrand
                             {...mapNavBrandToProps(group)}
-                            url={data.sanityContactInfo.homePage}
+                            url={contactInfo.homePage}
                             key={groupKey}
                           />
                         );
@@ -114,9 +116,9 @@ function MainNav({ data, location }) {
                   })}
                   {menuIndex === 0 && (
                     <MainNavHamburger
-                      bottomMenu={data.sanityNavMenu.menuArray[1].menuGroup}
-                      topMenu={data.sanityNavMenu.menuArray[0].menuGroup}
-                      brandUrl={data.sanityContactInfo.homePage}
+                      bottomMenu={menu.menuArray[1].menuGroup}
+                      topMenu={menu.menuArray[0].menuGroup}
+                      brandUrl={contactInfo.homePage}
                       location={location}
                     />
                   )}
@@ -129,164 +131,4 @@ function MainNav({ data, location }) {
     );
   }
   return null;
-}
-
-export default function MainNavigation(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          sanityNavMenu(type: { eq: "mainNav" }) {
-            type
-            menuArray {
-              _key
-              menuGroup {
-                ... on SanityNavClickableImage {
-                  _key
-                  _type
-                  image: _rawImage(resolveReferences: { maxDepth: 10 })
-                  link {
-                    ... on SanityJumpLink {
-                      _key
-                      _type
-                      hashId
-                    }
-                    ... on SanityAffiliateLink {
-                      _key
-                      _type
-                      href
-                    }
-                    ... on SanityExternalLink {
-                      _key
-                      _type
-                      href
-                      newTab
-                      noreferrer
-                    }
-                    ... on SanityInternalGlobal {
-                      _key
-                      _type
-                      href
-                      newTab
-                    }
-                    ... on SanityInternalLocal {
-                      _key
-                      _type
-                      newTab
-                      hashId
-                      parameter
-                      reference {
-                        ... on SanityFlexListingPage {
-                          id
-                          slug {
-                            current
-                          }
-                        }
-                        ... on SanityPage {
-                          id
-                          slug {
-                            current
-                          }
-                        }
-                        ... on SanitySoloGuidePage {
-                          id
-                          slug {
-                            current
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                ... on SanityNavBrand {
-                  _key
-                  _type
-                  alt
-                  brandGroup {
-                    _key
-                    height
-                    type
-                    brand {
-                      _id
-                      logo {
-                        asset {
-                          url
-                          metadata {
-                            dimensions {
-                              aspectRatio
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-                ... on SanityNavGroup {
-                  _key
-                  _type
-                  title
-                  group {
-                    title
-                    isButton
-                    icon
-                    nav {
-                      ... on SanityPage {
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanitySoloGuidePage {
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanityFlexListingPage {
-                        slug {
-                          current
-                        }
-                      }
-                    }
-                    _key
-                  }
-                }
-                ... on SanityNavItem {
-                  _key
-                  _type
-                  isButton
-                  title
-                  nav {
-                    ... on SanityPage {
-                      slug {
-                        current
-                      }
-                    }
-                    ... on SanitySoloGuidePage {
-                      slug {
-                        current
-                      }
-                    }
-                    ... on SanityFlexListingPage {
-                      slug {
-                        current
-                      }
-                    }
-                  }
-                }
-                ... on SanityNavPhone {
-                  _key
-                  _type
-                  text
-                  phoneNumber
-                }
-              }
-            }
-          }
-          sanityContactInfo {
-            homePage
-          }
-        }
-      `}
-      render={(data) => <MainNav data={data} {...props} />}
-    />
-  );
 }

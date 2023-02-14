@@ -1,14 +1,14 @@
 import React from 'react';
 import { IconButton } from 'gatsby-theme-material-ui';
-import { StaticQuery, graphql } from 'gatsby';
 import { Facebook, Twitter, Instagram, Pinterest, LinkedIn, YouTube } from '@mui/icons-material';
+import { useSocialInfo } from '../hooks/useSocialInfo';
 
-function SocialMedia({ data }) {
-  const { allSanitySocialInfo: socials } = data;
+export default function SocialMedia() {
+  const socials = useSocialInfo();
 
   return (
     <>
-      {socials.edges.map((social) => {
+      {socials.map((social) => {
         const iconSelector = (key) => {
           switch (key) {
             case 'facebook':
@@ -42,25 +42,5 @@ function SocialMedia({ data }) {
         );
       })}
     </>
-  );
-}
-export default function SocialMediaContact(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          allSanitySocialInfo {
-            edges {
-              node {
-                _id
-                social
-                link
-              }
-            }
-          }
-        }
-      `}
-      render={(data) => <SocialMedia data={data} {...props} />}
-    />
   );
 }
