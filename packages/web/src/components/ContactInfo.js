@@ -1,58 +1,36 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
-import { StaticQuery, graphql } from 'gatsby';
+import { useContactInfo } from '../hooks/useContactInfo';
 
-function ContactInfo({ data }) {
-  const { sanityContactInfo: contactInfo } = data;
+export default function Contact() {
+  const { address1, address2, city, provinceState, mailCode, phone, email } = useContactInfo;
 
   return (
     <Box my={2}>
-      {contactInfo.address1 && <div>{contactInfo.address1}</div>}
-      {contactInfo.address2 && <div>{contactInfo.address2}</div>}
+      {address1 && <div>{address1}</div>}
+      {address2 && <div>{address2}</div>}
       <div>
-        {contactInfo.city ? `${contactInfo.city}, ` : null}
-        {contactInfo.provinceState ? `${contactInfo.provinceState}, ` : null}
-        {contactInfo.mailCode ? `${contactInfo.mailCode}` : null}
+        {city ? `${city}, ` : null}
+        {provinceState ? `${provinceState}, ` : null}
+        {mailCode ? `${mailCode}` : null}
       </div>
-      {contactInfo.phone && (
+      {phone && (
         <Link
-          href={`tel:${contactInfo.phone}`}
+          href={`tel:${phone}`}
           content="telephone=yes"
           color="inherit"
           underline="none"
           sx={{ display: 'block' }}
         >
-          {contactInfo.phone}
+          {phone}
         </Link>
       )}
-      {contactInfo.email && (
-        <Link href={`mailto:${contactInfo.email}`} color="inherit">
-          {contactInfo.email}
+      {email && (
+        <Link href={`mailto:${email}`} color="inherit">
+          {email}
         </Link>
       )}
     </Box>
-  );
-}
-
-export default function Contact(props) {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          sanityContactInfo {
-            address1
-            address2
-            city
-            country
-            email
-            phone
-            mailCode
-            provinceState
-          }
-        }
-      `}
-      render={(data) => <ContactInfo data={data} {...props} />}
-    />
   );
 }
