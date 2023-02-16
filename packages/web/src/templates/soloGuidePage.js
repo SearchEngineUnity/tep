@@ -101,7 +101,7 @@ export default SoloGuidePage;
 //   return (
 //     <>
 //       <html lang="en" />
-//       <Seo {...mapSeoToProps(data.page, type)} heroImage={data.guide.heroImage.asset.url} />
+//       <Seo {...mapSeoToProps(data.guide, type)} heroImage={data.guide.heroImage.asset.url} />
 //     </>
 //   );
 // }

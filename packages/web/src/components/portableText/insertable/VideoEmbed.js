@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player/lazy';
 import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/styles';
 
 const StyledReactPlayer = styled(ReactPlayer)`
   position: absolute;
