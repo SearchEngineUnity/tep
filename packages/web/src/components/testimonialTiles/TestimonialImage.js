@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Grid, CardContent, Typography, Avatar } from '@mui/material';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/styles';
 import sanityConfig from '../../lib/sanityConfig';
 
 const StyledCard = styled(Card)(({ theme }) => ({

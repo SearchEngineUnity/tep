@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from 'tss-react/mui';
 import { Box, Typography, Link } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/styles';
 import { useHeadsObserver } from '../hooks/useHeadObserver';
 
 const useStyles = makeStyles()((theme) => ({

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/styles';
 
 const StyledCard = styled(Card)(({ theme }) => ({
   borderLeft: `4px solid ${theme.palette.primary.main}`,

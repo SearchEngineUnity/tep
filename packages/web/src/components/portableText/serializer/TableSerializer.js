@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
 import { Typography } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/styles';
 import JumpLink from '../../link/JumpLink';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
