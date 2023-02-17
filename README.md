@@ -97,9 +97,7 @@ removal of use of <StaicQuery />
 All dependencies were reinstalled to gatsby v5 compatible other than gatsby-theme-material-ui (they need to update their dependancy still)
 Material UI migration
 
-3. [Migrating to v5 getting started](https://mui.com/material-ui/migration/migration-v4/)
-
-**only code mod is needed here**
+3. [Migrating to v5 getting started](https://mui.com/material-ui/migration/migration-v4/) only code mod is needed here
 
 4. [Style change](https://mui.com/material-ui/migration/v5-style-changes/)
 
@@ -111,9 +109,7 @@ I think it is easier to just remember there are new ones to do things for compon
 migrated styled from styled-components to styled from @mui/material/styles
 migrated makeStyles and withstyles to tss-react/mui because I cannot tell if the new functions from @mui/styles still accepted props... it migh've worked fine - we can always revisit this to drop a package if we don't need to use tss-react-mui.
 
-5. [Component changes](https://mui.com/material-ui/migration/v5-component-changes/)
-
-**All of this has not be explicitly migrated if untouched by code mod. we will pick up when we go through each components more closely, esp the breakpoint stuff**
+5. [Component changes](https://mui.com/material-ui/migration/v5-component-changes/) All of this has not be explicitly migrated if untouched by code mod. we will pick up when we go through each components more closely, esp the breakpoint stuff**
 
 6. [Migrating from JSS](https://mui.com/material-ui/migration/migrating-from-jss/)
 
