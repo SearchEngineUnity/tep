@@ -8,11 +8,11 @@ import * as sections from './sections';
 import * as types from './types';
 
 export const schemaTypes = [
+  ...Object.values(types),
   ...Object.values(portableTexts),
-  ...Object.values(blocks),
-  ...Object.values(documents),
   ...Object.values(formParts),
   ...Object.values(insertables),
+  ...Object.values(blocks),
   ...Object.values(sections),
-  ...Object.values(types),
+  ...Object.values(documents),
 ];

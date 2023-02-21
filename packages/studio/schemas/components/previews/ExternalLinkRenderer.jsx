@@ -1,20 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 
-const ExternalLinkRenderer = (props) => {
-  const { children } = props;
-
+function ExternalLinkRenderer(props) {
+  const { renderDefault } = props;
   return (
     <span>
-      {children}
-      <FaExternalLinkAlt style={{ display: 'inline', paddingLeft: '8px', paddingRight: '8px' }} />
+      {renderDefault(props)}
+      <a
+        contentEditable={false}
+        href={props?.value?.href || '#'}
+        target="_blank"
+        style={{ paddingLeft: '8px', paddingRight: '4px' }}
+        rel="noreferrer"
+      >
+        <FaExternalLinkAlt size="14px" style={{ verticalAlign: 'middle' }} />
+      </a>
     </span>
   );
-};
-
-ExternalLinkRenderer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+}
 
 export default ExternalLinkRenderer;

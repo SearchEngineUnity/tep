@@ -1,25 +1,18 @@
+import { FaLink } from 'react-icons/fa';
+
 export default {
   title: 'Internal Local Link',
   name: 'internalLocal',
   type: 'object',
+  icon: FaLink,
   fields: [
     {
-      name: 'reference',
-      type: 'reference',
-      title: 'Reference',
-      to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
-    },
-    {
-      name: 'hashId',
-      title: 'Hash ID',
+      name: 'href',
       type: 'string',
-      description: 'Please enter the ID you would like to jump to. Do not include the # symbol.',
-    },
-    {
-      name: 'parameter',
-      title: 'Parameter(s)',
-      type: 'string',
-      description: 'Please enter all needed parameters for the link',
+      title: 'Path',
+      description: 'Please start with "/".',
+      // also need validation for rules must start with "/"
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       title: 'Open in new tab?',

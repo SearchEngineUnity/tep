@@ -42,28 +42,7 @@ export const useMainNav = () => {
                     _key
                     _type
                     newTab
-                    hashId
-                    parameter
-                    reference {
-                      ... on SanityFlexListingPage {
-                        id
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanityPage {
-                        id
-                        slug {
-                          current
-                        }
-                      }
-                      ... on SanitySoloGuidePage {
-                        id
-                        slug {
-                          current
-                        }
-                      }
-                    }
+                    href
                   }
                 }
               }

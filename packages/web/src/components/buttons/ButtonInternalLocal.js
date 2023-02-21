@@ -84,7 +84,7 @@ function ButtonInternalLocal({
   });
 
   const { classes } = useStyles({ padding });
-  const { reference, hashId, parameter, newTab } = link[0];
+  const { href, newTab } = link[0];
 
   return (
     <ThemeProvider theme={theme}>
@@ -100,9 +100,7 @@ function ButtonInternalLocal({
           className={classes.size}
           target={newTab ? '_blank' : undefined}
           rel={newTab ? 'noopener' : undefined}
-          to={`/${reference.slug.current}${hashId ? `#${hashId}` : ''}${
-            parameter ? `?${parameter}` : ''
-          }`}
+          to={href}
         >
           {text}
         </Button>

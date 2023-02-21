@@ -1,7 +1,4 @@
-import { FaExternalLinkAlt, FaLink, FaHashtag } from 'react-icons/fa';
-import { GiLinkedRings } from 'react-icons/gi';
-import { MdLink } from 'react-icons/md';
-import { TbFileDollar } from 'react-icons/tb';
+import { FaHashtag } from 'react-icons/fa';
 import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer';
 import HashIdRenderer from '../components/previews/HashIdRenderer';
 import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer';
@@ -30,153 +27,61 @@ export default {
         annotations: [
           {
             name: 'internalLocal',
-            type: 'object',
+            type: 'internalLocal',
             title: 'Internal Local Link',
-            icon: FaLink,
-            component: InternalLocalRenderer,
-            options: {
-              modal: {
-                width: 'medium',
-              },
+            components: {
+              annotation: InternalLocalRenderer,
             },
-            fields: [
-              {
-                name: 'reference',
-                type: 'reference',
-                title: 'Reference',
-                to: [{ type: 'page' }, { type: 'soloGuidePage' }, { type: 'flexListingPage' }],
-              },
-              {
-                name: 'hashId',
-                title: 'Hash ID',
-                type: 'string',
-                description:
-                  'Please enter the ID you would like to jump to. Do not include the # symbol.',
-              },
-              {
-                name: 'parameter',
-                title: 'Parameter(s)',
-                type: 'string',
-                description: 'Please enter all needed parameters for the link',
-              },
-              {
-                title: 'Open in new tab?',
-                name: 'newTab',
-                type: 'boolean',
-                initialValue: false,
-                validation: (Rule) => [Rule.required().error('Field is required')],
-              },
-            ],
           },
           {
             name: 'internalGlobal',
-            type: 'object',
+            type: 'internalGlobal',
             title: 'Internal Global Link',
-            icon: GiLinkedRings,
-            component: InternalGlobalRenderer,
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-                validation: (Rule) =>
-                  Rule.uri({
-                    allowRelative: false,
-                    scheme: ['https', 'http'],
-                  }),
-              },
-              {
-                title: 'Open in new tab?',
-                name: 'newTab',
-                type: 'boolean',
-                initialValue: false,
-                validation: (Rule) => [Rule.required().error('Field is required')],
-              },
-            ],
+            components: {
+              annotation: InternalGlobalRenderer,
+            },
           },
           {
             title: 'External Link',
             name: 'externalLink',
-            type: 'object',
-            icon: FaExternalLinkAlt,
-            component: ExternalLinkRenderer,
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-                validation: (Rule) =>
-                  Rule.uri({
-                    allowRelative: false,
-                    scheme: ['https', 'http', 'mailto', 'tel'],
-                  }),
-              },
-              {
-                title: 'Open in new tab?',
-                name: 'newTab',
-                type: 'boolean',
-                initialValue: true,
-                validation: (Rule) => [Rule.required().error('Field is required')],
-              },
-              {
-                title: 'rel=noreferrer?',
-                name: 'noreferrer',
-                type: 'boolean',
-                initialValue: false,
-                validation: (Rule) => [Rule.required().error('Field is required')],
-              },
-            ],
+            type: 'externalLink',
+            components: {
+              annotation: ExternalLinkRenderer,
+            },
           },
           {
             title: 'Affiliate Link',
             name: 'affiliateLink',
-            type: 'object',
-            icon: TbFileDollar,
-            component: AffiliateLinkRenderer,
-            fields: [
-              {
-                title: 'URL',
-                name: 'href',
-                type: 'url',
-                validation: (Rule) =>
-                  Rule.uri({
-                    allowRelative: false,
-                    scheme: ['https', 'http', 'mailto', 'tel'],
-                  }),
-              },
-            ],
+            type: 'affiliateLink',
+            components: {
+              annotation: AffiliateLinkRenderer,
+            },
           },
           {
             title: 'Hash ID',
             name: 'hashId',
             type: 'object',
             icon: FaHashtag,
-            component: HashIdRenderer,
+            components: {
+              annotation: HashIdRenderer,
+            },
             fields: [
               {
                 title: 'ID',
                 name: 'idTag',
                 type: 'string',
                 description:
-                  'Add ID to the selected string. Please only use alphanumeric characters and hypen.',
+                  'Add ID to the selected string. Please only use alphanumeric characters and hyphen.',
               },
             ],
           },
           {
             name: 'jumpLink',
-            type: 'object',
+            type: 'jumpLink',
             title: 'Page Jump Link',
-            icon: MdLink,
-            component: JumpLinkRenderer,
-            fields: [
-              {
-                name: 'hashId',
-                title: 'Hash ID',
-                type: 'string',
-                description:
-                  'Please enter the ID you would like to jump to. Do not include the # symbol.',
-              },
-            ],
+            components: {
+              annotation: JumpLinkRenderer,
+            },
           },
         ],
       },

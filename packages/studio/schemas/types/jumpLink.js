@@ -1,7 +1,10 @@
+import { MdLink } from 'react-icons/md';
+
 export default {
   name: 'jumpLink',
   type: 'object',
   title: 'Page Jump Link',
+  icon: MdLink,
   fields: [
     {
       name: 'hashId',

@@ -1,16 +1,17 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import PropTypes from 'prop-types';
 import { MdLink } from 'react-icons/md';
 
-const JumpLinkRenderer = ({ children }) => (
-  <span>
-    {children}
-    <MdLink style={{ display: 'inline', paddingLeft: '8px', paddingRight: '8px' }} />
-  </span>
-);
-
-JumpLinkRenderer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+function JumpLinkRenderer(props) {
+  const { renderDefault } = props;
+  return (
+    <span>
+      {renderDefault(props)}
+      <a contentEditable={false} href="#" style={{ paddingLeft: '8px', paddingRight: '4px' }}>
+        <MdLink size="16px" style={{ verticalAlign: 'middle' }} />
+      </a>
+    </span>
+  );
+}
 
 export default JumpLinkRenderer;
