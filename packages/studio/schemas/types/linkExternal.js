@@ -1,7 +1,10 @@
+import { FaExternalLinkAlt } from 'react-icons/fa';
+
 export default {
   title: 'External Link',
   name: 'externalLink',
   type: 'object',
+  icon: FaExternalLinkAlt,
   fields: [
     {
       title: 'URL',

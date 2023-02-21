@@ -1,16 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { FaLink } from 'react-icons/fa';
 
-const InternalLocalRenderer = ({ children }) => (
-  <span>
-    {children}
-    <FaLink style={{ display: 'inline', paddingLeft: '8px', paddingRight: '8px' }} />
-  </span>
-);
-
-InternalLocalRenderer.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+function InternalLocalRenderer(props) {
+  const { renderDefault } = props;
+  return (
+    <span>
+      {renderDefault(props)}
+      <a
+        contentEditable={false}
+        href={props?.value?.href || '#'}
+        target="_blank"
+        style={{ paddingLeft: '8px', paddingRight: '4px' }}
+        rel="noreferrer"
+      >
+        <FaLink size="14px" style={{ verticalAlign: 'middle' }} />
+      </a>
+    </span>
+  );
+}
 
 export default InternalLocalRenderer;

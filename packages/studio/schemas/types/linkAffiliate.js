@@ -1,7 +1,10 @@
+import { TbFileDollar } from 'react-icons/tb';
+
 export default {
   title: 'Affiliate Link',
   name: 'affiliateLink',
   type: 'object',
+  icon: TbFileDollar,
   fields: [
     {
       title: 'URL',

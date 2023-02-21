@@ -1,7 +1,10 @@
+import { GiLinkedRings } from 'react-icons/gi';
+
 export default {
   title: 'Internal Global Link',
   name: 'internalGlobal',
   type: 'object',
+  icon: GiLinkedRings,
   fields: [
     {
       title: 'URL',

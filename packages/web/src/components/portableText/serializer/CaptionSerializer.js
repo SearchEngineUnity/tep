@@ -30,10 +30,7 @@ const serializers = {
   },
   marks: {
     internalLocal: ({ value, children }) => {
-      const { slug = {} } = value.reference;
-      const { newTab, hashId, parameter } = value;
-      const baseSlug = slug.current === '/' ? `/` : `/${slug.current}`;
-      const href = `${baseSlug}${hashId ? `#${hashId}` : ''}${parameter ? `?${parameter}` : ''}`;
+      const { newTab, href } = value;
       return (
         <InternalLocal href={href} newTab={newTab} className="caption-link">
           {children}
