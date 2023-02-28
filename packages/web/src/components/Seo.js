@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { useSeoDefaults } from '../hooks/useSeoDefaults';
 
 export default function Seo({
@@ -44,7 +45,8 @@ export default function Seo({
     twitterShareMetaPack?.twitterShareDescription || ogDescription || metaDescription;
 
   return (
-    <>
+    <Helmet>
+      <html lang="en" />
       <title>{pageTitle}</title>
       {metaDescription && <meta name="description" content={metaDescription} />}
       <meta property="og:locale" content="en_CA" />
@@ -64,6 +66,6 @@ export default function Seo({
         <link rel="canonical" href={metaUrl} />
       )}
       {children}
-    </>
+    </Helmet>
   );
 }

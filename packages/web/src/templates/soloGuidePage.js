@@ -5,9 +5,8 @@ import Layout from '../containers/layout';
 import GuideHero from '../components/sections/GuideHero';
 import GuideBody from '../components/portableText/serializer/GuideSerializer';
 import ToC from '../components/TableOfContent';
-import Seo from '../components/Seo';
 import { useUpdateUrl } from '../hooks/useUpdateUrl';
-import { mapGuideHeroToProps, mapSeoToProps } from '../lib/mapToProps';
+import { mapGuideHeroToProps } from '../lib/mapToProps';
 
 const type = 'guide';
 
@@ -69,7 +68,12 @@ function SoloGuidePage({ data, location }) {
   useUpdateUrl();
 
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      data={data.guide}
+      type={type}
+      heroImage={data.guide.heroImage.asset.url}
+    >
       <main>
         <GuideHero {...mapGuideHeroToProps(data.guide)} />
         <Box my={3}>
@@ -96,12 +100,3 @@ function SoloGuidePage({ data, location }) {
 }
 
 export default SoloGuidePage;
-
-// export function Head({ data }) {
-//   return (
-//     <>
-//       <html lang="en" />
-//       <Seo {...mapSeoToProps(data.guide, type)} heroImage={data.guide.heroImage.asset.url} />
-//     </>
-//   );
-// }
