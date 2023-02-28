@@ -1,17 +1,11 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
-import Seo from '../components/Seo';
 import LrHero from '../components/sections/LrFlexHero';
 import LrFlex from '../components/sections/StructuredLrFlex';
 import StackFlex from '../components/sections/StackFlex';
 import StackHero from '../components/sections/StackHero';
-import {
-  mapLrHeroToProps,
-  mapSeoToProps,
-  mapLrFlexToProps,
-  mapStackSectionToProps,
-} from '../lib/mapToProps';
+import { mapLrHeroToProps, mapLrFlexToProps, mapStackSectionToProps } from '../lib/mapToProps';
 
 const type = 'page';
 
@@ -1584,7 +1578,7 @@ export const query = graphql`
 
 function StructuredPage({ data, location }) {
   return (
-    <Layout location={location}>
+    <Layout location={location} data={data.page} type={type}>
       <main>
         {data.page.sections.map((section) => {
           const { _type } = section;
@@ -1611,12 +1605,3 @@ function StructuredPage({ data, location }) {
 }
 
 export default StructuredPage;
-
-// export function Head({ data }) {
-//   return (
-//     <>
-//       <html lang="en" />
-//       <Seo {...mapSeoToProps(data.page, type)} />
-//     </>
-//   );
-// }

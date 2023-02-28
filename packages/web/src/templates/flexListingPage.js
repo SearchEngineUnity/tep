@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
-import Seo from '../components/Seo';
 import LrHero from '../components/sections/LrFlexHero';
 import LrFlex from '../components/sections/StructuredLrFlex';
 import StackFlex from '../components/sections/StackFlex';
@@ -10,7 +9,6 @@ import PaginatedListingSection from '../components/sections/PaginatedListingSect
 import { useSpGuides } from '../hooks/useSpGuides';
 import {
   mapLrHeroToProps,
-  mapSeoToProps,
   mapLrFlexToProps,
   mapStackSectionToProps,
   mapPaginatedListingSectionToProps,
@@ -1726,7 +1724,7 @@ function FlexListingPage({ data, location, pageContext }) {
   const listingItems = allListItems.slice((currentpage - 1) * limit, currentpage * limit);
 
   return (
-    <Layout location={location}>
+    <Layout location={location} data={data.page} type={type}>
       <main>
         {data.page.sections.map((section) => {
           const { _type } = section;
@@ -1763,12 +1761,3 @@ function FlexListingPage({ data, location, pageContext }) {
 }
 
 export default FlexListingPage;
-
-// export function Head({ data }) {
-//   return (
-//     <>
-//       <html lang="en" />
-//       <Seo {...mapSeoToProps(data.page, type)} />
-//     </>
-//   );
-// }

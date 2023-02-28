@@ -24,6 +24,7 @@ module.exports = {
     siteUrl,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     // {
     //   resolve: 'gatsby-plugin-google-tagmanager',
     //   options: {
