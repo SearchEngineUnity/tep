@@ -9,23 +9,21 @@ import AffiliateLink from '../../link/LinkAffiliate';
 const serializers = {
   // not sure if this container thing works anymore
   container: (props) => <figcaption style={{ textAlign: 'center' }}>{props.children}</figcaption>,
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography
-            gutterBottom
-            variant="caption"
-            component="p"
-            className="caption-text"
-            sx={{ fontStyle: 'italic' }}
-          >
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography
+          gutterBottom
+          variant="caption"
+          component="p"
+          className="caption-text"
+          sx={{ fontStyle: 'italic' }}
+        >
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
   },
   marks: {

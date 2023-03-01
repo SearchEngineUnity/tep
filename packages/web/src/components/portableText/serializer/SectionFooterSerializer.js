@@ -8,17 +8,15 @@ import InternalLocal from '../../link/LinkInternalLocal';
 import AffiliateLink from '../../link/LinkAffiliate';
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography gutterBottom variant="body1">
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography gutterBottom variant="body1">
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
   },
   marks: {

@@ -46,18 +46,18 @@ const TableTypography = styled(Typography)`
 // `;
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography gutterBottom variant="body1">
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography gutterBottom variant="body1">
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
+  },
+  types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
         <Illustration illustration={value} />

@@ -26,96 +26,96 @@ const StyledTypography = styled(Typography)({
 });
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography gutterBottom variant="body1">
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
-      h2: ({ value, children }) => (
-        <StyledTypography
-          gutterBottom
-          variant="h2"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography gutterBottom variant="body1">
           {children}
-        </StyledTypography>
-      ),
-      h3: ({ value, children }) => (
-        <StyledTypography
-          gutterBottom
-          variant="h3"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledTypography>
-      ),
-      h4: ({ value, children }) => (
-        <StyledTypography
-          gutterBottom
-          variant="h4"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledTypography>
-      ),
-      h5: ({ value, children }) => (
-        <StyledTypography
-          gutterBottom
-          variant="h5"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledTypography>
-      ),
-      h6: ({ value, children }) => (
-        <StyledTypography
-          gutterBottom
-          variant="h6"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledTypography>
-      ),
-      blockquote: ({ children }) => (
-        <Box
-          component="blockquote"
-          fontSize="h3.fontSize"
-          fontWeight={100}
-          borderColor="primary.main"
-          pl={4}
-          py={1}
-          borderLeft={4}
-        >
-          &#8220; {children} &#8221;
-        </Box>
-      ),
+        </Typography>
+      ) : (
+        <br />
+      );
     },
+    h2: ({ value, children }) => (
+      <StyledTypography
+        gutterBottom
+        variant="h2"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledTypography>
+    ),
+    h3: ({ value, children }) => (
+      <StyledTypography
+        gutterBottom
+        variant="h3"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledTypography>
+    ),
+    h4: ({ value, children }) => (
+      <StyledTypography
+        gutterBottom
+        variant="h4"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledTypography>
+    ),
+    h5: ({ value, children }) => (
+      <StyledTypography
+        gutterBottom
+        variant="h5"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledTypography>
+    ),
+    h6: ({ value, children }) => (
+      <StyledTypography
+        gutterBottom
+        variant="h6"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledTypography>
+    ),
+    blockquote: ({ children }) => (
+      <Box
+        component="blockquote"
+        fontSize="h3.fontSize"
+        fontWeight={100}
+        borderColor="primary.main"
+        pl={4}
+        py={1}
+        borderLeft={4}
+      >
+        &#8220; {children} &#8221;
+      </Box>
+    ),
+  },
+  types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
         <IndentHalfWrapper>

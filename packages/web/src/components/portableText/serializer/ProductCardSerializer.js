@@ -19,31 +19,31 @@ import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography gutterBottom variant="body1">
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
-      blockquote: ({ children }) => (
-        <Box
-          component="blockquote"
-          fontSize="h3.fontSize"
-          fontWeight={100}
-          borderColor="primary.main"
-          pl={4}
-          py={1}
-          borderLeft={4}
-        >
-          &#8220; {children} &#8221;
-        </Box>
-      ),
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography gutterBottom variant="body1">
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
+    blockquote: ({ children }) => (
+      <Box
+        component="blockquote"
+        fontSize="h3.fontSize"
+        fontWeight={100}
+        borderColor="primary.main"
+        pl={4}
+        py={1}
+        borderLeft={4}
+      >
+        &#8220; {children} &#8221;
+      </Box>
+    ),
+  },
+  types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
         <Illustration illustration={value} />
