@@ -8,11 +8,11 @@ export default {
   title: 'General Settings',
   icon: FaBullseye,
   fields: [
-    // {
-    //   name: 'recaptcha',
-    //   title: 'reCaptcha Site Key',
-    //   type: 'string',
-    // },
+    {
+      name: 'recaptcha',
+      title: 'reCaptcha Site Key',
+      type: 'string',
+    },
     {
       name: 'siteDomain',
       title: 'Site Domain',
