@@ -41,83 +41,83 @@ const StyledTypography = styled(Typography)`
 `;
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography gutterBottom variant="body1">
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
-      h2: ({ value, children }) => (
-        <StyledH2
-          gutterBottom
-          variant="h2"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography gutterBottom variant="body1">
           {children}
-        </StyledH2>
-      ),
-      h3: ({ value, children }) => (
-        <StyledH3
-          gutterBottom
-          variant="h3"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledH3>
-      ),
-      h4: ({ value, children }) => (
-        <StyledH4
-          gutterBottom
-          variant="h4"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledH4>
-      ),
-      h5: ({ value, children }) => (
-        <StyledH5
-          gutterBottom
-          variant="h5"
-          id={
-            value.markDefs.length !== 0
-              ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
-              : undefined
-          }
-        >
-          {children}
-        </StyledH5>
-      ),
-      blockquote: ({ children }) => (
-        <Box
-          component="blockquote"
-          fontSize="h3.fontSize"
-          fontWeight={100}
-          borderColor="primary.main"
-          pl={4}
-          py={1}
-          borderLeft={4}
-        >
-          &#8220; {children} &#8221;
-        </Box>
-      ),
+        </Typography>
+      ) : (
+        <br />
+      );
     },
+    h2: ({ value, children }) => (
+      <StyledH2
+        gutterBottom
+        variant="h2"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledH2>
+    ),
+    h3: ({ value, children }) => (
+      <StyledH3
+        gutterBottom
+        variant="h3"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledH3>
+    ),
+    h4: ({ value, children }) => (
+      <StyledH4
+        gutterBottom
+        variant="h4"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledH4>
+    ),
+    h5: ({ value, children }) => (
+      <StyledH5
+        gutterBottom
+        variant="h5"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </StyledH5>
+    ),
+    blockquote: ({ children }) => (
+      <Box
+        component="blockquote"
+        fontSize="h3.fontSize"
+        fontWeight={100}
+        borderColor="primary.main"
+        pl={4}
+        py={1}
+        borderLeft={4}
+      >
+        &#8220; {children} &#8221;
+      </Box>
+    ),
+  },
+  types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
         <IndentFullWrapper>
@@ -188,7 +188,7 @@ const serializers = {
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (
-        <InternalLocal href={href} newTab={newTab} className="caption-link">
+        <InternalLocal href={href} newTab={newTab} className="pt-link">
           {children}
         </InternalLocal>
       );

@@ -8,24 +8,22 @@ import InternalLocal from '../../link/LinkInternalLocal';
 import AffiliateLink from '../../link/LinkAffiliate';
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography component="p" variant="h4" gutterBottom>
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography component="p" variant="h4" gutterBottom>
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
   },
   marks: {
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (
-        <InternalLocal href={href} newTab={newTab} className="caption-link">
+        <InternalLocal href={href} newTab={newTab} className="pt-link">
           {children}
         </InternalLocal>
       );

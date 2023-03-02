@@ -18,18 +18,18 @@ import IndentHalfWrapper from '../insertable/IndentHalfWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 
 const serializers = {
-  types: {
-    block: {
-      normal: ({ children }) => {
-        return children[0] ? (
-          <Typography component="p" variant="body1" gutterBottom>
-            {children}
-          </Typography>
-        ) : (
-          <br />
-        );
-      },
+  block: {
+    normal: ({ children }) => {
+      return children[0] ? (
+        <Typography component="p" variant="body1" gutterBottom>
+          {children}
+        </Typography>
+      ) : (
+        <br />
+      );
     },
+  },
+  types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
         <IndentHalfWrapper>
@@ -85,7 +85,7 @@ const serializers = {
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (
-        <InternalLocal href={href} newTab={newTab} className="caption-link">
+        <InternalLocal href={href} newTab={newTab} className="pt-link">
           {children}
         </InternalLocal>
       );
