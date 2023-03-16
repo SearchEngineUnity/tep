@@ -21,29 +21,29 @@ const TableTypography = styled(Typography)`
   font-size: 14px;
 `;
 
-// const NoIndentUl = styled('ul')`
-//   list-style-type: disc;
-//   margin-left: 1.4rem;
-//   padding-left: 0;
-//   margin-block-start: 0px;
-//   margin-block-end: 0px;
+const NoIndentUl = styled('ul')`
+  list-style-type: disc;
+  margin-left: 1.4rem;
+  padding-left: 0;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 
-//   & > li {
-//     position: relative;
-//   }
-// `;
+  & > li {
+    position: relative;
+  }
+`;
 
-// const NoIndentOl = styled('ol')`
-//   list-style-type: decimal;
-//   margin-left: 1.4rem;
-//   padding-left: 0;
-//   margin-block-start: 0px;
-//   margin-block-end: 0px;
+const NoIndentOl = styled('ol')`
+  list-style-type: decimal;
+  margin-left: 1.4rem;
+  padding-left: 0;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 
-//   & > li {
-//     position: relative;
-//   }
-// `;
+  & > li {
+    position: relative;
+  }
+`;
 
 const serializers = {
   block: {
@@ -147,10 +147,10 @@ const serializers = {
       );
     },
   },
-  // list: {
-  //   bullet: ({ children }) => <NoIndentUl>{children}</NoIndentUl>,
-  //   number: ({ children }) => <NoIndentOl>{children}</NoIndentOl>,
-  // },
+  list: {
+    bullet: ({ children }) => <NoIndentUl>{children}</NoIndentUl>,
+    number: ({ children }) => <NoIndentOl>{children}</NoIndentOl>,
+  },
   listItem: ({ children }) => (
     <TableTypography variant="body1" component="li">
       {children}
