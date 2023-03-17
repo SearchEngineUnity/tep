@@ -16,7 +16,7 @@ import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
 import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
-
+// https://mui.com/material-ui/react-list/ gutterless lists?
 const TableTypography = styled(Typography)`
   font-size: 14px;
 `;
@@ -35,7 +35,7 @@ const NoIndentUl = styled('ul')`
 
 const NoIndentOl = styled('ol')`
   list-style-type: decimal;
-  margin-left: 1.4rem;
+  // margin-left: 1.4rem;
   padding-left: 0;
   margin-block-start: 0px;
   margin-block-end: 0px;
