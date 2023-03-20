@@ -1,6 +1,6 @@
 /* eslint-disable no-useless-escape */
 import React, { useState, useEffect } from 'react';
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {
   TextField,
   Select,
@@ -15,6 +15,7 @@ import {
   Box,
   Typography,
 } from '@mui/material';
+import { deepmerge } from '@mui/utils';
 import ButtonSubmit from '../buttons/ButtonSubmit';
 import { mapMuiBtnSubmitToProps } from '../../lib/mapToProps';
 import { determineColor } from '../../lib/helperFunctions';
@@ -41,9 +42,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
 
   const { formFields, name, subject, thankYou, submitBtn } = form;
 
-  const prevTheme = useTheme();
-
-  const theme = createTheme({
+  const componentTheme = {
     palette: {
       primary: {
         main: determineColor(focusedColor.color), // mui-focused class color (applies to border and checkbox, select, radio label color)
@@ -56,7 +55,6 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
         secondary: determineColor(labelColor.color), // control label text, helper text, and the border of checkbox and radio icons
       },
     },
-    typography: prevTheme.typography,
     components: {
       MuiOutlinedInput: {
         styleOverrides: {
@@ -99,7 +97,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
         },
       },
     },
-  });
+  };
 
   const [state, setState] = useState({});
   const [requiredRadioFields, setRequiredRadioFields] = useState(null);
@@ -234,7 +232,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={(theme) => createTheme(deepmerge(theme, componentTheme))}>
       <Box sx={{ boxShadow: 5, p: 4, bgcolor: 'background.paper' }}>
         <Box sx={{ textAlign: titleAlignment, color: determineColor(labelColor.color) }}>
           <Typography variant={headingLevel} sx={{ marginBottom: 4 }}>
