@@ -502,7 +502,7 @@ export const useCustomTheme = () => {
       h1: {
         fontFamily: typography?.h1?.fontFamily || 'Roboto, Helvetica, Arial, sans-serif',
         fontWeight: typography?.h1?.fontWeight || 700,
-        fontSize: typography?.h1?.fontSize || '2.625',
+        fontSize: typography?.h1?.fontSize || '2.625rem',
         lineHeight: typography?.h1?.lineHeight || 1.5,
       },
       h2: {
