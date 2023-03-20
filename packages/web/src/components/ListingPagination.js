@@ -3,13 +3,11 @@ import Box from '@mui/material/Box';
 import Pagination from '@mui/material/Pagination';
 import PaginationItem from '@mui/material/PaginationItem';
 import { Link } from 'gatsby';
-import { createTheme, ThemeProvider, useTheme } from '@mui/material/styles';
+import { deepmerge } from '@mui/utils';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 function ListingPagination({ currentpage, numPages, slug, color }) {
-  const prevTheme = useTheme();
-
-  const theme = createTheme({
-    typography: prevTheme.typography,
+  const componentTheme = {
     palette: {
       action: {
         selected: color
@@ -39,10 +37,10 @@ function ListingPagination({ currentpage, numPages, slug, color }) {
         },
       },
     },
-  });
+  };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={(theme) => createTheme(deepmerge(theme, componentTheme))}>
       <Box mt={3}>
         <Pagination
           page={currentpage}
