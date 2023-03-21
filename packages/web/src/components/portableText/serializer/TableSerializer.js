@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
 import { Typography } from '@mui/material';
-import { styled } from '@mui/styles';
+import styled from '@emotion/styled';
 import JumpLink from '../../link/JumpLink';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
@@ -16,29 +16,21 @@ import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
 import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
-// https://mui.com/material-ui/react-list/ gutterless lists?
-const TableTypography = styled(Typography)`
-  font-size: 14px;
-`;
 
-const NoIndentUl = styled('ul')`
+const NoIndentUl = styled.ul`
   list-style-type: disc;
   margin-left: 1.4rem;
   padding-left: 0;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
 
   & > li {
     position: relative;
   }
 `;
 
-const NoIndentOl = styled('ol')`
+const NoIndentOl = styled.ol`
   list-style-type: decimal;
-  // margin-left: 1.4rem;
+  margin-left: 1.4rem;
   padding-left: 0;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
 
   & > li {
     position: relative;
@@ -49,7 +41,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography gutterBottom variant="body1">
+        <Typography gutterBottom variant="body1" sx={{ fontSize: '14px' }}>
           {children}
         </Typography>
       ) : (
@@ -152,9 +144,9 @@ const serializers = {
     number: ({ children }) => <NoIndentOl>{children}</NoIndentOl>,
   },
   listItem: ({ children }) => (
-    <TableTypography variant="body1" component="li">
+    <Typography variant="body1" component="li" sx={{ fontSize: '14px' }}>
       {children}
-    </TableTypography>
+    </Typography>
   ),
 };
 
