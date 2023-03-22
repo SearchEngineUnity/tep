@@ -64,6 +64,7 @@ function NavGroup({ title, subGroup, location, position }) {
         aria-controls={open ? title.replace(' ', '-') : undefined}
         aria-expanded={open}
         aria-haspopup="true"
+        underline="hover"
       >
         <Box fontSize="h4.fontSize">
           {title}

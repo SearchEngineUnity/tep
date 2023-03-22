@@ -12,7 +12,6 @@ function ExternalLink({ href, children, noreferrer, newTab, className }) {
       }
       className={className}
       href={href}
-      underline="always"
     >
       {children}
     </Link>

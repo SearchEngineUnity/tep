@@ -3,7 +3,7 @@ import Link from '@mui/material/Link';
 
 function JumpLink({ hash, children, className }) {
   return (
-    <Link href={`#${hash}`} className={className} underline="always">
+    <Link href={`#${hash}`} className={className}>
       {children}
     </Link>
   );

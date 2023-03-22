@@ -3,7 +3,7 @@ import Link from '@mui/material/Link';
 
 function AffiliateLink({ href, children, className }) {
   return (
-    <Link target="_blank" rel="nofollow" className={className} href={href} underline="always">
+    <Link target="_blank" rel="nofollow" className={className} href={href}>
       {children}
     </Link>
   );
