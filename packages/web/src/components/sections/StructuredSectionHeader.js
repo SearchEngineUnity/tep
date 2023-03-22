@@ -21,19 +21,19 @@ function StructuredSectionHeader({
     (!hasSectionSubtitle && subtitle)
   ) {
     return (
-      <Box component={heading ? 'header' : 'div'} mb={{ xs: 2, sm: 4 }} textAlign={align}>
+      <Box component={heading ? 'header' : 'div'} sx={{ mb: { xs: 2, sm: 4 }, textAlign: align }}>
         {!hasSectionHeading && heading && (
-          <Box component={Typography} variant="h2" gutterBottom color={headingColor}>
+          <Typography variant="h2" gutterBottom sx={{ color: headingColor }}>
             {heading}
-          </Box>
+          </Typography>
         )}
         {!hasSectionSubheading && subheading && (
-          <Box component={Typography} variant="h3" gutterBottom color={subheadingColor}>
+          <Typography variant="h3" gutterBottom sx={{ color: subheadingColor }}>
             {subheading}
-          </Box>
+          </Typography>
         )}
         {!hasSectionSubtitle && subtitle && (
-          <Box color={subtitleColor}>
+          <Box sx={{ color: subtitleColor }}>
             <Subtitle blocks={subtitle} />
           </Box>
         )}

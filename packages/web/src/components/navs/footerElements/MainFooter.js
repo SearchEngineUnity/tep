@@ -20,7 +20,10 @@ export default function MainFooter() {
 
   if (footerMenu) {
     return (
-      <Box component="footer" color="common.white" bgcolor="common.black" fontSize={14} pt={2}>
+      <Box
+        component="footer"
+        sx={{ color: 'common.white', bgcolor: 'common.black', fontSize: '14px', pt: 2 }}
+      >
         <Container maxWidth="lg" component="nav" role="menubar">
           <Grid container spacing={3}>
             {menuArray.map((group) => (
@@ -30,7 +33,7 @@ export default function MainFooter() {
                     case 'navBrand':
                       return (
                         <Grid item key={item._key}>
-                          <Box my={2}>
+                          <Box sx={{ my: 2 }}>
                             <NavBrand {...mapNavBrandToProps(item)} url={contactInfo.homePage} />
                             <ContactInfo />
                             <Box sx={{ display: { xs: 'block', md: 'none' } }}>
@@ -69,7 +72,7 @@ export default function MainFooter() {
         <Divider role="none" sx={{ borderColor: 'common.white' }} />
         <Container maxWidth="lg" role="none">
           <Toolbar disableGutters role="menubar">
-            <Box component="p" mr={2}>
+            <Box component="p" sx={{ mr: 2 }}>
               &#0169; Copyright {new Date().getFullYear()} {contactInfo.name}
             </Box>
             <Link to="/privacy-policy" role="menuitem" color="inherit" underline="hover">

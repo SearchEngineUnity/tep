@@ -133,7 +133,7 @@ function ProductCard({
               {tagText}
             </Paper>
           )}
-          <Box margin={3}>
+          <Box sx={{ m: 3 }}>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={12} sm={4}>
                 <ButtonBase

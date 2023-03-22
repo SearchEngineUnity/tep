@@ -224,7 +224,7 @@ function StructuredLrFlex({
   });
 
   return (
-    <Box id={idTag} component="section" color={foregroundColor} className={classes.section}>
+    <Box id={idTag} component="section" className={classes.section} sx={{ color: foregroundColor }}>
       <Container maxWidth="lg" className={classes.column}>
         <StructuredSectionHeader
           heading={heading}

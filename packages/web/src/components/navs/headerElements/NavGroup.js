@@ -66,7 +66,7 @@ function NavGroup({ title, subGroup, location, position }) {
         aria-haspopup="true"
         underline="hover"
       >
-        <Box fontSize="h4.fontSize">
+        <Box sx={{ fontSize: 'h4.fontSize' }}>
           {title}
           {open ? (
             <ExpandLess style={{ verticalAlign: 'middle' }} />

@@ -15,8 +15,10 @@ function NavItem({ url, title, isButton, location }) {
   }
   return (
     <Box
-      fontSize="h4.fontSize"
-      fontWeight={`/${url}` === location.pathname ? 'fontWeightBold' : 'fontWeightRegular'}
+      sx={{
+        fontSize: 'h4.fontSize',
+        fontWeight: `/${url}` === location.pathname ? 'fontWeightBold' : 'fontWeightRegular',
+      }}
       role="none"
     >
       <Link

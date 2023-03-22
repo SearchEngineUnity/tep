@@ -4,7 +4,7 @@ import ProductCardSegment from '../../serializer/ProductCardSerializer';
 
 function ProductCardFlexSegment({ title, headingLevel, content }) {
   return (
-    <Box ma={3}>
+    <Box sx={{ m: 3 }}>
       <Typography component={headingLevel} variant="h5" gutterBottom>
         {title}
       </Typography>

@@ -69,7 +69,7 @@ function ProductCardRating({ rating }) {
   }
 
   return (
-    <Box py={1}>
+    <Box sx={{ py: 1 }}>
       <img
         src={starRating}
         alt="star-rating"

@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 
 function FooterItem({ url, title, isButton }) {
   return (
-    <Box my={2}>
+    <Box sx={{ my: 2 }}>
       {isButton ? (
         <ThemeProvider
           theme={(theme) =>
@@ -33,7 +33,7 @@ function FooterItem({ url, title, isButton }) {
           </Button>
         </ThemeProvider>
       ) : (
-        <Box fontSize={14} fontWeight="fontWeightBold">
+        <Box sx={{ fontSize: '14px', fontWeight: 'fontWeightBold' }}>
           <Link to={`/${url}`} color="inherit" underline="hover">
             {title}
           </Link>

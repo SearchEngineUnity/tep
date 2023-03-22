@@ -17,7 +17,11 @@ function NavBrand({ url, brandGroup, alt }) {
         switch (type) {
           case 'desktop':
             return (
-              <Box display={{ xs: 'none', lg: 'block', xl: 'block' }} key={_key} role="none">
+              <Box
+                sx={{ display: { xs: 'none', lg: 'block', xl: 'block' } }}
+                key={_key}
+                role="none"
+              >
                 <Link href={url} role="menuitem">
                   <img
                     src={brand.logo.asset.url}
@@ -32,7 +36,7 @@ function NavBrand({ url, brandGroup, alt }) {
           case 'tablet':
             return (
               <Box
-                display={{ xs: 'none', sm: 'none', md: 'block', lg: 'none', xl: 'none' }}
+                sx={{ display: { xs: 'none', sm: 'none', md: 'block', lg: 'none', xl: 'none' } }}
                 key={_key}
                 role="none"
               >
@@ -50,7 +54,7 @@ function NavBrand({ url, brandGroup, alt }) {
           case 'mobile':
             return (
               <Box
-                display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}
+                sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' } }}
                 key={_key}
                 role="none"
               >

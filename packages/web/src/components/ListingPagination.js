@@ -41,7 +41,7 @@ function ListingPagination({ currentpage, numPages, slug, color }) {
 
   return (
     <ThemeProvider theme={(theme) => createTheme(deepmerge(theme, componentTheme))}>
-      <Box mt={3}>
+      <Box sx={{ mt: 3 }}>
         <Pagination
           page={currentpage}
           count={numPages}
