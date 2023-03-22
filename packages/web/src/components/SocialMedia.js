@@ -1,6 +1,11 @@
 import React from 'react';
 import { IconButton } from 'gatsby-theme-material-ui';
-import { Facebook, Twitter, Instagram, Pinterest, LinkedIn, YouTube } from '@mui/icons-material';
+import Facebook from '@mui/icons-material/Facebook';
+import Instagram from '@mui/icons-material/Instagram';
+import LinkedIn from '@mui/icons-material/LinkedIn';
+import Pinterest from '@mui/icons-material/Pinterest';
+import Twitter from '@mui/icons-material/Twitter';
+import YouTube from '@mui/icons-material/YouTube';
 import { useSocialInfo } from '../hooks/useSocialInfo';
 
 export default function SocialMedia() {

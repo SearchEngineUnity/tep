@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from 'tss-react/mui';
-import { ErrorOutlineOutlined } from '@mui/icons-material';
+import ErrorOutlineOutlined from '@mui/icons-material/ErrorOutlineOutlined';
 import TextContent from '../../serializer/HighlightBoxSerializer';
 
 const useStyles = makeStyles()((theme) => ({

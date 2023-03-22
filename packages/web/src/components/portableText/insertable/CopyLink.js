@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-import { Link as LinkIcon } from '@mui/icons-material';
+import LinkIcon from '@mui/icons-material/Link';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 // Inherit style of Tooltip has a grey background and text is in theme.palette.primary.main

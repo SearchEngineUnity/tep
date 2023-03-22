@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from 'tss-react/mui';
-import { MenuBook } from '@mui/icons-material';
+import MenuBook from '@mui/icons-material/MenuBook';
 import TextContent from '../../serializer/HighlightBoxSerializer';
 
 const useStyles = makeStyles()((theme) => ({
