@@ -6,10 +6,11 @@ import Divider from '@mui/material/Divider';
 import Icon from '@mui/material/Icon';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 function NavGroupHamburger({ navGroup, index }) {
   const [collapse, setCollapse] = React.useState(true);
@@ -23,10 +24,10 @@ function NavGroupHamburger({ navGroup, index }) {
     <>
       {index === 0 ? null : <Divider />}
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-        <ListItem button onClick={handleClickCollapse}>
+        <ListItemButton onClick={handleClickCollapse}>
           <ListItemText primary={navGroup.title} />
           {collapse ? <ExpandMore /> : <ExpandLess />}
-        </ListItem>
+        </ListItemButton>
       </Box>
       <Collapse in={!collapse} timeout="auto" unmountOnExit>
         {navGroup.group.map(({ icon, title: itemTitle, nav: itemNav, _key: itemKey }) => (

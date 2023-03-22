@@ -13,7 +13,7 @@ function FooterGroup({ title, subGroup }) {
       <List>
         {subGroup.map(({ title: itemTitle, nav, _key }) => (
           <ListItem key={_key}>
-            <Link to={`/${nav.slug.current}`} color="inherit">
+            <Link to={`/${nav.slug.current}`} color="inherit" underline="hover">
               {itemTitle}
             </Link>
           </ListItem>

@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
-import Hidden from '@mui/material/Hidden';
 import Toolbar from '@mui/material/Toolbar';
 import { Link } from 'gatsby-theme-material-ui';
 import NavBrand from '../headerElements/NavBrand';
@@ -34,35 +33,29 @@ export default function MainFooter() {
                           <Box my={2}>
                             <NavBrand {...mapNavBrandToProps(item)} url={contactInfo.homePage} />
                             <ContactInfo />
-                            <Hidden mdUp>
+                            <Box sx={{ display: { xs: 'block', md: 'none' } }}>
                               <SocialMedia />
-                            </Hidden>
+                            </Box>
                           </Box>
                         </Grid>
                       );
                     case 'navItem':
                       return (
-                        <Hidden mdDown key={item._key}>
-                          <Grid item>
-                            <FooterItem {...mapNavItemToProps(item)} />
-                          </Grid>
-                        </Hidden>
+                        <Grid item key={item._key} sx={{ display: { xs: 'none', md: 'block' } }}>
+                          <FooterItem {...mapNavItemToProps(item)} />
+                        </Grid>
                       );
                     case 'navGroup':
                       return (
-                        <Hidden mdDown key={item._key}>
-                          <Grid item>
-                            <FooterGroup {...mapNavGroupToProps(item)} />
-                          </Grid>
-                        </Hidden>
+                        <Grid item key={item._key} sx={{ display: { xs: 'none', md: 'block' } }}>
+                          <FooterGroup {...mapNavGroupToProps(item)} />
+                        </Grid>
                       );
                     case 'navPhone':
                       return (
-                        <Hidden mdDown key={item._key}>
-                          <Grid item>
-                            <NavPhone text={item.text} number={item.phoneNUmber} />
-                          </Grid>
-                        </Hidden>
+                        <Grid item key={item._key} sx={{ display: { xs: 'none', md: 'block' } }}>
+                          <NavPhone text={item.text} number={item.phoneNUmber} />
+                        </Grid>
                       );
 
                     default:
@@ -73,19 +66,19 @@ export default function MainFooter() {
             ))}
           </Grid>
         </Container>
-        <Divider role="none" sx={{ bgcolor: 'common.white' }} />
+        <Divider role="none" sx={{ borderColor: 'common.white' }} />
         <Container maxWidth="lg" role="none">
           <Toolbar disableGutters role="menubar">
             <Box component="p" mr={2}>
               &#0169; Copyright {new Date().getFullYear()} {contactInfo.name}
             </Box>
-            <Link to="/privacy-policy" role="menuitem" color="inherit">
+            <Link to="/privacy-policy" role="menuitem" color="inherit" underline="hover">
               Privacy Policy
             </Link>
-            <Hidden mdDown>
+            <Box sx={{ display: { xs: 'none', md: 'block' } }}>
               <Box sx={{ flexGrow: 1 }} />
               <SocialMedia />
-            </Hidden>
+            </Box>
           </Toolbar>
         </Container>
       </Box>

@@ -8,7 +8,6 @@ function InternalLocal({ href, children, newTab, className }) {
       rel={newTab ? 'noopener' : undefined}
       to={href}
       className={className}
-      underline="always"
     >
       {children}
     </Link>

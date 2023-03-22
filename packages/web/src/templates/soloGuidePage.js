@@ -3,7 +3,6 @@ import { graphql } from 'gatsby';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Hidden from '@mui/material/Hidden';
 import Layout from '../containers/layout';
 import GuideHero from '../components/sections/GuideHero';
 import GuideBody from '../components/portableText/serializer/GuideSerializer';
@@ -82,14 +81,12 @@ function SoloGuidePage({ data, location }) {
         <Box my={3}>
           <Container maxWidth="lg">
             <Grid container spacing={3}>
-              <Hidden mdDown>
-                {/* The usage of this style prop may be removeable with Grid V2 */}
-                <Grid item md={3} style={{ order: 2 }}>
-                  {data.guide.toc.length > 0 && (
-                    <ToC toc={data.guide.toc} content={data.guide._rawGuideBody} />
-                  )}
-                </Grid>
-              </Hidden>
+              {/* The usage of this style prop may be removeable with Grid V2 */}
+              <Grid item md={3} style={{ order: 2 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+                {data.guide.toc.length > 0 && (
+                  <ToC toc={data.guide.toc} content={data.guide._rawGuideBody} />
+                )}
+              </Grid>
               {/* The usage of this style prop may be removeable with Grid V2 */}
               <Grid item md={9} xs={12} component="article" style={{ order: 1 }}>
                 <GuideBody blocks={data.guide._rawGuideBody} />

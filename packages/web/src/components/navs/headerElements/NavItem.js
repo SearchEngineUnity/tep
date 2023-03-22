@@ -19,7 +19,13 @@ function NavItem({ url, title, isButton, location }) {
       fontWeight={`/${url}` === location.pathname ? 'fontWeightBold' : 'fontWeightRegular'}
       role="none"
     >
-      <Link to={`/${url}`} role="menuitem" color="primary" sx={{ outlineColor: 'primary.main' }}>
+      <Link
+        to={`/${url}`}
+        role="menuitem"
+        color="primary"
+        sx={{ outlineColor: 'primary.main' }}
+        underline="hover"
+      >
         {title}
       </Link>
     </Box>

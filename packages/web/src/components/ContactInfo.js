@@ -27,7 +27,7 @@ export default function Contact() {
         </Link>
       )}
       {email && (
-        <Link href={`mailto:${email}`} color="inherit">
+        <Link href={`mailto:${email}`} color="inherit" underline="hover">
           {email}
         </Link>
       )}

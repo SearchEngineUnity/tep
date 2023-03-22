@@ -10,8 +10,8 @@ import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
-
-import { ExpandLess, ExpandMore } from '@mui/icons-material';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 import { navigate, Link as GLink } from 'gatsby';
 
 function NavGroup({ title, subGroup, location, position }) {
@@ -64,6 +64,7 @@ function NavGroup({ title, subGroup, location, position }) {
         aria-controls={open ? title.replace(' ', '-') : undefined}
         aria-expanded={open}
         aria-haspopup="true"
+        underline="hover"
       >
         <Box fontSize="h4.fontSize">
           {title}

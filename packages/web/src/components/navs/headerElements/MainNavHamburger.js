@@ -6,10 +6,12 @@ import Dialog from '@mui/material/Dialog';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Slide from '@mui/material/Slide';
 import Toolbar from '@mui/material/Toolbar';
-import { Menu, Close } from '@mui/icons-material';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from 'gatsby-theme-material-ui';
 import { makeStyles } from 'tss-react/mui';
 import NavItem from './NavItem';
@@ -60,7 +62,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
         onClick={handleClickOpen}
         size="large"
       >
-        <Menu />
+        <MenuIcon />
       </IconButton>
       <Dialog
         fullScreen
@@ -141,7 +143,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
               aria-label="close"
               size="large"
             >
-              <Close />
+              <CloseIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -154,8 +156,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                   <React.Fragment key={_key}>
                     {index === 0 ? null : <Divider />}
                     <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
-                      <ListItem
-                        button
+                      <ListItemButton
                         onClick={() => handleClickSubNavMenu(groupNav.slug.current)}
                         selected={location.pathname === `/${groupNav.slug.current}`}
                       >
@@ -167,7 +168,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                               : {}
                           }
                         />
-                      </ListItem>
+                      </ListItemButton>
                     </Box>
                   </React.Fragment>
                 );

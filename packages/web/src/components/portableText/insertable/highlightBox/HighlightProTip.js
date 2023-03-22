@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from 'tss-react/mui';
-import { ThumbUpOutlined } from '@mui/icons-material';
+import ThumbUpOutlined from '@mui/icons-material/ThumbUpOutlined';
 import TextContent from '../../serializer/HighlightBoxSerializer';
 
 const useStyles = makeStyles()((theme) => ({
