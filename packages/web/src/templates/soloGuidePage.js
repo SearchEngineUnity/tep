@@ -78,7 +78,7 @@ function SoloGuidePage({ data, location }) {
     >
       <main>
         <GuideHero {...mapGuideHeroToProps(data.guide)} />
-        <Box my={3}>
+        <Box sx={{ my: 3 }}>
           <Container maxWidth="lg">
             <Grid container spacing={3}>
               {/* The usage of this style prop may be removeable with Grid V2 */}

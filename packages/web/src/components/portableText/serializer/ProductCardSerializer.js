@@ -33,12 +33,14 @@ const serializers = {
     blockquote: ({ children }) => (
       <Box
         component="blockquote"
-        fontSize="h3.fontSize"
-        fontWeight={100}
-        borderColor="primary.main"
-        pl={4}
-        py={1}
-        borderLeft={4}
+        sx={{
+          fontSize: 'h3.fontSize',
+          fontWeight: 100,
+          borderColor: 'primary.main',
+          pl: 4,
+          py: 1,
+          borderLeft: '4px',
+        }}
       >
         &#8220; {children} &#8221;
       </Box>

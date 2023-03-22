@@ -54,7 +54,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
   };
 
   return (
-    <Box display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}>
+    <Box sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' } }}>
       <IconButton
         edge="end"
         color="inherit"
@@ -87,8 +87,16 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                 case 'navClickableImage':
                   return (
                     <Box
-                      display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}
-                      my={1}
+                      sx={{
+                        display: {
+                          xs: 'block',
+                          sm: 'block',
+                          md: 'none',
+                          lg: 'none',
+                          xl: 'none',
+                        },
+                        my: 1,
+                      }}
                       key={groupKey}
                     >
                       <NavClickableImage image={group.image} link={group.link} />
@@ -98,7 +106,15 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                   const { aspectRatio } = mobileBrand.brand.logo.asset.metadata.dimensions;
                   return (
                     <Box
-                      display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}
+                      sx={{
+                        display: {
+                          xs: 'block',
+                          sm: 'block',
+                          md: 'none',
+                          lg: 'none',
+                          xl: 'none',
+                        },
+                      }}
                       key={groupKey}
                     >
                       <a href={brandUrl} className={classes.primaryOutline}>
@@ -117,12 +133,14 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                 case 'navItem':
                   return (
                     <Box
-                      display={{
-                        xs: 'none',
-                        sm: 'block',
-                        md: 'block',
-                        lg: 'block',
-                        xl: 'block',
+                      sx={{
+                        display: {
+                          xs: 'none',
+                          sm: 'block',
+                          md: 'block',
+                          lg: 'block',
+                          xl: 'block',
+                        },
                       }}
                       key={groupKey}
                     >
@@ -155,7 +173,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                 return (
                   <React.Fragment key={_key}>
                     {index === 0 ? null : <Divider />}
-                    <Box style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                       <ListItemButton
                         onClick={() => handleClickSubNavMenu(groupNav.slug.current)}
                         selected={location.pathname === `/${groupNav.slug.current}`}

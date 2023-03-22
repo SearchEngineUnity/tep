@@ -11,9 +11,11 @@ function NavPhone({ text, number }) {
   return (
     <>
       <Box
-        display={{ xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' }}
-        fontWeight="fontWeightBold"
-        fontSize="h3.fontSize"
+        sx={{
+          display: { xs: 'none', sm: 'none', md: 'none', lg: 'block', xl: 'block' },
+          fontWeight: 'fontWeightBold',
+          fontSize: 'h3.fontSize',
+        }}
         role="none"
       >
         <StyledLink
@@ -27,9 +29,11 @@ function NavPhone({ text, number }) {
         </StyledLink>
       </Box>
       <Box
-        display={{ xs: 'block', sm: 'block', md: 'block', lg: 'none', xl: 'none' }}
-        fontWeight="fontWeightBold"
-        fontSize="h4.fontSize"
+        sx={{
+          display: { xs: 'block', sm: 'block', md: 'block', lg: 'none', xl: 'none' },
+          fontWeight: 'fontWeightBold',
+          fontSize: 'h4.fontSize',
+        }}
         role="none"
       >
         <StyledLink

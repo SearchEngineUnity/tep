@@ -20,8 +20,8 @@ function HighlightDefinition({ blockContent, id }) {
   const { classes } = useStyles();
 
   return (
-    <Box component={Paper} variant="outlined" key={id} className={classes.root} p={2}>
-      <Box display="inline-flex" mb="0.8125em">
+    <Box component={Paper} variant="outlined" key={id} className={classes.root} sx={{ p: 2 }}>
+      <Box sx={{ display: 'inline-flex', mb: '0.8125em' }}>
         <MenuBook sx={{ alignSelf: 'center', color: 'hlBox.definition.iconColor' }} />
         <Typography
           component="p"

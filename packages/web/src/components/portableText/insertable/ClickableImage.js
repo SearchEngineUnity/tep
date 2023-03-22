@@ -25,7 +25,7 @@ function ClickableImage({ image, alignment, link, borderRadius }) {
   const linkType = link[0]?._type;
 
   return (
-    <Box display="flex" justifyContent={alignment}>
+    <Box sx={{ display: 'flex', justifyContent: alignment }}>
       <Card className={classes.card} elevation={2}>
         <ConditionalCardActionArea condition={linkType} link={link[0]}>
           <GatsbyImage image={imageData} alt={image.alt || ''} />

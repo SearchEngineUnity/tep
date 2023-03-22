@@ -85,7 +85,7 @@ function ButtonSubmit({
 
   return (
     <ThemeProvider theme={theme}>
-      <Box display="flex" justifyContent={btnAlignment}>
+      <Box sx={{ display: 'flex', justifyContent: btnAlignment }}>
         <Button
           color="primary"
           variant={variant}

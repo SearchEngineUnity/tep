@@ -52,12 +52,14 @@ function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
   return (
     <>
       <Box
-        bgcolor="primary.main"
-        color="primary.contrastText"
+        sx={{
+          bgcolor: 'primary.main',
+          color: 'primary.contrastText',
+          py: 5,
+        }}
         id="hero"
         component="section"
         className={classes.section}
-        py={5}
       >
         <Container maxWidth="lg" className={classes.column}>
           <Grid
@@ -83,7 +85,7 @@ function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
               {includeDisclaimer && disclaimerText && <Subtitle blocks={disclaimerText} />}
             </Grid>
             <Grid item md={6} xs={12}>
-              <Box display="flex" justifyContent={heroAlignment.heroImgAlignment}>
+              <Box sx={{ display: 'flex', justifyContent: heroAlignment.heroImgAlignment }}>
                 <ImgBlock
                   {...mapFluidImgBlockToProps(image)}
                   loading="eager"

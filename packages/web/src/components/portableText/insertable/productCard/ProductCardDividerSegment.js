@@ -4,7 +4,7 @@ import Divider from '@mui/material/Divider';
 
 function ProductCardDividerSegment() {
   return (
-    <Box m={3}>
+    <Box sx={{ m: 3 }}>
       <Divider />
     </Box>
   );

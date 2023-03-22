@@ -88,7 +88,7 @@ function ButtonAffiliate({
 
   return (
     <ThemeProvider theme={theme}>
-      <Box display="flex" justifyContent={alignment}>
+      <Box sx={{ display: 'flex', justifyContent: alignment }}>
         <Button
           id={idTag}
           color="primary"

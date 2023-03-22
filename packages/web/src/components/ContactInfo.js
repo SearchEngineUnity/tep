@@ -7,7 +7,7 @@ export default function Contact() {
   const { address1, address2, city, provinceState, mailCode, phone, email } = useContactInfo;
 
   return (
-    <Box my={2}>
+    <Box sx={{ my: 2 }}>
       {address1 && <div>{address1}</div>}
       {address2 && <div>{address2}</div>}
       <div>

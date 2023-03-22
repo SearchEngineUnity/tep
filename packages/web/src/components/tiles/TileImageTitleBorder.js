@@ -25,7 +25,7 @@ function TileImageRecSqr({ image, alt, link, title }) {
       sx={{ border: '1px solid #acb4b8', borderRadius: '0.25rem', height: '100%' }}
     >
       <ConditionalCardActionArea condition={linkType} link={link}>
-        <Box pt={2}>
+        <Box sx={{ pt: 2 }}>
           <GatsbyImage
             image={imageData}
             alt={alt || ''}
@@ -37,8 +37,8 @@ function TileImageRecSqr({ image, alt, link, title }) {
             }}
           />
         </Box>
-        <Box py={2} px={1}>
-          <Box fontSize="20px" fontWeight="700" textAlign="center">
+        <Box sx={{ py: 2, px: 1 }}>
+          <Box sx={{ fontSize: '20px', fontWeight: 700, textAlign: 'center' }}>
             <div>{title}</div>
           </Box>
         </Box>

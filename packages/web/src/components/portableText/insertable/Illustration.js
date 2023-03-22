@@ -33,8 +33,8 @@ function Illustration({ illustration, loading }) {
   // }
 
   return (
-    <Box component="figure" display="flex" justifyContent={illustration.align} m={0}>
-      <Box maxWidth={minMaxWidth}>
+    <Box component="figure" sx={{ display: 'flex', justifyContent: illustration.align, m: 0 }}>
+      <Box sx={{ maxWidth: minMaxWidth }}>
         <GatsbyImage
           style={{
             maxHeight: customMaxHeight,

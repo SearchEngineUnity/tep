@@ -41,9 +41,7 @@ function TileImageRecSqr({ image, alt, url, title, text, date }) {
           </Grid>
           <Grid item md={8} sm={9} xs={12}>
             <CardContent sx={{ paddingRight: { xs: '16px', sm: '32px' } }}>
-              <Box fontSize="1.6rem" fontWeight="800" mb={1}>
-                {title}
-              </Box>
+              <Box sx={{ fontSize: '1.6rem', fontWeight: 800, mb: 1 }}>{title}</Box>
               <Typography variant="body1" color="textSecondary" component="p" gutterBottom>
                 <em>{lastUpdatedDate.toLocaleDateString('en-US', options)}</em>
               </Typography>

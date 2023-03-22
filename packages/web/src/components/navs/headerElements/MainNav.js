@@ -26,15 +26,16 @@ export default function MainNav({ location }) {
           {menu.menuArray.map((menuRow, menuIndex) => {
             // menu group is not a nav group. it is the top level menu item.
             const { menuGroup, _key } = menuRow;
-
             return (
               <Box
-                display={{
-                  xs: menuIndex === 0 ? 'block' : 'none',
-                  sm: menuIndex === 0 ? 'block' : 'none',
-                  md: 'block',
-                  lg: 'block',
-                  xl: 'block',
+                sx={{
+                  display: {
+                    xs: menuIndex === 0 ? 'block' : 'none',
+                    sm: menuIndex === 0 ? 'block' : 'none',
+                    md: 'block',
+                    lg: 'block',
+                    xl: 'block',
+                  },
                 }}
                 key={_key}
                 role="none"
@@ -60,7 +61,7 @@ export default function MainNav({ location }) {
                     switch (_type) {
                       case 'navClickableImage':
                         return (
-                          <Box py={1} key={groupKey}>
+                          <Box key={groupKey} sx={{ py: 1 }}>
                             <NavClickableImage image={group.image} link={group.link} />
                           </Box>
                         );
@@ -79,12 +80,14 @@ export default function MainNav({ location }) {
                       case 'navItem':
                         return (
                           <Box
-                            display={{
-                              xs: 'none',
-                              sm: 'block',
-                              md: 'block',
-                              lg: 'block',
-                              xl: 'block',
+                            sx={{
+                              display: {
+                                xs: 'none',
+                                sm: 'block',
+                                md: 'block',
+                                lg: 'block',
+                                xl: 'block',
+                              },
                             }}
                             key={groupKey}
                             role="none"
@@ -95,12 +98,14 @@ export default function MainNav({ location }) {
                       case 'navGroup':
                         return (
                           <Box
-                            display={{
-                              xs: 'none',
-                              sm: 'block',
-                              md: 'block',
-                              lg: 'block',
-                              xl: 'block',
+                            sx={{
+                              display: {
+                                xs: 'none',
+                                sm: 'block',
+                                md: 'block',
+                                lg: 'block',
+                                xl: 'block',
+                              },
                             }}
                             key={groupKey}
                             role="none"
