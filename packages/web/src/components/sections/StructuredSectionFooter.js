@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import Footer from '../portableText/serializer/HeroFooterSerializer';
 
 function StructuredSectionFooter({ footer, footerColor, align, hasSectionFooter }) {

@@ -1,16 +1,14 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import {
-  Box,
-  Dialog,
-  ListItemText,
-  ListItem,
-  List,
-  Divider,
-  AppBar,
-  Toolbar,
-  Slide,
-} from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Dialog from '@mui/material/Dialog';
+import Divider from '@mui/material/Divider';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Slide from '@mui/material/Slide';
+import Toolbar from '@mui/material/Toolbar';
 import { Menu, Close } from '@mui/icons-material';
 import { IconButton } from 'gatsby-theme-material-ui';
 import { makeStyles } from 'tss-react/mui';

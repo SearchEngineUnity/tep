@@ -1,6 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Container, Grid, Box, Hidden } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import Hidden from '@mui/material/Hidden';
 import Layout from '../containers/layout';
 import GuideHero from '../components/sections/GuideHero';
 import GuideBody from '../components/portableText/serializer/GuideSerializer';

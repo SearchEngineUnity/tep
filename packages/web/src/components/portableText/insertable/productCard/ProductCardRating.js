@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import zero from './assets/rating-stars-grey-background-0-of-5.png';
 import quarter from './assets/rating-stars-grey-background-0.25-of-5.png';
 import half from './assets/rating-stars-grey-background-0.5-of-5.png';

@@ -1,5 +1,7 @@
 import React from 'react';
-import { List, ListItem, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
 import { Link } from 'gatsby-theme-material-ui';
 
 function FooterGroup({ title, subGroup }) {

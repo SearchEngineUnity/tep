@@ -1,6 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import styled from '@emotion/styled';
 import JumpLink from '../../link/JumpLink';
 import ExternalLink from '../../link/LinkExternal';

@@ -1,7 +1,7 @@
-// Tile 4
-
 import React from 'react';
-import { Typography, Card, CardContent } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../lib/sanityConfig';

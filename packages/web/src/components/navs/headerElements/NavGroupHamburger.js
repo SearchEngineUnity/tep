@@ -1,15 +1,14 @@
 import React from 'react';
 import { navigate } from 'gatsby';
-import {
-  Box,
-  Icon,
-  ListItemText,
-  ListItemIcon,
-  ListItem,
-  List,
-  Divider,
-  Collapse,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import Collapse from '@mui/material/Collapse';
+import Divider from '@mui/material/Divider';
+import Icon from '@mui/material/Icon';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 
 function NavGroupHamburger({ navGroup, index }) {

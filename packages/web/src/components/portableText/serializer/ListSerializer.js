@@ -1,7 +1,8 @@
 /* eslint-disable import/no-cycle */
 import { PortableText } from '@portabletext/react';
 import React from 'react';
-import { Typography, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import { styled } from '@mui/styles';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Divider, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 
 function ProductCardDividerSegment() {
   return (

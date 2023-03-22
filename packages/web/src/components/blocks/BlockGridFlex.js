@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import Tile1 from '../tiles/TileImageRecSqr';
 import Tile2 from '../tiles/TileImageCircle';
 import Tile3 from '../tiles/TileImageTitleBorder';

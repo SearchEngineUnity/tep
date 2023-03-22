@@ -1,5 +1,9 @@
 import React from 'react';
-import { Card, Grid, CardContent, Typography, Avatar } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { styled } from '@mui/styles';

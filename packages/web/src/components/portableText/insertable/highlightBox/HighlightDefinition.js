@@ -1,5 +1,7 @@
 import React from 'react';
-import { Box, Paper, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import { makeStyles } from 'tss-react/mui';
 import { MenuBook } from '@mui/icons-material';
 import TextContent from '../../serializer/HighlightBoxSerializer';
