@@ -38,7 +38,7 @@ function TileImageRecSqr({ image, alt, link, title }) {
           />
         </Box>
         <Box sx={{ py: 2, px: 1 }}>
-          <Box sx={{ fontSize: '20px', fontWeight: '700', textAlign: 'center' }}>
+          <Box sx={{ fontSize: '20px', fontWeight: 700, textAlign: 'center' }}>
             <div>{title}</div>
           </Box>
         </Box>
