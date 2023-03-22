@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@mui/material';
+import Link from '@mui/material/Link';
 
 function ExternalLink({ href, children, noreferrer, newTab, className }) {
   return (

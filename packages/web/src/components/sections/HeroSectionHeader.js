@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Subtitle from '../portableText/serializer/H1SubtitleSerializer';
 
 function StructuredSectionHeader({

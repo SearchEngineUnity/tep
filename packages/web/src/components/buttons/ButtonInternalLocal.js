@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'gatsby-theme-material-ui';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';

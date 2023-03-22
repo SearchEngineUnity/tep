@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Grid, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 import { makeStyles } from 'tss-react/mui';
 import StructuredSectionFooter from './StructuredSectionFooter';
 import StructuredSectionHeader from './StructuredSectionHeader';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardActionArea } from '@mui/material';
+import CardActionArea from '@mui/material/CardActionArea';
 
 function CardActionAreaExternal({ href, children, noreferrer, newTab }) {
   return (

@@ -5,7 +5,7 @@
 // will need to set keys properly for react instead of using eslint disable
 
 import React from 'react';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import { makeStyles } from 'tss-react/mui';
 import ListContent from '../serializer/TableListSerializer';
 

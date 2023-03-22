@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import SectionTextBlock from '../portableText/serializer/HeroSectionBlockSerializer';
 import HeroSectionHeader from '../sections/HeroSectionHeader';
 import HeroSectionFooter from '../sections/HeroSectionFooter';

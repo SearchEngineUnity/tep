@@ -6,15 +6,13 @@
 // not a true unique ID. Once we start to dynamically change the array. This will fail.
 
 import React from 'react';
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
-} from '@mui/material';
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 import { makeStyles, withStyles } from 'tss-react/mui';
 import TableContent from '../serializer/TableSerializer';
 import Illustration from './Illustration';

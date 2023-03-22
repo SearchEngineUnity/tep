@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import ProductCardGridPtTile from './ProductCardGridPtTile';
 import PtTile from '../../serializer/SmartGridSerializer';
 import Illustration from '../Illustration';

@@ -1,7 +1,11 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import { Card, Paper, Box, Typography, Grid } from '@mui/material';
+import Box from '@mui/material/Box';
+import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import { makeStyles } from 'tss-react/mui';
 import Modal from '@mui/material/Modal';

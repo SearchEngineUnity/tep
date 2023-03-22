@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { IconButton, Tooltip } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import { Link as LinkIcon } from '@mui/icons-material';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 

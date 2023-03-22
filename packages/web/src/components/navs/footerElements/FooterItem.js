@@ -1,7 +1,7 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, Button } from 'gatsby-theme-material-ui';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 
 function FooterItem({ url, title, isButton }) {
   return (

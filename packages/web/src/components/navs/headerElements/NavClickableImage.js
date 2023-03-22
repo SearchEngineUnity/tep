@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from '@mui/material';
+import Card from '@mui/material/Card';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../../lib/sanityConfig';

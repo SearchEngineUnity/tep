@@ -1,5 +1,8 @@
 import React from 'react';
-import { AppBar, Box, Container, Toolbar } from '@mui/material';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import Toolbar from '@mui/material/Toolbar';
 import NavItem from './NavItem';
 import NavGroup from './NavGroup';
 import NavBrand from './NavBrand';

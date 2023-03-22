@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardActionArea } from '@mui/material';
+import CardActionArea from '@mui/material/CardActionArea';
 
 function CardActionAreaInternalGlobal({ href, children, newTab }) {
   return (

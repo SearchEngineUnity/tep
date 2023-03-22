@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 
 function IndentFullWrapper({ children }) {
   return <Box mx={{ xs: 2.5, md: 5 }}>{children}</Box>;

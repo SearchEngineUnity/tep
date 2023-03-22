@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Box } from '@mui/material';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';

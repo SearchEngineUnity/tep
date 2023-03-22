@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import {
-  Icon,
-  MenuList,
-  MenuItem,
-  ListItemIcon,
-  ListItemText,
-  Box,
-  Paper,
-  Popper,
-  Link,
-  ClickAwayListener,
-} from '@mui/material';
+import Box from '@mui/material/Box';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Icon from '@mui/material/Icon';
+import Link from '@mui/material/Link';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import MenuList from '@mui/material/MenuList';
+import MenuItem from '@mui/material/MenuItem';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+
 import { ExpandLess, ExpandMore } from '@mui/icons-material';
 import { navigate, Link as GLink } from 'gatsby';
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import ProductCardGridPtTile from '../portableText/insertable/SmartGrid/ProductCardGridPtTile';

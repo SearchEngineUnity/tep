@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@mui/material';
+import Link from '@mui/material/Link';
 
 function InternalGlobal({ href, children, newTab, className }) {
   return (
