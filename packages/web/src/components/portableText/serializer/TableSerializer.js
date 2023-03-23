@@ -1,7 +1,7 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import styled from '@emotion/styled';
 import JumpLink from '../../link/JumpLink';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
@@ -16,26 +16,6 @@ import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
 import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
-
-const NoIndentUl = styled.ul`
-  list-style-type: disc;
-  margin-left: 1.4rem;
-  padding-left: 0;
-
-  & > li {
-    position: relative;
-  }
-`;
-
-const NoIndentOl = styled.ol`
-  list-style-type: decimal;
-  margin-left: 1.4rem;
-  padding-left: 0;
-
-  & > li {
-    position: relative;
-  }
-`;
 
 const serializers = {
   block: {
@@ -140,8 +120,22 @@ const serializers = {
     },
   },
   list: {
-    bullet: ({ children }) => <NoIndentUl>{children}</NoIndentUl>,
-    number: ({ children }) => <NoIndentOl>{children}</NoIndentOl>,
+    bullet: ({ children }) => (
+      <Box
+        component="ul"
+        sx={{ listStyleType: 'disc', ml: '1.4rem', pl: 0, '& > li': { position: 'relative' } }}
+      >
+        {children}
+      </Box>
+    ),
+    number: ({ children }) => (
+      <Box
+        component="ol"
+        sx={{ listStyleType: 'decimal', ml: '1.4rem', pl: 0, '& > li': { position: 'relative' } }}
+      >
+        {children}
+      </Box>
+    ),
   },
   listItem: ({ children }) => (
     <Typography variant="body1" component="li" sx={{ fontSize: '14px' }}>

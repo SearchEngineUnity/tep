@@ -2,7 +2,7 @@ import { PortableText } from '@portabletext/react';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
 import JumpLink from '../../link/JumpLink';
@@ -19,12 +19,8 @@ import SmartUnorderedList from '../insertable/SmartUnorderedList';
 import ClickableImage from '../insertable/ClickableImage';
 import IndentHalfWrapper from '../insertable/IndentHalfWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
+import PTHeadingTypography from './PTHeadingTypography';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
-
-const StyledTypography = styled(Typography)({
-  marginTop: '1.35em',
-  scrollMargin: '45px',
-});
 
 const serializers = {
   block: {
@@ -38,8 +34,7 @@ const serializers = {
       );
     },
     h2: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h2"
         id={
           value.markDefs.length !== 0
@@ -48,11 +43,10 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     h3: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h3"
         id={
           value.markDefs.length !== 0
@@ -61,11 +55,10 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     h4: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h4"
         id={
           value.markDefs.length !== 0
@@ -74,11 +67,10 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     h5: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h5"
         id={
           value.markDefs.length !== 0
@@ -87,11 +79,10 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     h6: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h6"
         id={
           value.markDefs.length !== 0
@@ -100,7 +91,7 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     blockquote: ({ children }) => (
       <Box

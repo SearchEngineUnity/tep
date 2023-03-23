@@ -2,7 +2,6 @@ import { PortableText } from '@portabletext/react';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/styles';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/highlightBox/HighlightBox';
@@ -21,31 +20,11 @@ import IndentFullWrapper from '../insertable/IndentFullWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
 
-const StyledH2 = styled(Typography)`
-  font-size: 28px;
-  margin-bottom: 11px;
-`;
-const StyledH3 = styled(Typography)`
-  font-size: 24.5px;
-  margin-bottom: 11px;
-`;
-const StyledH4 = styled(Typography)`
-  font-size: 21px;
-  margin-bottom: 11px;
-`;
-const StyledH5 = styled(Typography)`
-  font-size: 17.5px;
-  margin-bottom: 11px;
-`;
-const StyledTypography = styled(Typography)`
-  font-size: 14px;
-`;
-
 const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography gutterBottom variant="body1">
+        <Typography gutterBottom variant="body1" sx={{ fontSize: '14px' }}>
           {children}
         </Typography>
       ) : (
@@ -53,7 +32,7 @@ const serializers = {
       );
     },
     h2: ({ value, children }) => (
-      <StyledH2
+      <Typography
         gutterBottom
         variant="h2"
         id={
@@ -61,12 +40,13 @@ const serializers = {
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
+        sx={{ fontSize: '28px', mb: '11px' }}
       >
         {children}
-      </StyledH2>
+      </Typography>
     ),
     h3: ({ value, children }) => (
-      <StyledH3
+      <Typography
         gutterBottom
         variant="h3"
         id={
@@ -74,12 +54,13 @@ const serializers = {
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
+        sx={{ fontSize: '24.5px', mb: '11px' }}
       >
         {children}
-      </StyledH3>
+      </Typography>
     ),
     h4: ({ value, children }) => (
-      <StyledH4
+      <Typography
         gutterBottom
         variant="h4"
         id={
@@ -87,12 +68,13 @@ const serializers = {
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
+        sx={{ fontSize: '21px', mb: '11px' }}
       >
         {children}
-      </StyledH4>
+      </Typography>
     ),
     h5: ({ value, children }) => (
-      <StyledH5
+      <Typography
         gutterBottom
         variant="h5"
         id={
@@ -100,9 +82,10 @@ const serializers = {
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
+        sx={{ fontSize: '17.5px', mb: '11px' }}
       >
         {children}
-      </StyledH5>
+      </Typography>
     ),
     blockquote: ({ children }) => (
       <Box

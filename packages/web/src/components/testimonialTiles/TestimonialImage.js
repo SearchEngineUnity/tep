@@ -6,20 +6,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { styled } from '@mui/styles';
 import sanityConfig from '../../lib/sanityConfig';
-
-const StyledCard = styled(Card)(({ theme }) => ({
-  borderLeft: `4px solid ${theme.palette.primary.main}`,
-  height: '100%',
-}));
-
-const StyledCardContent = styled(CardContent)(() => ({
-  padding: '8px 16px',
-  '&:last-child': {
-    paddingBottom: '8px',
-  },
-}));
 
 function TestimonialImage({ image, alt, name, text, role, company }) {
   const imageData = getGatsbyImageData(
@@ -34,14 +21,18 @@ function TestimonialImage({ image, alt, name, text, role, company }) {
   const printedCompany = company && `, ${company}`;
 
   return (
-    <StyledCard elevation={0} square>
-      <StyledCardContent>
+    <Card
+      elevation={0}
+      square
+      sx={(theme) => ({ height: '100%', borderLeft: `4px solid ${theme.palette.primary.main}` })}
+    >
+      <CardContent sx={{ p: '8px 16px', '&:last-child': { pb: '8px' } }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm>
             <Typography variant="body1" sx={{ fontStyle: 'italic', marginBottom: '16px' }}>
               {text}
             </Typography>
-            <Typography variant="body1" sx={{ fontStyle: 'italic', fontWeight: 'fontWeightBold' }}>
+            <Typography variant="body1" sx={{ fontStyle: 'italic', fontWeight: 'bold' }}>
               {'- '}
               {name}
               {printedRole}
@@ -62,8 +53,8 @@ function TestimonialImage({ image, alt, name, text, role, company }) {
             )}
           </Grid>
         </Grid>
-      </StyledCardContent>
-    </StyledCard>
+      </CardContent>
+    </Card>
   );
 }
 

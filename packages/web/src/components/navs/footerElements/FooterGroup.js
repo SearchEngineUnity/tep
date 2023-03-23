@@ -7,7 +7,7 @@ import { Link } from 'gatsby-theme-material-ui';
 function FooterGroup({ title, subGroup }) {
   return (
     <Box sx={{ my: 2 }}>
-      <Box sx={{ fontSize: '14px', fontWeight: 'fontWeightBold' }}>{title}</Box>
+      <Box sx={{ fontSize: '14px', fontWeight: 'bold' }}>{title}</Box>
       <List>
         {subGroup.map(({ title: itemTitle, nav, _key }) => (
           <ListItem key={_key}>
