@@ -41,7 +41,7 @@ export default function MainNav({ location }) {
                 role="none"
               >
                 <Toolbar
-                  style={{ display: 'flex', justifyContent: 'space-between' }}
+                  sx={{ display: 'flex', justifyContent: 'space-between' }}
                   disableGutters
                   role="menubar"
                 >

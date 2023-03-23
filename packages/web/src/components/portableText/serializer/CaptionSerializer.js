@@ -1,5 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
@@ -8,7 +9,11 @@ import AffiliateLink from '../../link/LinkAffiliate';
 
 const serializers = {
   // not sure if this container thing works anymore
-  container: (props) => <figcaption style={{ textAlign: 'center' }}>{props.children}</figcaption>,
+  container: (props) => (
+    <Box component="figcaption" sx={{ textAlign: 'center' }}>
+      {props.children}
+    </Box>
+  ),
   block: {
     normal: ({ children }) => {
       return children[0] ? (

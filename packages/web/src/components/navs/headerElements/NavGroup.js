@@ -59,7 +59,7 @@ function NavGroup({ title, subGroup, location, position }) {
         color="primary"
         onClick={handleToggle}
         type="button"
-        style={{ lineHeight: '56px' }}
+        sx={{ lineHeight: '56px' }}
         role="menuitem"
         aria-controls={open ? title.replace(' ', '-') : undefined}
         aria-expanded={open}
@@ -69,14 +69,14 @@ function NavGroup({ title, subGroup, location, position }) {
         <Box sx={{ fontSize: 'h4.fontSize' }}>
           {title}
           {open ? (
-            <ExpandLess style={{ verticalAlign: 'middle' }} />
+            <ExpandLess sx={{ verticalAlign: 'middle' }} />
           ) : (
-            <ExpandMore style={{ verticalAlign: 'middle' }} />
+            <ExpandMore sx={{ verticalAlign: 'middle' }} />
           )}
         </Box>
       </Link>
       <Popper
-        style={{ zIndex: 1900 }}
+        sx={{ zIndex: 1900 }}
         open={open}
         anchorEl={anchorRef.current}
         placement={position}

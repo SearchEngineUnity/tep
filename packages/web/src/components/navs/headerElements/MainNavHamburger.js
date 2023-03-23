@@ -5,7 +5,6 @@ import Box from '@mui/material/Box';
 import Dialog from '@mui/material/Dialog';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Slide from '@mui/material/Slide';
@@ -75,7 +74,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
           component="nav"
           sx={{ position: 'relative', bgcolor: 'common.white', color: 'common.black' }}
         >
-          <Toolbar style={{ display: 'flex', justifyContent: 'space-between' }} role="menubar">
+          <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }} role="menubar">
             {topMenu.map((group) => {
               const { _type, _key: groupKey } = group;
               const mobileBrand =
