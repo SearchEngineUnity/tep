@@ -149,7 +149,7 @@ function ProductCard({
                     objectFit="contain"
                   />
                   <span className={classes.imageBackdrop}>
-                    <ZoomInIcon style={{ fontSize: '120px' }} />
+                    <ZoomInIcon sx={{ fontSize: '120px' }} />
                   </span>
                 </ButtonBase>
                 {image.caption && <Caption blocks={image.caption} />}
@@ -158,7 +158,7 @@ function ProductCard({
                   onClose={handleClose}
                   aria-labelledby="simple-modal-title"
                   aria-describedby="simple-modal-description"
-                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
                   <div className={classes.paper}>
                     <GatsbyImage

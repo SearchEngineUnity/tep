@@ -81,14 +81,12 @@ function SoloGuidePage({ data, location }) {
         <Box sx={{ my: 3 }}>
           <Container maxWidth="lg">
             <Grid container spacing={3}>
-              {/* The usage of this style prop may be removeable with Grid V2 */}
-              <Grid item md={3} style={{ order: 2 }} sx={{ display: { xs: 'none', md: 'block' } }}>
+              <Grid item md={3} sx={{ display: { xs: 'none', md: 'block' }, order: 2 }}>
                 {data.guide.toc.length > 0 && (
                   <ToC toc={data.guide.toc} content={data.guide._rawGuideBody} />
                 )}
               </Grid>
-              {/* The usage of this style prop may be removeable with Grid V2 */}
-              <Grid item md={9} xs={12} component="article" style={{ order: 1 }}>
+              <Grid item md={9} xs={12} component="article" sx={{ order: 1 }}>
                 <GuideBody blocks={data.guide._rawGuideBody} />
               </Grid>
             </Grid>

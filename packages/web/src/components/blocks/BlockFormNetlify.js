@@ -249,13 +249,13 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
           id={name}
           autoComplete="off"
         >
-          <p className="hidden" style={{ display: 'none' }}>
+          <Box component="p" className="hidden" sx={{ display: 'none' }}>
             {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
             <label>
               Don&apos;t fill this out if you&apos;re human:
               <input name="bot-field" onChange={handleChange} />
             </label>
-          </p>
+          </Box>
 
           {success && <p>{thankYou}</p>}
 

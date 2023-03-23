@@ -140,7 +140,7 @@ function SmartTable({ smartTable }) {
                     return (
                       <StickyTableCell
                         key={`${thead._key}-${index}`}
-                        style={{ overflow: 'hidden' }}
+                        sx={{ overflow: 'hidden' }}
                         scope="col"
                         role="columnheader"
                         className={classes.crossed}
@@ -163,7 +163,7 @@ function SmartTable({ smartTable }) {
                   const values = propsMapping(cell._type, cell);
                   return (
                     // eslint-disable-next-line
-                  <StickyTableCell key={`${thead._key}-${index}`} style={{overflow: 'hidden'}} scope="col" role="columnheader" className={classes.heading}>
+                  <StickyTableCell key={`${thead._key}-${index}`} sx={{overflow: 'hidden'}} scope="col" role="columnheader" className={classes.heading}>
                       <Component {...values} />
                     </StickyTableCell>
                   );
@@ -175,7 +175,7 @@ function SmartTable({ smartTable }) {
                   return (
                     <TableCell
                       key={`${thead._key}-${index}`}
-                      style={{ overflow: 'hidden' }}
+                      sx={{ overflow: 'hidden' }}
                       scope="col"
                       role="columnheader"
                       className={classes.crossed}
@@ -198,7 +198,7 @@ function SmartTable({ smartTable }) {
                 const values = propsMapping(cell._type, cell);
                 return (
                   // eslint-disable-next-line
-                <TableCell key={`${thead._key}-${index}`} style={{overflow: 'hidden'}} scope="col" role="columnheader" className={classes.heading}>
+                <TableCell key={`${thead._key}-${index}`} sx={{overflow: 'hidden'}} scope="col" role="columnheader" className={classes.heading}>
                     <Component {...values} />
                   </TableCell>
                 );
@@ -221,7 +221,7 @@ function SmartTable({ smartTable }) {
                       <StickyTableCell
                         component="th"
                         key={`${row._key}-${index}`}
-                        style={{ verticalAlign: 'top', overflow: 'hidden' }}
+                        sx={{ verticalAlign: 'top', overflow: 'hidden' }}
                         scope="row"
                         role="rowheader"
                         className={classes.heading}
@@ -237,7 +237,7 @@ function SmartTable({ smartTable }) {
                     <TableCell
                       component="th"
                       key={`${row._key}-${index}`}
-                      style={{ verticalAlign: 'top', overflow: 'hidden' }}
+                      sx={{ verticalAlign: 'top', overflow: 'hidden' }}
                       scope="row"
                       role="rowheader"
                       className={classes.heading}
@@ -253,7 +253,7 @@ function SmartTable({ smartTable }) {
                   return (
                     <StickyTableCell
                       key={`${row._key}-${index}`}
-                      style={{ verticalAlign: 'top', overflow: 'hidden' }}
+                      sx={{ verticalAlign: 'top', overflow: 'hidden' }}
                       role="cell"
                     >
                       <Component {...values} />
@@ -266,7 +266,7 @@ function SmartTable({ smartTable }) {
                 return (
                   <TableCell
                     key={`${row._key}-${index}`}
-                    style={{ verticalAlign: 'top', overflow: 'hidden' }}
+                    sx={{ verticalAlign: 'top', overflow: 'hidden' }}
                     role="cell"
                   >
                     <Component {...values} />
