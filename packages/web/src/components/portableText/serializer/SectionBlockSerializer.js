@@ -2,7 +2,6 @@ import { PortableText } from '@portabletext/react';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/styles';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/highlightBox/HighlightBox';
@@ -24,11 +23,8 @@ import ButtonJumpLink from '../../buttons/ButtonJumpLink';
 import ClickableImage from '../insertable/ClickableImage';
 import IndentFullWrapper from '../insertable/IndentFullWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
+import PTHeadingTypography from './PTHeadingTypography';
 import { mapMuiBtnToProps } from '../../../lib/mapToProps';
-
-const StyledTypography = styled(Typography)`
-  margin-top: 1.35em;
-`;
 
 const serializers = {
   block: {
@@ -42,8 +38,7 @@ const serializers = {
       );
     },
     h3: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h3"
         id={
           value.markDefs.length !== 0
@@ -52,11 +47,10 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     h4: ({ value, children }) => (
-      <StyledTypography
-        gutterBottom
+      <PTHeadingTypography
         variant="h4"
         id={
           value.markDefs.length !== 0
@@ -65,7 +59,7 @@ const serializers = {
         }
       >
         {children}
-      </StyledTypography>
+      </PTHeadingTypography>
     ),
     blockquote: ({ children }) => (
       <Box

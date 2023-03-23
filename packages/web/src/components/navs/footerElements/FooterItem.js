@@ -33,7 +33,7 @@ function FooterItem({ url, title, isButton }) {
           </Button>
         </ThemeProvider>
       ) : (
-        <Box sx={{ fontSize: '14px', fontWeight: 'fontWeightBold' }}>
+        <Box sx={{ fontSize: '14px', fontWeight: 'bold' }}>
           <Link to={`/${url}`} color="inherit" underline="hover">
             {title}
           </Link>

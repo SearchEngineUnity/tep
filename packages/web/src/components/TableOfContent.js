@@ -3,7 +3,6 @@ import { makeStyles } from 'tss-react/mui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { styled } from '@mui/styles';
 import { useHeadsObserver } from '../hooks/useHeadObserver';
 
 const useStyles = makeStyles()((theme) => ({
@@ -12,11 +11,6 @@ const useStyles = makeStyles()((theme) => ({
     fontWeight: 'bold',
   },
 }));
-
-const List = styled('ul')({
-  listStyleType: 'none',
-  padding: '0px',
-});
 
 function TableOfContent({ toc }) {
   const { classes } = useStyles();
@@ -28,7 +22,7 @@ function TableOfContent({ toc }) {
         Table of Contents
       </Typography>
       <nav>
-        <List>
+        <Box component="ul" sx={{ listStyleType: 'none', padding: '0px' }}>
           {toc.map((item) => (
             <Box component="li" key={item._key} sx={{ mb: 1, fontSize: 'body2.fontSize' }}>
               <Link
@@ -46,7 +40,7 @@ function TableOfContent({ toc }) {
               </Link>
             </Box>
           ))}
-        </List>
+        </Box>
       </nav>
     </Box>
   );

@@ -21,7 +21,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography component="p" variant="body1" gutterBottom>
+        <Typography variant="body1" gutterBottom>
           {children}
         </Typography>
       ) : (

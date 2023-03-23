@@ -2,38 +2,29 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/styles';
-
-const StyledCard = styled(Card)(({ theme }) => ({
-  borderLeft: `4px solid ${theme.palette.primary.main}`,
-  height: '100%',
-}));
-
-const StyledCardContent = styled(CardContent)(() => ({
-  padding: '8px 16px',
-  '&:last-child': {
-    paddingBottom: '8px',
-  },
-}));
 
 function TestimonialPlain({ name, text, role, company }) {
   const printedRole = role && `, ${role}`;
   const printedCompany = company && `, ${company}`;
 
   return (
-    <StyledCard elevation={0} square>
-      <StyledCardContent>
+    <Card
+      elevation={0}
+      square
+      sx={(theme) => ({ height: '100%', borderLeft: `4px solid ${theme.palette.primary.main}` })}
+    >
+      <CardContent sx={{ p: '8px 16px', '&:last-child': { pb: '8px' } }}>
         <Typography variant="body1" sx={{ fontStyle: 'italic', marginBottom: '16px' }}>
           {text}
         </Typography>
-        <Typography variant="body1" ax={{ fontWeight: 'fontWeightBold', fontStyle: 'italic' }}>
+        <Typography variant="body1" ax={{ fontWeight: 'bold', fontStyle: 'italic' }}>
           {'- '}
           {name}
           {printedRole}
           {printedCompany}
         </Typography>
-      </StyledCardContent>
-    </StyledCard>
+      </CardContent>
+    </Card>
   );
 }
 

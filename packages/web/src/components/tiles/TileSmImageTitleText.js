@@ -37,7 +37,7 @@ export default function TileSmImageTitleText({ image, alt, link, title, text }) 
               }}
             />
           }
-          title={<Box sx={{ fontSize: 'h4.fontSize', fontWeight: 'fontWeightBold' }}>{title}</Box>}
+          title={<Box sx={{ fontSize: 'h4.fontSize', fontWeight: 'bold' }}>{title}</Box>}
         />
         <CardContent>
           <Typography variant="body1" color="textSecondary" component="p">

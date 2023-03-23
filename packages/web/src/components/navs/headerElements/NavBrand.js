@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { styled } from '@mui/styles';
+import { styled } from '@mui/material/styles';
 
 const Link = styled('a')(({ theme }) => ({
   outlineColor: theme.palette.primary.main,
