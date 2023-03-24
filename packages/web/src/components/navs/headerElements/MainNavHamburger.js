@@ -12,32 +12,17 @@ import Toolbar from '@mui/material/Toolbar';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from 'gatsby-theme-material-ui';
-import { makeStyles } from 'tss-react/mui';
 import NavItem from './NavItem';
 import NavPhone from './NavPhone';
 import NavGroup from './NavGroupHamburger';
 import NavClickableImage from './NavClickableImage';
 import { mapNavItemToProps } from '../../../lib/mapToProps';
 
-const useStyles = makeStyles()((theme) => ({
-  list: {
-    backgroundColor: theme.palette.primary.dark,
-    color: theme.palette.common.white,
-  },
-  bold: {
-    fontWeight: theme.typography.fontWeightBold,
-  },
-  primaryOutline: {
-    outlineColor: theme.palette.primary.main,
-  },
-}));
-
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
 function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
-  const { classes } = useStyles();
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -68,7 +53,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
-        PaperProps={{ className: classes.list }}
+        PaperProps={{ sx: { bgcolor: 'primary.dark', color: 'common.white' } }}
       >
         <AppBar
           component="nav"
@@ -105,6 +90,9 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                   const { aspectRatio } = mobileBrand.brand.logo.asset.metadata.dimensions;
                   return (
                     <Box
+                      components="a"
+                      href={brandUrl}
+                      key={groupKey}
                       sx={{
                         display: {
                           xs: 'block',
@@ -113,17 +101,15 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                           lg: 'none',
                           xl: 'none',
                         },
+                        outlineColor: 'primary.main',
                       }}
-                      key={groupKey}
                     >
-                      <a href={brandUrl} className={classes.primaryOutline}>
-                        <img
-                          src={mobileBrand.brand.logo.asset.url}
-                          alt={mobileBrand.brand.title}
-                          height={mobileBrand.height}
-                          width={mobileBrand.height * aspectRatio}
-                        />
-                      </a>
+                      <img
+                        src={mobileBrand.brand.logo.asset.url}
+                        alt={mobileBrand.brand.title}
+                        height={mobileBrand.height}
+                        width={mobileBrand.height * aspectRatio}
+                      />
                     </Box>
                   );
                 }
@@ -164,7 +150,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
             </IconButton>
           </Toolbar>
         </AppBar>
-        <List className={classes.list} role="menu">
+        <List role="menu" sx={{ bgcolor: 'primary.dark', color: 'common.white' }}>
           {bottomMenu.map((group, index) => {
             const { _type, title, nav: groupNav, _key } = group;
             switch (_type) {
@@ -181,7 +167,7 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
                           primary={title}
                           primaryTypographyProps={
                             location.pathname === `/${groupNav.slug.current}`
-                              ? { className: classes.bold }
+                              ? { sx: { fontWeight: 'bold' } }
                               : {}
                           }
                         />

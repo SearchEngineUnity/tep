@@ -1,19 +1,10 @@
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 import { useHeadsObserver } from '../hooks/useHeadObserver';
 
-const useStyles = makeStyles()((theme) => ({
-  activeLink: {
-    color: theme.palette.primary.dark,
-    fontWeight: 'bold',
-  },
-}));
-
 function TableOfContent({ toc }) {
-  const { classes } = useStyles();
   const { activeId } = useHeadsObserver();
 
   return (
@@ -26,7 +17,12 @@ function TableOfContent({ toc }) {
           {toc.map((item) => (
             <Box component="li" key={item._key} sx={{ mb: 1, fontSize: 'body2.fontSize' }}>
               <Link
-                className={`${item.hashID === activeId ? classes.activeLink : null}`}
+                sx={
+                  item.hashID === activeId && {
+                    color: 'primary.dark',
+                    fontWeight: 'bold',
+                  }
+                }
                 href={`#${item.hashId}`}
                 underline="hover"
                 onClick={(e) => {

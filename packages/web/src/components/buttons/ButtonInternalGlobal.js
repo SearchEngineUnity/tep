@@ -2,15 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';
-
-const useStyles = makeStyles()((theme, { padding }) => ({
-  size: {
-    padding,
-    textAlign: 'center',
-  },
-}));
 
 function ButtonInternalGlobal({
   idTag,
@@ -83,7 +75,6 @@ function ButtonInternalGlobal({
     },
   });
 
-  const { classes } = useStyles({ padding });
   const { href, newTab } = link[0];
 
   return (
@@ -97,10 +88,13 @@ function ButtonInternalGlobal({
           disableFocusRipple={disableFocusRipple}
           disableRipple={disableRipple}
           fullWidth={fullWidth}
-          className={classes.size}
           target={newTab ? '_blank' : undefined}
           rel={newTab ? 'noopener' : undefined}
           href={href}
+          sx={{
+            padding,
+            textAlign: 'center',
+          }}
         >
           {text}
         </Button>
