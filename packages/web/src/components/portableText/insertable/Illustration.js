@@ -28,10 +28,6 @@ function Illustration({ illustration, loading }) {
 
   const minMaxWidth = `${Math.min(...widthArray)}px`;
 
-  // if (minMaxWidth === `${imageWidth}px`) {
-  //   minMaxWidth = 'auto';
-  // }
-
   return (
     <Box component="figure" sx={{ display: 'flex', justifyContent: illustration.align, m: 0 }}>
       <Box sx={{ maxWidth: minMaxWidth }}>

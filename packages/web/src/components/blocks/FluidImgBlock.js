@@ -27,12 +27,6 @@ function FluidImgBlock({ image, alt, loading, maxHeight, maxWidth, caption }) {
 
   const minMaxWidth = `${Math.min(...widthArray)}px`;
 
-  // if (minMaxWidth === `${imageWidth}px`) {
-  //   minMaxWidth = 'auto';
-  // }
-
-  // if svg original file size is < custom size we should still return custom size
-
   return (
     <Box component="figure" sx={{ justifyContent: 'center', m: 0, display: 'flex' }}>
       <Box sx={{ maxWidth: minMaxWidth }}>
