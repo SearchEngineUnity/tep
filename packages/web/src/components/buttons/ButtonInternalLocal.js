@@ -2,15 +2,7 @@ import React from 'react';
 import { Button } from 'gatsby-theme-material-ui';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';
-
-const useStyles = makeStyles()((theme, { padding }) => ({
-  size: {
-    padding,
-    textAlign: 'center',
-  },
-}));
 
 function ButtonInternalLocal({
   idTag,
@@ -83,7 +75,6 @@ function ButtonInternalLocal({
     },
   });
 
-  const { classes } = useStyles({ padding });
   const { href, newTab } = link[0];
 
   return (
@@ -97,10 +88,13 @@ function ButtonInternalLocal({
           disableFocusRipple={disableFocusRipple}
           disableRipple={disableRipple}
           fullWidth={fullWidth}
-          className={classes.size}
           target={newTab ? '_blank' : undefined}
           rel={newTab ? 'noopener' : undefined}
           to={href}
+          sx={{
+            padding,
+            textAlign: 'center',
+          }}
         >
           {text}
         </Button>

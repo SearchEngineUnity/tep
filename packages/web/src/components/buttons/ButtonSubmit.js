@@ -2,15 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { makeStyles } from 'tss-react/mui';
 import { determineColor } from '../../lib/helperFunctions';
-
-const useStyles = makeStyles()((theme, { padding }) => ({
-  size: {
-    padding,
-    textAlign: 'center',
-  },
-}));
 
 function ButtonSubmit({
   text,
@@ -81,8 +73,6 @@ function ButtonSubmit({
     },
   });
 
-  const { classes } = useStyles({ padding });
-
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ display: 'flex', justifyContent: btnAlignment }}>
@@ -93,8 +83,11 @@ function ButtonSubmit({
           disableFocusRipple={disableFocusRipple}
           disableRipple={disableRipple}
           fullWidth={fullWidth}
-          className={classes.size}
           type="submit"
+          sx={{
+            padding,
+            textAlign: 'center',
+          }}
         >
           {text}
         </Button>

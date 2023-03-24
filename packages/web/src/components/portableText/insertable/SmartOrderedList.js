@@ -5,20 +5,11 @@
 // will need to set keys properly for react instead of using eslint disable
 
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from 'tss-react/mui';
 import ListContent from '../serializer/ListSerializer';
 
-const useStyles = makeStyles()({
-  list: {
-    listStylePosition: 'inside',
-    listStyle: 'none',
-    paddingLeft: '0px',
-  },
-});
-
 function SmartOrderedList({ listItems }) {
-  const { classes } = useStyles();
   const fontStyles = {
     h2: 'h2',
     h3: 'h3',
@@ -26,16 +17,24 @@ function SmartOrderedList({ listItems }) {
   };
 
   const selectedStyle = listItems[0].content[0].style;
-  const listStyle = fontStyles[selectedStyle] || 'body1';
+  const listStyle = fontStyles[selectedStyle];
 
   return (
-    <ol className={listStyle === 'body1' ? '' : classes.list}>
+    <Box
+      component="ol"
+      sx={
+        listStyle && {
+          listStyle: 'none',
+          paddingLeft: '0px',
+        }
+      }
+    >
       {listItems.map((li) => (
         <Typography variant={listStyle} component="li" key={li._key}>
           <ListContent blocks={li.content} />
         </Typography>
       ))}
-    </ol>
+    </Box>
   );
 }
 
