@@ -8,43 +8,37 @@ import Twitter from '@mui/icons-material/Twitter';
 import YouTube from '@mui/icons-material/YouTube';
 import { useSocialInfo } from '../hooks/useSocialInfo';
 
+const socialNetworks = {
+  facebook: Facebook,
+  twitter: Twitter,
+  instagram: Instagram,
+  pinterest: Pinterest,
+  linkedin: LinkedIn,
+  youtube: YouTube,
+};
+
 export default function SocialMedia() {
   const socials = useSocialInfo();
 
   return (
     <>
       {socials.map((social) => {
-        const iconSelector = (key) => {
-          switch (key) {
-            case 'facebook':
-              return <Facebook />;
-            case 'twitter':
-              return <Twitter />;
-            case 'instagram':
-              return <Instagram />;
-            case 'pinterest':
-              return <Pinterest />;
-            case 'linkedin':
-              return <LinkedIn />;
-            case 'youtube':
-              return <YouTube />;
-
-            default:
-              return <div>under construction</div>;
-          }
-        };
-        return (
-          <IconButton
-            color="inherit"
-            to={social.node.link}
-            target="_blank"
-            key={social.node.social}
-            aria-label={`${social.node.social}`}
-            size="large"
-          >
-            {iconSelector(social.node.social)}
-          </IconButton>
-        );
+        const SocialSelected = socialNetworks[social.node.social];
+        if (SocialSelected) {
+          return (
+            <IconButton
+              color="inherit"
+              to={social.node.link}
+              target="_blank"
+              key={social.node.social}
+              aria-label={`${social.node.social}`}
+              size="large"
+            >
+              <SocialSelected />
+            </IconButton>
+          );
+        }
+        return <div key={social.node.social}>Social Media Error</div>;
       })}
     </>
   );
