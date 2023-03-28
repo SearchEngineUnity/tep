@@ -88,19 +88,19 @@ const serializers = {
       </Typography>
     ),
     blockquote: ({ children }) => (
-      <Box
+      <Typography
         component="blockquote"
-        sx={{
-          fontSize: 'h3.fontSize',
+        variant="h3"
+        gutterBottom
+        sx={(theme) => ({
           fontWeight: 100,
-          borderColor: 'primary.main',
           pl: 4,
           py: 1,
-          borderLeft: '4px',
-        }}
+          borderLeft: `4px solid ${theme.palette.primary.main}`,
+        })}
       >
         &#8220; {children} &#8221;
-      </Box>
+      </Typography>
     ),
   },
   types: {
