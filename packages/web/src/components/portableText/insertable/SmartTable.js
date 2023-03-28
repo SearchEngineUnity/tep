@@ -14,7 +14,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { withStyles } from 'tss-react/mui';
+import { styled } from '@mui/material/styles';
 import TableContent from '../serializer/TableSerializer';
 import Illustration from './Illustration';
 import VideoEmbed from './VideoEmbed';
@@ -23,23 +23,13 @@ import ConditionalButton from '../../buttons/ConditionalButton';
 import TableSmartOrderedList from './TableSmartOrderedList';
 import TableSmartUnorderedList from './TableSmartUnorderedList';
 
-const StickyTableCell = withStyles(TableCell, (theme) => ({
-  head: {
-    backgroundColor: theme.palette.background.paper,
-    left: 0,
-    position: 'sticky',
-    zIndex: 1,
-    borderRight: '1px solid rgba(229, 228, 232, 1)',
-    overflow: 'hidden',
-  },
-  body: {
-    backgroundColor: theme.palette.background.paper,
-    left: 0,
-    position: 'sticky',
-    zIndex: 1,
-    borderRight: '1px solid rgba(229, 228, 232, 1)',
-    overflow: 'hidden',
-  },
+const StickyTableCell = styled(TableCell)(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+  left: 0,
+  position: 'sticky',
+  zIndex: 1,
+  borderRight: '1px solid rgba(229, 228, 232, 1)',
+  overflow: 'hidden',
 }));
 
 const SplitCellError = () => 'Split Cell can only be used in apex position with double headings';

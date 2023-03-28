@@ -1,8 +1,5 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import { makeStyles } from 'tss-react/mui';
 import ImgBlock from '../blocks/FluidImgBlock';
 import VideoBlock from '../blocks/VideoBlock';
 import SectionBlock from '../blocks/HeroSectionBlock';
@@ -28,96 +25,9 @@ import {
 } from '../../lib/mapToProps';
 import HeroSectionFooter from './HeroSectionFooter';
 import HeroSectionHeader from './HeroSectionHeader';
-import { determineColor } from '../../lib/helperFunctions';
-
-const useStyles = makeStyles()(
-  (
-    theme,
-    {
-      linkColor,
-      bleed,
-      bgImage,
-      backgroundColor,
-      captionColor,
-      repeat,
-      desktopOuterPadding,
-      tabletOuterPadding,
-      tabletMobileOuterPadding,
-      mobileOuterPadding,
-      desktopInnerPadding,
-      tabletInnerPadding,
-      tabletMobileInnerPadding,
-      mobileInnerPadding,
-      borderRadius,
-    },
-  ) => ({
-    blockOneReverse: {
-      order: 1,
-      [theme.breakpoints.down('sm')]: {
-        order: 2,
-      },
-    },
-    blockTwoReverse: {
-      order: 2,
-      [theme.breakpoints.down('sm')]: {
-        order: 1,
-      },
-    },
-    mobileGrid: {
-      [theme.breakpoints.down('sm')]: {
-        margin: -8,
-        width: `calc(100% + 16px)`,
-        '& > .MuiGrid-item': {
-          padding: 8,
-        },
-      },
-    },
-    section: {
-      backgroundColor: bleed && backgroundColor,
-      backgroundImage: bleed && bgImage && `url(${bgImage})`,
-      backgroundPosition: 'center center',
-      backgroundRepeat: repeat ? 'repeat' : 'no-repeat',
-      padding: desktopOuterPadding || theme.customSpacing.sectionOuter.padding.desktop,
-      [theme.breakpoints.down('lg')]: {
-        padding: tabletOuterPadding || theme.customSpacing.sectionOuter.padding.tablet,
-      },
-      [theme.breakpoints.down('md')]: {
-        padding: tabletMobileOuterPadding || theme.customSpacing.sectionOuter.padding.tabletMobile,
-      },
-      [theme.breakpoints.down('sm')]: {
-        padding: mobileOuterPadding || theme.customSpacing.sectionOuter.padding.mobile,
-        backgroundImage: bleed && bgImage && repeat ? `url(${bgImage})` : 'none',
-      },
-      '& .pt-link': {
-        color: linkColor,
-      },
-      '& .caption-text': {
-        color: captionColor,
-      },
-      '& .caption-link': {
-        color: captionColor,
-      },
-    },
-    column: {
-      borderRadius,
-      backgroundColor: !bleed && backgroundColor,
-      backgroundImage: !bleed && bgImage && `url(${bgImage})`,
-      backgroundPosition: 'center center',
-      backgroundRepeat: repeat ? 'repeat' : 'no-repeat',
-      padding: desktopInnerPadding || theme.customSpacing.sectionInner.padding.desktop,
-      [theme.breakpoints.down('lg')]: {
-        padding: tabletInnerPadding || theme.customSpacing.sectionInner.padding.tablet,
-      },
-      [theme.breakpoints.down('md')]: {
-        padding: tabletMobileInnerPadding || theme.customSpacing.sectionInner.padding.tabletMobile,
-      },
-      [theme.breakpoints.down('sm')]: {
-        padding: mobileInnerPadding || theme.customSpacing.sectionInner.padding.mobile,
-        backgroundImage: !bleed && bgImage && repeat ? `url(${bgImage})` : 'none',
-      },
-    },
-  }),
-);
+import SectionOuterWrapper from './SectionOuterWrapper';
+import SectionInnerWrapper from './SectionInnerWrapper';
+import { determineColor, stackColCalculator } from '../../lib/helperFunctions';
 
 function StructuredLrFlex({
   idTag,
@@ -131,105 +41,14 @@ function StructuredLrFlex({
   footerAlignment,
   designSettings,
 }) {
-  const colCalculator = (value) => {
-    switch (value) {
-      case 12:
-        return {
-          xs: 12,
-        };
-      case 10:
-        return {
-          xs: 12,
-          md: 10,
-        };
-      case 9:
-        return {
-          xs: 12,
-          md: 9,
-        };
-      case 8:
-        return {
-          xs: 12,
-          md: 8,
-        };
-      case 7:
-        return {
-          xs: 12,
-          md: 7,
-        };
-      case 6:
-        return {
-          xs: 12,
-          md: 6,
-        };
-      case 5:
-        return {
-          xs: 12,
-          md: 5,
-        };
-      case 4:
-        return {
-          xs: 12,
-          md: 4,
-        };
-      case 3:
-        return {
-          xs: 12,
-          md: 3,
-        };
-      case 2:
-        return {
-          xs: 12,
-          md: 2,
-        };
-      default:
-        console.log('calculator missing');
-        return null;
-    }
-  };
-
-  const bleed = designSettings ? !!designSettings?.bleed : true;
-  const bgImage = designSettings?.bgImage?.asset?.url;
-  const repeat = !!designSettings?.repeat;
-  const backgroundColor = determineColor(designSettings?.background?.color) || 'transparent';
-  const foregroundColor = determineColor(designSettings?.foreground?.color) || 'text.primary';
-  const linkColor = determineColor(designSettings?.link?.color) || 'initial';
   const headingColor = determineColor(designSettings?.heading?.color) || 'inherit';
   const subheadingColor = determineColor(designSettings?.subheading?.color) || 'inherit';
   const subtitleColor = determineColor(designSettings?.subtitle?.color) || 'inherit';
   const footerColor = determineColor(designSettings?.footer?.color) || 'inherit';
-  const captionColor = determineColor(designSettings?.caption?.color) || '#757575';
-  const desktopOuterPadding = designSettings?.outerPadding?.desktopPadding;
-  const tabletOuterPadding = designSettings?.outerPadding?.tabletPadding;
-  const tabletMobileOuterPadding = designSettings?.outerPadding?.tabletMobilePadding;
-  const mobileOuterPadding = designSettings?.outerPadding?.mobilePadding;
-  const desktopInnerPadding = designSettings?.innerPadding?.desktopPadding;
-  const tabletInnerPadding = designSettings?.innerPadding?.tabletPadding;
-  const tabletMobileInnerPadding = designSettings?.innerPadding?.tabletMobilePadding;
-  const mobileInnerPadding = designSettings?.innerPadding?.mobilePadding;
-  const borderRadius = designSettings?.borderRadius || '0px';
-
-  const { classes } = useStyles({
-    linkColor,
-    bleed,
-    bgImage,
-    backgroundColor,
-    captionColor,
-    repeat,
-    desktopOuterPadding,
-    tabletOuterPadding,
-    tabletMobileOuterPadding,
-    mobileOuterPadding,
-    desktopInnerPadding,
-    tabletInnerPadding,
-    tabletMobileInnerPadding,
-    mobileInnerPadding,
-    borderRadius,
-  });
 
   return (
-    <Box id={idTag} component="section" className={classes.section} sx={{ color: foregroundColor }}>
-      <Container maxWidth="lg" className={classes.column}>
+    <SectionOuterWrapper idTag={idTag} designSettings={designSettings}>
+      <SectionInnerWrapper designSettings={designSettings}>
         <HeroSectionHeader
           heading={heading}
           subheading={subheading}
@@ -241,7 +60,7 @@ function StructuredLrFlex({
         />
         {blocks.map((block) => {
           const { _type, _key } = block;
-          const col = colCalculator(parseInt(blockWidth, 10));
+          const col = stackColCalculator(parseInt(blockWidth, 10));
           const blockSelector = (key) => {
             switch (true) {
               case key === 'smartGridBlock':
@@ -327,13 +146,7 @@ function StructuredLrFlex({
             }
           };
           return (
-            <Grid
-              container
-              justifyContent="center"
-              spacing={6}
-              className={classes.mobileGrid}
-              key={_key}
-            >
+            <Grid container justifyContent="center" spacing={6} key={_key}>
               <Grid item {...col}>
                 {blockSelector(_type)}
               </Grid>
@@ -341,8 +154,8 @@ function StructuredLrFlex({
           );
         })}
         <HeroSectionFooter footer={footer} footerColor={footerColor} align={footerAlignment} />
-      </Container>
-    </Box>
+      </SectionInnerWrapper>
+    </SectionOuterWrapper>
   );
 }
 
