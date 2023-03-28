@@ -3,7 +3,6 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from 'tss-react/mui';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Subtitle from '../portableText/serializer/HeroSubtitleSerializer';
 import ProgressBar from '../ScrollProgressBar';
@@ -11,43 +10,11 @@ import { mapFluidImgBlockToProps } from '../../lib/mapToProps';
 import { useSpGuideHero } from '../../hooks/useSpGuideHero';
 import { useDisclaimerText } from '../../hooks/useDisclaimerText';
 
-const useStyles = makeStyles()((theme) => ({
-  section: {
-    [theme.breakpoints.down('md')]: {
-      padding: 16,
-    },
-    '& .pt-link': {
-      color: theme.palette.secondary.main,
-    },
-    '& .caption-text': {
-      color: 'white',
-    },
-    '& .caption-link': {
-      color: 'white',
-    },
-  },
-  column: {
-    [theme.breakpoints.down('md')]: {
-      padding: 0,
-    },
-  },
-  mobileGrid: {
-    [theme.breakpoints.down('md')]: {
-      margin: -8,
-      width: `calc(100% + 16px)`,
-      '& > .MuiGrid-item': {
-        padding: 8,
-      },
-    },
-  },
-}));
-
 function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const heroAlignment = useSpGuideHero();
   const disclaimerText = useDisclaimerText();
-  const { classes } = useStyles();
 
   return (
     <>
@@ -55,13 +22,21 @@ function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
         sx={{
           bgcolor: 'primary.main',
           color: 'primary.contrastText',
-          py: 5,
+          py: { xs: '16px', md: '40px' },
+          '& .pt-link': {
+            color: 'secondary.main',
+          },
+          '& .caption-text': {
+            color: 'white',
+          },
+          '& .caption-link': {
+            color: 'white',
+          },
         }}
         id="hero"
         component="section"
-        className={classes.section}
       >
-        <Container maxWidth="lg" className={classes.column}>
+        <Container maxWidth="lg">
           <Grid
             container
             direction="row"
@@ -69,7 +44,6 @@ function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
             alignItems={heroAlignment.heroLrAlignment}
             spacing={6}
             component="header"
-            className={classes.mobileGrid}
           >
             <Grid item md={6} xs={12}>
               <Typography variant="h1" gutterBottom>

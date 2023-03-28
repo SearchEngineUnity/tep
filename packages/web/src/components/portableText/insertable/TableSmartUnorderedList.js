@@ -6,38 +6,42 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import { makeStyles } from 'tss-react/mui';
 import ListContent from '../serializer/TableListSerializer';
-
-const useStyles = makeStyles()((theme, { image }) => ({
-  removeStyle: {
-    listStyle: image ? 'none' : 'initial',
-    paddingInlineStart: image ? 'calc(20px - 1.5em)' : '20px',
-    marginBlockStart: '0px',
-    marginBlockEnd: '0px',
-  },
-  imageBullet: {
-    padding: '0 0 0 1.5em',
-    background: `url('${image}') no-repeat`,
-    backgroundPosition: 'top 0.25em left',
-    backgroundSize: '1em',
-  },
-}));
 
 function TableSmartUnorderedList({ listItems, listStyleImage }) {
   const image = listStyleImage?.asset?.url;
 
-  const { classes } = useStyles({ image });
-
   // using typography to set changeable fontsize to ul and li so that we can use em to calculate things with variant so all the em units will work properly
   return (
-    <Typography variant="body1" component="ul" className={classes.removeStyle}>
+    <Typography
+      variant="body1"
+      component="ul"
+      sx={[
+        {
+          listStyle: 'initial',
+          paddingInlineStart: '20px',
+          marginBlockStart: '0px',
+          marginBlockEnd: '0px',
+        },
+        image && {
+          listStyle: 'none',
+          paddingInlineStart: 'calc(20px - 1.5em)',
+        },
+      ]}
+    >
       {listItems.map((li) => (
         <Typography
           variant="body1"
           component="li"
           key={li._key}
-          className={image && classes.imageBullet}
+          sx={
+            image && {
+              padding: '0 0 0 1.5em',
+              background: `url('${image}') no-repeat`,
+              backgroundPosition: 'top 0.25em left',
+              backgroundSize: '1em',
+            }
+          }
         >
           <ListContent blocks={li.content} />
         </Typography>

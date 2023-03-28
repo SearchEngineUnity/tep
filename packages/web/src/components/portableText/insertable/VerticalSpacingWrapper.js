@@ -1,22 +1,12 @@
 import React from 'react';
-import { makeStyles } from 'tss-react/mui';
-
-const useStyles = makeStyles()((theme) => ({
-  spacing: {
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
-    '&:first-child': {
-      marginTop: '0px',
-    },
-    '&:last-child': {
-      marginBottom: '0px',
-    },
-  },
-}));
+import Box from '@mui/material/Box';
 
 function VerticalSpacingWrapper({ children }) {
-  const { classes } = useStyles();
-  return <div className={classes.spacing}>{children}</div>;
+  return (
+    <Box sx={{ mt: 2, mb: 2, '&:first-child': { mt: 0 }, '&:last-child': { mb: 0 } }}>
+      {children}
+    </Box>
+  );
 }
 
 export default VerticalSpacingWrapper;

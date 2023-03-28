@@ -7,7 +7,6 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
-import { makeStyles } from 'tss-react/mui';
 import Modal from '@mui/material/Modal';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
@@ -21,77 +20,6 @@ import Caption from '../../serializer/CaptionSerializer';
 import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 import { determineColor } from '../../../../lib/helperFunctions';
 
-const useStyles = makeStyles()((theme, { tagColor }) => ({
-  paper: {
-    display: 'flex',
-    width: '50vw',
-    height: '50vh',
-    [theme.breakpoints.down('sm')]: {
-      width: '80vw',
-      height: '80vh',
-    },
-    backgroundColor: theme.palette.background.paper,
-    border: 'none',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2),
-    justifyContent: 'center',
-  },
-  imageBackdrop: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    backgroundColor: theme.palette.common.black,
-    opacity: 0,
-    transition: theme.transitions.create('opacity'),
-    color: 'white',
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  enlarge: {
-    border: 'none',
-    background: 'none',
-    height: 'auto',
-    width: '100%',
-    cursor: 'pointer',
-    '&:hover, &$focusVisible': {
-      zIndex: 1,
-      '& $imageBackdrop': {
-        opacity: 0.4,
-      },
-    },
-  },
-  focusVisible: {},
-  tag: {
-    backgroundColor: determineColor(tagColor?.color) || 'black',
-    color: '#fff',
-    position: 'absolute',
-    top: '-20px',
-    left: '-10px',
-    display: 'inline-block',
-    padding: '8px 16px',
-    fontSize: '1rem',
-    lineHeight: '1rem',
-    fontWeight: theme.typography.fontWeightBold,
-    '&:after': {
-      content: '" "',
-      display: 'block',
-      position: 'absolute',
-      left: '-10px',
-      bottom: '-7px',
-      borderWidth: '0 10px 7px',
-      borderColor: (props) =>
-        `rgba(0, 0, 0, 0) ${
-          determineColor(tagColor?.color) || 'black'
-        } rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)`,
-      borderStyle: 'inset solid inset inset',
-      filter: ' brightness(50%)',
-    },
-  },
-}));
-
 function ProductCard({
   name,
   headingLevel,
@@ -103,8 +31,6 @@ function ProductCard({
   topBtn,
   segments,
 }) {
-  const { classes } = useStyles({ tagColor });
-
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -129,7 +55,35 @@ function ProductCard({
       <Box sx={{ position: 'relative' }}>
         <Card>
           {tagText && (
-            <Paper elevation={3} className={classes.tag} square>
+            <Paper
+              elevation={3}
+              square
+              sx={{
+                backgroundColor: determineColor(tagColor?.color) || 'black',
+                color: '#fff',
+                position: 'absolute',
+                top: '-20px',
+                left: '-10px',
+                display: 'inline-block',
+                padding: '8px 16px',
+                fontSize: '1rem',
+                lineHeight: '1rem',
+                fontWeight: 'bold',
+                '&:after': {
+                  content: '" "',
+                  display: 'block',
+                  position: 'absolute',
+                  left: '-10px',
+                  bottom: '-7px',
+                  borderWidth: '0 10px 7px',
+                  borderColor: `rgba(0, 0, 0, 0) ${
+                    determineColor(tagColor?.color) || 'black'
+                  } rgba(0, 0, 0, 0) rgba(0, 0, 0, 0)`,
+                  borderStyle: 'inset solid inset inset',
+                  filter: ' brightness(50%)',
+                },
+              }}
+            >
               {tagText}
             </Paper>
           )}
@@ -139,8 +93,20 @@ function ProductCard({
                 <ButtonBase
                   type="button"
                   onClick={handleOpen}
-                  className={classes.enlarge}
-                  focusVisibleClassName={classes.focusVisible}
+                  focusVisibleClassName={{}}
+                  sx={{
+                    border: 'none',
+                    background: 'none',
+                    height: 'auto',
+                    width: '100%',
+                    cursor: 'pointer',
+                    '&:hover, &$focusVisible': {
+                      zIndex: 1,
+                      '& $imageBackdrop': {
+                        opacity: 0.4,
+                      },
+                    },
+                  }}
                 >
                   <GatsbyImage
                     image={imageData}
@@ -148,9 +114,25 @@ function ProductCard({
                     style={{ display: 'block', maxWidth: '100%', maxHeight: '240px' }}
                     objectFit="contain"
                   />
-                  <span className={classes.imageBackdrop}>
+                  <Box
+                    component="span"
+                    sx={(theme) => ({
+                      position: 'absolute',
+                      left: 0,
+                      right: 0,
+                      top: 0,
+                      bottom: 0,
+                      bgcolor: 'common.black',
+                      opacity: 0,
+                      transition: theme.transitions.create('opacity'),
+                      color: 'white',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    })}
+                  >
                     <ZoomInIcon sx={{ fontSize: '120px' }} />
-                  </span>
+                  </Box>
                 </ButtonBase>
                 {image.caption && <Caption blocks={image.caption} />}
                 <Modal
@@ -160,14 +142,25 @@ function ProductCard({
                   aria-describedby="simple-modal-description"
                   sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                 >
-                  <div className={classes.paper}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      width: { xs: '80vw', md: '50vw' },
+                      height: { xs: '80vh', md: '50vh' },
+                      bgcolor: 'background.paper',
+                      border: 'none',
+                      boxShadow: 5,
+                      p: 2,
+                      justifyContent: 'center',
+                    }}
+                  >
                     <GatsbyImage
                       image={imageData}
                       alt={image?.alt}
                       objectFit="contain"
                       style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
                     />
-                  </div>
+                  </Box>
                 </Modal>
                 <br />
                 <ButtonAffiliate {...mapMuiBtnToProps(topBtn)} />
