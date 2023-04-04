@@ -33,8 +33,16 @@ export default {
       type: 'type',
     },
     prepare({ type }) {
+      const titleSelector = {
+        proTip: 'Pro Tip',
+        important: 'Important',
+        warning: 'Warning',
+        dyk: 'Did You Know',
+        definition: 'Definition',
+      };
+
       return {
-        title: type,
+        title: titleSelector[type],
         subtitle: 'Highlight Box',
       };
     },

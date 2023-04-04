@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
-import HighlightBox from '../insertable/highlightBox/HighlightBox';
+import HighlightBox from '../insertable/HighlightBox';
 import JumpLink from '../../link/JumpLink';
 import AffiliateLink from '../../link/LinkAffiliate';
 import ExternalLink from '../../link/LinkExternal';
