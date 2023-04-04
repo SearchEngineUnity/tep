@@ -12,11 +12,11 @@ export default {
       type: 'string',
       options: {
         list: [
-          { title: 'Pro Tip', value: 'Pro Tip' },
-          { title: 'Important', value: 'Important' },
-          { title: 'Warning', value: 'Warning' },
-          { title: 'Did You Know', value: 'Did You Know' },
-          { title: 'Definition', value: 'Definition' },
+          { title: 'Pro Tip', value: 'proTip' },
+          { title: 'Important', value: 'important' },
+          { title: 'Warning', value: 'warning' },
+          { title: 'Did You Know', value: 'dyk' },
+          { title: 'Definition', value: 'definition' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
