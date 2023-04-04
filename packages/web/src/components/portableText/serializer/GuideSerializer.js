@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
-import HighlightBox from '../insertable/highlightBox/HighlightBox';
+import HighlightBox from '../insertable/HighlightBox';
 import SmartTable from '../insertable/SmartTable';
 import JumpLink from '../../link/JumpLink';
 import AffiliateLink from '../../link/LinkAffiliate';
