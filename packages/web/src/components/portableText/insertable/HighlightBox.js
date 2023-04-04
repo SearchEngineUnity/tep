@@ -25,7 +25,7 @@ const titleSelector = {
   definition: 'Definition',
 };
 
-function ConditionalHighlightBox({ box: { _key: id, type, text } }) {
+function HighlightBox({ box: { _key: id, type, text } }) {
   const Icon = iconSelector[type];
   const title = titleSelector[type];
 
@@ -60,4 +60,4 @@ function ConditionalHighlightBox({ box: { _key: id, type, text } }) {
   );
 }
 
-export default ConditionalHighlightBox;
+export default HighlightBox;
