@@ -100,12 +100,6 @@ function ProductCard({
                     height: 'auto',
                     width: '100%',
                     cursor: 'pointer',
-                    '&:hover, &$focusVisible': {
-                      zIndex: 1,
-                      '& $imageBackdrop': {
-                        opacity: 0.4,
-                      },
-                    },
                   }}
                 >
                   <GatsbyImage
@@ -124,11 +118,16 @@ function ProductCard({
                       bottom: 0,
                       bgcolor: 'common.black',
                       opacity: 0,
+                      width: '100%',
                       transition: theme.transitions.create('opacity'),
                       color: 'white',
                       display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      '&:hover': {
+                        zIndex: 1,
+                        opacity: 0.4,
+                      },
                     })}
                   >
                     <ZoomInIcon sx={{ fontSize: '120px' }} />
