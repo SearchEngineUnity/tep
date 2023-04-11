@@ -12,7 +12,6 @@ import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../../../lib/sanityConfig';
 import ProductCardFlexSegment from './ProductCardFlexSegment';
-import ProductCardDividerSegment from './ProductCardDividerSegment';
 import ProductInfoList from './ProductInfoList';
 import ProductCardRating from './ProductCardRating';
 import ButtonAffiliate from '../../../buttons/ButtonAffiliate';
@@ -51,6 +50,7 @@ function ProductCard({
 
   return (
     <>
+      <hr />
       {tagText && <br />}
       <Box sx={{ position: 'relative' }}>
         <Card>
@@ -179,8 +179,6 @@ function ProductCard({
             switch (_type) {
               case 'productCardFlexSegment':
                 return <ProductCardFlexSegment key={_key} {...segment} />;
-              case 'productCardDividerSegment':
-                return <ProductCardDividerSegment key={_key} />;
               default:
                 return <div key="default-inner-block"> Block still under development</div>;
             }

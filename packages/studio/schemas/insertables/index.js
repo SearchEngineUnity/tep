@@ -1,10 +1,4 @@
-export {
-  infoItem,
-  productCard,
-  productCardDividerSegment,
-  productCardImage,
-  productCardFlexSegment,
-} from './productCard';
+export { infoItem, productCard, productCardImage, productCardFlexSegment } from './productCard';
 export { productCardGridPtTile, smartGrid, smartGridPtTile } from './smartGrid';
 export { rowPlus, smartTable, tablePtCell, tablePlus, emptyCell, splitCell } from './smartTable';
 export { default as highlightBox } from './highlightBox';

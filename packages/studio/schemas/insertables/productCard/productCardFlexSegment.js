@@ -29,6 +29,13 @@ export default {
       title: 'Segment Content',
       type: 'productCardPT',
     },
+    {
+      title: 'Hide Segment',
+      name: 'hide',
+      type: 'boolean',
+      initialValue: false,
+      validation: (Rule) => [Rule.required().error('Field is required')],
+    },
   ],
   preview: {
     select: {
