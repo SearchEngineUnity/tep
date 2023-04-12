@@ -80,7 +80,7 @@ export default {
       title: 'Product Card Flex Segment Stack',
       name: 'segments',
       type: 'array',
-      of: [{ type: 'productCardFlexSegment' }, { type: 'productCardDividerSegment' }],
+      of: [{ type: 'productCardFlexSegment' }],
     },
   ],
   preview: {
