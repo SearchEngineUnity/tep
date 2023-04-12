@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Layout from '../containers/layout';
 import GuideHero from '../components/sections/GuideHero';
-import GuideBody from '../components/portableText/serializer/GuideSerializer';
+import GuideBody from '../components/portableText/serializer/FullIndentSerializer';
 import ToC from '../components/TableOfContent';
 import { useUpdateUrl } from '../hooks/useUpdateUrl';
 import { mapGuideHeroToProps } from '../lib/mapToProps';

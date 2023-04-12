@@ -1,30 +1,24 @@
+/* eslint-disable import/no-cycle */
 import { PortableText } from '@portabletext/react';
 import React from 'react';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/HighlightBox';
 import SmartTable from '../insertable/SmartTable';
-import SmartGrid from '../insertable/SmartGrid/SmartGrid';
-import SmartUnorderedList from '../insertable/SmartUnorderedList';
-import SmartOrderedList from '../insertable/SmartOrderedList';
-import ProductCard from '../insertable/productCard/ProductCard';
-import AffiliateLink from '../../link/LinkAffiliate';
 import JumpLink from '../../link/JumpLink';
+import AffiliateLink from '../../link/LinkAffiliate';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
 import InternalLocal from '../../link/LinkInternalLocal';
-import ButtonAffiliate from '../../buttons/ButtonAffiliate';
-import ButtonExternal from '../../buttons/ButtonExternal';
-import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
-import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
-import ButtonJumpLink from '../../buttons/ButtonJumpLink';
+import ConditionalButton from '../../buttons/ConditionalButton';
+import SmartOrderedList from '../insertable/SmartOrderedList';
+import SmartUnorderedList from '../insertable/SmartUnorderedList';
+import ProductCard from '../insertable/productCard/ProductCard';
 import ClickableImage from '../insertable/ClickableImage';
-import IndentFullWrapper from '../insertable/IndentFullWrapper';
+import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import PTHeadingTypography from './PTHeadingTypography';
-import { mapMuiBtnToProps } from '../../../lib/mapToProps';
 
 const serializers = {
   block: {
@@ -37,6 +31,18 @@ const serializers = {
         <br />
       );
     },
+    h2: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h2"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
     h3: ({ value, children }) => (
       <PTHeadingTypography
         variant="h3"
@@ -52,6 +58,30 @@ const serializers = {
     h4: ({ value, children }) => (
       <PTHeadingTypography
         variant="h4"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h5: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h5"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h6: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h6"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
@@ -80,16 +110,12 @@ const serializers = {
   types: {
     illustration: ({ value }) => (
       <VerticalSpacingWrapper>
-        <IndentFullWrapper>
-          <Illustration illustration={value} />
-        </IndentFullWrapper>
+        <Illustration illustration={value} />
       </VerticalSpacingWrapper>
     ),
     highlightBox: ({ value }) => (
       <VerticalSpacingWrapper>
-        <IndentFullWrapper>
-          <HighlightBox box={value} />
-        </IndentFullWrapper>
+        <HighlightBox box={value} />
       </VerticalSpacingWrapper>
     ),
     smartTable: ({ value }) => (
@@ -99,66 +125,30 @@ const serializers = {
     ),
     videoEmbed: ({ value }) => (
       <VerticalSpacingWrapper>
-        <IndentFullWrapper>
-          <VideoEmbed url={value.url} ratio={value.ratio} />
-        </IndentFullWrapper>
+        <VideoEmbed url={value.url} ratio={value.ratio} />
       </VerticalSpacingWrapper>
     ),
-    btnBlockMui: ({ value }) => {
-      switch (value.link[0]._type) {
-        case 'jumpLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonJumpLink {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalLocal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalLocal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalGlobal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalGlobal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'externalLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonExternal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'affiliateLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonAffiliate {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        default:
-          return <p>under development</p>;
-      }
-    },
+    btnBlockMui: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <ConditionalButton condition={value.link[0]._type} values={value} />
+      </VerticalSpacingWrapper>
+    ),
     smartOrderedList: ({ value }) => <SmartOrderedList {...value} />,
     smartUnorderedList: ({ value }) => <SmartUnorderedList {...value} />,
     productCard: ({ value }) => (
       <VerticalSpacingWrapper>
-        <IndentFullWrapper>
-          <ProductCard {...value} />
-        </IndentFullWrapper>
+        <ProductCard {...value} />
       </VerticalSpacingWrapper>
     ),
     clickableImage: ({ value }) => (
       <VerticalSpacingWrapper>
-        <IndentFullWrapper>
-          <ClickableImage {...value} />
-        </IndentFullWrapper>
+        <ClickableImage {...value} />
       </VerticalSpacingWrapper>
     ),
     smartGrid: ({ value }) => <SmartGrid {...value} />,
   },
   marks: {
+    hashId: ({ children }) => children,
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (

@@ -1,21 +1,25 @@
+/* eslint-disable import/no-cycle */
 import { PortableText } from '@portabletext/react';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import VideoEmbed from '../insertable/VideoEmbed';
+import Illustration from '../insertable/Illustration';
+import HighlightBox from '../insertable/HighlightBox';
+import SmartTable from '../insertable/SmartTable';
 import JumpLink from '../../link/JumpLink';
+import AffiliateLink from '../../link/LinkAffiliate';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
 import InternalLocal from '../../link/LinkInternalLocal';
-import AffiliateLink from '../../link/LinkAffiliate';
-import Illustration from '../insertable/Illustration';
+import ConditionalButton from '../../buttons/ConditionalButton';
+import SmartOrderedList from '../insertable/SmartOrderedList';
+import SmartUnorderedList from '../insertable/SmartUnorderedList';
+import ProductCard from '../insertable/productCard/ProductCard';
 import ClickableImage from '../insertable/ClickableImage';
-import ButtonJumpLink from '../../buttons/ButtonJumpLink';
-import ButtonAffiliate from '../../buttons/ButtonAffiliate';
-import ButtonExternal from '../../buttons/ButtonExternal';
-import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
-import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
+import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
-import { mapMuiBtnToProps } from '../../../lib/mapToProps';
+import PTHeadingTypography from './PTHeadingTypography';
 
 const serializers = {
   block: {
@@ -28,6 +32,86 @@ const serializers = {
         <br />
       );
     },
+    h2: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h2"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+        sx={{ fontSize: '28px', mb: '11px' }}
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h3: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h3"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+        sx={{ fontSize: '24.5px', mb: '11px' }}
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h4: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h4"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+        sx={{ fontSize: '21px', mb: '11px' }}
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h5: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h5"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+        sx={{ fontSize: '17.5px', mb: '11px' }}
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    h6: ({ value, children }) => (
+      <PTHeadingTypography
+        variant="h6"
+        id={
+          value.markDefs.length !== 0
+            ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
+            : undefined
+        }
+        sx={{ fontSize: '15px', mb: '11px' }}
+      >
+        {children}
+      </PTHeadingTypography>
+    ),
+    blockquote: ({ children }) => (
+      <Typography
+        component="blockquote"
+        variant="h3"
+        gutterBottom
+        sx={(theme) => ({
+          fontWeight: 100,
+          pl: 4,
+          py: 1,
+          borderLeft: `4px solid ${theme.palette.primary.main}`,
+        })}
+      >
+        &#8220; {children} &#8221;
+      </Typography>
+    ),
   },
   types: {
     illustration: ({ value }) => (
@@ -35,49 +119,42 @@ const serializers = {
         <Illustration illustration={value} />
       </VerticalSpacingWrapper>
     ),
+    highlightBox: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <HighlightBox box={value} />
+      </VerticalSpacingWrapper>
+    ),
+    smartTable: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <SmartTable smartTable={value} />
+      </VerticalSpacingWrapper>
+    ),
+    videoEmbed: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <VideoEmbed url={value.url} ratio={value.ratio} />
+      </VerticalSpacingWrapper>
+    ),
+    btnBlockMui: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <ConditionalButton condition={value.link[0]._type} values={value} />
+      </VerticalSpacingWrapper>
+    ),
+    smartOrderedList: ({ value }) => <SmartOrderedList {...value} />,
+    smartUnorderedList: ({ value }) => <SmartUnorderedList {...value} />,
+    productCard: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <ProductCard {...value} />
+      </VerticalSpacingWrapper>
+    ),
     clickableImage: ({ value }) => (
       <VerticalSpacingWrapper>
         <ClickableImage {...value} />
       </VerticalSpacingWrapper>
     ),
-    btnBlockMui: ({ value }) => {
-      switch (value.link[0]._type) {
-        case 'jumpLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonJumpLink {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalLocal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalLocal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalGlobal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalGlobal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'externalLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonExternal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'affiliateLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonAffiliate {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        default:
-          return <p>under development</p>;
-      }
-    },
+    smartGrid: ({ value }) => <SmartGrid {...value} />,
   },
   marks: {
+    hashId: ({ children }) => children,
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (

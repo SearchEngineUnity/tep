@@ -7,7 +7,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListContent from '../serializer/TableListSerializer';
+import ListContent from '../serializer/TableSerializer';
 
 function TableSmartOrderedList({ listItems }) {
   const fontStyles = {

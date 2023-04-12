@@ -4,7 +4,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import ImgBlock from '../blocks/FluidImgBlock';
-import Subtitle from '../portableText/serializer/HeroSubtitleSerializer';
+import Subtitle from '../portableText/serializer/H1SubtitleSerializer';
+import Disclaimer from '../portableText/serializer/DisclaimerSerializer';
 import ProgressBar from '../ScrollProgressBar';
 import { mapFluidImgBlockToProps } from '../../lib/mapToProps';
 import { useSpGuideHero } from '../../hooks/useSpGuideHero';
@@ -56,7 +57,7 @@ function GuideHero({ h1, subtitle, date, image, includeDisclaimer }) {
                 </Typography>
               )}
               <br />
-              {includeDisclaimer && disclaimerText && <Subtitle blocks={disclaimerText} />}
+              {includeDisclaimer && disclaimerText && <Disclaimer blocks={disclaimerText} />}
             </Grid>
             <Grid item md={6} xs={12}>
               <Box sx={{ display: 'flex', justifyContent: heroAlignment.heroImgAlignment }}>

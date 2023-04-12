@@ -1,6 +1,7 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import Content from '../../serializer/ProductCardGridTileSerializer';
+import Content from '../../serializer/NoIndentSerializer';
 
 function ProductCardGridPtTile({ title, headingLevel, content }) {
   return (

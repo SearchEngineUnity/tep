@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
@@ -7,7 +8,7 @@ import ErrorOutlineOutlined from '@mui/icons-material/ErrorOutlineOutlined';
 import WarningOutlined from '@mui/icons-material/WarningOutlined';
 import EmojiObjectsOutlined from '@mui/icons-material/EmojiObjectsOutlined';
 import MenuBook from '@mui/icons-material/MenuBook';
-import TextContent from '../serializer/HighlightBoxSerializer';
+import TextContent from '../serializer/HalfIndentSerializer';
 
 const iconSelector = {
   proTip: ThumbUpOutlined,

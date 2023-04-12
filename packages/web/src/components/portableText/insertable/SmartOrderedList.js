@@ -7,7 +7,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import ListContent from '../serializer/ListSerializer';
+import ListContent from '../serializer/FullIndentSerializer';
 
 function SmartOrderedList({ listItems }) {
   const fontStyles = {

@@ -1,7 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { PortableText } from '@portabletext/react';
 import React from 'react';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import VideoEmbed from '../insertable/VideoEmbed';
 import Illustration from '../insertable/Illustration';
@@ -12,16 +11,15 @@ import AffiliateLink from '../../link/LinkAffiliate';
 import ExternalLink from '../../link/LinkExternal';
 import InternalGlobal from '../../link/LinkInternalGlobal';
 import InternalLocal from '../../link/LinkInternalLocal';
-import ButtonAffiliate from '../../buttons/ButtonAffiliate';
-import ButtonExternal from '../../buttons/ButtonExternal';
-import ButtonInternalGlobal from '../../buttons/ButtonInternalGlobal';
-import ButtonInternalLocal from '../../buttons/ButtonInternalLocal';
-import ButtonJumpLink from '../../buttons/ButtonJumpLink';
+import ConditionalButton from '../../buttons/ConditionalButton';
+import SmartOrderedList from '../insertable/SmartOrderedList';
+import SmartUnorderedList from '../insertable/SmartUnorderedList';
+import ProductCard from '../insertable/productCard/ProductCard';
 import ClickableImage from '../insertable/ClickableImage';
+import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import IndentFullWrapper from '../insertable/IndentFullWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import PTHeadingTypography from './PTHeadingTypography';
-import { mapMuiBtnToProps } from '../../../lib/mapToProps';
 
 const serializers = {
   block: {
@@ -137,42 +135,20 @@ const serializers = {
         </IndentFullWrapper>
       </VerticalSpacingWrapper>
     ),
-    btnBlockMui: ({ value }) => {
-      switch (value.link[0]._type) {
-        case 'jumpLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonJumpLink {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalLocal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalLocal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'internalGlobal':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonInternalGlobal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'externalLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonExternal {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        case 'affiliateLink':
-          return (
-            <VerticalSpacingWrapper>
-              <ButtonAffiliate {...mapMuiBtnToProps(value)} />
-            </VerticalSpacingWrapper>
-          );
-        default:
-          return <p>under development</p>;
-      }
-    },
+    btnBlockMui: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <ConditionalButton condition={value.link[0]._type} values={value} />
+      </VerticalSpacingWrapper>
+    ),
+    smartOrderedList: ({ value }) => <SmartOrderedList {...value} />,
+    smartUnorderedList: ({ value }) => <SmartUnorderedList {...value} />,
+    productCard: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <IndentFullWrapper>
+          <ProductCard {...value} />
+        </IndentFullWrapper>
+      </VerticalSpacingWrapper>
+    ),
     clickableImage: ({ value }) => (
       <VerticalSpacingWrapper>
         <IndentFullWrapper>
@@ -180,6 +156,7 @@ const serializers = {
         </IndentFullWrapper>
       </VerticalSpacingWrapper>
     ),
+    smartGrid: ({ value }) => <SmartGrid {...value} />,
   },
   marks: {
     hashId: ({ children }) => children,
@@ -224,8 +201,11 @@ const serializers = {
       );
     },
   },
-  list: ({ children }) => null,
-  listItem: ({ children }) => null,
+  listItem: ({ children }) => (
+    <Typography variant="body1" component="li">
+      {children}
+    </Typography>
+  ),
 };
 
 function BlockContent({ blocks }) {

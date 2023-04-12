@@ -20,6 +20,7 @@ const serializers = {
     },
   },
   marks: {
+    hashId: ({ children }) => children,
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (
@@ -61,6 +62,11 @@ const serializers = {
       );
     },
   },
+  listItem: ({ children }) => (
+    <Typography variant="body1" component="li">
+      {children}
+    </Typography>
+  ),
 };
 
 function BlockContent({ blocks }) {
