@@ -48,7 +48,7 @@ export default {
     {
       name: 'footer',
       title: 'Footer',
-      type: 'heroFooterPT',
+      type: 'minPT',
     },
     {
       name: 'blockWidth',

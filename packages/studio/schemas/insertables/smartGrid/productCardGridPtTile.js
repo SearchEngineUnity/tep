@@ -27,7 +27,7 @@ export default {
     {
       name: 'content',
       title: 'Tile Content',
-      type: 'smartGridProductCardPT',
+      type: 'noHeadingsPT',
     },
   ],
   preview: {

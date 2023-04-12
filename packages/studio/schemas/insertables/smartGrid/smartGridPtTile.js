@@ -9,7 +9,7 @@ export default {
     {
       name: 'content',
       title: 'Tile Content',
-      type: 'smartGridPT',
+      type: 'maxPT',
     },
   ],
   preview: {

@@ -18,7 +18,7 @@ export default {
 
     {
       name: 'caption',
-      type: 'captionPT',
+      type: 'minPT',
       title: 'Caption',
     },
     {

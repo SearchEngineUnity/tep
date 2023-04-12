@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       name: 'content',
-      type: 'orderedListPT',
+      type: 'maxPT',
     },
   ],
   preview: {

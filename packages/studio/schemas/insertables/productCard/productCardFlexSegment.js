@@ -27,7 +27,7 @@ export default {
     {
       name: 'content',
       title: 'Segment Content',
-      type: 'productCardPT',
+      type: 'noHeadingsPT',
     },
   ],
   preview: {
