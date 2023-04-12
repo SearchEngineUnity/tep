@@ -32,9 +32,7 @@ export default {
     {
       title: 'Hide Segment',
       name: 'hide',
-      type: 'boolean',
-      initialValue: false,
-      validation: (Rule) => [Rule.required().error('Field is required')],
+      type: 'hideProductCardFlexSegment',
     },
   ],
   preview: {
