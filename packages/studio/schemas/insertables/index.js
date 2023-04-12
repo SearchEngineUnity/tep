@@ -1,9 +1,9 @@
 export {
   infoItem,
   productCard,
-  productCardDividerSegment,
   productCardImage,
   productCardFlexSegment,
+  hideProductCardFlexSegment,
 } from './productCard';
 export { productCardGridPtTile, smartGrid, smartGridPtTile } from './smartGrid';
 export { rowPlus, smartTable, tablePtCell, tablePlus, emptyCell, splitCell } from './smartTable';

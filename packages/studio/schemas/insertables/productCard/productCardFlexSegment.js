@@ -29,6 +29,11 @@ export default {
       title: 'Segment Content',
       type: 'productCardPT',
     },
+    {
+      title: 'Hide Segment',
+      name: 'hide',
+      type: 'hideProductCardFlexSegment',
+    },
   ],
   preview: {
     select: {
