@@ -130,7 +130,7 @@ export default {
     {
       name: 'heroSubtitle',
       title: 'Hero Subtitle Text',
-      type: 'heroBlockPT',
+      type: 'minPT',
       fieldset: 'hero',
     },
     {
@@ -150,7 +150,7 @@ export default {
     },
     {
       name: 'guideBody',
-      type: 'guideBodyPT',
+      type: 'maxPT',
       title: 'Guide Content Body',
       fieldset: 'mainContent',
       validation: (Rule) => [Rule.required().error('Field is required')],

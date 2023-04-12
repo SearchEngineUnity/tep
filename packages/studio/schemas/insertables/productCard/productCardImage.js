@@ -13,7 +13,7 @@ export default {
     },
     {
       name: 'caption',
-      type: 'captionPT',
+      type: 'minPT',
       title: 'Image Credit',
     },
   ],

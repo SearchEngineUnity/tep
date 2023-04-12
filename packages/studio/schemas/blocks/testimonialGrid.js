@@ -30,7 +30,7 @@ export default {
     {
       name: 'footer',
       title: 'Footer',
-      type: 'sectionSubtitleFooterPT',
+      type: 'minPT',
     },
     {
       name: 'tileOption',

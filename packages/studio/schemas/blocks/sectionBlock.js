@@ -24,12 +24,12 @@ export default {
     {
       name: 'text',
       title: 'Text',
-      type: 'sectionBlockPT',
+      type: 'maxPT',
     },
     {
       name: 'footer',
       title: 'Footer',
-      type: 'sectionSubtitleFooterPT',
+      type: 'minPT',
     },
     {
       name: 'headerAlignment',

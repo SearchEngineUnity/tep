@@ -6,7 +6,7 @@ export default {
     {
       name: 'copy',
       title: 'Cell Content',
-      type: 'smartTablePT',
+      type: 'noHeadingsPT',
     },
   ],
   preview: {

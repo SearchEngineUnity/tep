@@ -32,7 +32,7 @@ export default {
     {
       name: 'disclaimerText',
       title: 'Affiliate Disclaimer Text',
-      type: 'disclaimerPT',
+      type: 'minPT',
       description: 'This is the affiliate disclaimer text to be used on guide page types.',
     },
   ],

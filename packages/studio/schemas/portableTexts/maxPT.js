@@ -1,4 +1,5 @@
 import { FaHashtag } from 'react-icons/fa';
+// import InlineImageRenderer from '../components/previews/InlineImageRenderer';
 import AffiliateLinkRenderer from '../components/previews/AffiliateLinkRenderer';
 import HashIdRenderer from '../components/previews/HashIdRenderer';
 import ExternalLinkRenderer from '../components/previews/ExternalLinkRenderer';
@@ -7,8 +8,8 @@ import InternalGlobalRenderer from '../components/previews/InternalGlobalRendere
 import JumpLinkRenderer from '../components/previews/JumpLinkRenderer';
 
 export default {
-  title: 'Ordered List PT',
-  name: 'orderedListPT',
+  title: 'Max PT',
+  name: 'maxPT',
   type: 'array',
   of: [
     {
@@ -20,12 +21,10 @@ export default {
         { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
       ],
-      lists: [],
       marks: {
         decorators: [
           { title: 'Strong', value: 'strong' },
           { title: 'Emphasis', value: 'em' },
-          { title: 'Underline', value: 'underline' },
         ],
         annotations: [
           {
@@ -86,6 +85,26 @@ export default {
               annotation: JumpLinkRenderer,
             },
           },
+          // {
+          //   title: 'Inline Image',
+          //   name: 'inlineImage',
+          //   type: 'image',
+          //   options: {
+          //     hotspot: true, // <-- Defaults to false
+          //     storeOriginalFilename: true,
+          //   },
+          //   fields: [
+          //     {
+          //       name: 'height',
+          //       type: 'string',
+          //       title: 'Image height',
+          //       description: `You can enter a height % of vh. If the image's native height is smaller it will be used instead.`,
+          //     },
+          //   ],
+          //   icon: MdImage,
+          //   component: InlineImageRenderer,
+          //   validation: (Rule) => [Rule.required().error('Missing Image')],
+          // },
         ],
       },
     },
@@ -98,5 +117,9 @@ export default {
     { type: 'highlightBox' },
     { type: 'videoEmbed' },
     { type: 'smartTable' },
+    { type: 'smartGrid' },
+    { type: 'smartOrderedList' },
+    { type: 'smartUnorderedList' },
+    { type: 'productCard' },
   ],
 };

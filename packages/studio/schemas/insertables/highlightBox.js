@@ -24,7 +24,7 @@ export default {
     {
       name: 'text',
       title: 'Text',
-      type: 'highlightBoxPT',
+      type: 'noHeadingsPT',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
   ],

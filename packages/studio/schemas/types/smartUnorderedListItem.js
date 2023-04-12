@@ -8,7 +8,7 @@ export default {
   fields: [
     {
       name: 'content',
-      type: 'unorderedListPT',
+      type: 'noHeadingsPT',
     },
   ],
   preview: {
