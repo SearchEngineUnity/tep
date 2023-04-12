@@ -6,7 +6,7 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import ListContent from '../serializer/ListSerializer';
+import ListContent from '../serializer/FullIndentSerializer';
 
 function SmartUnorderedList({ listItems, listStyleImage }) {
   const image = listStyleImage?.asset?.url;

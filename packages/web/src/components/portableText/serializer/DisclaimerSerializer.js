@@ -11,7 +11,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography component="p" variant="h4" gutterBottom>
+        <Typography component="p" variant="subtitle2" gutterBottom>
           {children}
         </Typography>
       ) : (
@@ -20,6 +20,7 @@ const serializers = {
     },
   },
   marks: {
+    hashId: ({ children }) => children,
     internalLocal: ({ value, children }) => {
       const { newTab, href } = value;
       return (
@@ -61,6 +62,11 @@ const serializers = {
       );
     },
   },
+  listItem: ({ children }) => (
+    <Typography variant="body1" component="li">
+      {children}
+    </Typography>
+  ),
 };
 
 function BlockContent({ blocks }) {

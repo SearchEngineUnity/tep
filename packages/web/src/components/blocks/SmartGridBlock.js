@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import ProductCardGridPtTile from '../portableText/insertable/SmartGrid/ProductCardGridPtTile';
-import PtTile from '../portableText/serializer/SmartGridSerializer';
+import PtTile from '../portableText/serializer/HalfIndentSerializer';
 import Illustration from '../portableText/insertable/Illustration';
 import SmartUnorderedList from '../portableText/insertable/SmartUnorderedList';
 import VideoEmbed from '../portableText/insertable/VideoEmbed';

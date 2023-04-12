@@ -6,7 +6,7 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import ListContent from '../serializer/TableListSerializer';
+import ListContent from '../serializer/TableSerializer';
 
 function TableSmartUnorderedList({ listItems, listStyleImage }) {
   const image = listStyleImage?.asset?.url;

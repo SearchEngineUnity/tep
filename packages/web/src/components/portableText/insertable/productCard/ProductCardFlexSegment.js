@@ -1,6 +1,7 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import ProductCardSegment from '../../serializer/ProductCardSerializer';
+import ProductCardSegment from '../../serializer/NoIndentSerializer';
 
 function ProductCardFlexSegment({ title, headingLevel, content }) {
   return (
