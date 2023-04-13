@@ -8,7 +8,6 @@ import CaptionContent from '../serializer/CaptionSerializer';
 function Illustration({ illustration, loading }) {
   const loadingSetting = loading || 'lazy';
   const imageFluid = illustration?.asset;
-  const fluidProps = getGatsbyImageData(imageFluid, {}, sanityConfig);
   const customMaxHeight = illustration.maxHeight || 'auto';
   const customMaxWidth = illustration.maxWidth || 'auto';
   const imageWidth = imageFluid.metadata.dimensions.width;
@@ -26,23 +25,14 @@ function Illustration({ illustration, loading }) {
     calculatedWidthBasedOnCustomMaxHeight,
   ];
 
-  const minMaxWidth = `${Math.min(...widthArray)}px`;
+  const minMaxWidth = Math.min(...widthArray);
+
+  const fluidProps = getGatsbyImageData(imageFluid._id, { maxWidth: minMaxWidth }, sanityConfig);
 
   return (
-    <Box component="figure" sx={{ display: 'flex', justifyContent: illustration.align, m: 0 }}>
-      <Box sx={{ maxWidth: minMaxWidth }}>
-        <GatsbyImage
-          style={{
-            maxHeight: customMaxHeight,
-            maxWidth: customMaxWidth,
-            display: 'block',
-          }}
-          image={fluidProps}
-          // eslint-disable-next-line no-unneeded-ternary
-          alt={illustration.alt ? illustration.alt : ''}
-          loading={loadingSetting}
-          objectFit="contain"
-        />
+    <Box sx={{ display: 'flex', justifyContent: illustration.align }}>
+      <Box component="figure" sx={{ maxWidth: `${minMaxWidth}px`, m: 0 }}>
+        <GatsbyImage image={fluidProps} alt={illustration.alt || ''} loading={loadingSetting} />
         {illustration.caption && <CaptionContent blocks={illustration.caption} />}
       </Box>
     </Box>
