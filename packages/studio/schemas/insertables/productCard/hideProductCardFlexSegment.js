@@ -5,7 +5,8 @@ export default {
   fieldsets: [
     {
       name: 'set',
-      title: 'Please click all device types you wish to hide this product card flex segement on.',
+      title:
+        'Please check all screen range options you wish to hide this product card flex segement on.',
       options: {
         collapsible: false,
         collapsed: false,
