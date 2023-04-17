@@ -1,11 +1,23 @@
 /* eslint-disable import/no-cycle */
 import React from 'react';
-import { Box, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Divider from '@mui/material/Divider';
 import ProductCardSegment from '../../serializer/NoIndentSerializer';
 
-function ProductCardFlexSegment({ title, headingLevel, content }) {
+function ProductCardFlexSegment({ title, headingLevel, content, hide }) {
+  const { hideOnDesktop, hideOnTablet, hideOnTabletMobile, hideOnMobile } = hide;
+
+  const display = {
+    xs: hideOnMobile ? 'none' : 'block',
+    sm: hideOnTabletMobile ? 'none' : 'block',
+    md: hideOnTablet ? 'none' : 'block',
+    lg: hideOnDesktop ? 'none' : 'block',
+  };
+
   return (
-    <Box sx={{ m: 3 }}>
+    <Box sx={{ m: 3, display }}>
+      <Divider sx={{ my: 3 }} />
       <Typography component={headingLevel} variant="h5" gutterBottom>
         {title}
       </Typography>
