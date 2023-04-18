@@ -56,17 +56,19 @@ Here are some resources consulted by SC when setting up this project.
 * [@lerna/bootstrap](https://www.npmjs.com/package/@lerna/bootstrap)
 * [Lerna Getting Started](https://lerna.js.org/docs/getting-started)
 
-## Sanity migration
+## Migration
+
+### Sanity migration
 
 1. [Step by step guide](https://www.sanity.io/docs/example-migrating-the-blog-template-from-studio-v2-to-v3)
 
 2. [Migrating the CLI - This migrates sanity.json to sanity.cli.js](https://www.sanity.io/docs/migrating-the-cli)
 
-3. [Studio configiration - This migrates the other part of sanity.json to sanity.config.js. We are not currently using](https://www.sanity.io/docs/migrating-studio-configuration)workspaces.
+3. [Studio configuration - This migrates the other part of sanity.json to sanity.config.js. We are not currently using](https://www.sanity.io/docs/migrating-studio-configuration)workspaces.
 
 4. [Schema and schema types - This one is used migrate custom input components and preview components.](https://www.sanity.io/docs/migrating-schema-types)
 
-5. [Preveiw list view - This is the current document that has been helpful for custom input components and preview components.](https://www.sanity.io/docs/previews-list-views)
+5. [Preview list view - This is the current document that has been helpful for custom input components and preview components.](https://www.sanity.io/docs/previews-list-views)
 
 6. [Structure Builder - The majority of the migration has been completed but the custom preview (of button, form, section) has not been yet implemented.](https://www.sanity.io/docs/migrating-custom-structure-and-default-document-node)
 
@@ -74,15 +76,8 @@ Here are some resources consulted by SC when setting up this project.
 
 8. [Document actions](https://www.sanity.io/docs/document-actions)
 
-## Gatsby Preview Button
+### Gatsby Migration
 
-1. [Install Preview Extension for Sanity](https://support.gatsbyjs.com/hc/en-us/articles/4877130019731-Install-Preview-Extension-for-Sanity)
-
-2. [Document action](https://www.sanity.io/docs/document-actions)
-
-3. [Code for the plugin - Use this code to build our preview instead of installing it directly as this plugin is not Sanity V3 compatible](https://www.npmjs.com/package/%40nwazuo/sanity-plugin-gatsby-cloud-preview?activeTab=explore)
-
-## Gatsby Migration
 We technically didn't 'migrate', we installed the newest V5 and slowly moved the stuff into it.
 
 1. [Migrate v3 to v4](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v3-to-v4/) No action was required
@@ -93,37 +88,39 @@ We technically didn't 'migrate', we installed the newest V5 and slowly moved the
 
 Change to IE support
 Updated sort
-Set up trailing slash to never isntead of using a package to acheive this
+Set up trailing slash to never instead of using a package to achieve this
 Migrate to head api instead of using gatsby-react-helmet or react-helmet
 When you start up the playground it will be GraphiQL now
-removal of use of <StaicQuery />
-All dependencies were reinstalled to gatsby v5 compatible other than gatsby-theme-material-ui (they need to update their dependancy still)
+removal of use of <StaticQuery />
+All dependencies were reinstalled to gatsby v5 compatible other than gatsby-theme-material-ui (they need to update their dependency still)
 Material UI migration
 
 3. [Migrating to v5 getting started](https://mui.com/material-ui/migration/migration-v4/) only code mod is needed here
 
 4. [Style change](https://mui.com/material-ui/migration/v5-style-changes/)
 
-**Notes**
-
-A lot of these changes noted are updated automatically by the code mod. Note the changes to the renamed items.
-I manually updated all the overrides to components instead of using the adaptV5Theme function done by the code mod
-I think it is easier to just remember there are new ones to do things for component definition as we don't do this often anyways
-migrated styled from styled-components to styled from @mui/material/styles
-migrated makeStyles and withstyles to tss-react/mui because I cannot tell if the new functions from @mui/styles still accepted props... it migh've worked fine - we can always revisit this to drop a package if we don't need to use tss-react-mui.
-
-5. [Component changes](https://mui.com/material-ui/migration/v5-component-changes/) All of this has not be explicitly migrated if untouched by code mod. we will pick up when we go through each components more closely, esp the breakpoint stuff**
-
-6. [Migrating from JSS](https://mui.com/material-ui/migration/migrating-from-jss/)
+5. [Component changes](https://mui.com/material-ui/migration/v5-component-changes/)
 
 **Notes**
 
-Sx prop is used instead of makestyles in a lot of places
-This is where I got confused if i should be using styled from @mui/material/styles or @mui/styles.
-This is where I learned to ust tss-react for makestyles and withstyles - again this may not be required according to above note
+The sx prop is the preferred way to style one offs. The styled utility is used to create reusable styled components.
 
-## Update to 'Serializer' code
+### Update to 'Serializer' code
 
 We have moved off the: [deprecated package](https://github.com/sanity-io/block-content-to-react) to the new [portable text to react.](https://www.sanity.io/docs/portable-text-to-react)
 
 [Migration guide](https://www.sanity.io/docs/portable-text-to-react)
+
+## Gatsby Notes + Resources
+
+### Gatsby Graphql
+
+[Customizing the GraphQL Schema](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/)
+
+### Gatsby Preview Button
+
+1. [Install Preview Extension for Sanity](https://support.gatsbyjs.com/hc/en-us/articles/4877130019731-Install-Preview-Extension-for-Sanity)
+
+2. [Document action](https://www.sanity.io/docs/document-actions)
+
+3. [Code for the plugin - Use this code to build our preview instead of installing it directly as this plugin is not Sanity V3 compatible](https://www.npmjs.com/package/%40nwazuo/sanity-plugin-gatsby-cloud-preview?activeTab=explore)

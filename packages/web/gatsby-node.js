@@ -1,5 +1,20 @@
 const path = require('path');
 
+// Type airtable redirect data - this resolves issue with empty ATT
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type Airtable implements Node {
+      data: AirtableData
+    }
+    type AirtableData {
+      Source: String!
+      Destination: String!
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // create all structured pages
 async function createStructuredPages(actions, graphql) {
   const { data } = await graphql(`
@@ -130,8 +145,8 @@ async function createSoloGuidePages(actions, graphql) {
   });
 }
 
-// create redirect
-async function createPageRedirects(actions, graphql) {
+// create sanity redirect
+async function createSanityPageRedirects(actions, graphql) {
   const { data } = await graphql(`
     {
       allSanityRedirect {
@@ -161,9 +176,43 @@ async function createPageRedirects(actions, graphql) {
   });
 }
 
+// create airtable redirect
+async function createAirtableRedirects(actions, graphql) {
+  const { data } = await graphql(`
+    {
+      allAirtable {
+        nodes {
+          data {
+            fromPath: Source
+            toPath: Destination
+          }
+        }
+      }
+    }
+  `);
+
+  const redirects = data?.allAirtable?.nodes;
+
+  if (redirects.length > 0) {
+    redirects.forEach((redirect) => {
+      const {
+        data: { fromPath, toPath },
+      } = redirect;
+
+      actions.createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: true,
+        force: true,
+      });
+    });
+  }
+}
+
 exports.createPages = async ({ actions, graphql }) => {
   await createStructuredPages(actions, graphql);
   await createFlexListingPages(actions, graphql);
   await createSoloGuidePages(actions, graphql);
-  await createPageRedirects(actions, graphql);
+  await createSanityPageRedirects(actions, graphql);
+  await createAirtableRedirects(actions, graphql);
 };

@@ -55,6 +55,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.AIRTABLE_TABLE_NAME,
+            tableView: process.env.AIRTABLE_TABLE_VIEW_NAME,
+            defaultValues: {
+              Source: '',
+              Destination: '',
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'ki8bqxrw',
