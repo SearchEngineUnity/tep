@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
@@ -50,7 +51,6 @@ function ProductCard({
 
   return (
     <>
-      <hr />
       {tagText && <br />}
       <Box sx={{ position: 'relative' }}>
         <Card>
