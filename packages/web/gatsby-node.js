@@ -176,19 +176,21 @@ async function createAirtableRedirects(actions, graphql) {
     }
   `);
 
-  const redirects = data.allAirtable.nodes;
-  redirects.forEach((redirect) => {
-    const {
-      data: { fromPath, toPath },
-    } = redirect;
+  const redirects = data?.allAirtable?.nodes;
+  if (redirects) {
+    redirects.forEach((redirect) => {
+      const {
+        data: { fromPath, toPath },
+      } = redirect;
 
-    actions.createRedirect({
-      fromPath,
-      toPath,
-      isPermanent: true,
-      force: true,
+      actions.createRedirect({
+        fromPath,
+        toPath,
+        isPermanent: true,
+        force: true,
+      });
     });
-  });
+  }
 }
 
 exports.createPages = async ({ actions, graphql }) => {
