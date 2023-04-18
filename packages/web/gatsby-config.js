@@ -63,6 +63,10 @@ module.exports = {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: process.env.AIRTABLE_TABLE_NAME,
             tableView: process.env.AIRTABLE_TABLE_VIEW_NAME,
+            defaultValues: {
+              Source: '',
+              Destination: '',
+            },
           },
         ],
       },

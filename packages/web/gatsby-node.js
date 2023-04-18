@@ -1,5 +1,20 @@
 const path = require('path');
 
+// Type airtable redirect data - this resolves issue with empty ATT
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type Airtable implements Node {
+      data: AirtableData
+    }
+    type AirtableData {
+      Source: String!
+      Destination: String!
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 // create all structured pages
 async function createStructuredPages(actions, graphql) {
   const { data } = await graphql(`
@@ -177,7 +192,8 @@ async function createAirtableRedirects(actions, graphql) {
   `);
 
   const redirects = data?.allAirtable?.nodes;
-  if (redirects) {
+
+  if (redirects.length > 0) {
     redirects.forEach((redirect) => {
       const {
         data: { fromPath, toPath },
