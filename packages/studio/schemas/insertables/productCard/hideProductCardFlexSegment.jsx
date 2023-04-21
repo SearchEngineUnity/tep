@@ -38,7 +38,7 @@ export default {
       fieldset: 'set',
     },
     {
-      name: 'hideOnTabelt',
+      name: 'hideOnTablet',
       title: 'Tablet',
       options: {
         layout: 'checkbox',

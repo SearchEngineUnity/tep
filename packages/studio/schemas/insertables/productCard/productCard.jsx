@@ -37,6 +37,7 @@ export default {
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
       fieldset: 'essentials',
+      initialValue: 'p',
     },
     {
       title: 'Rating Score',
