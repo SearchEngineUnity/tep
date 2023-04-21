@@ -23,6 +23,7 @@ export default {
           { title: 'Non-Heading', value: 'p' },
         ],
       },
+      initialValue: 'p',
     },
     {
       name: 'content',

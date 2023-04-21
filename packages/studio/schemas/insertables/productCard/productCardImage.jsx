@@ -14,7 +14,7 @@ export default {
     {
       name: 'caption',
       type: 'minPT',
-      title: 'Image Credit',
+      title: 'Caption',
     },
   ],
   preview: {
