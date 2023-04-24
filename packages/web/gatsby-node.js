@@ -145,37 +145,6 @@ async function createSoloGuidePages(actions, graphql) {
   });
 }
 
-// create sanity redirect
-async function createSanityPageRedirects(actions, graphql) {
-  const { data } = await graphql(`
-    {
-      allSanityRedirect {
-        edges {
-          node {
-            redirectPaths
-            redirectTo
-          }
-        }
-      }
-    }
-  `);
-
-  const redirectEdges = data.allSanityRedirect.edges;
-  redirectEdges.forEach((edge) => {
-    const { redirectPaths, redirectTo } = edge.node;
-    const toPath = redirectTo;
-
-    redirectPaths.forEach((fromPath) => {
-      actions.createRedirect({
-        fromPath,
-        toPath,
-        isPermanent: true,
-        force: true,
-      });
-    });
-  });
-}
-
 // create airtable redirect
 async function createAirtableRedirects(actions, graphql) {
   const { data } = await graphql(`
@@ -213,6 +182,5 @@ exports.createPages = async ({ actions, graphql }) => {
   await createStructuredPages(actions, graphql);
   await createFlexListingPages(actions, graphql);
   await createSoloGuidePages(actions, graphql);
-  await createSanityPageRedirects(actions, graphql);
   await createAirtableRedirects(actions, graphql);
 };
