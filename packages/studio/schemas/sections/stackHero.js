@@ -43,6 +43,7 @@ export default {
             type: name,
             title,
           })),
+        { type: 'video' },
       ],
     },
     {
