@@ -11,4 +11,5 @@ export { default as highlightBox } from './highlightBox';
 export { default as illustration } from './illustration';
 export { default as smartOrderedList } from './smartOrderedList';
 export { default as smartUnorderedList } from './smartUnorderedList';
+export { default as video } from './video';
 export { default as videoEmbed } from './videoEmbed';

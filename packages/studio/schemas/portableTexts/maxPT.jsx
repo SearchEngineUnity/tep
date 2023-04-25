@@ -115,6 +115,7 @@ export default {
     { type: 'clickableImage' },
     { type: 'btnBlockMui' },
     { type: 'highlightBox' },
+    { type: 'video' },
     { type: 'videoEmbed' },
     { type: 'smartTable' },
     { type: 'smartGrid' },

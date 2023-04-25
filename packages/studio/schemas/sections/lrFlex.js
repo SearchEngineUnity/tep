@@ -42,6 +42,7 @@ export default {
             type: name,
             title,
           })),
+        { type: 'video' },
       ],
       validation: (Rule) => Rule.length(2).error('Must contain two items'),
     },

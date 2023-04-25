@@ -43,6 +43,7 @@ export default {
             type: name,
             title,
           })),
+        { type: 'video' },
       ],
       validation: (Rule) => Rule.min(1).error('Minimum 1 block required'),
     },
