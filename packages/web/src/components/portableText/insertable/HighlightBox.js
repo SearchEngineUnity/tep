@@ -39,14 +39,17 @@ function HighlightBox({ box: { _key: id, type, text } }) {
         p: 2,
         bgcolor: `hlBox.${type}.bgColor`,
         borderColor: `hlBox.${type}.borderColor`,
-        '& .pt-link': { color: `hlBox.${type}.linkColor` },
+        '& .pt-link': {
+          color: `hlBox.${type}.linkColor`,
+          textDecorationColor: 'currentcolor',
+        },
       }}
     >
       <Box sx={{ display: 'inline-flex', mb: '0.8125em' }}>
         <Icon sx={{ alignSelf: 'center', color: `hlBox.${type}.iconColor` }} />
         <Typography
           component="p"
-          variant="h3"
+          variant="h4"
           sx={{ color: `hlBox.${type}.textColor`, marginLeft: '8px' }}
         >
           {title}
