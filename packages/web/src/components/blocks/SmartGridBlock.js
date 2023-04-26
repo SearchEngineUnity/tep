@@ -6,6 +6,7 @@ import ProductCardGridPtTile from '../portableText/insertable/SmartGrid/ProductC
 import PtTile from '../portableText/serializer/HalfIndentSerializer';
 import Illustration from '../portableText/insertable/Illustration';
 import SmartUnorderedList from '../portableText/insertable/SmartUnorderedList';
+import Video from '../portableText/insertable/Video';
 import VideoEmbed from '../portableText/insertable/VideoEmbed';
 import ButtonJumpLink from '../buttons/ButtonJumpLink';
 import ButtonAffiliate from '../buttons/ButtonAffiliate';
@@ -78,6 +79,8 @@ function SmartGridBlock({
                 return <SmartUnorderedList {...tile} />;
               case key === 'clickableImage':
                 return <ClickableImage {...tile} />;
+              case key === 'video':
+                return <Video {...tile} />;
               case key === 'videoEmbed':
                 return <VideoEmbed {...tile} />;
               case key === 'btnBlockMui' && tile.link[0]._type === 'jumpLink':

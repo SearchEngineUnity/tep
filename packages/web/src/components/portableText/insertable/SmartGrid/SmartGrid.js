@@ -6,6 +6,7 @@ import PtTile from '../../serializer/HalfIndentSerializer';
 import Illustration from '../Illustration';
 import SmartUnorderedList from '../SmartUnorderedList';
 import SmartOrderedList from '../SmartOrderedList';
+import Video from '../Video';
 import VideoEmbed from '../VideoEmbed';
 import ButtonJumpLink from '../../../buttons/ButtonJumpLink';
 import ButtonAffiliate from '../../../buttons/ButtonAffiliate';
@@ -51,6 +52,8 @@ function SmartGrid({ layout, tiles }) {
                 return <SmartUnorderedList {...tile} />;
               case key === 'clickableImage':
                 return <ClickableImage {...tile} />;
+              case key === 'video':
+                return <Video {...tile} />;
               case key === 'videoEmbed':
                 return <VideoEmbed {...tile} />;
               case key === 'btnBlockMui' && tile.link[0]._type === 'jumpLink':

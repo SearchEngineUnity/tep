@@ -270,6 +270,11 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
+            ... on SanityVideo {
+              _key
+              _type
+              url
+            }
             ... on SanityVideoBlock {
               _key
               _type
@@ -520,6 +525,11 @@ export const query = graphql`
               headerAlignment
               textAlignment
               footerAlignment
+            }
+            ... on SanityVideo {
+              _key
+              _type
+              url
             }
             ... on SanityVideoBlock {
               _key
@@ -1041,6 +1051,11 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
+            ... on SanityVideo {
+              _key
+              _type
+              url
+            }
             ... on SanityVideoBlock {
               _key
               _type
@@ -1421,6 +1436,11 @@ export const query = graphql`
               headerAlignment
               textAlignment
               footerAlignment
+            }
+            ... on SanityVideo {
+              _key
+              _type
+              url
             }
             ... on SanityVideoBlock {
               _key

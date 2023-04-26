@@ -17,6 +17,7 @@ import TableRow from '@mui/material/TableRow';
 import { styled } from '@mui/material/styles';
 import TableContent from '../serializer/TableSerializer';
 import Illustration from './Illustration';
+import Video from './Video';
 import VideoEmbed from './VideoEmbed';
 import ClickableImage from './ClickableImage';
 import ConditionalButton from '../../buttons/ConditionalButton';
@@ -37,6 +38,7 @@ const SplitCellError = () => 'Split Cell can only be used in apex position with 
 const componentMapping = {
   tablePtCell: TableContent,
   illustration: Illustration,
+  video: Video,
   videoEmbed: VideoEmbed,
   clickableImage: ClickableImage,
   btnBlockMui: ConditionalButton,

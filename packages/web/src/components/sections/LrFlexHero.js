@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import ImgBlock from '../blocks/FluidImgBlock';
+import Video from '../portableText/insertable/Video';
 import VideoBlock from '../blocks/VideoBlock';
 import SectionBlock from '../blocks/HeroSectionBlock';
 import ButtonAffiliate from '../buttons/ButtonAffiliate';
@@ -82,6 +83,8 @@ function LrFlexHero({
                       {...mapSmartGridBlockToProps(block)}
                     />
                   );
+                case key === 'video':
+                  return <Video key={_key} url={block.url} />;
                 case key === 'videoBlock':
                   return <VideoBlock key={_key} url={block.url} ratio={block.ratio} />;
                 case key === 'imageBlock':
