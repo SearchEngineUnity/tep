@@ -29,7 +29,7 @@ export default {
         { type: 'smartGridPtTile' },
         { type: 'illustration' },
         { type: 'smartUnorderedList' },
-        { type: 'videoEmbed' },
+        { type: 'video' },
         { type: 'btnBlockMui' },
         { type: 'clickableImage' },
       ],

@@ -26,7 +26,7 @@ export default {
         { type: 'illustration' },
         { type: 'clickableImage' },
         { type: 'btnBlockMui' },
-        { type: 'videoEmbed' },
+        { type: 'video' },
         { type: 'smartOrderedList' },
         { type: 'smartUnorderedList' },
       ],

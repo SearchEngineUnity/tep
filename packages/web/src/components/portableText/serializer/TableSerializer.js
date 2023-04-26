@@ -3,7 +3,7 @@ import { PortableText } from '@portabletext/react';
 import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import VideoEmbed from '../insertable/VideoEmbed';
+import Video from '../insertable/Video';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/HighlightBox';
 import SmartTable from '../insertable/SmartTable';
@@ -129,9 +129,9 @@ const serializers = {
         <SmartTable smartTable={value} />
       </VerticalSpacingWrapper>
     ),
-    videoEmbed: ({ value }) => (
+    video: ({ value }) => (
       <VerticalSpacingWrapper>
-        <VideoEmbed url={value.url} ratio={value.ratio} />
+        <Video url={value.url} />
       </VerticalSpacingWrapper>
     ),
     btnBlockMui: ({ value }) => (

@@ -263,11 +263,10 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
-            ... on SanityVideoBlock {
+            ... on SanityVideo {
               _key
               _type
               url
-              ratio
             }
             ... on SanityBlockFormNetlify {
               _key
@@ -514,11 +513,10 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
-            ... on SanityVideoBlock {
+            ... on SanityVideo {
               _key
               _type
               url
-              ratio
             }
             ... on SanityClickableImage {
               _key
@@ -1034,11 +1032,10 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
-            ... on SanityVideoBlock {
+            ... on SanityVideo {
               _key
               _type
               url
-              ratio
             }
             ... on SanityBlockFormNetlify {
               _key
@@ -1415,11 +1412,10 @@ export const query = graphql`
               textAlignment
               footerAlignment
             }
-            ... on SanityVideoBlock {
+            ... on SanityVideo {
               _key
               _type
               url
-              ratio
             }
             ... on SanityBlockFormNetlify {
               _key

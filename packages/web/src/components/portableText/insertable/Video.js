@@ -9,12 +9,12 @@ const StyledReactPlayer = styled(ReactPlayer)`
   left: 0;
 `;
 
-function VideoEmbed({ url, ratio }) {
+function Video({ url }) {
   return (
-    <Box sx={{ pt: ratio, position: 'relative' }}>
+    <Box sx={{ pt: '56.25%', position: 'relative' }}>
       <StyledReactPlayer url={url} controls width="100%" height="100%" />
     </Box>
   );
 }
 
-export default VideoEmbed;
+export default Video;
