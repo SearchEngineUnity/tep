@@ -18,7 +18,6 @@ import { styled } from '@mui/material/styles';
 import TableContent from '../serializer/TableSerializer';
 import Illustration from './Illustration';
 import Video from './Video';
-import VideoEmbed from './VideoEmbed';
 import ClickableImage from './ClickableImage';
 import ConditionalButton from '../../buttons/ConditionalButton';
 import TableSmartOrderedList from './TableSmartOrderedList';
@@ -39,7 +38,6 @@ const componentMapping = {
   tablePtCell: TableContent,
   illustration: Illustration,
   video: Video,
-  videoEmbed: VideoEmbed,
   clickableImage: ClickableImage,
   btnBlockMui: ConditionalButton,
   smartOrderedList: TableSmartOrderedList,

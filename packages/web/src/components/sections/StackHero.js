@@ -2,7 +2,6 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
-import VideoBlock from '../blocks/VideoBlock';
 import SectionBlock from '../blocks/HeroSectionBlock';
 import ButtonAffiliate from '../buttons/ButtonAffiliate';
 import ButtonExternal from '../buttons/ButtonExternal';
@@ -81,8 +80,6 @@ function StructuredLrFlex({
                 );
               case key === 'video':
                 return <Video url={block.url} key={_key} />;
-              case key === 'videoBlock':
-                return <VideoBlock url={block.url} ratio={block.ratio} key={_key} />;
               case key === 'imageBlock':
                 return <ImgBlock {...mapFluidImgBlockToProps(block)} key={_key} loading="eager" />;
               case key === 'heroBlock':

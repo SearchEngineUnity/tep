@@ -7,7 +7,6 @@ import PtTile from '../portableText/serializer/HalfIndentSerializer';
 import Illustration from '../portableText/insertable/Illustration';
 import SmartUnorderedList from '../portableText/insertable/SmartUnorderedList';
 import Video from '../portableText/insertable/Video';
-import VideoEmbed from '../portableText/insertable/VideoEmbed';
 import ButtonJumpLink from '../buttons/ButtonJumpLink';
 import ButtonAffiliate from '../buttons/ButtonAffiliate';
 import ButtonExternal from '../buttons/ButtonExternal';
@@ -81,8 +80,6 @@ function SmartGridBlock({
                 return <ClickableImage {...tile} />;
               case key === 'video':
                 return <Video {...tile} />;
-              case key === 'videoEmbed':
-                return <VideoEmbed {...tile} />;
               case key === 'btnBlockMui' && tile.link[0]._type === 'jumpLink':
                 return <ButtonJumpLink {...mapMuiBtnToProps(tile)} />;
               case key === 'btnBlockMui' && tile.link[0]._type === 'affiliateLink':

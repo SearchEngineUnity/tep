@@ -30,7 +30,6 @@ export default {
         { type: 'illustration' },
         { type: 'smartUnorderedList' },
         { type: 'video' },
-        { type: 'videoEmbed' },
         { type: 'btnBlockMui' },
         { type: 'clickableImage' },
       ],

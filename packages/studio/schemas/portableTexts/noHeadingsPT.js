@@ -89,7 +89,6 @@ export default {
     { type: 'btnBlockMui' },
     { type: 'highlightBox' },
     { type: 'video' },
-    { type: 'videoEmbed' },
     { type: 'smartTable' },
     { type: 'smartGrid' },
     { type: 'smartOrderedList' },

@@ -7,4 +7,3 @@ export { default as imageBlock } from './imageBlock';
 export { default as sectionBlock } from './sectionBlock';
 export { default as smartGridBlock } from './smartGridBlock';
 export { default as testimonialGrid } from './testimonialGrid';
-export { default as videoBlock } from './videoBlock';

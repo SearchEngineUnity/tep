@@ -268,12 +268,6 @@ export const query = graphql`
               _type
               url
             }
-            ... on SanityVideoBlock {
-              _key
-              _type
-              url
-              ratio
-            }
             ... on SanityBlockFormNetlify {
               _key
               _type
@@ -523,12 +517,6 @@ export const query = graphql`
               _key
               _type
               url
-            }
-            ... on SanityVideoBlock {
-              _key
-              _type
-              url
-              ratio
             }
             ... on SanityClickableImage {
               _key
@@ -1049,12 +1037,6 @@ export const query = graphql`
               _type
               url
             }
-            ... on SanityVideoBlock {
-              _key
-              _type
-              url
-              ratio
-            }
             ... on SanityBlockFormNetlify {
               _key
               _type
@@ -1434,12 +1416,6 @@ export const query = graphql`
               _key
               _type
               url
-            }
-            ... on SanityVideoBlock {
-              _key
-              _type
-              url
-              ratio
             }
             ... on SanityBlockFormNetlify {
               _key
