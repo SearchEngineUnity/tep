@@ -1,7 +1,6 @@
 export { default as brandItem } from './brandItem';
 export { default as btnSettingsMui } from './btnSettingsMui';
 export { default as clickableImageImage } from './clickableImageImage';
-export { default as colWidth } from './colWidth';
 export { default as header } from './header';
 export { default as heroHeader } from './heroHeader';
 export { default as hlbColorSet } from './hlbColorSet';

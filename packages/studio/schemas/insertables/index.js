@@ -6,7 +6,7 @@ export {
   hideProductCardFlexSegment,
 } from './productCard';
 export { productCardGridPtTile, smartGrid, smartGridPtTile } from './smartGrid';
-export { rowPlus, smartTable, tablePtCell, tablePlus, emptyCell, splitCell } from './smartTable';
+export { colWidth, rowPlus, smartTable, tablePtCell, emptyCell, splitCell } from './smartTable';
 export { default as highlightBox } from './highlightBox';
 export { default as illustration } from './illustration';
 export { default as smartOrderedList } from './smartOrderedList';

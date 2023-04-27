@@ -1,5 +1,5 @@
 export default {
-  title: 'Row Plus',
+  title: 'Row',
   name: 'rowPlus',
   type: 'object',
   fields: [
