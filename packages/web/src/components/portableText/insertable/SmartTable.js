@@ -62,11 +62,11 @@ function SmartTable({ smartTable }) {
   const { colHeading, rowHeading, title, maxWidth, colgroup, fixedFirstColumn } = smartTable;
 
   let thead = [];
-  let tbody = smartTable.table.rows;
+  let tbody = smartTable.rows;
 
   if (colHeading) {
-    thead = smartTable.table.rows[0]; // eslint-disable-line
-    tbody = smartTable.table.rows.slice(1);
+    thead = smartTable.rows[0]; // eslint-disable-line
+    tbody = smartTable.rows.slice(1);
   }
 
   return (
