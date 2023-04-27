@@ -9,7 +9,8 @@ export default {
     {
       name: 'width',
       type: 'string',
-      title: 'Must end in "px" (ex. 200px).',
+      title: 'Width',
+      description: 'Must end in "px" (ex. 200px).',
     },
   ],
   preview: {
