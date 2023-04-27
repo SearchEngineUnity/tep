@@ -3,7 +3,7 @@ import { AiOutlineColumnWidth } from 'react-icons/ai';
 export default {
   name: 'colWidth',
   type: 'object',
-  title: 'Minium Column Widths',
+  title: 'Minium Column Width',
   icon: AiOutlineColumnWidth,
   fields: [
     {
