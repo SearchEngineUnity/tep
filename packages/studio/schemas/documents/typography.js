@@ -25,7 +25,7 @@ export default {
     {
       name: 'htmlFontSize',
       title: 'HTML Font Size (Root)',
-      description: 'Default Font Size Root 16px.',
+      description: 'Default Font Size Root "16px".',
       type: 'number',
       fieldset: 'general',
       initialValue: 16,
@@ -33,7 +33,7 @@ export default {
     {
       name: 'fontFamily',
       title: 'Font Family',
-      description: 'Default Font Family Roboto, Helvetica, Arial, sans-serif.',
+      description: 'Default Font Family "Roboto, Helvetica, Arial, sans-serif".',
       type: 'string',
       fieldset: 'general',
       initialValue: 'Roboto, Helvetica, Arial, sans-serif',
@@ -41,7 +41,7 @@ export default {
     {
       name: 'fontSize',
       title: 'Font Size',
-      description: 'Default Font Size Root 14px.',
+      description: 'Default Font Size Root "14px".',
       type: 'number',
       fieldset: 'general',
       initialValue: 14,
@@ -49,7 +49,7 @@ export default {
     {
       name: 'fontWeightLight',
       title: 'Font Weight Light',
-      description: 'Default Font Weight Light 300.',
+      description: 'Default Font Weight Light "300".',
       type: 'number',
       fieldset: 'general',
       initialValue: 300,
@@ -57,14 +57,14 @@ export default {
     {
       name: 'fontWeightRegular',
       title: 'Font Weight Regular',
-      description: 'Default Font Weight Regular 500.',
+      description: 'Default Font Weight Regular "500".',
       type: 'number',
       fieldset: 'general',
       initialValue: 500,
     },
     {
       name: 'fontWeightMedium',
-      description: 'Default Font Weight Medium 700.',
+      description: 'Default Font Weight Medium "700".',
       type: 'number',
       fieldset: 'general',
       initialValue: 700,
@@ -72,7 +72,7 @@ export default {
     {
       name: 'fontWeightBold',
       title: 'Font Weight Bold',
-      description: 'Default Font Weight Bold 800.',
+      description: 'Default Font Weight Bold "800".',
       type: 'number',
       fieldset: 'general',
       initialValue: 800,
@@ -80,7 +80,8 @@ export default {
     {
       name: 'h1',
       title: 'H1',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 700, 2.625rem, 1.5',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "700", "2.625rem", "1.5"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -93,7 +94,8 @@ export default {
     {
       name: 'h2',
       title: 'H2',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 700, 1.75rem, 1.1',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "700", "1.75rem", "1.1"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -106,7 +108,8 @@ export default {
     {
       name: 'h3',
       title: 'H3',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 600, 1.5rem, 1.1',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "600", "1.5rem", "1.1"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -119,7 +122,8 @@ export default {
     {
       name: 'h4',
       title: 'H4',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 400, 1.25rem, 1.1',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "400", "1.25rem", "1.1"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -132,7 +136,7 @@ export default {
     {
       name: 'h5',
       title: 'H5',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 700, 1rem, 1.1',
+      description: 'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "700", "1rem", "1.1"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -145,7 +149,7 @@ export default {
     {
       name: 'h6',
       title: 'H6',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 600, 1rem, 1.1',
+      description: 'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "600", "1rem", "1.1"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -158,7 +162,8 @@ export default {
     {
       name: 'subtitle1',
       title: 'Subtitle 1',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 400, 1rem, 1.75',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "400", "1rem", "1.75"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -171,7 +176,8 @@ export default {
     {
       name: 'subtitle2',
       title: 'Subtitle 2',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 500, 0.875rem, 1.57',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "500", "0.875rem", "1.57"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -184,7 +190,8 @@ export default {
     {
       name: 'body1',
       title: 'Body 1',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 500, 1rem, 1.625',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "500", "1rem", "1.625"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -197,7 +204,8 @@ export default {
     {
       name: 'body2',
       title: 'Body 2',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 400, 0.875rem, 1.43',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "400", "0.875rem", "1.43"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -210,7 +218,8 @@ export default {
     {
       name: 'caption',
       title: 'Caption',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 400, 0.75rem, 1.66',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "400", "0.75rem", "1.66"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
@@ -223,7 +232,8 @@ export default {
     {
       name: 'overline',
       title: 'Overline',
-      description: 'Default Setings: Roboto, Helvetica, Arial, sans-serif, 400, 0.75rem, 2.66',
+      description:
+        'Default Settings: "Roboto, Helvetica, Arial, sans-serif", "400", "0.75rem", "2.66"',
       type: 'muiTypeStyleSet',
       fieldset: 'variants',
       initialValue: {
