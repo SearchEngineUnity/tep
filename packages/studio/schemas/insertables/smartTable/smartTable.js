@@ -19,6 +19,7 @@ export default {
       options: {
         layout: 'checkbox',
       },
+      initialValue: false,
     },
     {
       name: 'rowHeading',
@@ -27,6 +28,7 @@ export default {
       options: {
         layout: 'checkbox',
       },
+      initialValue: false,
     },
     {
       name: 'fixedFirstColumn',
@@ -35,23 +37,26 @@ export default {
       options: {
         layout: 'checkbox',
       },
+      initialValue: false,
     },
     {
       name: 'maxWidth',
       type: 'string',
       title: 'Max Table Width',
-      description: 'Please make sure to include px with the minimum width number (ie. 100px).',
+      description: 'Must end in "px" (ex. 600px)',
     },
     {
       name: 'colgroup',
       type: 'array',
-      title: 'Column Width Settings',
-      description: `Sets the column widths in order from left to right. This must be set in px.`,
+      title: 'Minimum Column Widths',
+      description: `The minimum column width regardless of browser width. Must end in "px".`,
       of: [{ type: 'colWidth' }],
     },
     {
-      name: 'table',
-      type: 'tablePlus',
+      name: 'rows',
+      title: 'Rows',
+      type: 'array',
+      of: [{ type: 'rowPlus' }],
     },
   ],
   preview: {
