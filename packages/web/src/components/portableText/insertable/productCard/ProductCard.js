@@ -135,7 +135,17 @@ function ProductCard({
                   </ButtonBase>
 
                   {image.caption && (
-                    <Box component={Caption} as="figcaption" sx={{ textAlign: 'center' }}>
+                    <Box
+                      component={Caption}
+                      as="figcaption"
+                      sx={{
+                        textAlign: 'center',
+                        '& .pt-link': {
+                          color: 'text.primary',
+                          textDecorationColor: 'currentcolor',
+                        },
+                      }}
+                    >
                       <Caption blocks={image.caption} />
                     </Box>
                   )}
