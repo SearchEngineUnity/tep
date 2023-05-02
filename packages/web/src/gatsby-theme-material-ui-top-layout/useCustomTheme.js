@@ -386,6 +386,9 @@ export const useCustomTheme = () => {
       },
       MuiTableCell: {
         styleOverrides: {
+          root: {
+            overflow: 'hidden',
+          },
           head: {
             fontWeight: 600,
           },

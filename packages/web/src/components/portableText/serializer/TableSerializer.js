@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import Video from '../insertable/Video';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/HighlightBox';
-import SmartTable from '../insertable/SmartTable';
 import JumpLink from '../../link/JumpLink';
 import AffiliateLink from '../../link/LinkAffiliate';
 import ExternalLink from '../../link/LinkExternal';
@@ -25,7 +24,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography gutterBottom variant="body1" sx={{ fontSize: '14px' }}>
+        <Typography gutterBottom variant="body1" sx={{ fontSize: '14px' }} className="pt-heading">
           {children}
         </Typography>
       ) : (
@@ -41,6 +40,7 @@ const serializers = {
             : undefined
         }
         sx={{ fontSize: '28px', mb: '11px' }}
+        className="pt-heading"
       >
         {children}
       </PTHeadingTypography>
@@ -54,6 +54,7 @@ const serializers = {
             : undefined
         }
         sx={{ fontSize: '24.5px', mb: '11px' }}
+        className="pt-heading"
       >
         {children}
       </PTHeadingTypography>
@@ -67,6 +68,7 @@ const serializers = {
             : undefined
         }
         sx={{ fontSize: '21px', mb: '11px' }}
+        className="pt-heading"
       >
         {children}
       </PTHeadingTypography>
@@ -80,6 +82,7 @@ const serializers = {
             : undefined
         }
         sx={{ fontSize: '17.5px', mb: '11px' }}
+        className="pt-heading"
       >
         {children}
       </PTHeadingTypography>
@@ -93,6 +96,7 @@ const serializers = {
             : undefined
         }
         sx={{ fontSize: '15px', mb: '11px' }}
+        className="pt-heading"
       >
         {children}
       </PTHeadingTypography>
@@ -122,11 +126,6 @@ const serializers = {
     highlightBox: ({ value }) => (
       <VerticalSpacingWrapper>
         <HighlightBox box={value} />
-      </VerticalSpacingWrapper>
-    ),
-    smartTable: ({ value }) => (
-      <VerticalSpacingWrapper>
-        <SmartTable smartTable={value} />
       </VerticalSpacingWrapper>
     ),
     video: ({ value }) => (
