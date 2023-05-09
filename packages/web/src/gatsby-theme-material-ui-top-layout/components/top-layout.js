@@ -12,7 +12,7 @@ export default function TopLayout({ children, theme }) {
 
   return (
     <ThemeProvider theme={mergedTheme}>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       {children}
     </ThemeProvider>
   );

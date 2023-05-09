@@ -89,23 +89,23 @@ function SmartTable({ smartTable }) {
       component={Paper}
       sx={{
         maxWidth,
-        // '&::-webkit-scrollbar': {
-        //   width: '14px',
-        //   height: '14px',
-        // },
-        // '&::-webkit-scrollbar-track': {
-        //   bgcolor: 'grey.50',
-        // },
-        // '&::-webkit-scrollbar-thumb': {
-        //   width: '10px',
-        //   height: '10px',
-        //   bgcolor: 'grey.400',
-        //   borderRadius: '8px',
-        //   border: (theme) => `3px solid ${theme.palette.grey[50]}`,
-        // },
-        // '&::-webkit-scrollbar-thumb:hover': {
-        //   bgcolor: 'grey.500',
-        // },
+        '&::-webkit-scrollbar': {
+          width: '14px',
+          height: '14px',
+        },
+        '&::-webkit-scrollbar-track': {
+          bgcolor: 'grey.50',
+        },
+        '&::-webkit-scrollbar-thumb': {
+          width: '10px',
+          height: '10px',
+          bgcolor: 'grey.400',
+          borderRadius: '8px',
+          border: (theme) => `3px solid ${theme.palette.grey[50]}`,
+        },
+        '&::-webkit-scrollbar-thumb:hover': {
+          bgcolor: 'grey.500',
+        },
       }}
     >
       <Table
