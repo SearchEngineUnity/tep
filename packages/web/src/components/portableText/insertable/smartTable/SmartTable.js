@@ -101,7 +101,7 @@ function SmartTable({ smartTable }) {
           height: '10px',
           bgcolor: 'grey.400',
           borderRadius: '8px',
-          border: '3px solid #fafafa',
+          border: (theme) => `3px solid ${theme.palette.grey[50]}`,
         },
         '&::-webkit-scrollbar-thumb:hover': {
           bgcolor: 'grey.500',
