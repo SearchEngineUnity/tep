@@ -88,7 +88,7 @@ function SmartGridBlock({
                 return <ButtonExternal {...mapMuiBtnToProps(tile)} />;
               case key === 'btnBlockMui' && tile.link[0]._type === 'internalGlobal':
                 return <ButtonInternalGlobal {...mapMuiBtnToProps(tile)} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'internalLocal':
+              case key === 'btnBlockMui' && tile.link[0]._type === '':
                 return <ButtonInternalLocal {...mapMuiBtnToProps(tile)} />;
               default:
                 return <div> Tile still under development</div>;

@@ -31,6 +31,7 @@ function ProductCard({
   topBtn,
   segments,
 }) {
+  console.log(segments);
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {

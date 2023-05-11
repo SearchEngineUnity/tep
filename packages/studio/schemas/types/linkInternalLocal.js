@@ -24,13 +24,11 @@ export default {
   ],
   preview: {
     select: {
-      link: 'reference.slug.current',
-      id: 'hashId',
-      parameter: 'parameter',
+      link: 'href',
     },
-    prepare({ link, id, parameter }) {
+    prepare({ link }) {
       return {
-        title: `/${link}${id ? `#${id}` : ''}${parameter ? `?${parameter}` : ''}`,
+        title: link,
       };
     },
   },
