@@ -3,27 +3,24 @@ import { Button } from 'gatsby-theme-material-ui';
 // import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { mapMuiBtnToProps } from '../../lib/mapToProps';
 import { determineColor } from '../../lib/helperFunctions';
 
-function ConditionalButton({ condition, values }) {
-  const {
-    idTag,
-    text,
-    variant,
-    disableElevation,
-    disableFocusRipple,
-    disableRipple,
-    fullWidth,
-    borderRadius,
-    padding,
-    link,
-    colors,
-    alignment,
-    typography,
-    bgImage,
-  } = mapMuiBtnToProps(values);
-
+function ConditionalButton({
+  idTag,
+  text,
+  variant,
+  disableElevation,
+  disableFocusRipple,
+  disableRipple,
+  fullWidth,
+  borderRadius,
+  padding,
+  link,
+  colors,
+  alignment,
+  typography,
+  bgImage,
+}) {
   const { main, dark, contrastText } = colors;
   const mainColor = determineColor(main?.color);
   const darkColor = determineColor(dark?.color);
@@ -79,21 +76,21 @@ function ConditionalButton({ condition, values }) {
     },
   });
 
-  let linkType = condition;
+  let linkType = link[0]._type;
   let { href } = link[0];
   const { hashId = '', newTab = false, noreferrer = false } = link[0];
   const noopenerTag = newTab ? 'noopener' : '';
-  const nofollowTag = condition === 'affiliateLink' ? 'nofollow' : '';
+  const nofollowTag = linkType === 'affiliateLink' ? 'nofollow' : '';
   const noreferrerTag = noreferrer ? 'noreferrer' : '';
 
-  const target = newTab || condition === 'affiliateLink' ? '_blank' : undefined;
+  const target = newTab || linkType === 'affiliateLink' ? '_blank' : undefined;
   const rel = `${nofollowTag} ${noopenerTag} ${noreferrerTag}`.trim();
 
-  if (condition === 'jumpLink') {
+  if (linkType === 'jumpLink') {
     href = `#${hashId}`;
   }
 
-  if (condition === 'internalLocal' && newTab) {
+  if (linkType === 'internalLocal' && newTab) {
     linkType = 'internalGlobal';
   }
   return (

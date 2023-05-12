@@ -3,11 +3,7 @@ import Grid from '@mui/material/Grid';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
 import SectionBlock from '../blocks/HeroSectionBlock';
-import ButtonAffiliate from '../buttons/ButtonAffiliate';
-import ButtonExternal from '../buttons/ButtonExternal';
-import ButtonInternalGlobal from '../buttons/ButtonInternalGlobal';
-import ButtonInternalLocal from '../buttons/ButtonInternalLocal';
-import ButtonJumpLink from '../buttons/ButtonJumpLink';
+import ConditionalButton from '../buttons/ConditionalButton';
 import GridFlex from '../blocks/BlockGridFlex';
 import BlockFormNetlify from '../blocks/BlockFormNetlify';
 import TestimonialGrid from '../blocks/TestimonialGrid';
@@ -116,16 +112,8 @@ function StructuredLrFlex({
                 return <ClickableImage {...mapClickableImageToProps(block)} />;
               case key === 'blockFormNetlify':
                 return <BlockFormNetlify key={block._key} {...mapBlockFormNetlifyToProps(block)} />;
-              case key === 'btnBlockMui' && block.link[0]._type === 'jumpLink':
-                return <ButtonJumpLink key={_key} {...mapMuiBtnToProps(block)} />;
-              case key === 'btnBlockMui' && block.link[0]._type === 'affiliateLink':
-                return <ButtonAffiliate key={_key} {...mapMuiBtnToProps(block)} />;
-              case key === 'btnBlockMui' && block.link[0]._type === 'externalLink':
-                return <ButtonExternal key={_key} {...mapMuiBtnToProps(block)} />;
-              case key === 'btnBlockMui' && block.link[0]._type === 'internalGlobal':
-                return <ButtonInternalGlobal key={_key} {...mapMuiBtnToProps(block)} />;
-              case key === 'btnBlockMui' && block.link[0]._type === 'internalLocal':
-                return <ButtonInternalLocal key={_key} {...mapMuiBtnToProps(block)} />;
+              case key === 'btnBlockMui':
+                return <ConditionalButton {...mapMuiBtnToProps(block)} />;
               case key === 'testimonialGrid':
                 return (
                   <TestimonialGrid

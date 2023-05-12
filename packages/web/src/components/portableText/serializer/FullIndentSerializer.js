@@ -20,6 +20,7 @@ import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import IndentFullWrapper from '../insertable/IndentFullWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import PTHeadingTypography from './PTHeadingTypography';
+import { mapMuiBtnToProps } from '../../../lib/mapToProps';
 
 const serializers = {
   block: {
@@ -137,7 +138,7 @@ const serializers = {
     ),
     btnBlockMui: ({ value }) => (
       <VerticalSpacingWrapper>
-        <ConditionalButton condition={value.link[0]._type} values={value} />
+        <ConditionalButton {...mapMuiBtnToProps(value)} />
       </VerticalSpacingWrapper>
     ),
     smartOrderedList: ({ value }) => <SmartOrderedList {...value} />,
