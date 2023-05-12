@@ -14,160 +14,260 @@ export const useCustomTheme = () => {
           proTip {
             bgColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             borderColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             iconColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             textColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             linkColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
           definition {
             bgColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             borderColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             iconColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             textColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             linkColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
           important {
             bgColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             borderColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             iconColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             textColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             linkColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
           warning {
             bgColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             borderColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             iconColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             textColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             linkColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
           dyk {
             bgColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             borderColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             iconColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             textColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             linkColor {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
@@ -204,26 +304,42 @@ export const useCustomTheme = () => {
           primary {
             contrastText {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             dark {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             light {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             main {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }
@@ -236,26 +352,42 @@ export const useCustomTheme = () => {
           secondary {
             contrastText {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             dark {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             light {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
             main {
               color {
-                hex
-                alpha
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
               }
             }
           }

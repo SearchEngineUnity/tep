@@ -287,8 +287,6 @@ export const query = graphql`
             borderRadius
             caption {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -299,8 +297,6 @@ export const query = graphql`
             }
             background {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -318,8 +314,6 @@ export const query = graphql`
             repeat
             footer {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -330,8 +324,6 @@ export const query = graphql`
             }
             foreground {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -342,8 +334,6 @@ export const query = graphql`
             }
             heading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -354,8 +344,6 @@ export const query = graphql`
             }
             subheading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -366,8 +354,6 @@ export const query = graphql`
             }
             link {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -678,8 +664,6 @@ export const query = graphql`
             borderRadius
             caption {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -690,8 +674,6 @@ export const query = graphql`
             }
             background {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -709,8 +691,6 @@ export const query = graphql`
             repeat
             footer {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -721,8 +701,6 @@ export const query = graphql`
             }
             foreground {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -733,8 +711,6 @@ export const query = graphql`
             }
             heading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -745,8 +721,6 @@ export const query = graphql`
             }
             subheading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -757,8 +731,6 @@ export const query = graphql`
             }
             link {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1053,8 +1025,6 @@ export const query = graphql`
             borderRadius
             caption {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1065,8 +1035,6 @@ export const query = graphql`
             }
             background {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1084,8 +1052,6 @@ export const query = graphql`
             repeat
             footer {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1096,8 +1062,6 @@ export const query = graphql`
             }
             foreground {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1108,8 +1072,6 @@ export const query = graphql`
             }
             heading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1120,8 +1082,6 @@ export const query = graphql`
             }
             subheading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1132,8 +1092,6 @@ export const query = graphql`
             }
             link {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1433,8 +1391,6 @@ export const query = graphql`
             borderRadius
             caption {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1445,8 +1401,6 @@ export const query = graphql`
             }
             background {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1464,8 +1418,6 @@ export const query = graphql`
             repeat
             footer {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1476,8 +1428,6 @@ export const query = graphql`
             }
             foreground {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1488,8 +1438,6 @@ export const query = graphql`
             }
             heading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1500,8 +1448,6 @@ export const query = graphql`
             }
             subheading {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
@@ -1512,8 +1458,6 @@ export const query = graphql`
             }
             link {
               color {
-                hex
-                alpha
                 rgb {
                   r
                   g
