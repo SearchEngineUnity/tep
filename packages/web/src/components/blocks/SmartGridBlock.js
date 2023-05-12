@@ -7,11 +7,7 @@ import PtTile from '../portableText/serializer/HalfIndentSerializer';
 import Illustration from '../portableText/insertable/Illustration';
 import SmartUnorderedList from '../portableText/insertable/SmartUnorderedList';
 import Video from '../portableText/insertable/Video';
-import ButtonJumpLink from '../buttons/ButtonJumpLink';
-import ButtonAffiliate from '../buttons/ButtonAffiliate';
-import ButtonExternal from '../buttons/ButtonExternal';
-import ButtonInternalGlobal from '../buttons/ButtonInternalGlobal';
-import ButtonInternalLocal from '../buttons/ButtonInternalLocal';
+import ConditionalButton from '../buttons/ConditionalButton';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import { mapMuiBtnToProps } from '../../lib/mapToProps';
 
@@ -80,16 +76,8 @@ function SmartGridBlock({
                 return <ClickableImage {...tile} />;
               case key === 'video':
                 return <Video {...tile} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'jumpLink':
-                return <ButtonJumpLink {...mapMuiBtnToProps(tile)} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'affiliateLink':
-                return <ButtonAffiliate {...mapMuiBtnToProps(tile)} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'externalLink':
-                return <ButtonExternal {...mapMuiBtnToProps(tile)} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'internalGlobal':
-                return <ButtonInternalGlobal {...mapMuiBtnToProps(tile)} />;
-              case key === 'btnBlockMui' && tile.link[0]._type === 'internalLocal':
-                return <ButtonInternalLocal {...mapMuiBtnToProps(tile)} />;
+              case key === 'btnBlockMui':
+                return <ConditionalButton {...mapMuiBtnToProps(tile)} />;
               default:
                 return <div> Tile still under development</div>;
             }

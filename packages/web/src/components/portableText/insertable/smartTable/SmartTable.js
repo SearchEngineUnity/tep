@@ -21,6 +21,7 @@ import ClickableImage from '../ClickableImage';
 import ConditionalButton from '../../../buttons/ConditionalButton';
 import TableSmartOrderedList from '../TableSmartOrderedList';
 import TableSmartUnorderedList from '../TableSmartUnorderedList';
+import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 
 const stickyCellStyle = {
   bgcolor: 'background.paper',
@@ -67,7 +68,7 @@ const propsMapping = (type, props) => {
     case 'illustration':
       return { illustration: props };
     case 'btnBlockMui':
-      return { condition: props.link[0]._type, values: props };
+      return { ...mapMuiBtnToProps(props) };
     default:
       return props;
   }
