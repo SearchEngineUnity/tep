@@ -15,7 +15,7 @@ import sanityConfig from '../../../../lib/sanityConfig';
 import ProductCardFlexSegment from './ProductCardFlexSegment';
 import ProductInfoList from './ProductInfoList';
 import ProductCardRating from './ProductCardRating';
-import ButtonAffiliate from '../../../buttons/ButtonAffiliate';
+import ConditionalButton from '../../../buttons/ConditionalButton';
 import Caption from '../../serializer/CaptionSerializer';
 import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 import { determineColor } from '../../../../lib/helperFunctions';
@@ -31,7 +31,6 @@ function ProductCard({
   topBtn,
   segments,
 }) {
-  console.log(segments);
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -179,7 +178,7 @@ function ProductCard({
                   </Modal>
                 </Box>
                 <Box sx={{ mt: 3 }}>
-                  <ButtonAffiliate {...mapMuiBtnToProps(topBtn)} />
+                  <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
                 </Box>
               </Grid>
               <Grid item xs={12} sm={8}>
