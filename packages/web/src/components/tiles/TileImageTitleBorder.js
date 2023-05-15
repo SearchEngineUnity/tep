@@ -17,14 +17,12 @@ function TileImageRecSqr({ image, alt, link, title }) {
     sanityConfig,
   );
 
-  const linkType = link ? link._type : 'noLink';
-
   return (
     <Card
       elevation={link ? 8 : 0}
       sx={{ border: '1px solid #acb4b8', borderRadius: '0.25rem', height: '100%' }}
     >
-      <ConditionalCardActionArea condition={linkType} link={link}>
+      <ConditionalCardActionArea link={link}>
         <Box sx={{ pt: 2 }}>
           <GatsbyImage
             image={imageData}

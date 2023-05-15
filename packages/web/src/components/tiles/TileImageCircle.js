@@ -14,11 +14,9 @@ function TileImageCircle({ image, alt, link }) {
     sanityConfig,
   );
 
-  const linkType = link ? link._type : 'noLink';
-
   return (
     <Card square elevation={link ? 8 : 0} sx={{ borderRadius: '10000px' }}>
-      <ConditionalCardActionArea condition={linkType} link={link}>
+      <ConditionalCardActionArea link={link}>
         <GatsbyImage image={imageData} alt={alt || ''} />
       </ConditionalCardActionArea>
     </Card>
