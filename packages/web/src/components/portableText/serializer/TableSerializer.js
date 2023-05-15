@@ -6,11 +6,7 @@ import Typography from '@mui/material/Typography';
 import Video from '../insertable/Video';
 import Illustration from '../insertable/Illustration';
 import HighlightBox from '../insertable/HighlightBox';
-import JumpLink from '../../link/JumpLink';
-import AffiliateLink from '../../link/LinkAffiliate';
-import ExternalLink from '../../link/LinkExternal';
-import InternalGlobal from '../../link/LinkInternalGlobal';
-import InternalLocal from '../../link/LinkInternalLocal';
+import ConditionalLink from '../../link/ConditionalLink';
 import ConditionalButton from '../../buttons/ConditionalButton';
 import SmartOrderedList from '../insertable/SmartOrderedList';
 import SmartUnorderedList from '../insertable/SmartUnorderedList';
@@ -156,43 +152,38 @@ const serializers = {
   marks: {
     hashId: ({ children }) => children,
     internalLocal: ({ value, children }) => {
-      const { newTab, href } = value;
       return (
-        <InternalLocal href={href} newTab={newTab} className="pt-link">
+        <ConditionalLink link={value} className="pt-link">
           {children}
-        </InternalLocal>
+        </ConditionalLink>
       );
     },
     internalGlobal: ({ value, children }) => {
-      const { href, newTab } = value;
       return (
-        <InternalGlobal href={href} newTab={newTab} className="pt-link">
+        <ConditionalLink link={value} className="pt-link">
           {children}
-        </InternalGlobal>
+        </ConditionalLink>
       );
     },
     externalLink: ({ value, children }) => {
-      const { href, noreferrer, newTab } = value;
       return (
-        <ExternalLink href={href} noreferrer={noreferrer} newTab={newTab} className="pt-link">
+        <ConditionalLink link={value} className="pt-link">
           {children}
-        </ExternalLink>
+        </ConditionalLink>
       );
     },
     affiliateLink: ({ value, children }) => {
-      const { href } = value;
       return (
-        <AffiliateLink href={href} className="pt-link">
+        <ConditionalLink link={value} className="pt-link">
           {children}
-        </AffiliateLink>
+        </ConditionalLink>
       );
     },
     jumpLink: ({ value, children }) => {
-      const { hashId } = value;
       return (
-        <JumpLink hash={hashId} className="pt-link">
+        <ConditionalLink link={value} className="pt-link">
           {children}
-        </JumpLink>
+        </ConditionalLink>
       );
     },
   },
