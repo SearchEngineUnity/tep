@@ -1,25 +1,36 @@
 import React from 'react';
-import CardActionAreaAffiliate from './CardActionAreaAffiliate';
-import CardActionAreaExternal from './CardActionAreaExternal';
-import CardActionAreaInternalGlobal from './CardActionAreaInternalGlobal';
-import CardActionAreaInternalLocal from './CardActionAreaInternalLocal';
-import CardActionAreaJumpLink from './CardActionAreaJumpLink';
+import { CardActionArea } from 'gatsby-theme-material-ui';
 
-function ConditionalCardActionArea({ condition, link, children }) {
-  switch (condition) {
-    case 'jumpLink':
-      return <CardActionAreaJumpLink {...link}>{children}</CardActionAreaJumpLink>;
-    case 'affiliateLink':
-      return <CardActionAreaAffiliate {...link}>{children}</CardActionAreaAffiliate>;
-    case 'externalLink':
-      return <CardActionAreaExternal {...link}>{children}</CardActionAreaExternal>;
-    case 'internalGlobal':
-      return <CardActionAreaInternalGlobal {...link}>{children}</CardActionAreaInternalGlobal>;
-    case 'internalLocal':
-      return <CardActionAreaInternalLocal {...link}>{children}</CardActionAreaInternalLocal>;
-    default:
-      return children;
+function ConditionalCardActionArea({ link, children }) {
+  let linkType = link?._type;
+
+  let { href = undefined } = link;
+  const { hashId = '', newTab = false, noreferrer = false } = link;
+  const noopenerTag = newTab ? 'noopener' : '';
+  const nofollowTag = linkType === 'affiliateLink' ? 'nofollow' : '';
+  const noreferrerTag = noreferrer ? 'noreferrer' : '';
+
+  const target = newTab || linkType === 'affiliateLink' ? '_blank' : undefined;
+  const rel = `${nofollowTag} ${noopenerTag} ${noreferrerTag}`.trim();
+
+  if (linkType === 'jumpLink') {
+    href = `#${hashId}`;
   }
+
+  if (linkType === 'internalLocal' && newTab) {
+    linkType = 'internalGlobal';
+  }
+
+  return (
+    <CardActionArea
+      target={target}
+      rel={rel || undefined}
+      to={linkType && linkType === 'internalLocal' ? href : undefined}
+      href={linkType && linkType !== 'internalLocal' ? href : undefined}
+    >
+      {children}
+    </CardActionArea>
+  );
 }
 
 export default ConditionalCardActionArea;

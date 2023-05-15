@@ -16,11 +16,9 @@ function TileImageRecSqr({ image, alt, link, title, text }) {
     sanityConfig,
   );
 
-  const linkType = link ? link._type : 'noLink';
-
   return (
     <Card elevation={link ? 8 : 0} square sx={{ border: '1px solid #acb4b8', height: '100%' }}>
-      <ConditionalCardActionArea condition={linkType} link={link}>
+      <ConditionalCardActionArea link={link}>
         <GatsbyImage image={imageData} alt={alt || ''} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

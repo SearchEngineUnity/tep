@@ -20,11 +20,9 @@ export default function TileSmImageTitleText({ image, alt, link, title, text }) 
     sanityConfig,
   );
 
-  const linkType = link ? link._type : 'noLink';
-
   return (
     <Card square elevation={link ? 8 : 0}>
-      <ConditionalCardActionArea condition={linkType} link={link}>
+      <ConditionalCardActionArea link={link}>
         <CardHeader
           sx={{ paddingBottom: '0px' }}
           avatar={
