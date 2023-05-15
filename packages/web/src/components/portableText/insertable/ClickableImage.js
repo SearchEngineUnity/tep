@@ -12,12 +12,10 @@ function ClickableImage({ image, alignment, link, borderRadius }) {
   const height = image?.asset?.height;
   const width = image?.asset?.width;
 
-  const linkType = link[0]?._type;
-
   return (
     <Box sx={{ display: 'flex', justifyContent: alignment }}>
       <Card elevation={2} sx={{ borderRadius, maxHeight: `${height}px`, maxWidth: `${width}px` }}>
-        <ConditionalCardActionArea condition={linkType} link={link[0]}>
+        <ConditionalCardActionArea link={link[0]}>
           <GatsbyImage image={imageData} alt={image.alt || ''} />
         </ConditionalCardActionArea>
       </Card>
