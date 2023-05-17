@@ -18,7 +18,7 @@
   "dependencies": {
     "@sanity/color-input": "^3.1.0",
     "@sanity/dashboard": "^3.1.4",
-    "@sanity/vision": "^3.11.1",
+    "@sanity/vision": "^3.10.3",
     "get-video-id": "^3.6.5",
     "latest": "^0.2.0",
     "prop-types": "^15.8.1",
@@ -26,7 +26,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-is": "^18.2.0",
-    "sanity": "^3.11.1",
+    "sanity": "^3.10.3",
     "sanity-plugin-dashboard-widget-netlify": "^2.0.1",
     "sanity-plugin-media": "^2.0.5",
     "styled-components": "^5.2.0"
