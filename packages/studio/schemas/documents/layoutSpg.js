@@ -2,7 +2,7 @@
 
 export default {
   name: 'layoutSpg',
-  title: 'SPG layout',
+  title: 'SGP layout',
   type: 'document',
   fields: [
     {
@@ -46,7 +46,7 @@ export default {
     select: {},
     prepare() {
       return {
-        title: `SPG Hero Layout`,
+        title: `SGP Hero Layout`,
       };
     },
   },

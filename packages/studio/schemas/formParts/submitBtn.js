@@ -10,7 +10,8 @@ export default {
       name: 'idTag',
       title: 'Button ID',
       type: 'string',
-      description: 'Add ID to the button. Please only use alphanumeric characters and hypen.',
+      description:
+        'Add ID to the button. Please only use alphanumeric characters and hypen and do no start the string with a number.',
     },
     {
       name: 'text',

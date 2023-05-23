@@ -66,7 +66,7 @@ export default {
                 name: 'idTag',
                 type: 'string',
                 description:
-                  'Add ID to the selected string. Please only use alphanumeric characters and hyphen.',
+                  'Add ID to the selected string. Please only use alphanumeric characters and hyphen and do no start the string with a number.',
               },
             ],
           },

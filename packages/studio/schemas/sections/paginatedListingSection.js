@@ -30,7 +30,7 @@ export default {
       title: 'ID',
       type: 'string',
       description:
-        'Add ID to the selected string. Please only use alphanumeric characters and hypen.',
+        'Add ID to the selected string. Please only use alphanumeric characters and hypen and do no start the string with a number.',
     },
     {
       name: 'listItemType',

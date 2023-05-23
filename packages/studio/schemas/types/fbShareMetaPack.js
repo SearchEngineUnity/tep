@@ -4,7 +4,7 @@ export default {
   type: 'object',
   fields: [
     {
-      title: 'FaceBook Share Title',
+      title: 'Facebook Share Title',
       name: 'fbShareTitle',
       type: 'string',
     },
