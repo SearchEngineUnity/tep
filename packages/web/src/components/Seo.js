@@ -49,7 +49,7 @@ export default function Seo({
       <html lang="en" />
       <title>{pageTitle}</title>
       {metaDescription && <meta name="description" content={metaDescription} />}
-      <meta property="og:locale" content="en_CA" />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={metaUrl} />
       <meta property="og:title" content={ogTitle} />
