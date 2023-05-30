@@ -19,7 +19,7 @@ export default function Seo({
   const { socialImage } = defaults;
   let { metaUrl } = defaults;
   let ogType = '';
-  const robots = `${nofollow ? 'nofollow' : ''} ${noindex ? 'noindex' : ''}`;
+  const robots = `${nofollow ? 'nofollow' : ''} ${noindex ? 'noindex' : ''}`.trim();
 
   switch (type) {
     case 'page':
