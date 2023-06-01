@@ -3,8 +3,6 @@ import React from 'react';
 import Widget from './GatsbyWidget';
 
 export function gatsbyWidget(config) {
-  console.log(config);
-
   const {
     site: { title, name, id },
   } = config;
