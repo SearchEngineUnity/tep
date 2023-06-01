@@ -1,4 +1,5 @@
 export * from './productCard';
+export * from './productGrid';
 export * from './smartGrid';
 export * from './smartTable';
 export { default as highlightBox } from './highlightBox';
