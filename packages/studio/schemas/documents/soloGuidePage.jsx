@@ -111,7 +111,7 @@ export default {
       title: 'Tile Image',
       type: 'tileImage',
       fieldset: 'tile',
-      validation: (Rule) => Rule.custom(({ asset }) => (asset ? true : 'An image is required')),
+      validation: (Rule) => Rule.custom((value) => (value?.asset ? true : 'An image is required')),
     },
     {
       name: 'tileText',
@@ -138,7 +138,11 @@ export default {
       title: 'Hero Image',
       type: 'imageBlock',
       fieldset: 'hero',
-      validation: (Rule) => Rule.custom(({ asset }) => (asset ? true : 'An image is required')),
+    },
+    {
+      name: 'hero',
+      title: 'Hero',
+      type: 'guideHero',
     },
     {
       name: 'toc',
