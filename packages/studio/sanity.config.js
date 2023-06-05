@@ -43,7 +43,7 @@ export default defineConfig({
             organizationId: 'd7d268c0-3157-4cab-a651-e456e34643bb',
             url: 'https://preview-sitebuilderv2.gatsbyjs.io',
             adminUrl:
-              'https://www.gatsbyjs.com/dashboard/d7d268c0-3157-4cab-a651-e456e34643bb/sites/b3aea1e1-5265-4f8e-a477-52211e5bdb3c/cmsPreview0',
+              'https://www.gatsbyjs.com/dashboard/d7d268c0-3157-4cab-a651-e456e34643bb/sites/b3aea1e1-5265-4f8e-a477-52211e5bdb3c/cmsPreview',
             buildHookId: 'b3aea1e1-5265-4f8e-a477-52211e5bdb3c',
           },
         }),
@@ -53,7 +53,6 @@ export default defineConfig({
     visionTool(),
     colorInput(),
   ],
-
   schema: {
     types: schemaTypes,
   },
