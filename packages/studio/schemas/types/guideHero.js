@@ -1,5 +1,5 @@
 export default {
-  name: 'hero',
+  name: 'guideHero',
   title: 'Guide Hero',
   type: 'object',
   options: {
@@ -45,7 +45,7 @@ export default {
     },
     {
       name: 'subtitle',
-      title: 'Hero Subtitle',
+      title: 'Hero Subtitle Text',
       type: 'minPT',
     },
     {

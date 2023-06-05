@@ -142,7 +142,7 @@ export default {
     {
       name: 'hero',
       title: 'Hero',
-      type: 'hero',
+      type: 'guideHero',
     },
     {
       name: 'toc',

@@ -3,7 +3,7 @@ export { default as btnSettingsMui } from './btnSettingsMui';
 export { default as clickableImageImage } from './clickableImageImage';
 export { default as fbShareMetaPack } from './fbShareMetaPack';
 export { default as header } from './header';
-export { default as hero } from './hero';
+export { default as guideHero } from './guideHero';
 export { default as heroHeader } from './heroHeader';
 export { default as hlbColorSet } from './hlbColorSet';
 export { default as jumpLink } from './jumpLink';
