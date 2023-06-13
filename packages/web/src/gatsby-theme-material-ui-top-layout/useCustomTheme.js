@@ -273,32 +273,52 @@ export const useCustomTheme = () => {
           }
           black {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           default {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           paper {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           disabledText {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           divider {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           primary {
@@ -345,8 +365,12 @@ export const useCustomTheme = () => {
           }
           primaryText {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           secondary {
@@ -393,14 +417,22 @@ export const useCustomTheme = () => {
           }
           secondaryText {
             color {
-              alpha
-              hex
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
           white {
             color {
-              hex
-              alpha
+              rgb {
+                r
+                g
+                b
+                a
+              }
             }
           }
         }
@@ -548,7 +580,7 @@ export const useCustomTheme = () => {
       primary: {
         light: determineColor(palette?.primary?.light?.color) || '#42a5f5',
         main: determineColor(palette?.primary?.main?.color) || '#1976d2',
-        dark: determineColor(palette?.primary?.dark?.color) || '#1976d2',
+        dark: determineColor(palette?.primary?.dark?.color) || '#1565c0',
         contrastText: determineColor(palette?.primary?.contrastText?.color) || '#fff',
       },
       secondary: {
@@ -559,13 +591,13 @@ export const useCustomTheme = () => {
       },
       text: {
         primary: determineColor(palette?.primaryText?.color) || 'rgba(0, 0, 0, 0.87)',
-        secondary: determineColor(palette?.secondaryText?.color) || 'rgba(0, 0, 0, 0.54)',
+        secondary: determineColor(palette?.secondaryText?.color) || 'rgba(0, 0, 0, 0.6)',
         disabled: determineColor(palette?.disabled?.color) || 'rgba(0, 0, 0, 0.38)',
       },
       divider: determineColor(palette?.divider?.color) || 'rgba(0, 0, 0, 0.12)',
       background: {
         paper: determineColor(palette?.paper?.color) || '#fff',
-        default: determineColor(palette?.default?.color) || '#fafafa',
+        default: determineColor(palette?.default?.color) || '#fff',
       },
       hlBox: {
         definition: {

@@ -203,8 +203,6 @@ export const query = graphql`
                 colors {
                   contrastText {
                     color {
-                      hex
-                      alpha
                       rgb {
                         r
                         g
@@ -215,8 +213,6 @@ export const query = graphql`
                   }
                   dark {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -227,8 +223,6 @@ export const query = graphql`
                   }
                   main {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -364,8 +358,6 @@ export const query = graphql`
             }
             subtitle {
               color {
-                alpha
-                hex
                 rgb {
                   r
                   g
@@ -603,8 +595,6 @@ export const query = graphql`
                 colors {
                   contrastText {
                     color {
-                      hex
-                      alpha
                       rgb {
                         r
                         g
@@ -615,8 +605,6 @@ export const query = graphql`
                   }
                   dark {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -627,8 +615,6 @@ export const query = graphql`
                   }
                   main {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -741,8 +727,6 @@ export const query = graphql`
             }
             subtitle {
               color {
-                alpha
-                hex
                 rgb {
                   r
                   g
@@ -944,8 +928,6 @@ export const query = graphql`
                 colors {
                   contrastText {
                     color {
-                      hex
-                      alpha
                       rgb {
                         r
                         g
@@ -956,8 +938,6 @@ export const query = graphql`
                   }
                   dark {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -968,8 +948,6 @@ export const query = graphql`
                   }
                   main {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -1102,8 +1080,6 @@ export const query = graphql`
             }
             subtitle {
               color {
-                alpha
-                hex
                 rgb {
                   r
                   g
@@ -1310,8 +1286,6 @@ export const query = graphql`
                 colors {
                   contrastText {
                     color {
-                      hex
-                      alpha
                       rgb {
                         r
                         g
@@ -1322,8 +1296,6 @@ export const query = graphql`
                   }
                   dark {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -1334,8 +1306,6 @@ export const query = graphql`
                   }
                   main {
                     color {
-                      alpha
-                      hex
                       rgb {
                         r
                         g
@@ -1468,8 +1438,6 @@ export const query = graphql`
             }
             subtitle {
               color {
-                alpha
-                hex
                 rgb {
                   r
                   g
