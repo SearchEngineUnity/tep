@@ -21,46 +21,38 @@ function ConditionalButton({
   typography,
   bgImage,
 }) {
-  const { main, dark, contrastText } = colors;
+  const { main, dark, contrastText } = colors || {};
   const mainColor = determineColor(main?.color);
   const darkColor = determineColor(dark?.color);
   const contrastTextColor = determineColor(contrastText?.color);
-  const hoverOverlay = dark.color.rgb;
+  const hoverOverlay = dark?.color?.rgb;
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: mainColor,
-        dark: darkColor,
-        contrastText: contrastTextColor,
+  const btnTheme = (theme) =>
+    createTheme({
+      palette: {
+        primary: {
+          main: mainColor || theme.palette.primary.main,
+          dark: darkColor || theme.palette.primary.dark,
+          contrastText: contrastTextColor || theme.palette.primary.contrastText,
+        },
       },
-    },
-    shape: {
-      borderRadius: borderRadius || '4px',
-    },
-    typography: {
-      button: {
-        fontFamily: typography?.fontFamily || 'Roboto, Helvetica, Arial, sans-serif',
-        fontWeight: typography?.fontWeight || 500,
-        fontSize: typography?.fontSize || '0.875rem',
-        lineHeight: typography?.lineHeight || 1.75,
-        letterSpacing: typography?.letterSpacing || '0.02857em',
-        textTransform: 'none',
+      shape: {
+        borderRadius: borderRadius || theme.shape.borderRadius,
       },
-    },
-    components: {
-      MuiButton: {
-        styleOverrides: {
-          root: {
-            backgroundImage: bgImage && `url(${bgImage})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center center',
-            '&:hover': {
-              backgroundImage:
-                bgImage &&
-                `linear-gradient(rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50), rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50)), url(${bgImage})`,
-            },
-            '@media (hover: none)': {
+      typography: {
+        button: {
+          fontFamily: typography?.fontFamily || theme.typography.button.fontFamily,
+          fontWeight: typography?.fontWeight || theme.typography.button.fontWeight,
+          fontSize: typography?.fontSize || theme.typography.button.fontSize,
+          lineHeight: typography?.lineHeight || theme.typography.button.lineHeight,
+          letterSpacing: typography?.letterSpacing || theme.typography.button.letterSpacing,
+          textTransform: 'none',
+        },
+      },
+      components: {
+        MuiButton: {
+          styleOverrides: {
+            root: {
               backgroundImage: bgImage && `url(${bgImage})`,
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center center',
@@ -69,12 +61,21 @@ function ConditionalButton({
                   bgImage &&
                   `linear-gradient(rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50), rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50)), url(${bgImage})`,
               },
+              '@media (hover: none)': {
+                backgroundImage: bgImage && `url(${bgImage})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center',
+                '&:hover': {
+                  backgroundImage:
+                    bgImage &&
+                    `linear-gradient(rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50), rgba(${hoverOverlay.r}, ${hoverOverlay.g}, ${hoverOverlay.b}, .50)), url(${bgImage})`,
+                },
+              },
             },
           },
         },
       },
-    },
-  });
+    });
 
   let linkType = link[0]._type;
   let { href } = link[0];
@@ -94,7 +95,7 @@ function ConditionalButton({
     linkType = 'internalGlobal';
   }
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={(theme) => btnTheme(theme)}>
       <Box sx={{ display: 'flex', justifyContent: alignment }}>
         <Button
           id={idTag}
