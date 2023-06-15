@@ -31,14 +31,6 @@ export default {
       },
     },
     {
-      name: 'hero',
-      title: 'Hero',
-      options: {
-        collapsible: true,
-        collapsed: false,
-      },
-    },
-    {
       name: 'mainContent',
       title: 'Main Content',
       options: {
@@ -119,25 +111,6 @@ export default {
       type: 'text',
       fieldset: 'tile',
       validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
-      name: 'h1',
-      title: 'H1 Text',
-      type: 'string',
-      fieldset: 'hero',
-      validation: (Rule) => [Rule.required().error('H1 Text is required')],
-    },
-    {
-      name: 'heroSubtitle',
-      title: 'Hero Subtitle Text',
-      type: 'minPT',
-      fieldset: 'hero',
-    },
-    {
-      name: 'heroImage',
-      title: 'Hero Image',
-      type: 'imageBlock',
-      fieldset: 'hero',
     },
     {
       name: 'hero',
