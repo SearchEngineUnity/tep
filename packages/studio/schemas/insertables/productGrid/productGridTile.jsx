@@ -29,7 +29,13 @@ export default {
     {
       title: 'Content',
       name: 'content',
-      type: 'maxPT',
+      type: 'noHeadingsPT',
+    },
+    {
+      title: 'Button Text',
+      name: 'btnText',
+      type: 'string',
+      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'btnLink',

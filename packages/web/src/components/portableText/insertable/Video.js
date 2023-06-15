@@ -9,9 +9,19 @@ const StyledReactPlayer = styled(ReactPlayer)`
   left: 0;
 `;
 
-function Video({ url }) {
+function Video({ url, stackHero }) {
+  const ptStackHeroDesktop = `${70 * 0.5625}%`;
+  const ptStackHeroTablet = `${80 * 0.5625}%`;
+
   return (
-    <Box sx={{ pt: '56.25%', position: 'relative' }}>
+    <Box
+      sx={{
+        pt: stackHero ? { xs: '56.25%', md: ptStackHeroTablet, lg: ptStackHeroDesktop } : '56.25%',
+        position: 'relative',
+        width: stackHero ? { xs: '100%', md: '80%', lg: '70%' } : '100%',
+        margin: 'auto',
+      }}
+    >
       <StyledReactPlayer url={url} controls width="100%" height="100%" />
     </Box>
   );

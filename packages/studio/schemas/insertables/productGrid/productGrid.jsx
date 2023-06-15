@@ -12,26 +12,20 @@ export default {
       type: 'string',
     },
     {
-      title: 'Button Text',
-      name: 'btnText',
-      type: 'string',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-    },
-    {
       title: 'Page Jump Text',
       name: 'pageJumpText',
       type: 'string',
     },
     {
       title: 'Tile Set',
-      name: 'tileSet',
+      name: 'tiles',
       type: 'array',
       of: [{ type: 'productGridTile' }],
       validation: (Rule) =>
         Rule.custom((tiles) => {
-          return tiles && tiles?.length >= 1 && tiles?.length <= 5
+          return tiles && tiles?.length >= 1 && tiles?.length <= 4
             ? true
-            : 'Number of tiles must be between 1 and 5.';
+            : 'Number of tiles must be between 1 and 4.';
         }),
     },
     {
@@ -39,10 +33,10 @@ export default {
       name: 'design',
       type: 'string',
       options: {
-        list: [{ title: 'Default', value: 'default' }],
+        list: [{ title: 'Sites', value: 'sites' }],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
-      initialValue: 'default',
+      initialValue: 'sites',
     },
   ],
   preview: {
