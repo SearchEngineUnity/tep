@@ -72,18 +72,17 @@ export function mapFluidImgBlockToProps({ _rawAsset, alt, _rawCaption, maxHeight
   };
 }
 
-export function mapGuideHeroToProps({
-  h1,
-  _rawHeroSubtitle,
-  displayDate,
-  heroImage,
-  includeDisclaimer,
-}) {
+export function mapGuideHeroToProps({ hero, displayDate, includeDisclaimer }) {
   return {
-    h1,
-    subtitle: _rawHeroSubtitle,
+    featureType: hero?.feature || 'image',
+    h1: hero.h1,
+    subtitle: hero?._rawSubtitle,
     date: displayDate,
-    image: heroImage,
+    feature: {
+      image: hero?.image,
+      video: hero?.video,
+      productGrid: hero?.productGrid,
+    },
     includeDisclaimer,
   };
 }
@@ -391,5 +390,15 @@ export function mapSmartGridBlockToProps({
     footerAlignment,
     layout,
     tiles: _rawTiles,
+  };
+}
+
+export function mapProductGridToProps({ id, btnText, pageJumpText, _rawTiles, design }) {
+  return {
+    id,
+    btnText,
+    pageJumpText,
+    tiles: _rawTiles,
+    design,
   };
 }

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { graphql } from 'gatsby';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Layout from '../containers/layout';
-import GuideHero from '../components/sections/GuideHero';
+import LrGuideHero from '../components/sections/LrGuideHero';
+import StackGuideHero from '../components/sections/StackGuideHero';
+import ProgressBar from '../components/ScrollProgressBar';
 import GuideBody from '../components/portableText/serializer/FullIndentSerializer';
 import ToC from '../components/TableOfContent';
 import { useUpdateUrl } from '../hooks/useUpdateUrl';
@@ -34,7 +36,6 @@ export const query = graphql`
       nofollow
       canonical
       id
-      h1
       fbShareMetaPack {
         fbShareTitle
         fbShareDescription
@@ -51,33 +52,73 @@ export const query = graphql`
         hashID
       }
       metaDescription
-      heroImage {
-        alt
-        _rawAsset(resolveReferences: { maxDepth: 1 })
-        asset {
+      hero {
+        h1
+        feature
+        layout
+        image {
+          alt
+          _rawAsset(resolveReferences: { maxDepth: 1 })
+          asset {
+            url
+          }
+          maxHeight
+          maxWidth
+          _rawCaption(resolveReferences: { maxDepth: 1 })
+        }
+        _rawSubtitle(resolveReferences: { maxDepth: 1 })
+        video {
           url
         }
-        maxHeight
-        maxWidth
-        _rawCaption(resolveReferences: { maxDepth: 4 })
+        productGrid {
+          design
+          pageJumpText
+          id
+          _rawTiles(resolveReferences: { maxDepth: 5 })
+        }
       }
-      _rawHeroSubtitle(resolveReferences: { maxDepth: 4 })
     }
   }
 `;
 
+const heroComponentMapping = {
+  lrHero: LrGuideHero,
+  stackHero: StackGuideHero,
+};
+
 function SoloGuidePage({ data, location }) {
+  const heroRef = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  const setProgressBarVisibility = (entries) => {
+    const [entry] = entries;
+    console.log(entry);
+    setIsVisible(!entry.isIntersecting);
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(setProgressBarVisibility);
+    observer.observe(heroRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   useUpdateUrl();
+
+  const heroLayout = data?.guide?.hero?.layout;
+  const Hero = heroComponentMapping[heroLayout];
 
   return (
     <Layout
       location={location}
       data={data.guide}
       type={type}
-      heroImage={data.guide.heroImage.asset.url}
+      heroImage={data?.guide?.hero?.image?.asset?.url}
     >
       <main>
-        <GuideHero {...mapGuideHeroToProps(data.guide)} />
+        <div ref={heroRef}>
+          <Hero {...mapGuideHeroToProps(data.guide)} />
+        </div>
+        {isVisible && <ProgressBar />}
         <Box sx={{ my: 3 }}>
           <Container maxWidth="lg">
             <Grid container spacing={3}>
