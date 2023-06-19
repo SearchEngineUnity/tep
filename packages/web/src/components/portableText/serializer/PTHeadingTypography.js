@@ -1,9 +1,20 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
 
-function PTHeadingTypography({ variant, id, children }) {
+function PTHeadingTypography({ variant, id, children, noIndent }) {
   return (
-    <Typography variant={variant} gutterBottom id={id} sx={{ mt: '1.35em', scrollMargin: '45px' }}>
+    <Typography
+      variant={variant}
+      gutterBottom
+      id={id}
+      sx={[
+        { mt: '1.35em', scrollMargin: '45px' },
+        noIndent && {
+          '&:first-child': { display: 'inline' },
+          '&:not(:first-child)': { textIndent: '0' },
+        },
+      ]}
+    >
       {children}
     </Typography>
   );
