@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import ListContent from '../serializer/FullIndentSerializer';
 
-function SmartOrderedList({ listItems }) {
+function SmartOrderedList({ listItems, noIndent }) {
   const fontStyles = {
     h2: 'h2',
     h3: 'h3',
@@ -22,12 +22,18 @@ function SmartOrderedList({ listItems }) {
   return (
     <Box
       component="ol"
-      sx={
+      sx={[
+        { marginBlockStart: 0, marginBlockEnd: 0 },
         listStyle && {
           listStyle: 'none',
           paddingLeft: '0px',
-        }
-      }
+        },
+        !listStyle &&
+          noIndent && {
+            istStyle: 'initial',
+            paddingInlineStart: '1.5em',
+          },
+      ]}
     >
       {listItems.map((li) => (
         <Typography variant={listStyle} component="li" key={li._key}>

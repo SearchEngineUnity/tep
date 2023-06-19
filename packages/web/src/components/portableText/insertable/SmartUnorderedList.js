@@ -6,9 +6,9 @@
 
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import ListContent from '../serializer/FullIndentSerializer';
+import ListContent from '../serializer/NoIndentSerializer';
 
-function SmartUnorderedList({ listItems, listStyleImage }) {
+function SmartUnorderedList({ listItems, listStyleImage, noIndent }) {
   const image = listStyleImage?.asset?.url;
 
   // using typography to set changable fontsize to ul and li so that we can use em to calculate things with variant so all the em units will work properly
@@ -17,10 +17,12 @@ function SmartUnorderedList({ listItems, listStyleImage }) {
       variant="body1"
       component="ul"
       sx={[
-        { marginBlockStart: '1em', marginBlockEnd: '1em' },
-        image
+        { marginBlockStart: 0, marginBlockEnd: 0 },
+        image && !noIndent
           ? { listStyle: 'none', paddingInlineStart: 'calc(40px - 1.5em)' }
           : { listStyle: 'initial', paddingInlineStart: '40px' },
+        image && noIndent && { listStyle: 'none', paddingInlineStart: 'calc(20px - 1.5em)' },
+        !image && noIndent && { listStyle: 'initial', paddingInlineStart: '1.5em' },
       ]}
     >
       {listItems.map((li) => (

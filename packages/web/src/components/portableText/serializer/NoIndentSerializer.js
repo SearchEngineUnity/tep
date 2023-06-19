@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import { PortableText } from '@portabletext/react';
 import React from 'react';
+import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Video from '../insertable/Video';
 import Illustration from '../insertable/Illustration';
@@ -130,8 +131,16 @@ const serializers = {
         <ConditionalButton {...mapMuiBtnToProps(value)} />
       </VerticalSpacingWrapper>
     ),
-    smartOrderedList: ({ value }) => <SmartOrderedList {...value} />,
-    smartUnorderedList: ({ value }) => <SmartUnorderedList {...value} />,
+    smartOrderedList: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <SmartOrderedList {...value} noIndent />
+      </VerticalSpacingWrapper>
+    ),
+    smartUnorderedList: ({ value }) => (
+      <VerticalSpacingWrapper>
+        <SmartUnorderedList {...value} noIndent />
+      </VerticalSpacingWrapper>
+    ),
     productCard: ({ value }) => (
       <VerticalSpacingWrapper>
         <ProductCard {...value} />
@@ -186,6 +195,28 @@ const serializers = {
       );
     },
   },
+  list: {
+    bullet: ({ children }) => (
+      <VerticalSpacingWrapper>
+        <Box
+          component="ul"
+          sx={{ marginBlockStart: 0, marginBlockEnd: 0, paddingInlineStart: '1.5em' }}
+        >
+          {children}
+        </Box>
+      </VerticalSpacingWrapper>
+    ),
+    number: ({ children }) => (
+      <VerticalSpacingWrapper>
+        <Box
+          component="ol"
+          sx={{ marginBlockStart: 0, marginBlockEnd: 0, paddingInlineStart: '1.5em' }}
+        >
+          {children}
+        </Box>
+      </VerticalSpacingWrapper>
+    ),
+  },
   listItem: ({ children }) => (
     <Typography variant="body1" component="li">
       {children}
@@ -194,7 +225,7 @@ const serializers = {
 };
 
 function BlockContent({ blocks }) {
-  return <PortableText value={blocks} components={serializers} />;
+  return <PortableText value={blocks} components={serializers} noIndent />;
 }
 
 export default BlockContent;
