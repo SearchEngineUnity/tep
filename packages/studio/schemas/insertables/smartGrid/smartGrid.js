@@ -5,16 +5,6 @@ export default {
   title: 'Smart Grid',
   type: 'object',
   icon: FiGrid,
-  fieldsets: [
-    {
-      name: 'presentation',
-      title: 'Presentation Settings',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
-    },
-  ],
   fields: [
     {
       name: 'tiles',
@@ -39,7 +29,6 @@ export default {
         'Please enter in the format of value/value/value/value for desktop/tablet/tablet-mobile/mobile. Accepted values are 1, 2, 3, 4, 6, 12.',
       type: 'string',
       initialValue: '3/2/2/1',
-      fieldset: 'presentation',
       validation: (Rule) => [
         Rule.required().error('Field is required'),
         Rule.regex(/^(1|2|3|4|6|12)(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))(\/(1|2|3|4|6|12))$/).error(
