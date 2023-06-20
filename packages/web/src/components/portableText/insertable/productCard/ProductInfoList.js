@@ -1,21 +1,27 @@
+/* eslint-disable import/no-cycle */
 import React from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2';
+import { Typography } from '@mui/material';
+import ItemText from '../../serializer/NoIndentSerializer';
 
 function ProductInfoList({ infoList }) {
   return (
     <>
       {infoList.map((item) => (
         <Grid container spacing={0} key={item._key}>
-          <Grid item xs={4} sm={5} md={4} lg={4}>
-            <Box component="p" sx={{ fontSize: 'body1.fontSize', mb: 0, lineHeight: '1.2rem' }}>
+          <Grid item xs={4} sm={5} md={4} lg={4} sx={{ mb: 1.5 }}>
+            <Typography
+              variant="body1"
+              gutterBottom
+              sx={{
+                fontWeight: 'bold',
+              }}
+            >
               {item.label}:
-            </Box>
+            </Typography>
           </Grid>
-          <Grid item xs={8} sm={7} md={8} lg={8}>
-            <Box component="p" sx={{ fontSize: 'body1.fontSize', mb: 0, lineHeight: '1.2rem' }}>
-              {item.text}
-            </Box>
+          <Grid item xs={8} sm={7} md={8} lg={8} sx={{ mb: 1.5 }}>
+            <ItemText blocks={item.text} />
           </Grid>
         </Grid>
       ))}
