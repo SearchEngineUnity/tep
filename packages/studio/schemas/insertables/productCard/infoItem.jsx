@@ -14,7 +14,7 @@ export default {
     {
       name: 'text',
       title: 'Info Item Text',
-      type: 'string',
+      type: 'noHeadingsPT',
     },
   ],
   preview: {
