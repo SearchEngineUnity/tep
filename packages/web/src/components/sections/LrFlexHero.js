@@ -46,7 +46,7 @@ function LrFlexHero({
   const footerColor = determineColor(designSettings?.footer?.color) || 'inherit';
 
   return (
-    <SectionOuterWrapper idTag={idTag} designSettings={designSettings}>
+    <SectionOuterWrapper idTag={idTag} designSettings={designSettings} isHero>
       <SectionInnerWrapper designSettings={designSettings}>
         <HeroSectionHeader
           heading={heading}

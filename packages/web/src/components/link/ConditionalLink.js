@@ -22,6 +22,7 @@ function ConditionalLink({ link, children, className }) {
 
   return (
     <Link
+      underline="always"
       target={target}
       rel={rel || undefined}
       to={linkType === 'internalLocal' ? href : undefined}
