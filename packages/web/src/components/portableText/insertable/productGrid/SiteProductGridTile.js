@@ -28,7 +28,6 @@ export default function DefaultProductGridTile({ pageJumpText, tile }) {
           color: 'common.white',
           bgcolor: 'common.black',
           textAlign: { xs: 'center', sm: 'left', lg: 'center' },
-          minHeight: { xs: 'auto', sm: 'auto', lg: 'calc(32px + 3em)' },
           width: '100%',
           order: 1,
         }}
