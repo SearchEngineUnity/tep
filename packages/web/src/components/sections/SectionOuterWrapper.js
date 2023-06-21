@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import { determineColor } from '../../lib/helperFunctions';
 
-function SectionOuterWrapper({ idTag, designSettings, children }) {
+function SectionOuterWrapper({ idTag, designSettings, children, isHero }) {
   const bleed = designSettings ? !!designSettings?.bleed : true;
   const bgImage = designSettings?.bgImage?.asset?.url;
   const repeat = !!designSettings?.repeat;
@@ -18,7 +18,7 @@ function SectionOuterWrapper({ idTag, designSettings, children }) {
   return (
     <Box
       id={idTag}
-      component="section"
+      component={isHero ? 'header' : 'section'}
       sx={[
         (theme) => ({
           color: foregroundColor,
