@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -32,7 +32,10 @@ const propsMapping = (type, props) => {
   }
 };
 
-function StackGuideHero({ featureType, h1, subtitle, date, feature, includeDisclaimer }) {
+const StackGuideHeroWithRef = forwardRef(function StackGuideHero(
+  { featureType, h1, subtitle, date, feature, includeDisclaimer },
+  ref,
+) {
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const disclaimerText = useDisclaimerText();
@@ -45,18 +48,21 @@ function StackGuideHero({ featureType, h1, subtitle, date, feature, includeDiscl
 
   return (
     <Box
+      ref={ref}
       id="hero"
-      component="section"
+      component="header"
       sx={{
         color: 'primary.contrastText',
         '& .pt-link': {
-          color: 'secondary.main',
+          color: 'primary.contrastText',
+          textDecorationColor: 'currentcolor',
         },
         '& .caption-text': {
-          color: 'white',
+          color: 'primary.contrastText',
         },
         '& .caption-link': {
-          color: 'white',
+          color: 'primary.contrastText',
+          textDecorationColor: 'currentcolor',
         },
       }}
     >
@@ -109,6 +115,6 @@ function StackGuideHero({ featureType, h1, subtitle, date, feature, includeDiscl
       </Box>
     </Box>
   );
-}
+});
 
-export default StackGuideHero;
+export default StackGuideHeroWithRef;

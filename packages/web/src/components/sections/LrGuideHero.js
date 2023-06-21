@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
@@ -29,7 +29,10 @@ const propsMapping = (type, props) => {
       return props;
   }
 };
-function LrGuideHero({ featureType, h1, subtitle, date, feature, includeDisclaimer }) {
+const LrGuideHeroWithRef = forwardRef(function LrGuideHero(
+  { featureType, h1, subtitle, date, feature, includeDisclaimer },
+  ref,
+) {
   const lastUpdatedDate = date ? new Date(date.replace(/-/g, '/')) : null;
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const heroAlignment = useSpGuideHero();
@@ -40,22 +43,25 @@ function LrGuideHero({ featureType, h1, subtitle, date, feature, includeDisclaim
 
   return (
     <Box
+      ref={ref}
       sx={{
         bgcolor: 'primary.main',
         color: 'primary.contrastText',
         py: { xs: '16px', md: '40px' },
         '& .pt-link': {
-          color: 'secondary.main',
+          color: 'primary.contrastText',
+          textDecorationColor: 'currentcolor',
         },
         '& .caption-text': {
-          color: 'white',
+          color: 'primary.contrastText',
         },
         '& .caption-link': {
-          color: 'white',
+          color: 'primary.contrastText',
+          textDecorationColor: 'currentcolor',
         },
       }}
       id="hero"
-      component="section"
+      component="header"
     >
       <Container maxWidth="lg">
         <Grid
@@ -92,6 +98,6 @@ function LrGuideHero({ featureType, h1, subtitle, date, feature, includeDisclaim
       </Container>
     </Box>
   );
-}
+});
 
-export default LrGuideHero;
+export default LrGuideHeroWithRef;

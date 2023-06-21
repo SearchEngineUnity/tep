@@ -87,12 +87,11 @@ const heroComponentMapping = {
 };
 
 function SoloGuidePage({ data, location }) {
-  const heroRef = useRef();
+  const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
   const setProgressBarVisibility = (entries) => {
     const [entry] = entries;
-    console.log(entry);
     setIsVisible(!entry.isIntersecting);
   };
 
@@ -115,9 +114,7 @@ function SoloGuidePage({ data, location }) {
       heroImage={data?.guide?.hero?.image?.asset?.url}
     >
       <main>
-        <div ref={heroRef}>
-          <Hero {...mapGuideHeroToProps(data.guide)} />
-        </div>
+        <Hero {...mapGuideHeroToProps(data.guide)} ref={heroRef} />
         {isVisible && <ProgressBar />}
         <Box sx={{ my: 3 }}>
           <Container maxWidth="lg">
