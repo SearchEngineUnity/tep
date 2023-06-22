@@ -23,7 +23,7 @@ export default {
       type: 'string',
       validation: (Rule) => [Rule.required().error('Field is required')],
       description:
-        'Add ID to the selected string. Please only use alphanumeric characters and hypen and do no start the string with a number.',
+        'Add ID to the selected string. Please only use alphanumeric characters and hypen and do not start the string with a number.',
     },
     {
       name: 'header',
