@@ -57,6 +57,7 @@ export const query = graphql`
         feature
         layout
         image {
+          idTag
           alt
           _rawAsset(resolveReferences: { maxDepth: 1 })
           asset {
@@ -68,12 +69,13 @@ export const query = graphql`
         }
         _rawSubtitle(resolveReferences: { maxDepth: 1 })
         video {
+          idTag
           url
         }
         productGrid {
           design
           pageJumpText
-          id
+          idTag
           _rawTiles(resolveReferences: { maxDepth: 5 })
         }
       }
@@ -87,6 +89,7 @@ const heroComponentMapping = {
 };
 
 function SoloGuidePage({ data, location }) {
+  console.log(data);
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
