@@ -393,9 +393,9 @@ export function mapSmartGridBlockToProps({
   };
 }
 
-export function mapProductGridToProps({ id, btnText, pageJumpText, _rawTiles, design }) {
+export function mapProductGridToProps({ idTag, btnText, pageJumpText, _rawTiles, design }) {
   return {
-    id,
+    id: idTag,
     btnText,
     pageJumpText,
     tiles: _rawTiles,
