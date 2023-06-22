@@ -21,7 +21,7 @@ import ClickableImage from '../ClickableImage';
 import ConditionalButton from '../../../buttons/ConditionalButton';
 import TableSmartOrderedList from '../TableSmartOrderedList';
 import TableSmartUnorderedList from '../TableSmartUnorderedList';
-import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
+import { mapMuiBtnToProps, mapVideoToProps } from '../../../../lib/mapToProps';
 
 const stickyCellStyle = {
   bgcolor: 'background.paper',
@@ -69,6 +69,9 @@ const propsMapping = (type, props) => {
       return { illustration: props };
     case 'btnBlockMui':
       return { ...mapMuiBtnToProps(props) };
+
+    case 'video':
+      return { ...mapVideoToProps(props) };
     default:
       return props;
   }

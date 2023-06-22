@@ -9,7 +9,7 @@ import SmartUnorderedList from '../portableText/insertable/SmartUnorderedList';
 import Video from '../portableText/insertable/Video';
 import ConditionalButton from '../buttons/ConditionalButton';
 import ClickableImage from '../portableText/insertable/ClickableImage';
-import { mapMuiBtnToProps } from '../../lib/mapToProps';
+import { mapMuiBtnToProps, mapVideoToProps } from '../../lib/mapToProps';
 
 function SmartGridBlock({
   hasSectionHeading,
@@ -75,7 +75,7 @@ function SmartGridBlock({
               case key === 'clickableImage':
                 return <ClickableImage {...tile} />;
               case key === 'video':
-                return <Video {...tile} />;
+                return <Video {...mapVideoToProps(tile)} />;
               case key === 'btnBlockMui':
                 return <ConditionalButton {...mapMuiBtnToProps(tile)} />;
               default:

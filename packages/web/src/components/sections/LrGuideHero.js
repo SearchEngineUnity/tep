@@ -7,7 +7,7 @@ import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
 import Subtitle from '../portableText/serializer/H1SubtitleSerializer';
 import Disclaimer from '../portableText/serializer/DisclaimerSerializer';
-import { mapFluidImgBlockToProps } from '../../lib/mapToProps';
+import { mapFluidImgBlockToProps, mapVideoToProps } from '../../lib/mapToProps';
 import { useSpGuideHero } from '../../hooks/useSpGuideHero';
 import { useDisclaimerText } from '../../hooks/useDisclaimerText';
 
@@ -24,7 +24,7 @@ const propsMapping = (type, props) => {
         loading: 'eager',
       };
     case 'video':
-      return { url: props?.video };
+      return { ...mapVideoToProps(props.video) };
     default:
       return props;
   }

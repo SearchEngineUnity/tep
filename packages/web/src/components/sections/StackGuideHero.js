@@ -7,7 +7,11 @@ import Video from '../portableText/insertable/Video';
 import ProductGrid from '../portableText/insertable/productGrid/ProductGrid';
 import Subtitle from '../portableText/serializer/H1SubtitleSerializer';
 import Disclaimer from '../portableText/serializer/DisclaimerSerializer';
-import { mapFluidImgBlockToProps, mapProductGridToProps } from '../../lib/mapToProps';
+import {
+  mapFluidImgBlockToProps,
+  mapProductGridToProps,
+  mapVideoToProps,
+} from '../../lib/mapToProps';
 import { useDisclaimerText } from '../../hooks/useDisclaimerText';
 
 const featureComponentMapping = {
@@ -24,7 +28,7 @@ const propsMapping = (type, props) => {
         loading: 'eager',
       };
     case 'video':
-      return { id: props?.video?.idTag, url: props?.video?.url, stackHero: 'true' };
+      return { ...mapVideoToProps(props.video), stackHero: 'true' };
     case 'productGrid':
       return { ...mapProductGridToProps(props.productGrid) };
     default:

@@ -402,3 +402,10 @@ export function mapProductGridToProps({ idTag, btnText, pageJumpText, _rawTiles,
     design,
   };
 }
+
+export function mapVideoToProps({ idTag, url }) {
+  return {
+    id: idTag,
+    url,
+  };
+}
