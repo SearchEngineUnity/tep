@@ -235,6 +235,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -470,6 +471,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -962,6 +964,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -1321,6 +1324,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt

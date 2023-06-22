@@ -48,6 +48,8 @@ const StackGuideHeroWithRef = forwardRef(function StackGuideHero(
 
   const values = propsMapping(featureType, feature);
 
+  console.log(values);
+
   const errorMessage = 'No matching Feature component';
 
   return (
