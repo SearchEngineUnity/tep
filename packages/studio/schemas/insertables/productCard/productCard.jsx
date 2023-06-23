@@ -7,8 +7,8 @@ export default {
   icon: BiNews,
   fieldsets: [
     {
-      name: 'essentials',
-      title: 'Essentials',
+      name: 'productCardTop',
+      title: 'Product Card Top',
       options: {
         collapsible: true,
         collapsed: false,
@@ -17,11 +17,29 @@ export default {
   ],
   fields: [
     {
+      title: 'Product Card Top Design',
+      name: 'design',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'eCommerce', value: 'eCommerce' },
+          { title: 'App', value: 'app' },
+          { title: 'Site', value: 'site' },
+        ],
+      },
+      fieldset: 'productCardTop',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+      initialValue: 'eCommerce',
+    },
+    {
       title: 'Product Name',
       name: 'name',
       type: 'string',
-      validation: (Rule) => [Rule.required().error('Field is required')],
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design || design === 'site';
+      },
     },
     {
       title: 'Product Heading Level',
@@ -35,53 +53,121 @@ export default {
           { title: 'Non-Heading', value: 'p' },
         ],
       },
-      validation: (Rule) => [Rule.required().error('Field is required')],
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
       initialValue: 'p',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design || design === 'site';
+      },
     },
     {
       title: 'Rating Score',
       name: 'rating',
       type: 'number',
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
     {
       title: 'Image',
       name: 'image',
       type: 'productCardImage',
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
     {
       title: 'Special Tag Text',
       name: 'tagText',
       type: 'string',
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
     {
       title: 'Special Tag Color',
       name: 'tagColor',
       type: 'reference',
       to: [{ type: 'colorOption' }],
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
     {
       title: 'Info Item List',
       name: 'infoList',
       type: 'array',
       of: [{ type: 'infoItem' }],
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
     {
       title: 'Top Button',
       name: 'topBtn',
       type: 'btnBlockMui',
-      fieldset: 'essentials',
+      fieldset: 'productCardTop',
+    },
+    {
+      title: 'Button Set',
+      name: 'btnSet',
+      type: 'array',
+      of: [{ type: 'btnBlockMui' }],
+      fieldset: 'productCardTop',
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design || design === 'app';
+      },
+    },
+    {
+      title: 'iOS Link',
+      name: 'iosLink',
+      type: 'url',
+      fieldset: 'productCardTop',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['https'],
+        }),
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design || design !== 'app';
+      },
+    },
+    {
+      title: 'Google Play Link',
+      name: 'googlePlayLink',
+      type: 'url',
+      fieldset: 'productCardTop',
+      validation: (Rule) =>
+        Rule.uri({
+          allowRelative: false,
+          scheme: ['https'],
+        }),
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design || design !== 'app';
+      },
     },
     {
       title: 'Product Card Flex Segment Stack',
       name: 'segments',
       type: 'array',
       of: [{ type: 'productCardFlexSegment' }],
+      hidden: ({ parent }) => {
+        const { design = '' } = parent || {};
+        return !design;
+      },
     },
   ],
   preview: {
