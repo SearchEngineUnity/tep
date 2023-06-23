@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../lib/sanityConfig';
 import CaptionContent from '../portableText/serializer/CaptionSerializer';
 
-function FluidImgBlock({ image, alt, loading, maxHeight, maxWidth, caption }) {
+function FluidImgBlock({ id, image, alt, loading, maxHeight, maxWidth, caption }) {
   const loadingSetting = loading || 'lazy';
   const imageData = getGatsbyImageData(image, {}, sanityConfig);
   const customMaxHeight = maxHeight || 'auto';
@@ -28,7 +28,7 @@ function FluidImgBlock({ image, alt, loading, maxHeight, maxWidth, caption }) {
   const minMaxWidth = `${Math.min(...widthArray)}px`;
 
   return (
-    <Box component="figure" sx={{ justifyContent: 'center', m: 0, display: 'flex' }}>
+    <Box component="figure" id={id} sx={{ justifyContent: 'center', m: 0, display: 'flex' }}>
       <Box sx={{ maxWidth: minMaxWidth }}>
         <GatsbyImage
           image={imageData}

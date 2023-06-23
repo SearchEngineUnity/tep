@@ -18,6 +18,7 @@ import {
   mapTestimonialGridToProps,
   mapClickableImageToProps,
   mapSmartGridBlockToProps,
+  mapVideoToProps,
 } from '../../lib/mapToProps';
 import HeroSectionFooter from './HeroSectionFooter';
 import HeroSectionHeader from './HeroSectionHeader';
@@ -79,7 +80,7 @@ function LrFlexHero({
                     />
                   );
                 case key === 'video':
-                  return <Video key={_key} url={block.url} />;
+                  return <Video key={_key} {...mapVideoToProps(block)} />;
                 case key === 'imageBlock':
                   return (
                     <ImgBlock {...mapFluidImgBlockToProps(block)} key={_key} loading="eager" />

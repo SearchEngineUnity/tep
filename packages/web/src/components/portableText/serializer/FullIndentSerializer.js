@@ -17,7 +17,7 @@ import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import IndentFullWrapper from '../insertable/IndentFullWrapper';
 import VerticalSpacingWrapper from '../insertable/VerticalSpacingWrapper';
 import PTHeadingTypography from './PTHeadingTypography';
-import { mapMuiBtnToProps } from '../../../lib/mapToProps';
+import { mapMuiBtnToProps, mapVideoToProps } from '../../../lib/mapToProps';
 
 const serializers = {
   block: {
@@ -129,7 +129,7 @@ const serializers = {
     video: ({ value }) => (
       <VerticalSpacingWrapper>
         <IndentFullWrapper>
-          <Video url={value.url} />
+          <Video {...mapVideoToProps(value)} />
         </IndentFullWrapper>
       </VerticalSpacingWrapper>
     ),

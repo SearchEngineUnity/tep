@@ -235,6 +235,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -260,6 +261,7 @@ export const query = graphql`
             ... on SanityVideo {
               _key
               _type
+              idTag
               url
             }
             ... on SanityBlockFormNetlify {
@@ -469,6 +471,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -494,6 +497,7 @@ export const query = graphql`
             ... on SanityVideo {
               _key
               _type
+              idTag
               url
             }
             ... on SanityClickableImage {
@@ -960,6 +964,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -985,6 +990,7 @@ export const query = graphql`
             ... on SanityVideo {
               _key
               _type
+              idTag
               url
             }
             ... on SanityBlockFormNetlify {
@@ -1318,6 +1324,7 @@ export const query = graphql`
               }
             }
             ... on SanityImageBlock {
+              idTag
               _key
               _type
               alt
@@ -1343,6 +1350,7 @@ export const query = graphql`
             ... on SanityVideo {
               _key
               _type
+              idTag
               url
             }
             ... on SanityBlockFormNetlify {

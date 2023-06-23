@@ -62,8 +62,16 @@ export function mapGuideCardToProps({ h1, slug, excerpt, cardImage, displayDate 
   };
 }
 
-export function mapFluidImgBlockToProps({ _rawAsset, alt, _rawCaption, maxHeight, maxWidth }) {
+export function mapFluidImgBlockToProps({
+  idTag,
+  _rawAsset,
+  alt,
+  _rawCaption,
+  maxHeight,
+  maxWidth,
+}) {
   return {
+    id: idTag,
     image: _rawAsset,
     alt,
     caption: _rawCaption,
@@ -400,5 +408,12 @@ export function mapProductGridToProps({ idTag, btnText, pageJumpText, _rawTiles,
     pageJumpText,
     tiles: _rawTiles,
     design,
+  };
+}
+
+export function mapVideoToProps({ idTag, url }) {
+  return {
+    id: idTag,
+    url,
   };
 }

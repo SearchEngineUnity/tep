@@ -9,12 +9,13 @@ const StyledReactPlayer = styled(ReactPlayer)`
   left: 0;
 `;
 
-function Video({ url, stackHero }) {
+function Video({ id, url, stackHero }) {
   const ptStackHeroDesktop = `${70 * 0.5625}%`;
   const ptStackHeroTablet = `${80 * 0.5625}%`;
 
   return (
     <Box
+      id={id}
       sx={{
         pt: stackHero ? { xs: '56.25%', md: ptStackHeroTablet, lg: ptStackHeroDesktop } : '56.25%',
         position: 'relative',

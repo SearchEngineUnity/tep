@@ -18,6 +18,7 @@ import {
   mapTestimonialGridToProps,
   mapClickableImageToProps,
   mapSmartGridBlockToProps,
+  mapVideoToProps,
 } from '../../lib/mapToProps';
 import StructuredSectionFooter from './StructuredSectionFooter';
 import StructuredSectionHeader from './StructuredSectionHeader';
@@ -75,7 +76,7 @@ function StackFlex({
                   />
                 );
               case key === 'video':
-                return <Video url={block.url} key={_key} />;
+                return <Video {...mapVideoToProps(block)} key={_key} />;
               case key === 'imageBlock':
                 return <ImgBlock {...mapFluidImgBlockToProps(block)} key={_key} />;
               case key === 'sectionBlock':

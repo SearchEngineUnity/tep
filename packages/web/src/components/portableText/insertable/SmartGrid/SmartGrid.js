@@ -9,7 +9,7 @@ import SmartOrderedList from '../SmartOrderedList';
 import Video from '../Video';
 import ConditionalButton from '../../../buttons/ConditionalButton';
 import ClickableImage from '../ClickableImage';
-import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
+import { mapMuiBtnToProps, mapVideoToProps } from '../../../../lib/mapToProps';
 
 function SmartGrid({ layout, tiles }) {
   // number of tiles desktop/tablet/tablet-mobile/mobile: '6/4/2/1' -> {lg: 2, md: 3, sm: 6, xs: 12}
@@ -46,6 +46,8 @@ function SmartGrid({ layout, tiles }) {
         return { ...mapMuiBtnToProps(props) };
       case 'smartGridPtTile':
         return { blocks: props.content };
+      case 'video':
+        return { ...mapVideoToProps(props) };
       default:
         return props;
     }
