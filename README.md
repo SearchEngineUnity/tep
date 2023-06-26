@@ -1,5 +1,46 @@
 # Site Builder V2
 
+## Links to the deployed frontend and backend
+
+* [Sanity (CMS) Studio](https://sitebuilderv2.sanity.studio/desk)
+* [Gatsby Preview hosted on Gatsby Cloud](https://preview-sitebuilderv2.gatsbyjs.io/)
+* [Live site hosted on Gatsby Cloud](https://sitebuilderv2.gatsbyjs.io/)
+
+## How to install and run the project
+
+### Node/NPM versions
+
+* node v18.13.0
+* npm v8.19.3
+
+### Install
+
+1. Git clone project
+2. Install Lerna `npm install -g lerna@6.6.2` 
+3. Install Sanity cli `npm install -g @sanity/cli@3.12.2`
+4. Install Gatsby cli `npm install -g gatsby-cli@5.6.0`
+5. Run `npm install --legacy-peer-deps` from the root folder of the repo. This should install npms in both packages (studio + web).
+
+### Run Sanity CMS locally
+
+*Even though you can start the studio from the root, we prefer to cd into the folder directly as it provides better terminal logs when things go awry.*
+
+1. `cd packages/studio` from root
+2. Log into Sanity account if opening the studio for the first time by typing `sanity login` and follow the prompts
+3. Start the Sanity Studio in develope mode with the command `sanity dev`
+4. If you have incorrect redential you should logout using `sanity logout` and repeat from step 2
+5. Access Sanity development server on `localhost:3333`
+
+### Run Gatsby locally
+
+*Even though you can start Gatsby from the root, we prefer to cd into the folder directly as it provides better terminal logs when things go awry.*
+
+1. `cd packages/web` from root
+2. Run `gatsby develop`
+3. Access Gatsby development server on `localhost:8000`
+4. Access GraphiQL on `localhost:8000/___graphql`
+5. View a list of all available pages on `localhost:8000/404`
+
 ## Setup Notes
 
 Please use node 18.13.0 and npm 8.19.3.
@@ -25,7 +66,7 @@ All the common commands can be accessed directly via the root folder via `npm ru
 **Breaking change for Studio script**
 Sanity has repurposed the [start] command. [sanity start] will now start a preview for the static builds. To run a development server from the studio folder, use the [npm run dev] or [sanity dev] command instead.
 
-## Using Lerna^6.4.1
+## Using Lerna^6.6.2
 
 ### Clean up node modules
 
@@ -64,7 +105,7 @@ Here are some resources consulted by SC when setting up this project.
 
 2. [Migrating the CLI - This migrates sanity.json to sanity.cli.js](https://www.sanity.io/docs/migrating-the-cli)
 
-3. [Studio configuration - This migrates the other part of sanity.json to sanity.config.js. We are not currently using](https://www.sanity.io/docs/migrating-studio-configuration)workspaces.
+3. [Studio configuration - This migrates the other part of sanity.json to sanity.config.js. We are not currently using workspaces.](https://www.sanity.io/docs/migrating-studio-configuration)
 
 4. [Schema and schema types - This one is used migrate custom input components and preview components.](https://www.sanity.io/docs/migrating-schema-types)
 
