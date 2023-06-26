@@ -527,6 +527,7 @@ export const useCustomTheme = () => {
     sanityCustomSpacing: spacing,
   } = themeData;
 
+  console.log(palette);
   const customTheme = {
     breakpoints: {
       values: {
@@ -592,7 +593,7 @@ export const useCustomTheme = () => {
       text: {
         primary: determineColor(palette?.primaryText?.color) || 'rgba(0, 0, 0, 0.87)',
         secondary: determineColor(palette?.secondaryText?.color) || 'rgba(0, 0, 0, 0.6)',
-        disabled: determineColor(palette?.disabled?.color) || 'rgba(0, 0, 0, 0.38)',
+        disabled: determineColor(palette?.disabledText?.color) || 'rgba(0, 0, 0, 0.38)',
       },
       divider: determineColor(palette?.divider?.color) || 'rgba(0, 0, 0, 0.12)',
       background: {
