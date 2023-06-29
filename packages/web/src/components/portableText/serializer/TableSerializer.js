@@ -20,7 +20,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography gutterBottom variant="body1" sx={{ fontSize: '14px' }} className="pt-heading">
+        <Typography gutterBottom variant="body2" className="pt-heading">
           {children}
         </Typography>
       ) : (
@@ -29,13 +29,13 @@ const serializers = {
     },
     h2: ({ value, children }) => (
       <PTHeadingTypography
-        variant="h2"
+        variant="h3"
+        component="h2"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
-        sx={{ fontSize: '28px', mb: '11px' }}
         className="pt-heading"
       >
         {children}
@@ -43,13 +43,13 @@ const serializers = {
     ),
     h3: ({ value, children }) => (
       <PTHeadingTypography
-        variant="h3"
+        variant="h4"
+        component="h3"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
-        sx={{ fontSize: '24.5px', mb: '11px' }}
         className="pt-heading"
       >
         {children}
@@ -57,13 +57,13 @@ const serializers = {
     ),
     h4: ({ value, children }) => (
       <PTHeadingTypography
-        variant="h4"
+        component="h4"
+        variant="h5"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
-        sx={{ fontSize: '21px', mb: '11px' }}
         className="pt-heading"
       >
         {children}
@@ -71,13 +71,13 @@ const serializers = {
     ),
     h5: ({ value, children }) => (
       <PTHeadingTypography
-        variant="h5"
+        component="h5"
+        variant="h6"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
-        sx={{ fontSize: '17.5px', mb: '11px' }}
         className="pt-heading"
       >
         {children}
@@ -85,13 +85,13 @@ const serializers = {
     ),
     h6: ({ value, children }) => (
       <PTHeadingTypography
-        variant="h6"
+        component="h6"
+        variant="subtitle2"
         id={
           value.markDefs.length !== 0
             ? value.markDefs.filter((x) => x._type === 'hashId')[0]?.idTag
             : undefined
         }
-        sx={{ fontSize: '15px', mb: '11px' }}
         className="pt-heading"
       >
         {children}
