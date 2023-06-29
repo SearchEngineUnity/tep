@@ -15,7 +15,7 @@ function TableOfContent({ toc }) {
       <nav>
         <Box component="ul" sx={{ listStyleType: 'none', padding: '0px' }}>
           {toc.map((item) => (
-            <Box component="li" key={item._key} sx={{ mb: 1, fontSize: 'body2.fontSize' }}>
+            <Typography component="li" key={item._key} variant="body1" sx={{ mb: 1 }}>
               <Link
                 sx={
                   item.hashID === activeId && {
@@ -34,7 +34,7 @@ function TableOfContent({ toc }) {
               >
                 {item.title}
               </Link>
-            </Box>
+            </Typography>
           ))}
         </Box>
       </nav>
