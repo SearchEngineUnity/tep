@@ -79,20 +79,17 @@ const StackGuideHeroWithRef = forwardRef(function StackGuideHero(
         }}
       >
         <Container maxWidth="lg" sx={{ textAlign: 'center' }}>
-          <Typography variant="h1" gutterBottom>
-            {h1}
-          </Typography>
+          <Typography variant="h1">{h1}</Typography>
           {subtitle && <Subtitle blocks={subtitle} />}
           {lastUpdatedDate && (
-            <Typography variant="body1" component="p" gutterBottom>
+            <Typography variant="body1" component="p" mt={1}>
               Last updated: {lastUpdatedDate.toLocaleDateString('en-US', options)}
             </Typography>
           )}
           {includeDisclaimer && disclaimerText && (
-            <>
-              <br />
+            <Box mt={6}>
               <Disclaimer blocks={disclaimerText} />
-            </>
+            </Box>
           )}
         </Container>
       </Box>

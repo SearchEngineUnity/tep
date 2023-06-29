@@ -7,7 +7,7 @@ import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
 import Subtitle from '../portableText/serializer/H1SubtitleSerializer';
 import Disclaimer from '../portableText/serializer/DisclaimerSerializer';
-import { mapFluidImgBlockToProps, mapVideoToProps } from '../../lib/mapToProps';
+import { mapFluidImgBlockToProps } from '../../lib/mapToProps';
 import { useSpGuideHero } from '../../hooks/useSpGuideHero';
 import { useDisclaimerText } from '../../hooks/useDisclaimerText';
 
@@ -24,7 +24,7 @@ const propsMapping = (type, props) => {
         loading: 'eager',
       };
     case 'video':
-      return { ...mapVideoToProps(props.video) };
+      return { url: props?.video };
     default:
       return props;
   }
@@ -73,20 +73,17 @@ const LrGuideHeroWithRef = forwardRef(function LrGuideHero(
           component="header"
         >
           <Grid item md={6} xs={12}>
-            <Typography variant="h1" gutterBottom>
-              {h1}
-            </Typography>
+            <Typography variant="h1">{h1}</Typography>
             {subtitle && <Subtitle blocks={subtitle} />}
             {lastUpdatedDate && (
-              <Typography variant="body1" component="p" gutterBottom>
+              <Typography variant="body1" component="p" mt={1}>
                 Last updated: {lastUpdatedDate.toLocaleDateString('en-US', options)}
               </Typography>
             )}
             {includeDisclaimer && disclaimerText && (
-              <>
-                <br />
+              <Box mt={6}>
                 <Disclaimer blocks={disclaimerText} />
-              </>
+              </Box>
             )}
           </Grid>
           <Grid item md={6} xs={12}>
