@@ -16,6 +16,10 @@ const topSelector = {
   site: ProductCardTopSite,
 };
 
+function Error() {
+  return <Box sx={{ m: 3 }}>Product Card Top design unavailable</Box>;
+}
+
 function ProductCard({
   design = 'eCommerce',
   name,
@@ -30,11 +34,7 @@ function ProductCard({
   googlePlayLink,
   segments,
 }) {
-  const ProductCardTop = topSelector[design];
-
-  console.log(btnSet);
-  console.log(iosLink);
-  console.log(googlePlayLink);
+  const ProductCardTop = topSelector[design] || Error;
 
   return (
     <>
@@ -74,7 +74,6 @@ function ProductCard({
               {tagText}
             </Paper>
           )}
-          {/* Product Card Tops go here */}
           <ProductCardTop
             {...{
               name,
