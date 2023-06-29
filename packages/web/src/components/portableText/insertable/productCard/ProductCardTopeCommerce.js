@@ -16,7 +16,7 @@ import ConditionalButton from '../../../buttons/ConditionalButton';
 import Caption from '../../serializer/CaptionSerializer';
 import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 
-function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, topBtn }) {
+function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, btnSet }) {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -176,12 +176,12 @@ function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, 
               },
             }}
           >
-            <Box sx={{ mr: 3 }}>
-              <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
-            </Box>
-            <Box sx={{ mr: 3 }}>
-              <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
-            </Box>
+            {btnSet &&
+              btnSet.map((btn) => (
+                <Box sx={{ mr: 3 }} key={btn._key}>
+                  <ConditionalButton {...mapMuiBtnToProps(btn)} />
+                </Box>
+              ))}
           </Box>
           <Box
             sx={{
@@ -196,12 +196,12 @@ function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, 
               },
             }}
           >
-            <Box sx={{ mt: 3 }}>
-              <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
-            </Box>
-            <Box sx={{ mt: 3 }}>
-              <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
-            </Box>
+            {btnSet &&
+              btnSet.map((btn) => (
+                <Box sx={{ mr: 3 }} key={btn._key}>
+                  <ConditionalButton {...mapMuiBtnToProps(btn)} />
+                </Box>
+              ))}
           </Box>
         </Grid>
       </Grid>
