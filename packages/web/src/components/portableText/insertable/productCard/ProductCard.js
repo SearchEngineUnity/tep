@@ -25,10 +25,16 @@ function ProductCard({
   tagText,
   tagColor,
   infoList,
-  topBtn,
+  btnSet,
+  iosLink,
+  googlePlayLink,
   segments,
 }) {
   const ProductCardTop = topSelector[design];
+
+  console.log(btnSet);
+  console.log(iosLink);
+  console.log(googlePlayLink);
 
   return (
     <>
@@ -69,7 +75,18 @@ function ProductCard({
             </Paper>
           )}
           {/* Product Card Tops go here */}
-          <ProductCardTop {...{ name, headingLevel, rating, image, infoList, topBtn }} />
+          <ProductCardTop
+            {...{
+              name,
+              headingLevel,
+              rating,
+              image,
+              infoList,
+              btnSet,
+              iosLink,
+              googlePlayLink,
+            }}
+          />
           {segments.map((segment) => {
             const { _type, _key } = segment;
             switch (_type) {
