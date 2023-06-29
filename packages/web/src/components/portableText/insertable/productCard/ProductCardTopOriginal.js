@@ -16,7 +16,7 @@ import ConditionalButton from '../../../buttons/ConditionalButton';
 import Caption from '../../serializer/CaptionSerializer';
 import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 
-function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, btnSet }) {
+function ProductCardTopOriginal({ name, headingLevel, rating, image, infoList, topBtn }) {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
@@ -39,7 +39,7 @@ function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, 
     <Box sx={{ m: 3 }}>
       <Grid container spacing={2} alignItems="center">
         <Grid item xs={12} sm={4}>
-          <Box component={Box} as="figure" sx={{ m: 0, display: { xs: 'none', sm: 'block' } }}>
+          <Box component={Box} as="figure" sx={{ m: 0 }}>
             <ButtonBase
               type="button"
               onClick={handleOpen}
@@ -126,90 +126,20 @@ function ProductCardTopeCommerce({ name, headingLevel, rating, image, infoList, 
               </Box>
             </Modal>
           </Box>
-          <Box
-            component={Box}
-            as="figure"
-            sx={{
-              m: 0,
-              display: { xs: 'block', sm: 'none', md: 'none', lg: 'none', xl: 'none' },
-            }}
-          >
-            <GatsbyImage
-              image={imageData}
-              alt={image?.alt}
-              style={{ display: 'block', maxWidth: '100%', maxHeight: '240px' }}
-              objectFit="contain"
-            />
-            {image.caption && (
-              <Box
-                component={Caption}
-                as="figcaption"
-                sx={{
-                  textAlign: 'center',
-                  '& .pt-link': {
-                    color: 'text.primary',
-                    textDecorationColor: 'currentcolor',
-                  },
-                }}
-              >
-                <Caption blocks={image.caption} />
-              </Box>
-            )}
+          <Box sx={{ mt: 3 }}>
+            <ConditionalButton {...mapMuiBtnToProps(topBtn)} />
           </Box>
         </Grid>
         <Grid item xs={12} sm={8}>
           <Typography component={headingLevel || 'p'} variant="h4">
             {name}
           </Typography>
-          <Box sx={{ mt: 0.5 }}>
-            <ProductCardRating rating={rating} />
-          </Box>
-          <Box
-            sx={{
-              mt: 3,
-              display: {
-                xs: 'none',
-                sm: 'inline-flex',
-                md: 'inline-flex',
-                lg: 'inline-flex',
-                xl: 'inline-flex',
-              },
-            }}
-          >
-            {btnSet &&
-              btnSet.map((btn) => (
-                <Box sx={{ mr: 3 }} key={btn._key}>
-                  <ConditionalButton {...mapMuiBtnToProps(btn)} />
-                </Box>
-              ))}
-          </Box>
-          <Box
-            sx={{
-              mr: 3,
-              display: {
-                xs: 'inline-flex',
-                sm: 'none',
-                md: 'none',
-                lg: 'none',
-                xl: 'none',
-                flexDirection: 'column',
-              },
-            }}
-          >
-            {btnSet &&
-              btnSet.map((btn) => (
-                <Box sx={{ mr: 3 }} key={btn._key}>
-                  <ConditionalButton {...mapMuiBtnToProps(btn)} />
-                </Box>
-              ))}
-          </Box>
+          <ProductCardRating rating={rating} />
+          <ProductInfoList infoList={infoList} />
         </Grid>
       </Grid>
-      <Box sx={{ mt: 3 }}>
-        <ProductInfoList infoList={infoList} />
-      </Box>
     </Box>
   );
 }
 
-export default ProductCardTopeCommerce;
+export default ProductCardTopOriginal;

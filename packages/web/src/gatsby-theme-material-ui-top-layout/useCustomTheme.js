@@ -527,7 +527,6 @@ export const useCustomTheme = () => {
     sanityCustomSpacing: spacing,
   } = themeData;
 
-  console.log(palette);
   const customTheme = {
     breakpoints: {
       values: {
