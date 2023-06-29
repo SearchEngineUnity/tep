@@ -107,6 +107,10 @@ export default {
       type: 'array',
       of: [{ type: 'infoItem' }],
       fieldset: 'productCardTop',
+      validation: (Rule) =>
+        Rule.custom((infoList) => {
+          return infoList && infoList?.length > 0 ? true : 'There must be at least one info item';
+        }),
       hidden: ({ parent }) => {
         const { design = '' } = parent || {};
         return !design;
