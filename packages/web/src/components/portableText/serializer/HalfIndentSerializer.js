@@ -10,7 +10,7 @@ import ConditionalLink from '../../link/ConditionalLink';
 import ConditionalButton from '../../buttons/ConditionalButton';
 import SmartOrderedList from '../insertable/SmartOrderedList';
 import SmartUnorderedList from '../insertable/SmartUnorderedList';
-import ProductCard from '../insertable/productCard/ProductCardTopeCommerce';
+import ProductCard from '../insertable/productCard/ProductCard';
 import ClickableImage from '../insertable/ClickableImage';
 import SmartGrid from '../insertable/SmartGrid/SmartGrid';
 import IndentHalfWrapper from '../insertable/IndentHalfWrapper';
