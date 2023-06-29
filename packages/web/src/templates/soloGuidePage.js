@@ -89,7 +89,6 @@ const heroComponentMapping = {
 };
 
 function SoloGuidePage({ data, location }) {
-  console.log(data);
   const heroRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
