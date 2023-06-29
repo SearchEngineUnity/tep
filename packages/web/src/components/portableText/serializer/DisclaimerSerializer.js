@@ -9,7 +9,7 @@ const serializers = {
   block: {
     normal: ({ children }) => {
       return children[0] ? (
-        <Typography component="p" variant="subtitle2" gutterBottom>
+        <Typography component="p" variant="caption" sx={{ fontStyle: 'italic' }}>
           {children}
         </Typography>
       ) : (
