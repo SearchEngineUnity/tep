@@ -1,26 +1,23 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-import Modal from '@mui/material/Modal';
-import { getGatsbyImageData } from 'gatsby-source-sanity';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '../../../../lib/sanityConfig';
 import ProductCardFlexSegment from './ProductCardFlexSegment';
-import ProductInfoList from './ProductInfoList';
-import ProductCardRating from './ProductCardRating';
-import ConditionalButton from '../../../buttons/ConditionalButton';
-import Caption from '../../serializer/CaptionSerializer';
-import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 import { determineColor } from '../../../../lib/helperFunctions';
+import ProductCardTopeCommerce from './ProductCardTopeCommerce';
+import ProductCardTopApp from './ProductCardTopApp';
+import ProductCardTopSite from './ProductCardTopSite';
+
+const topSelector = {
+  eCommerce: ProductCardTopeCommerce,
+  app: ProductCardTopApp,
+  site: ProductCardTopSite,
+};
 
 function ProductCard({
+  design = 'eCommerce',
   name,
   headingLevel,
   rating,
@@ -31,23 +28,7 @@ function ProductCard({
   topBtn,
   segments,
 }) {
-  const [open, setOpen] = React.useState(false);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const imageData = getGatsbyImageData(
-    image,
-    {
-      layout: 'constrained',
-    },
-    sanityConfig,
-  );
+  const ProductCardTop = topSelector[design];
 
   return (
     <>
@@ -88,6 +69,7 @@ function ProductCard({
             </Paper>
           )}
           {/* Product Card Tops go here */}
+          <ProductCardTop {...{ name, headingLevel, rating, image, infoList, topBtn }} />
           {segments.map((segment) => {
             const { _type, _key } = segment;
             switch (_type) {
