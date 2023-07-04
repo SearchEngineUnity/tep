@@ -1,8 +1,74 @@
+/* eslint-disable import/no-cycle */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import sanityConfig from '../../../../lib/sanityConfig';
+import ProductInfoList from './ProductInfoList';
+import ProductCardRating from './ProductCardRating';
+import ConditionalButton from '../../../buttons/ConditionalButton';
+import Caption from '../../serializer/CaptionSerializer';
+import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 
-function ProductCardTopSite() {
-  return <Box sx={{ m: 3 }}>This is an product card top for Site</Box>;
+function ProductCardTopSite({ name, headingLevel, rating, image, infoList, btnSet }) {
+  const imageData = getGatsbyImageData(
+    image,
+    {
+      layout: 'constrained',
+    },
+    sanityConfig,
+  );
+
+  return (
+    <Box sx={{ m: 3 }}>
+      <Grid container spacing={2} alignItems="center">
+        <Grid item xs={12} sm={4}>
+          <Box component={Box} as="figure" sx={{ m: 0 }}>
+            <GatsbyImage
+              image={imageData}
+              alt={image?.alt}
+              style={{ display: 'block', maxWidth: '100%', maxHeight: '240px' }}
+              objectFit="contain"
+            />
+            {image.caption && (
+              <Box
+                component={Caption}
+                as="figcaption"
+                sx={{
+                  textAlign: 'center',
+                  '& .pt-link': {
+                    color: 'text.primary',
+                    textDecorationColor: 'currentcolor',
+                  },
+                }}
+              >
+                <Caption blocks={image.caption} />
+              </Box>
+            )}
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <Box>
+            {btnSet &&
+              btnSet.map((btn) => (
+                <Box sx={{ mr: 3 }} key={btn._key}>
+                  <ConditionalButton {...mapMuiBtnToProps(btn)} />
+                </Box>
+              ))}
+          </Box>
+        </Grid>
+      </Grid>
+      <Box sx={{ mt: 0.5 }}>
+        <ProductCardRating rating={rating} />
+      </Box>
+      <Box sx={{ mt: 3 }}>
+        <ProductInfoList infoList={infoList} />
+      </Box>
+    </Box>
+  );
 }
 
 export default ProductCardTopSite;
