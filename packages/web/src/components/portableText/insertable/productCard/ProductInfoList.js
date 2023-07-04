@@ -10,13 +10,7 @@ function ProductInfoList({ infoList }) {
       {infoList.map((item) => (
         <Grid container spacing={0} key={item._key}>
           <Grid item xs={4} sm={5} md={4} lg={4} sx={{ mb: 1.5 }}>
-            <Typography
-              variant="body1"
-              gutterBottom
-              sx={{
-                fontWeight: 'bold',
-              }}
-            >
+            <Typography variant="body1" gutterBottom>
               {item.label}:
             </Typography>
           </Grid>
