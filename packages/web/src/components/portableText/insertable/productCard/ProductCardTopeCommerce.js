@@ -167,7 +167,7 @@ function ProductCardTopeCommerce(props) {
             <Typography component={headingLevel || 'p'} variant="h4">
               {name}
             </Typography>
-            <Box sx={{ mt: 0.5 }}>
+            <Box sx={{ mt: 0.5, py: 1 }}>
               <ProductCardRating rating={rating} />
             </Box>
             <Box
@@ -191,20 +191,18 @@ function ProductCardTopeCommerce(props) {
             </Box>
             <Box
               sx={{
-                mr: 3,
                 display: {
-                  xs: 'inline-flex',
+                  xs: 'block',
                   sm: 'none',
                   md: 'none',
                   lg: 'none',
                   xl: 'none',
-                  flexDirection: 'column',
                 },
               }}
             >
               {btnSet &&
                 btnSet.map((btn) => (
-                  <Box sx={{ mr: 3, mt: 3 }} key={btn._key}>
+                  <Box sx={{ display: 'flex', mt: 3, justifyContent: 'center' }} key={btn._key}>
                     <ConditionalButton {...mapMuiBtnToProps(btn)} />
                   </Box>
                 ))}
