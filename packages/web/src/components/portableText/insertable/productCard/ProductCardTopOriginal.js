@@ -143,7 +143,9 @@ function ProductCardTopOriginal({ name, headingLevel, rating, image, infoList, b
           <Typography component={headingLevel || 'p'} variant="h4">
             {name}
           </Typography>
-          <ProductCardRating rating={rating} />
+          <Box sx={{ mt: 0.5, py: 1 }}>
+            <ProductCardRating rating={rating} />
+          </Box>
           <ProductInfoList infoList={infoList} />
         </Grid>
       </Grid>

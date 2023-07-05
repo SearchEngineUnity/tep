@@ -24,7 +24,7 @@ function ProductCardTopSite({ rating, image, infoList, btnSet }) {
   return (
     <Box sx={{ m: 3 }}>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={6}>
           <Box component={Box} as="figure" sx={{ m: 0 }}>
             <GatsbyImage
               image={imageData}
@@ -49,7 +49,7 @@ function ProductCardTopSite({ rating, image, infoList, btnSet }) {
             )}
           </Box>
         </Grid>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={6}>
           <Box
             sx={{
               display: {
@@ -63,14 +63,14 @@ function ProductCardTopSite({ rating, image, infoList, btnSet }) {
           >
             {btnSet &&
               btnSet.map((btn) => (
-                <Box sx={{ mr: 3 }} key={btn._key}>
+                <Box key={btn._key}>
                   <ConditionalButton {...mapMuiBtnToProps(btn)} />
                 </Box>
               ))}
           </Box>
         </Grid>
       </Grid>
-      <Box sx={{ mt: 0.5 }}>
+      <Box sx={{ mt: 0.5, py: 1, display: { xs: 'flex', sm: 'block', justifyContent: 'center' } }}>
         <ProductCardRating rating={rating} />
       </Box>
       <Box
@@ -82,13 +82,12 @@ function ProductCardTopSite({ rating, image, infoList, btnSet }) {
             md: 'none',
             lg: 'none',
             xl: 'none',
-            flexDirection: 'column',
           },
         }}
       >
         {btnSet &&
           btnSet.map((btn) => (
-            <Box sx={{ mr: 3 }} key={btn._key}>
+            <Box sx={{ display: 'flex', mt: 3, justifyContent: 'center' }} key={btn._key}>
               <ConditionalButton {...mapMuiBtnToProps(btn)} />
             </Box>
           ))}

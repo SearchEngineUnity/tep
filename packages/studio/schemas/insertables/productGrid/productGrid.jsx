@@ -25,7 +25,9 @@ export default {
       of: [{ type: 'productGridTile' }],
       validation: (Rule) =>
         Rule.custom((tiles) => {
-          return !tiles || tiles?.length <= 4 ? true : 'Number of tiles must be between 0 and 4.';
+          return !tiles || (tiles?.length >= 1 && tiles?.length <= 4)
+            ? true
+            : 'Number of tiles must be between 1 and 4.';
         }),
     },
     {
