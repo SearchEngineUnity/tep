@@ -3,7 +3,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../../../lib/sanityConfig';
@@ -13,7 +12,7 @@ import ConditionalButton from '../../../buttons/ConditionalButton';
 import Caption from '../../serializer/CaptionSerializer';
 import { mapMuiBtnToProps } from '../../../../lib/mapToProps';
 
-function ProductCardTopSite({ name, headingLevel, rating, image, infoList, btnSet }) {
+function ProductCardTopSite({ rating, image, infoList, btnSet }) {
   const imageData = getGatsbyImageData(
     image,
     {
@@ -51,7 +50,17 @@ function ProductCardTopSite({ name, headingLevel, rating, image, infoList, btnSe
           </Box>
         </Grid>
         <Grid item xs={12} sm={8}>
-          <Box>
+          <Box
+            sx={{
+              display: {
+                xs: 'none',
+                sm: 'block',
+                md: 'block',
+                lg: 'block',
+                xl: 'block',
+              },
+            }}
+          >
             {btnSet &&
               btnSet.map((btn) => (
                 <Box sx={{ mr: 3 }} key={btn._key}>
@@ -63,6 +72,26 @@ function ProductCardTopSite({ name, headingLevel, rating, image, infoList, btnSe
       </Grid>
       <Box sx={{ mt: 0.5 }}>
         <ProductCardRating rating={rating} />
+      </Box>
+      <Box
+        sx={{
+          mt: 3,
+          display: {
+            xs: 'block',
+            sm: 'none',
+            md: 'none',
+            lg: 'none',
+            xl: 'none',
+            flexDirection: 'column',
+          },
+        }}
+      >
+        {btnSet &&
+          btnSet.map((btn) => (
+            <Box sx={{ mr: 3 }} key={btn._key}>
+              <ConditionalButton {...mapMuiBtnToProps(btn)} />
+            </Box>
+          ))}
       </Box>
       <Box sx={{ mt: 3 }}>
         <ProductInfoList infoList={infoList} />
