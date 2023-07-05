@@ -86,15 +86,16 @@ function ProductCard({
               googlePlayLink,
             }}
           />
-          {segments.map((segment) => {
-            const { _type, _key } = segment;
-            switch (_type) {
-              case 'productCardFlexSegment':
-                return <ProductCardFlexSegment key={_key} {...segment} />;
-              default:
-                return <div key="default-inner-block"> Block still under development</div>;
-            }
-          })}
+          {segments &&
+            segments.map((segment) => {
+              const { _type, _key } = segment;
+              switch (_type) {
+                case 'productCardFlexSegment':
+                  return <ProductCardFlexSegment key={_key} {...segment} />;
+                default:
+                  return <div key="default-inner-block"> Block still under development</div>;
+              }
+            })}
         </Card>
       </Box>
     </>
