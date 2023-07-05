@@ -117,12 +117,6 @@ export default {
       },
     },
     {
-      title: 'Top Button',
-      name: 'topBtn',
-      type: 'btnBlockMui',
-      fieldset: 'productCardTop',
-    },
-    {
       title: 'Button Set',
       name: 'btnSet',
       type: 'array',
