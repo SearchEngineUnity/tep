@@ -146,6 +146,8 @@ function SmartTable({ smartTable }) {
                 } else if (index === 0) {
                   if (cell._type === 'splitCell') {
                     style = { ...splitStyle, ...colHeadStyle };
+                  } else {
+                    style = { ...colHeadStyle };
                   }
                 } else {
                   style = { ...colHeadStyle };
