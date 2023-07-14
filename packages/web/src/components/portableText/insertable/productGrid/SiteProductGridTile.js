@@ -8,7 +8,7 @@ import Illustration from '../Illustration';
 import Content from '../../serializer/NoIndentSerializer';
 import ConditionalButton from '../../../buttons/ConditionalButton';
 
-export default function DefaultProductGridTile({ pageJumpText, tile }) {
+export default function SiteProductGridTile({ pageJumpText, tile }) {
   const { specialTagText, tileImage, name, content, btnText, btnLink, jumpLink } = tile;
   const { alt } = tileImage;
 
@@ -21,6 +21,17 @@ export default function DefaultProductGridTile({ pageJumpText, tile }) {
         flexDirection: { xs: 'column', sm: 'row', lg: 'column' },
         flexWrap: 'wrap',
         height: '100%',
+        '& .pt-link': {
+          color: 'primary.main',
+          textDecorationColor: 'currentcolor',
+        },
+        '& .caption-text': {
+          color: 'text.primary',
+        },
+        '& .caption-link': {
+          color: 'text.primary',
+          textDecorationColor: 'currentcolor',
+        },
       }}
     >
       <CardHeader
