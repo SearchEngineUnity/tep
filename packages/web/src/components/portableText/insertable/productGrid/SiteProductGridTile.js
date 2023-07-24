@@ -105,7 +105,7 @@ export default function SiteProductGridTile({ pageJumpText, tile }) {
             }}
           >
             <Link
-              href={`#${jumpLink}`}
+              href={`#${jumpLink.hashId}`}
               underline="none"
               color="textSecondary"
               sx={{
