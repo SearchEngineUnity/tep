@@ -16,10 +16,10 @@ export function useSectionsObserver() {
     };
 
     observer.current = new IntersectionObserver(handleObserver, {
-      threshold: 0.25,
+      rootMargin: '-10% 0% -80% 0px',
     });
 
-    const elements = document.querySelectorAll('section');
+    const elements = document.querySelectorAll('section[id]');
     elements.forEach((elem) => observer.current.observe(elem));
 
     return () => observer.current?.disconnect();
