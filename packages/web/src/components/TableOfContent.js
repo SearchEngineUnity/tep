@@ -23,14 +23,8 @@ function TableOfContent({ toc }) {
                     fontWeight: 'bold',
                   }
                 }
-                href={`#${item.hashId}`}
+                href={`#${item.hashID}`}
                 underline="hover"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(`#${item.hashID}`).scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }}
               >
                 {item.title}
               </Link>
