@@ -2,10 +2,10 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { useHeadsObserver } from '../hooks/useHeadObserver';
+import { useSectionsObserver } from '../hooks/useSectionsObserver';
 
 function TableOfContent({ toc }) {
-  const { activeId } = useHeadsObserver();
+  const { activeId } = useSectionsObserver();
 
   return (
     <Box sx={{ display: 'block', bgcolor: 'grey.100', position: 'sticky', top: 0, padding: 3 }}>
@@ -23,14 +23,8 @@ function TableOfContent({ toc }) {
                     fontWeight: 'bold',
                   }
                 }
-                href={`#${item.hashId}`}
+                href={`#${item.hashID}`}
                 underline="hover"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector(`#${item.hashID}`).scrollIntoView({
-                    behavior: 'smooth',
-                  });
-                }}
               >
                 {item.title}
               </Link>
