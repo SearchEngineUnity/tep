@@ -198,7 +198,7 @@ function SmartTable({ smartTable }) {
                   if (fixedFirstColumn) {
                     style = { ...stickyCellStyle, ...rowHeadStyle };
                   } else {
-                    style = colHeadStyle;
+                    style = rowHeadStyle;
                   }
                 } else if (fixedFirstColumn && index === 0) {
                   style = stickyCellStyle;
