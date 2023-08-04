@@ -34,7 +34,6 @@ const stickyCellStyle = {
 
 const colHeadStyle = {
   backgroundColor: 'secondary.light',
-  verticalAlign: 'bottom',
   fontWeight: 'medium',
   '& .pt-heading': { fontWeight: 'medium' },
 };
