@@ -111,8 +111,6 @@ function SoloGuidePage({ data, location }) {
 
   const guideBody = data.guide._rawGuideBody;
 
-  console.log(data.guide._rawGuideBody);
-
   let sectionStarts = [];
 
   for (let index = 0; index < guideBody.length; index++) {
@@ -134,14 +132,9 @@ function SoloGuidePage({ data, location }) {
   for (let index = 0; index < sectionStarts.length; index++) {
     const { position: startPosition, id } = sectionStarts[index];
     const endPosition = sectionStarts[index + 1]?.position || guideBody.length;
-    console.log(startPosition);
-    console.log(endPosition);
     const section = guideBody.slice(startPosition, endPosition);
     sections.push({ section, id });
   }
-
-  console.log(sectionStarts);
-  console.log(sections);
 
   return (
     <Layout
