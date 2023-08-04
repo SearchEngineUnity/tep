@@ -1,7 +1,7 @@
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import { visionTool } from '@sanity/vision';
-import { media } from 'sanity-plugin-media';
+import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/dashboard';
 import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify';
 import { colorInput } from '@sanity/color-input';
@@ -53,6 +53,14 @@ export default defineConfig({
     visionTool(),
     colorInput(),
   ],
+  form: {
+    // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
+    file: {
+      assetSources: (previousAssetSources) => {
+        return previousAssetSources.filter((assetSource) => assetSource !== mediaAssetSource);
+      },
+    },
+  },
   schema: {
     types: schemaTypes,
   },
