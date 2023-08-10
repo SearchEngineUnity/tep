@@ -25,6 +25,16 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        // eslint-disable-next-line global-require
+        queries: require('./src/utils/algolia-queries'),
+      },
+    },
     // {
     //   resolve: 'gatsby-plugin-google-tagmanager',
     //   options: {
