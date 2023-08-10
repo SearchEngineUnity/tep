@@ -13,6 +13,9 @@ const pageQuery = `{
         hero{
           h1
         }
+        Internal {
+          contentDigest
+        }
       }
     }
   }
@@ -23,12 +26,14 @@ function pageToAlgoliaRecord({
     id,
     hero: { h1 },
     slug,
+    ...rest
   },
 }) {
   return {
     objectID: id,
     slug: slug.current,
     title: h1,
+    ...rest,
   };
 }
 
