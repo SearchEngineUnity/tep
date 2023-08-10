@@ -13,7 +13,7 @@ const pageQuery = `{
         hero{
           h1
         }
-        Internal {
+        internal {
           contentDigest
         }
       }
