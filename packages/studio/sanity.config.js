@@ -6,6 +6,7 @@ import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/da
 import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify';
 import { colorInput } from '@sanity/color-input';
 import { gatsbyWidget } from './schemas/components/widgets/gatsbyPreviewWidget';
+import { sanityLimitWidget } from './schemas/components/widgets/sanityLimitWidget';
 import { schemaTypes } from './schemas';
 import deskStructure from './deskStructure';
 import { GatsbyPreviewAction } from './actions';
@@ -47,6 +48,7 @@ export default defineConfig({
             buildHookId: 'b3aea1e1-5265-4f8e-a477-52211e5bdb3c',
           },
         }),
+        sanityLimitWidget({ projectId: 'ki8bqxrw' }),
         projectUsersWidget(),
       ],
     }),
