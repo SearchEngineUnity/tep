@@ -20,6 +20,7 @@ function ConditionalButton({
   alignment,
   typography,
   bgImage,
+  className,
 }) {
   const { main, dark, contrastText } = colors || {};
   const mainColor = determineColor(main?.color);
@@ -113,6 +114,7 @@ function ConditionalButton({
             padding,
             textAlign: 'center',
           }}
+          className={`btn ${className}`}
         >
           {text}
         </Button>
