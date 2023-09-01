@@ -95,6 +95,9 @@ function ConditionalButton({
   if (linkType === 'internalLocal' && newTab) {
     linkType = 'internalGlobal';
   }
+
+  const btnClassName = className ? `btn ${className}`.trim() : 'btn';
+
   return (
     <ThemeProvider theme={(theme) => btnTheme(theme)}>
       <Box sx={{ display: 'flex', justifyContent: alignment }}>
@@ -114,7 +117,7 @@ function ConditionalButton({
             padding,
             textAlign: 'center',
           }}
-          className={`btn ${className}`}
+          className={btnClassName}
         >
           {text}
         </Button>
