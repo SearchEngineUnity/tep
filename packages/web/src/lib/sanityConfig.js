@@ -1,6 +1,6 @@
 const sanityConfig = {
   projectId: 'ki8bqxrw',
-  dataset: 'production',
+  dataset: 'development',
 };
 
 export default sanityConfig;
