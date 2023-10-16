@@ -10,11 +10,19 @@ const pageQuery = `{
           current
         }
         id
-        hero{
+        hero {
           h1
         }
         internal {
           contentDigest
+        }
+        pageTitle
+        metaDescription
+        toc {
+          title
+        }
+        guideBody {
+          _rawChildren(resolveReferences: {maxDepth: 1})
         }
       }
     }
@@ -24,16 +32,24 @@ const pageQuery = `{
 function pageToAlgoliaRecord({
   node: {
     id,
-    hero: { h1 },
+    hero,
+    pageTitle,
+    metaDescription,
+    toc,
     slug,
-    ...rest
+    internal,
+    //  guideBody
   },
 }) {
   return {
     objectID: id,
     slug: slug.current,
-    title: h1,
-    ...rest,
+    title: pageTitle,
+    h1: hero.h1,
+    metaDescription,
+    toc,
+    internal,
+    // guideBody,
   };
 }
 
