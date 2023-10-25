@@ -155,7 +155,7 @@ function ProductCardTopApp({ rating, image, infoList, iosLink, googlePlayLink })
             }}
           >
             <CardActionArea
-              href={iosLink}
+              href={googlePlayLink}
               rel="nofollow"
               className="product-card__top-btn google-play-btn"
             >
