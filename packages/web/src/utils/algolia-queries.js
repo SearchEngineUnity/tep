@@ -1,6 +1,6 @@
 // const escapeStringRegexp = require('escape-string-regexp');
 // const pagePath = `content`;
-const indexName = `SiteBuilderV2`;
+const indexName = `testing`;
 
 const pageQuery = `{
   pages: allSanitySoloGuidePage {
@@ -22,7 +22,10 @@ const pageQuery = `{
           title
         }
         guideBody {
-          _rawChildren(resolveReferences: {maxDepth: 1})
+          children {
+            text
+          }
+          style
         }
       }
     }
@@ -30,26 +33,24 @@ const pageQuery = `{
 }`;
 
 function pageToAlgoliaRecord({
-  node: {
-    id,
-    hero,
-    pageTitle,
-    metaDescription,
-    toc,
-    slug,
-    internal,
-    //  guideBody
-  },
+  node: { id, hero, pageTitle, metaDescription, toc, slug, internal, guideBody },
 }) {
+  const h2 = guideBody.filter((x) => x.style === 'h2').map((x) => x.children[0].text);
+
+  const h3 = guideBody.filter((x) => x.style === 'h3').map((x) => x.children[0].text);
+
+  const tocArr = toc.map((x) => x.title);
+
   return {
     objectID: id,
     slug: slug.current,
     title: pageTitle,
     h1: hero.h1,
     metaDescription,
-    toc,
+    toc: tocArr,
     internal,
-    // guideBody,
+    h2,
+    h3,
   };
 }
 
