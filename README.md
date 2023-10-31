@@ -1,10 +1,8 @@
-# Site Builder V2
+# TEP
 
 ## Links to the deployed frontend and backend
 
-* [Sanity (CMS) Studio](https://sitebuilderv2.sanity.studio/desk)
-* [Gatsby Preview hosted on Gatsby Cloud](https://preview-sitebuilderv2.gatsbyjs.io/)
-* [Live site hosted on Gatsby Cloud](https://sitebuilderv2.gatsbyjs.io/)
+* [Sanity (CMS) Studio](https://tep.sanity.studio/desk)
 
 ## How to install and run the project
 
@@ -96,71 +94,6 @@ Here are some resources consulted by SC when setting up this project.
 * [Building a JavaScript Monorepo with Lerna](https://javascript.plainenglish.io/javascript-monorepo-with-lerna-5729d6242302)
 * [@lerna/bootstrap](https://www.npmjs.com/package/@lerna/bootstrap)
 * [Lerna Getting Started](https://lerna.js.org/docs/getting-started)
-
-## Migration
-
-### Sanity migration
-
-1. [Step by step guide](https://www.sanity.io/docs/example-migrating-the-blog-template-from-studio-v2-to-v3)
-
-2. [Migrating the CLI - This migrates sanity.json to sanity.cli.js](https://www.sanity.io/docs/migrating-the-cli)
-
-3. [Studio configuration - This migrates the other part of sanity.json to sanity.config.js. We are not currently using workspaces.](https://www.sanity.io/docs/migrating-studio-configuration)
-
-4. [Schema and schema types - This one is used migrate custom input components and preview components.](https://www.sanity.io/docs/migrating-schema-types)
-
-5. [Preview list view - This is the current document that has been helpful for custom input components and preview components.](https://www.sanity.io/docs/previews-list-views)
-
-6. [Structure Builder - The majority of the migration has been completed but the custom preview (of button, form, section) has not been yet implemented.](https://www.sanity.io/docs/migrating-custom-structure-and-default-document-node)
-
-7. [Migrating Plugins](https://www.sanity.io/docs/migrating-plugins)
-
-8. [Document actions](https://www.sanity.io/docs/document-actions)
-
-### Gatsby Migration
-
-We technically didn't 'migrate', we installed the newest V5 and slowly moved the stuff into it.
-
-1. [Migrate v3 to v4](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v3-to-v4/) No action was required
-
-2. [Migrate v4 to v5](https://www.gatsbyjs.com/docs/reference/release-notes/migrating-from-v4-to-v5/)
-
-**Some highlights**
-
-Change to IE support
-Updated sort
-Set up trailing slash to never instead of using a package to achieve this
-Migrate to head api instead of using gatsby-react-helmet or react-helmet
-When you start up the playground it will be GraphiQL now
-removal of use of <StaticQuery />
-All dependencies were reinstalled to gatsby v5 compatible other than gatsby-theme-material-ui (they need to update their dependency still)
-Material UI migration
-
-3. [Migrating to v5 getting started](https://mui.com/material-ui/migration/migration-v4/) only code mod is needed here
-
-4. [Style change](https://mui.com/material-ui/migration/v5-style-changes/)
-
-5. [Component changes](https://mui.com/material-ui/migration/v5-component-changes/)
-
-**Notes**
-
-The sx prop is the preferred way to style one offs. The styled utility is used to create reusable styled components.
-
-### Update to 'Serializer' code
-
-We have moved off the: [deprecated package](https://github.com/sanity-io/block-content-to-react) to the new [portable text to react.](https://www.sanity.io/docs/portable-text-to-react)
-
-[Migration guide](https://www.sanity.io/docs/portable-text-to-react)
-
-## Gatsby Notes + Resources
-
-### Gatsby Graphql
-
-[Customizing the GraphQL Schema](https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/)
-
-### Gatsby Preview Button
-
-1. [Install Preview Extension for Sanity](https://support.gatsbyjs.com/hc/en-us/articles/4877130019731-Install-Preview-Extension-for-Sanity)
 
 2. [Document action](https://www.sanity.io/docs/document-actions)
 
