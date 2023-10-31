@@ -80,7 +80,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sanity',
       options: {
-        projectId: 'ki8bqxrw',
+        projectId: 'ed2r2yff',
         dataset: 'development',
         token: process.env.SANITY_TOKEN,
         watchMode: !isProd, // watchMode only in dev mode

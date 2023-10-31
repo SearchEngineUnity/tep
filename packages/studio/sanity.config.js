@@ -14,7 +14,7 @@ import { GatsbyPreviewAction } from './actions';
 export default defineConfig({
   name: 'default',
   title: 'siteBuilderV2',
-  projectId: 'ki8bqxrw',
+  projectId: 'ed2r2yff',
   dataset: 'production',
   plugins: [
     deskTool({
@@ -48,7 +48,7 @@ export default defineConfig({
             buildHookId: 'b3aea1e1-5265-4f8e-a477-52211e5bdb3c',
           },
         }),
-        sanityLimitWidget({ projectId: 'ki8bqxrw' }),
+        sanityLimitWidget({ projectId: 'ed2r2yff' }),
         projectUsersWidget(),
       ],
     }),
