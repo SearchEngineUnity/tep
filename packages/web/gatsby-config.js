@@ -10,7 +10,7 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || 'false').toLowerCase() 
 
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'https://sitebuilderv2.netlify.app', // update to new netlify URL
+  URL: NETLIFY_SITE_URL = 'https://tep.netlify.app', // update to new netlify URL
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
@@ -81,7 +81,7 @@ module.exports = {
       resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'ed2r2yff',
-        dataset: 'development',
+        dataset: 'production',
         token: process.env.SANITY_TOKEN,
         watchMode: !isProd, // watchMode only in dev mode
         overlayDrafts: !isProd || previewEnabled, // drafts in dev & Gatsby Cloud Preview
