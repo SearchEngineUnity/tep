@@ -9,14 +9,6 @@ import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
 function TileImageRecSqr({ image, alt, link, title }) {
-  const imageData = getGatsbyImageData(
-    image,
-    {
-      layout: 'fullWidth',
-    },
-    sanityConfig,
-  );
-
   return (
     <Card
       elevation={link ? 8 : 0}
@@ -25,7 +17,7 @@ function TileImageRecSqr({ image, alt, link, title }) {
       <ConditionalCardActionArea link={link}>
         <Box sx={{ pt: 2 }}>
           <GatsbyImage
-            image={imageData}
+            image={image}
             alt={alt || ''}
             style={{
               width: '50%',
