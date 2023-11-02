@@ -45,6 +45,7 @@ export default {
           { title: 'Bordered Rectangle Image then Title', value: '3' },
           { title: 'Bordered Full Image then Title then Text', value: '4' },
           { title: 'Small Image and Title then Text', value: '5' },
+          { title: 'Image and Title', value: '6' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],

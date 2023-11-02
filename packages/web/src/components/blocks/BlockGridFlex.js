@@ -5,6 +5,7 @@ import Tile2 from '../tiles/TileImageCircle';
 import Tile3 from '../tiles/TileImageTitleBorder';
 import Tile4 from '../tiles/TileImageTitleTextBase';
 import Tile5 from '../tiles/TileSmImageTitleText';
+import Tile6 from '../tiles/TileImageTitle';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import { mapGatsbyImageDataToProps } from '../../lib/mapToProps';
@@ -90,6 +91,14 @@ function GridFlex({
                     link={tile.link[0]}
                     title={tile.title}
                     text={tile.text}
+                  />
+                );
+              case '6':
+                return (
+                  <Tile6
+                    {...mapGatsbyImageDataToProps(tile.tileImage)}
+                    link={tile.link[0]}
+                    title={tile.title}
                   />
                 );
               default:

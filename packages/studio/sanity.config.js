@@ -13,7 +13,7 @@ import { GatsbyPreviewAction } from './actions';
 
 export default defineConfig({
   name: 'default',
-  title: 'siteBuilderV2',
+  title: 'tep',
   projectId: 'ed2r2yff',
   dataset: 'production',
   plugins: [
@@ -31,18 +31,18 @@ export default defineConfig({
               title: 'Site Builder V2',
               apiId: 'e978dfee-c169-45df-9cea-aa427232a7f8',
               buildHookId: '63e28e14258d2d0fddde9ef4',
-              name: 'sitebuilderv2',
+              name: 'tep',
             },
           ],
           layout: { width: 'small', height: 'small' },
         }),
         gatsbyWidget({
           site: {
-            title: 'siteBuilderV2 Preview',
-            name: 'sitebuilderv2-preview',
-            id: 'sitebuilderv2-preview',
+            title: 'tep Preview',
+            name: 'tep-preview',
+            id: 'tep-preview',
             organizationId: 'd7d268c0-3157-4cab-a651-e456e34643bb',
-            url: 'https://preview-sitebuilderv2.gatsbyjs.io',
+            url: 'https://preview-tep.gatsbyjs.io',
             adminUrl:
               'https://www.gatsbyjs.com/dashboard/d7d268c0-3157-4cab-a651-e456e34643bb/sites/b3aea1e1-5265-4f8e-a477-52211e5bdb3c/cmsPreview',
             buildHookId: 'b3aea1e1-5265-4f8e-a477-52211e5bdb3c',
