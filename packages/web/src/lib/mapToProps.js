@@ -323,16 +323,6 @@ export function mapFluidImgToProps({ _rawAsset, alt, maxHeight, maxWidth, _rawCa
   };
 }
 
-export function mapGatsbyImageDataToProps({ asset, alt, maxHeight, maxWidth, _rawCaption }) {
-  return {
-    image: asset.gatsbyImageData,
-    alt,
-    maxHeight,
-    maxWidth,
-    caption: _rawCaption,
-  };
-}
-
 export function mapBlockFormNetlifyToProps({
   _rawFormNetlify,
   heading,

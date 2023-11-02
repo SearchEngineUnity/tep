@@ -99,9 +99,7 @@ export const query = graphql`
                 title
                 tileImage {
                   alt
-                  asset {
-                    gatsbyImageData(placeholder: BLURRED)
-                  }
+                  _rawAsset(resolveReferences: { maxDepth: 1 })
                 }
               }
             }
@@ -468,9 +466,7 @@ export const query = graphql`
                 title
                 tileImage {
                   alt
-                  asset {
-                    gatsbyImageData(placeholder: BLURRED)
-                  }
+                  _rawAsset(resolveReferences: { maxDepth: 1 })
                 }
               }
             }
@@ -832,11 +828,8 @@ export const query = graphql`
                 text
                 title
                 tileImage {
-                  asset {
-                    gatsbyImageData(placeholder: BLURRED)
-                  }
                   alt
-                  # _rawAsset(resolveReferences: { maxDepth: 1 })
+                  _rawAsset(resolveReferences: { maxDepth: 1 })
                 }
               }
             }
@@ -1196,9 +1189,7 @@ export const query = graphql`
                 title
                 tileImage {
                   alt
-                  asset {
-                    gatsbyImageData(placeholder: BLURRED)
-                  }
+                  _rawAsset(resolveReferences: { maxDepth: 1 })
                 }
               }
             }

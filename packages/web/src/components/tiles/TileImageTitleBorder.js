@@ -1,10 +1,20 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
+import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
-function TileImageRecSqr({ image, alt, link, title }) {
+function TileImageTitleBorder({ image, alt, link, title }) {
+  const imageData = getGatsbyImageData(
+    image,
+    {
+      layout: 'fullWidth',
+    },
+    sanityConfig,
+  );
+
   return (
     <Card
       elevation={link ? 8 : 0}
@@ -13,7 +23,7 @@ function TileImageRecSqr({ image, alt, link, title }) {
       <ConditionalCardActionArea link={link}>
         <Box sx={{ pt: 2 }}>
           <GatsbyImage
-            image={image}
+            image={imageData}
             alt={alt || ''}
             style={{
               width: '50%',
@@ -33,4 +43,4 @@ function TileImageRecSqr({ image, alt, link, title }) {
   );
 }
 
-export default TileImageRecSqr;
+export default TileImageTitleBorder;
