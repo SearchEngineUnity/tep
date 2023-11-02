@@ -8,7 +8,7 @@ import Tile5 from '../tiles/TileSmImageTitleText';
 import Tile6 from '../tiles/TileImageTitle';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
-import { mapGatsbyImageDataToProps } from '../../lib/mapToProps';
+import { mapFluidImgToProps } from '../../lib/mapToProps';
 
 function GridFlex({
   hasSectionHeading,
@@ -64,13 +64,13 @@ function GridFlex({
           const tileSelector = (key) => {
             switch (key) {
               case '1':
-                return <Tile1 {...mapGatsbyImageDataToProps(tile.tileImage)} link={tile.link[0]} />;
+                return <Tile1 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
               case '2':
-                return <Tile2 {...mapGatsbyImageDataToProps(tile.tileImage)} link={tile.link[0]} />;
+                return <Tile2 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
               case '3':
                 return (
                   <Tile3
-                    {...mapGatsbyImageDataToProps(tile.tileImage)}
+                    {...mapFluidImgToProps(tile.tileImage)}
                     link={tile.link[0]}
                     title={tile.title}
                   />
@@ -78,7 +78,7 @@ function GridFlex({
               case '4':
                 return (
                   <Tile4
-                    {...mapGatsbyImageDataToProps(tile.tileImage)}
+                    {...mapFluidImgToProps(tile.tileImage)}
                     link={tile.link[0]}
                     title={tile.title}
                     text={tile.text}
@@ -87,7 +87,7 @@ function GridFlex({
               case '5':
                 return (
                   <Tile5
-                    {...mapGatsbyImageDataToProps(tile.tileImage)}
+                    {...mapFluidImgToProps(tile.tileImage)}
                     link={tile.link[0]}
                     title={tile.title}
                     text={tile.text}
@@ -96,7 +96,7 @@ function GridFlex({
               case '6':
                 return (
                   <Tile6
-                    {...mapGatsbyImageDataToProps(tile.tileImage)}
+                    {...mapFluidImgToProps(tile.tileImage)}
                     link={tile.link[0]}
                     title={tile.title}
                   />
