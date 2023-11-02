@@ -80,9 +80,9 @@ lerna add a --scope=b
 lerna add a --scope=b --scope=c --scope=d  
 ```
 
-Here’s a concrete example installing **dotenv** as a dependency to the **@siteBuilderV2/web** package:
+Here’s a concrete example installing **dotenv** as a dependency to the **@tep/web** package:
 ```
-lerna add dotenv --scope=@siteBuilderV2/web  
+lerna add dotenv --scope=@tep/web  
 ```
 
 Run `npm run clean` should you accidentally installed a dependency inside the package itself then rerun `npm install --legacy-peer-deps` from the root folder.

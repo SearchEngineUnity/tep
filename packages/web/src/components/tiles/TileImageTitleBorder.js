@@ -1,11 +1,7 @@
-// Tile 3
-
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
 function TileImageRecSqr({ image, alt, link, title }) {
