@@ -1,3 +1,4 @@
+// Tile #6
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -16,17 +17,13 @@ function TileImageTitle({ image, alt, link, title }) {
   );
 
   return (
-    <Card
-      elevation={link ? 8 : 0}
-      sx={{ border: '1px solid #acb4b8', borderRadius: '0.25rem', height: '100%' }}
-    >
+    <Card elevation={link ? 8 : 0} sx={{ height: '100%' }}>
       <ConditionalCardActionArea link={link}>
         <Box sx={{ pt: 2 }}>
           <GatsbyImage
             image={imageData}
             alt={alt || ''}
             style={{
-              width: '50%',
               height: 'auto',
               marginLeft: 'auto',
               marginRight: 'auto',

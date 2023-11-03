@@ -121,6 +121,11 @@ export default {
             title: heading || subheading || 'Flex Grid',
             subtitle: 'Grid: Small Image and Title then Text',
           };
+        case '6':
+          return {
+            title: heading || subheading || 'Flex Grid',
+            subtitle: 'Grid: Image and Title',
+          };
         default:
           return { title: 'Error' };
       }
