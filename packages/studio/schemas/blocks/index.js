@@ -1,3 +1,4 @@
+export { default as accordionBlock } from './accordionBlock';
 export { default as blockFormNetlify } from './blockFormNetlify';
 export { default as btnBlockMui } from './btnBlockMui';
 export { default as clickableImage } from './clickableImage';
