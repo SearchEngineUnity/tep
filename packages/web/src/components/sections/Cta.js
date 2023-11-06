@@ -8,16 +8,13 @@ import { Button } from 'gatsby-theme-material-ui';
 function Cta() {
   const btnTheme = (theme) =>
     createTheme({
-      // palette: {
-      //   background: {
-      //     default: '#FFFFFF',
-      //     paper: '#FFFFFF',
-      //   },
-      //   primary: {
-      //     main: theme.palette.primary.main,
-      //     contrastText: '#FFFFFF',
-      //   },
-      // },
+      palette: {
+        primary: {
+          main: theme.palette.common.white,
+          dark: '#F9F9F9',
+          contrastText: theme.palette.primary.main,
+        },
+      },
       shape: {
         borderRadius: '4px',
       },
@@ -86,9 +83,12 @@ function Cta() {
           <ThemeProvider theme={(theme) => btnTheme(theme)}>
             <Box sx={{ textAlign: 'center' }}>
               <Button
+                variant="contained"
                 to="/contact-us"
-                variant="outlined"
-                sx={{ backgroundColor: 'white', padding: '12px 24px', textAlign: 'center' }}
+                disableElevation
+                disableFocusRipple
+                disableRipple
+                sx={{ padding: '12px 24px', textAlign: 'center' }}
               >
                 Request a quote
               </Button>
