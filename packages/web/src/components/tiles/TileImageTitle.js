@@ -11,7 +11,7 @@ function TileImageTitle({ image, alt, link, title }) {
   const imageData = getGatsbyImageData(
     image,
     {
-      layout: 'fullWidth',
+      layout: 'constrained',
     },
     sanityConfig,
   );
@@ -19,19 +19,16 @@ function TileImageTitle({ image, alt, link, title }) {
   return (
     <Card elevation={link ? 8 : 0} sx={{ height: '100%' }}>
       <ConditionalCardActionArea link={link}>
-        <Box sx={{ pt: 2 }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <GatsbyImage
+            objectFit="contain"
             image={imageData}
             alt={alt || ''}
-            style={{
-              height: 'auto',
-              marginLeft: 'auto',
-              marginRight: 'auto',
-            }}
+            style={{ marginLeft: 'auto', marginRight: 'auto' }}
           />
         </Box>
-        <Box sx={{ py: 2, px: 1 }}>
-          <Box sx={{ fontSize: '20px', fontWeight: 700, textAlign: 'center' }}>
+        <Box sx={{ py: 2 }}>
+          <Box sx={{ fontSize: '20px', fontWeight: 400, textAlign: 'center' }}>
             <div>{title}</div>
           </Box>
         </Box>
