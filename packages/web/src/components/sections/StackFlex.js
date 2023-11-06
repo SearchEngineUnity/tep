@@ -9,6 +9,7 @@ import BlockFormNetlify from '../blocks/BlockFormNetlify';
 import TestimonialGrid from '../blocks/TestimonialGrid';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import SmartGridBlock from '../blocks/SmartGridBlock';
+import AccordionBlock from '../portableText/insertable/Accordion';
 import {
   mapFluidImgBlockToProps,
   mapSectionBlockToProps,
@@ -60,6 +61,8 @@ function StackFlex({
           const col = stackColCalculator(parseInt(blockWidth, 10));
           const blockSelector = (key) => {
             switch (true) {
+              case key === 'accordionBlock':
+                return <AccordionBlock key={_key} accordionSet={block._rawAccordionSet} />;
               case key === 'smartGridBlock':
                 return (
                   <SmartGridBlock

@@ -20,6 +20,11 @@ export const query = graphql`
           _key
           _type
           blocks {
+            ... on SanityAccordionBlock {
+              _key
+              _type
+              _rawAccordionSet
+            }
             ... on SanitySmartGridBlock {
               _key
               _type
@@ -387,6 +392,11 @@ export const query = graphql`
           headerAlignment
           footerAlignment
           blocks {
+            ... on SanityAccordionBlock {
+              _key
+              _type
+              _rawAccordionSet
+            }
             ... on SanitySmartGridBlock {
               _key
               _type
@@ -750,6 +760,11 @@ export const query = graphql`
           headerAlignment
           idTag
           blocks {
+            ... on SanityAccordionBlock {
+              _key
+              _type
+              _rawAccordionSet
+            }
             ... on SanitySmartGridBlock {
               _key
               _type
@@ -1110,6 +1125,11 @@ export const query = graphql`
           headerAlignment
           idTag
           blocks {
+            ... on SanityAccordionBlock {
+              _key
+              _type
+              _rawAccordionSet
+            }
             ... on SanitySmartGridBlock {
               _key
               _type
