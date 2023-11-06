@@ -1,16 +1,16 @@
 import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
+import MuiAccordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import AccordionText from '../portableText/serializer/FullIndentSerializer';
+import AccordionText from '../serializer/FullIndentSerializer';
 
-export default function AccordionBlock({ accordionSet }) {
+export default function Accordion({ accordionSet }) {
   return (
     <>
       {accordionSet.map((item) => (
-        <Accordion
+        <MuiAccordion
           key={item._Key}
           disableGutters
           square
@@ -43,7 +43,7 @@ export default function AccordionBlock({ accordionSet }) {
           >
             <AccordionText blocks={item.text} />
           </AccordionDetails>
-        </Accordion>
+        </MuiAccordion>
       ))}
     </>
   );

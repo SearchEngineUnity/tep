@@ -9,7 +9,7 @@ import BlockFormNetlify from '../blocks/BlockFormNetlify';
 import TestimonialGrid from '../blocks/TestimonialGrid';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import SmartGridBlock from '../blocks/SmartGridBlock';
-import AccordionBlock from '../blocks/AccordionBlock';
+import AccordionBlock from '../portableText/insertable/Accordion';
 import {
   mapFluidImgBlockToProps,
   mapSectionBlockToProps,
