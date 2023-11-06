@@ -5,6 +5,7 @@ import LrHero from '../components/sections/LrFlexHero';
 import LrFlex from '../components/sections/StructuredLrFlex';
 import StackFlex from '../components/sections/StackFlex';
 import StackHero from '../components/sections/StackHero';
+import Cta from '../components/sections/Cta';
 import { mapLrHeroToProps, mapLrFlexToProps, mapStackSectionToProps } from '../lib/mapToProps';
 
 const type = 'page';
@@ -16,6 +17,10 @@ export const query = graphql`
         current
       }
       sections {
+        ... on SanityCta {
+          _key
+          _type
+        }
         ... on SanityLrHero {
           _key
           _type
@@ -1530,6 +1535,9 @@ function StructuredPage({ data, location }) {
 
             case 'stackHero':
               return <StackHero key={section._key} {...mapStackSectionToProps(section)} />;
+
+            case 'cta':
+              return <Cta />;
 
             default:
               return <div>Still under development</div>;
