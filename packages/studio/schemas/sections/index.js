@@ -1,3 +1,4 @@
+export { default as cta } from './cta';
 export { default as paginatedListingSection } from './paginatedListingSection';
 export { default as lrFlex } from './lrFlex';
 export { default as lrHero } from './lrHero';
