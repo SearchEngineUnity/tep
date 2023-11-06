@@ -9,6 +9,7 @@ import BlockFormNetlify from '../blocks/BlockFormNetlify';
 import TestimonialGrid from '../blocks/TestimonialGrid';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import SmartGridBlock from '../blocks/SmartGridBlock';
+import AccordionBlock from '../blocks/AccordionBlock';
 import {
   mapFluidImgBlockToProps,
   mapSectionBlockToProps,
@@ -64,6 +65,8 @@ function LrFlexHero({
             const { _type, _key } = block;
             const blockSelector = (key) => {
               switch (true) {
+                case key === 'accordionBlock':
+                  return <AccordionBlock key={_key} accordionSet={block._rawAccordionSet} />;
                 case key === 'smartGridBlock':
                   return (
                     <SmartGridBlock
