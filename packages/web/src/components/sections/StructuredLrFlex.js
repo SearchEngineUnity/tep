@@ -10,6 +10,7 @@ import TestimonialGrid from '../blocks/TestimonialGrid';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import SmartGridBlock from '../blocks/SmartGridBlock';
 import AccordionBlock from '../portableText/insertable/Accordion';
+import StepsBlock from '../blocks/StepsBlock';
 import {
   mapFluidImgBlockToProps,
   mapSectionBlockToProps,
@@ -65,6 +66,8 @@ function StructuredLrFlex({
             const col = lrColCalculator(colArr[index]);
             const blockSelector = (key) => {
               switch (true) {
+                case key === 'stepsBlock':
+                  return <StepsBlock key={_key} steps={block._rawSteps} />;
                 case key === 'accordionBlock':
                   return <AccordionBlock key={_key} accordionSet={block._rawAccordionSet} />;
                 case key === 'smartGridBlock':
