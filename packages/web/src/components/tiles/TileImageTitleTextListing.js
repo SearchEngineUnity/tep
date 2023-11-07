@@ -9,7 +9,8 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
-function TileImageTitleTextListing({ image, alt, link, title, text }) {
+function TileImageTitleTextListing({ image, alt, link, title, text, subtitle }) {
+  console.log(subtitle);
   const imageData = getGatsbyImageData(
     image,
     {
@@ -34,10 +35,13 @@ function TileImageTitleTextListing({ image, alt, link, title, text }) {
           </Box>
 
           <Box sx={{ flexDirection: 'row' }} px={2}>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h3" component="p">
               {title}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="div">
+            <Typography gutterBottom variant="h5" component="p" sx={{ fontStyle: 'italic' }}>
+              {subtitle}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
               {text}
             </Typography>
           </Box>

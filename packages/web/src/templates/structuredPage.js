@@ -112,6 +112,7 @@ export const query = graphql`
                 }
                 text
                 title
+                subtitle
                 tileImage {
                   alt
                   _rawAsset(resolveReferences: { maxDepth: 1 })
@@ -489,6 +490,7 @@ export const query = graphql`
                 }
                 text
                 title
+                subtitle
                 tileImage {
                   alt
                   _rawAsset(resolveReferences: { maxDepth: 1 })
@@ -862,6 +864,7 @@ export const query = graphql`
                 }
                 text
                 title
+                subtitle
                 tileImage {
                   alt
                   _rawAsset(resolveReferences: { maxDepth: 1 })
@@ -1232,6 +1235,7 @@ export const query = graphql`
                 }
                 text
                 title
+                subtitle
                 tileImage {
                   alt
                   _rawAsset(resolveReferences: { maxDepth: 1 })
