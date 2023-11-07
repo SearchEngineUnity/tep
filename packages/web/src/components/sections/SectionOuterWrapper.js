@@ -30,12 +30,15 @@ function SectionOuterWrapper({ idTag, designSettings, children, isHero }) {
           },
           '& .pt-link': {
             color: linkColor,
+            textDecorationColor: 'currentcolor',
           },
           '& .caption-text': {
             color: captionColor,
+            textDecorationColor: 'currentcolor',
           },
           '& .caption-link': {
             color: captionColor,
+            textDecorationColor: 'currentcolor',
           },
         }),
         bleed && {
