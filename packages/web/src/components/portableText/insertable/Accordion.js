@@ -35,10 +35,6 @@ export default function Accordion({ accordionSet }) {
             sx={{
               paddingX: 0,
               paddingY: '1rem',
-              '& .pt-link': {
-                color: `primary.main`,
-                textDecorationColor: 'currentcolor',
-              },
             }}
           >
             <AccordionText blocks={item.text} />
