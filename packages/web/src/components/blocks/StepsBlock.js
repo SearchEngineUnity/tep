@@ -5,11 +5,18 @@ import TextBlock from '../portableText/serializer/FullIndentSerializer';
 
 function StepsBlock({ steps }) {
   return (
-    <>
+    <Box sx={{ containerType: 'inline-size' }}>
       {/* tablet-mobile and up */}
       <Box
         component="ol"
-        sx={{ listStyle: 'none', padding: 0, display: { sm: 'block', xs: 'none' } }}
+        sx={{
+          listStyle: 'none',
+          padding: 0,
+          display: 'none',
+          '@container (min-width: 600px)': {
+            display: 'block',
+          },
+        }}
       >
         {steps.map((step) => (
           <Typography
@@ -47,10 +54,6 @@ function StepsBlock({ steps }) {
             <Box
               sx={{
                 padding: '24px 0',
-                '& .pt-link': {
-                  color: `primary.main`,
-                  textDecorationColor: 'currentcolor',
-                },
               }}
             >
               <Typography variant="h3" gutterBottom>
@@ -64,7 +67,14 @@ function StepsBlock({ steps }) {
       {/* mobile */}
       <Box
         component="ol"
-        sx={{ listStyle: 'none', padding: 0, display: { sm: 'none', xs: 'block' } }}
+        sx={{
+          listStyle: 'none',
+          padding: 0,
+          display: 'none',
+          '@container (max-width: 600px)': {
+            display: 'block',
+          },
+        }}
       >
         {steps.map((step) => (
           <Typography
@@ -78,10 +88,6 @@ function StepsBlock({ steps }) {
             <Box
               sx={{
                 padding: '24px 0',
-                '& .pt-link': {
-                  color: `primary.main`,
-                  textDecorationColor: 'currentcolor',
-                },
               }}
             >
               <Box
@@ -119,7 +125,7 @@ function StepsBlock({ steps }) {
           </Typography>
         ))}
       </Box>
-    </>
+    </Box>
   );
 }
 export default StepsBlock;
