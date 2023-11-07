@@ -65,19 +65,14 @@ function Cta() {
         >
           <Typography
             paragraph
+            variant="h4"
             sx={{
-              fontSize: '24px',
-              fontWeight: 'regular',
-              lineHeight: '1.2083',
               textAlign: 'center',
             }}
           >
             CONTACT US TODAY FOR A FREE EPOXY QUOTE
           </Typography>
-          <Typography
-            paragraph
-            sx={{ fontSize: '24px', fontWeight: '900', lineHeight: '1.2083', textAlign: 'center' }}
-          >
+          <Typography paragraph variant="h3" sx={{ textAlign: 'center' }}>
             Call us at 647-580-9479
           </Typography>
           <ThemeProvider theme={(theme) => btnTheme(theme)}>
