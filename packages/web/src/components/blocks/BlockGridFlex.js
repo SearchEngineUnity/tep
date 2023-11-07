@@ -6,6 +6,9 @@ import Tile3 from '../tiles/TileImageTitleBorder';
 import Tile4 from '../tiles/TileImageTitleTextBase';
 import Tile5 from '../tiles/TileSmImageTitleText';
 import Tile6 from '../tiles/TileImageTitle';
+import Tile7 from '../tiles/TileImageTitleTextListing';
+import Tile8 from '../tiles/TileBorderSmImageTopTitleText';
+
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import { mapFluidImgToProps } from '../../lib/mapToProps';
@@ -60,7 +63,6 @@ function GridFlex({
       />
       <Grid container spacing={3}>
         {tiles.map((tile) => {
-          console.log(tile.link[0]);
           const tileSelector = (key) => {
             switch (key) {
               case '1':
@@ -99,6 +101,24 @@ function GridFlex({
                     {...mapFluidImgToProps(tile.tileImage)}
                     link={tile.link[0]}
                     title={tile.title}
+                  />
+                );
+              case '7':
+                return (
+                  <Tile7
+                    {...mapFluidImgToProps(tile.tileImage)}
+                    link={tile.link[0]}
+                    title={tile.title}
+                    text={tile.text}
+                  />
+                );
+              case '8':
+                return (
+                  <Tile8
+                    {...mapFluidImgToProps(tile.tileImage)}
+                    link={tile.link[0]}
+                    title={tile.title}
+                    text={tile.text}
                   />
                 );
               default:
