@@ -40,7 +40,7 @@ export default function TileBorderSmImageTopTitleText({ image, alt, title, text 
           {title}
         </Typography>
         <Typography
-          variant="body2"
+          variant="body1"
           color="textSecondary"
           component="p"
           sx={{ textAlign: 'center' }}

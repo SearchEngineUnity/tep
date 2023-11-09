@@ -6,7 +6,7 @@ import Tile3 from '../tiles/TileImageTitleBorder';
 import Tile4 from '../tiles/TileImageTitleTextBase';
 import Tile5 from '../tiles/TileSmImageTitleText';
 import Tile6 from '../tiles/TileImageTitle';
-import Tile7 from '../tiles/TileImageTitleTextListing';
+import Tile7 from '../tiles/TileImageTitleSubtitleTextListing';
 import Tile8 from '../tiles/TileBorderSmImageTopTitleText';
 
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
@@ -61,9 +61,8 @@ function GridFlex({
         subheadingColor={subheadingColor}
         subtitleColor={subtitleColor}
       />
-      <Grid container spacing={6}>
+      <Grid container spacing={5}>
         {tiles.map((tile) => {
-          console.log(tile);
           const tileSelector = (key) => {
             switch (key) {
               case '1':

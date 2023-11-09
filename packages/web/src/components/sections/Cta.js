@@ -84,6 +84,7 @@ function Cta() {
                 disableFocusRipple
                 disableRipple
                 sx={{ padding: '12px 24px', textAlign: 'center' }}
+                className="btn-cta-banner"
               >
                 Request a quote
               </Button>
