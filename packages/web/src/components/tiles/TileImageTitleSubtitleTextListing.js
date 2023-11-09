@@ -19,21 +19,24 @@ function TileImageTitleSubtitleTextListing({ image, alt, link, title, text, subt
   );
 
   return (
-    <Card rectangle elevation={link ? 8 : 0}>
+    <Card square elevation={link ? 8 : 0}>
       <ConditionalCardActionArea link={link}>
-        <CardContent sx={{ display: 'flex' }}>
-          <Box sx={{ flexDirection: 'row' }}>
+        <Box sx={{ display: 'flex' }}>
+          <Box
+            sx={{
+              height: { lg: '236px', md: '248px', xs: '0px' },
+              width: { lg: '379px', md: '248px', xs: '0px' },
+              flexGrow: 1,
+              flexShrink: 0,
+            }}
+          >
             <GatsbyImage
               image={imageData}
               alt={alt || ''}
-              style={{
-                height: '236px',
-                width: '379px',
-              }}
+              style={{ width: '100%', height: '100%' }}
             />
           </Box>
-
-          <Box sx={{ flexDirection: 'row' }} px={2}>
+          <Box sx={{ paddingLeft: { md: 3, sm: 0 } }}>
             <Typography gutterBottom variant="h3" component="p">
               {title}
             </Typography>
@@ -44,7 +47,7 @@ function TileImageTitleSubtitleTextListing({ image, alt, link, title, text, subt
               {text}
             </Typography>
           </Box>
-        </CardContent>
+        </Box>
       </ConditionalCardActionArea>
     </Card>
   );
