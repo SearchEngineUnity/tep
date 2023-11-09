@@ -9,8 +9,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../lib/sanityConfig';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
-function TileImageTitleTextListing({ image, alt, link, title, text, subtitle }) {
-  console.log(subtitle);
+function TileImageTitleSubtitleTextListing({ image, alt, link, title, text, subtitle }) {
   const imageData = getGatsbyImageData(
     image,
     {
@@ -51,4 +50,4 @@ function TileImageTitleTextListing({ image, alt, link, title, text, subtitle }) 
   );
 }
 
-export default TileImageTitleTextListing;
+export default TileImageTitleSubtitleTextListing;
