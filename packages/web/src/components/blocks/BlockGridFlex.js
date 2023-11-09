@@ -61,9 +61,8 @@ function GridFlex({
         subheadingColor={subheadingColor}
         subtitleColor={subtitleColor}
       />
-      <Grid container spacing={6}>
+      <Grid container spacing={5}>
         {tiles.map((tile) => {
-          console.log(tile);
           const tileSelector = (key) => {
             switch (key) {
               case '1':
