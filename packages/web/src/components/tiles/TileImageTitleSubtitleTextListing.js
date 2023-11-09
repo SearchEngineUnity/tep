@@ -40,7 +40,7 @@ function TileImageTitleSubtitleTextListing({ image, alt, link, title, text, subt
             <Typography gutterBottom variant="h5" component="p" sx={{ fontStyle: 'italic' }}>
               {subtitle}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body1" color="textSecondary" component="p">
               {text}
             </Typography>
           </Box>
