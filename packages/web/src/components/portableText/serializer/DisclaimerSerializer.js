@@ -72,7 +72,7 @@ const serializers = {
     ),
   },
   listItem: ({ children }) => (
-    <Typography variant="body1" component="li">
+    <Typography variant="body1" component="li" sx={{ fontStyle: 'italic' }}>
       {children}
     </Typography>
   ),

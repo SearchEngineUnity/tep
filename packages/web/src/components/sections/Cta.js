@@ -11,7 +11,7 @@ function Cta() {
       palette: {
         primary: {
           main: theme.palette.common.white,
-          dark: '#F9F9F9',
+          dark: '#E0E0E0',
           contrastText: theme.palette.primary.main,
         },
       },
