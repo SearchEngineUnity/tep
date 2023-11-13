@@ -12,7 +12,7 @@ export default {
       title: 'Social',
       type: 'string',
       options: {
-        list: ['facebook', 'twitter', 'instagram', 'pinterest', 'linkedin', 'youtube'],
+        list: ['facebook', 'twitter', 'instagram', 'pinterest', 'linkedin', 'youtube', 'homestars'],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
@@ -41,6 +41,8 @@ export default {
           return { title: 'LinkedIn' };
         case 'youtube':
           return { title: 'Youtube' };
+        case 'homestars':
+          return { title: 'HomeStars' };
         default:
           return { title: 'Error' };
       }
