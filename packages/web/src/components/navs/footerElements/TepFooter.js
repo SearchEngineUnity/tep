@@ -1,10 +1,9 @@
+/* remove this eslint-disable when all links are added */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import MuiLink from '@mui/material/Link';
 import { Link } from 'gatsby-theme-material-ui';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -90,13 +89,12 @@ function TepFooter() {
               <br />
               <Grid container spacing={3}>
                 <Grid item>
-                  {/* was a */}
                   <a
                     href="https://www.facebook.com/TorontoEpoxy"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={facebook} alt="facebook" width="48" height="48" />
+                    <img src={facebook} alt="facebook" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid item>
@@ -105,7 +103,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={twitter} alt="twitter" width="48" height="48" />
+                    <img src={twitter} alt="twitter" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid item>
@@ -114,7 +112,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={linkedIn} alt="linkedin" width="48" height="48" />
+                    <img src={linkedIn} alt="linkedin" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid item>
@@ -123,7 +121,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={homeStars} alt="homestars" width="48" height="48" />
+                    <img src={homeStars} alt="homestars" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
               </Grid>
@@ -132,47 +130,47 @@ function TepFooter() {
               <MenuHeading component="p">INDUSTRIES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Industrial Buildings
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Institutional Buildings
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Retail and Showroom
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Residential Complex
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Hotel and Hospitality
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Kitchen and Restaurant
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Airports and Hangars
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Parking Garages
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Smart Centers
                   </MenuLink>
                 </li>
@@ -182,22 +180,22 @@ function TepFooter() {
               <MenuHeading component="p">FLOORING SERVICES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Epoxy Floor Installation
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Epoxy Floor Patching and Repair
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Concrete Polishing
                   </MenuLink>
                 </li>
                 <li>
-                  <MenuLink to="#" target="_blank" rel="noopener">
+                  <MenuLink to="#" target="_blank">
                     Concrete Restoration
                   </MenuLink>
                 </li>
