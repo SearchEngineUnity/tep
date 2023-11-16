@@ -51,16 +51,20 @@ function StructuredLrFlex({
   return (
     <SectionOuterWrapper idTag={idTag} designSettings={designSettings}>
       <SectionInnerWrapper designSettings={designSettings}>
-        <StructuredSectionHeader
-          heading={heading}
-          subheading={subheading}
-          subtitle={subtitle}
-          headingColor={headingColor}
-          subheadingColor={subheadingColor}
-          subtitleColor={subtitleColor}
-          align={headerAlignment}
-        />
         <Grid container justifyContent="center" alignItems={blockAlignment} spacing={5}>
+          {(heading || subheading || subtitle) && (
+            <Grid xs={12}>
+              <StructuredSectionHeader
+                heading={heading}
+                subheading={subheading}
+                subtitle={subtitle}
+                headingColor={headingColor}
+                subheadingColor={subheadingColor}
+                subtitleColor={subtitleColor}
+                align={headerAlignment}
+              />
+            </Grid>
+          )}
           {blocks.map((block, index) => {
             const { _type, _key } = block;
             const col = lrColCalculator(colArr[index]);
@@ -158,12 +162,16 @@ function StructuredLrFlex({
               </Grid>
             );
           })}
+          {footer && (
+            <Grid xs={12}>
+              <StructuredSectionFooter
+                footer={footer}
+                footerColor={footerColor}
+                align={footerAlignment}
+              />
+            </Grid>
+          )}
         </Grid>
-        <StructuredSectionFooter
-          footer={footer}
-          footerColor={footerColor}
-          align={footerAlignment}
-        />
       </SectionInnerWrapper>
     </SectionOuterWrapper>
   );

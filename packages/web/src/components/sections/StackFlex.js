@@ -48,33 +48,29 @@ function StackFlex({
   return (
     <SectionOuterWrapper idTag={idTag} designSettings={designSettings}>
       <SectionInnerWrapper designSettings={designSettings}>
-        <StructuredSectionHeader
-          heading={heading}
-          subheading={subheading}
-          subtitle={subtitle}
-          headingColor={headingColor}
-          subheadingColor={subheadingColor}
-          subtitleColor={subtitleColor}
-          align={headerAlignment}
-        />
-        <Grid container justifyContent="center" spacing={5}>
+        <Grid container alignItems="center" spacing={5} direction="column">
+          {(heading || subheading || subtitle) && (
+            <Grid xs={12}>
+              <StructuredSectionHeader
+                heading={heading}
+                subheading={subheading}
+                subtitle={subtitle}
+                headingColor={headingColor}
+                subheadingColor={subheadingColor}
+                subtitleColor={subtitleColor}
+                align={headerAlignment}
+              />
+            </Grid>
+          )}
           {blocks.map((block) => {
             const { _type, _key } = block;
             const col = stackColCalculator(parseInt(blockWidth, 10));
             const blockSelector = (key) => {
               switch (true) {
                 case key === 'stepsBlock':
-                  return (
-                    <Grid {...col}>
-                      <StepsBlock steps={block._rawSteps} />
-                    </Grid>
-                  );
+                  return <StepsBlock steps={block._rawSteps} />;
                 case key === 'accordionBlock':
-                  return (
-                    <Grid {...col}>
-                      <AccordionBlock accordionSet={block._rawAccordionSet} />
-                    </Grid>
-                  );
+                  return <AccordionBlock accordionSet={block._rawAccordionSet} />;
                 case key === 'smartGridBlock':
                   return (
                     <SmartGridBlock
@@ -90,32 +86,22 @@ function StackFlex({
                     />
                   );
                 case key === 'video':
-                  return (
-                    <Grid {...col}>
-                      <Video {...mapVideoToProps(block)} />
-                    </Grid>
-                  );
+                  return <Video {...mapVideoToProps(block)} />;
                 case key === 'imageBlock':
-                  return (
-                    <Grid {...col}>
-                      <ImgBlock {...mapFluidImgBlockToProps(block)} loading="eager" />
-                    </Grid>
-                  );
+                  return <ImgBlock {...mapFluidImgBlockToProps(block)} loading="eager" />;
                 case key === 'sectionBlock':
                   return (
-                    <Grid {...col}>
-                      <SectionBlock
-                        hasSectionHeading={!!heading}
-                        hasSectionSubheading={!!subheading}
-                        hasSectionFooter={!!footer}
-                        hasSectionSubtitle={!!subtitle}
-                        headingColor={headingColor}
-                        subheadingColor={subheadingColor}
-                        subtitleColor={subtitleColor}
-                        footerColor={footerColor}
-                        {...mapSectionBlockToProps(block)}
-                      />
-                    </Grid>
+                    <SectionBlock
+                      hasSectionHeading={!!heading}
+                      hasSectionSubheading={!!subheading}
+                      hasSectionFooter={!!footer}
+                      hasSectionSubtitle={!!subtitle}
+                      headingColor={headingColor}
+                      subheadingColor={subheadingColor}
+                      subtitleColor={subtitleColor}
+                      footerColor={footerColor}
+                      {...mapSectionBlockToProps(block)}
+                    />
                   );
                 case key === 'gridFlex':
                   return (
@@ -132,51 +118,45 @@ function StackFlex({
                     />
                   );
                 case key === 'clickableImage':
-                  return (
-                    <Grid {...col}>
-                      <ClickableImage {...mapClickableImageToProps(block)} />
-                    </Grid>
-                  );
+                  return <ClickableImage {...mapClickableImageToProps(block)} />;
                 case key === 'blockFormNetlify':
-                  return (
-                    <Grid {...col}>
-                      <BlockFormNetlify {...mapBlockFormNetlifyToProps(block)} />
-                    </Grid>
-                  );
+                  return <BlockFormNetlify {...mapBlockFormNetlifyToProps(block)} />;
                 case key === 'btnBlockMui':
-                  return (
-                    <Grid {...col}>
-                      <ConditionalButton {...mapMuiBtnToProps(block)} />
-                    </Grid>
-                  );
+                  return <ConditionalButton {...mapMuiBtnToProps(block)} />;
                 case key === 'testimonialGrid':
                   return (
-                    <Grid {...col}>
-                      <TestimonialGrid
-                        hasSectionHeading={!!heading}
-                        hasSectionSubheading={!!subheading}
-                        hasSectionFooter={!!footer}
-                        hasSectionSubtitle={!!subtitle}
-                        headingColor={headingColor}
-                        subheadingColor={subheadingColor}
-                        subtitleColor={subtitleColor}
-                        footerColor={footerColor}
-                        {...mapTestimonialGridToProps(block)}
-                      />
-                    </Grid>
+                    <TestimonialGrid
+                      hasSectionHeading={!!heading}
+                      hasSectionSubheading={!!subheading}
+                      hasSectionFooter={!!footer}
+                      hasSectionSubtitle={!!subtitle}
+                      headingColor={headingColor}
+                      subheadingColor={subheadingColor}
+                      subtitleColor={subtitleColor}
+                      footerColor={footerColor}
+                      {...mapTestimonialGridToProps(block)}
+                    />
                   );
                 default:
                   return <div> Block still under development</div>;
               }
             };
-            return <React.Fragment key={_key}>{blockSelector(_type)}</React.Fragment>;
+            return (
+              <Grid {...col} key={_key}>
+                {blockSelector(_type)}
+              </Grid>
+            );
           })}
+          {footer && (
+            <Grid xs={12}>
+              <StructuredSectionFooter
+                footer={footer}
+                footerColor={footerColor}
+                align={footerAlignment}
+              />
+            </Grid>
+          )}
         </Grid>
-        <StructuredSectionFooter
-          footer={footer}
-          footerColor={footerColor}
-          align={footerAlignment}
-        />
       </SectionInnerWrapper>
     </SectionOuterWrapper>
   );
