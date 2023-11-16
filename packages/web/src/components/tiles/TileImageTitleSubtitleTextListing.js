@@ -19,7 +19,7 @@ function TileImageTitleSubtitleTextListing({ image, alt, link, title, text, subt
   );
 
   return (
-    <Card square elevation={link ? 8 : 0}>
+    <Card square elevation={link ? 8 : 0} sx={{ display: 'flex' }}>
       <ConditionalCardActionArea link={link}>
         <Box sx={{ display: 'flex' }}>
           <Box

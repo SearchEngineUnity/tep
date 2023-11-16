@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
 import SectionBlock from '../blocks/SectionBlock';
@@ -57,97 +57,121 @@ function StackFlex({
           subtitleColor={subtitleColor}
           align={headerAlignment}
         />
-        {blocks.map((block) => {
-          const { _type, _key } = block;
-          const col = stackColCalculator(parseInt(blockWidth, 10));
-          const blockSelector = (key) => {
-            switch (true) {
-              case key === 'stepsBlock':
-                return <StepsBlock key={_key} steps={block._rawSteps} />;
-              case key === 'accordionBlock':
-                return <AccordionBlock key={_key} accordionSet={block._rawAccordionSet} />;
-              case key === 'smartGridBlock':
-                return (
-                  <SmartGridBlock
-                    key={block._key}
-                    hasSectionHeading={!!heading}
-                    hasSectionSubheading={!!subheading}
-                    hasSectionFooter={!!footer}
-                    hasSectionSubtitle={!!subtitle}
-                    headingColor={headingColor}
-                    subheadingColor={subheadingColor}
-                    subtitleColor={subtitleColor}
-                    footerColor={footerColor}
-                    {...mapSmartGridBlockToProps(block)}
-                  />
-                );
-              case key === 'video':
-                return <Video {...mapVideoToProps(block)} key={_key} />;
-              case key === 'imageBlock':
-                return <ImgBlock {...mapFluidImgBlockToProps(block)} key={_key} />;
-              case key === 'sectionBlock':
-                return (
-                  <SectionBlock
-                    key={_key}
-                    hasSectionHeading={!!heading}
-                    hasSectionSubheading={!!subheading}
-                    hasSectionFooter={!!footer}
-                    hasSectionSubtitle={!!subtitle}
-                    headingColor={headingColor}
-                    subheadingColor={subheadingColor}
-                    subtitleColor={subtitleColor}
-                    footerColor={footerColor}
-                    {...mapSectionBlockToProps(block)}
-                  />
-                );
-              case key === 'gridFlex':
-                return (
-                  <GridFlex
-                    key={_key}
-                    hasSectionHeading={!!heading}
-                    hasSectionSubheading={!!subheading}
-                    hasSectionFooter={!!footer}
-                    hasSectionSubtitle={!!subtitle}
-                    headingColor={headingColor}
-                    subheadingColor={subheadingColor}
-                    subtitleColor={subtitleColor}
-                    footerColor={footerColor}
-                    {...mapGridFlexToProps(block)}
-                  />
-                );
-              case key === 'clickableImage':
-                return <ClickableImage {...mapClickableImageToProps(block)} />;
-              case key === 'blockFormNetlify':
-                return <BlockFormNetlify key={block._key} {...mapBlockFormNetlifyToProps(block)} />;
-              case key === 'btnBlockMui':
-                return <ConditionalButton {...mapMuiBtnToProps(block)} />;
-              case key === 'testimonialGrid':
-                return (
-                  <TestimonialGrid
-                    key={_key}
-                    hasSectionHeading={!!heading}
-                    hasSectionSubheading={!!subheading}
-                    hasSectionFooter={!!footer}
-                    hasSectionSubtitle={!!subtitle}
-                    headingColor={headingColor}
-                    subheadingColor={subheadingColor}
-                    subtitleColor={subtitleColor}
-                    footerColor={footerColor}
-                    {...mapTestimonialGridToProps(block)}
-                  />
-                );
-              default:
-                return <div key="default-inner-block"> Block still under development</div>;
-            }
-          };
-          return (
-            <Grid container justifyContent="center" spacing={6} key={_key}>
-              <Grid item {...col}>
-                {blockSelector(_type)}
-              </Grid>
-            </Grid>
-          );
-        })}
+        <Grid container justifyContent="center" spacing={5}>
+          {blocks.map((block) => {
+            const { _type, _key } = block;
+            const col = stackColCalculator(parseInt(blockWidth, 10));
+            const blockSelector = (key) => {
+              switch (true) {
+                case key === 'stepsBlock':
+                  return (
+                    <Grid {...col}>
+                      <StepsBlock steps={block._rawSteps} />
+                    </Grid>
+                  );
+                case key === 'accordionBlock':
+                  return (
+                    <Grid {...col}>
+                      <AccordionBlock accordionSet={block._rawAccordionSet} />
+                    </Grid>
+                  );
+                case key === 'smartGridBlock':
+                  return (
+                    <SmartGridBlock
+                      hasSectionHeading={!!heading}
+                      hasSectionSubheading={!!subheading}
+                      hasSectionFooter={!!footer}
+                      hasSectionSubtitle={!!subtitle}
+                      headingColor={headingColor}
+                      subheadingColor={subheadingColor}
+                      subtitleColor={subtitleColor}
+                      footerColor={footerColor}
+                      {...mapSmartGridBlockToProps(block)}
+                    />
+                  );
+                case key === 'video':
+                  return (
+                    <Grid {...col}>
+                      <Video {...mapVideoToProps(block)} />
+                    </Grid>
+                  );
+                case key === 'imageBlock':
+                  return (
+                    <Grid {...col}>
+                      <ImgBlock {...mapFluidImgBlockToProps(block)} loading="eager" />
+                    </Grid>
+                  );
+                case key === 'sectionBlock':
+                  return (
+                    <Grid {...col}>
+                      <SectionBlock
+                        hasSectionHeading={!!heading}
+                        hasSectionSubheading={!!subheading}
+                        hasSectionFooter={!!footer}
+                        hasSectionSubtitle={!!subtitle}
+                        headingColor={headingColor}
+                        subheadingColor={subheadingColor}
+                        subtitleColor={subtitleColor}
+                        footerColor={footerColor}
+                        {...mapSectionBlockToProps(block)}
+                      />
+                    </Grid>
+                  );
+                case key === 'gridFlex':
+                  return (
+                    <GridFlex
+                      hasSectionHeading={!!heading}
+                      hasSectionSubheading={!!subheading}
+                      hasSectionFooter={!!footer}
+                      hasSectionSubtitle={!!subtitle}
+                      headingColor={headingColor}
+                      subheadingColor={subheadingColor}
+                      subtitleColor={subtitleColor}
+                      footerColor={footerColor}
+                      {...mapGridFlexToProps(block)}
+                    />
+                  );
+                case key === 'clickableImage':
+                  return (
+                    <Grid {...col}>
+                      <ClickableImage {...mapClickableImageToProps(block)} />
+                    </Grid>
+                  );
+                case key === 'blockFormNetlify':
+                  return (
+                    <Grid {...col}>
+                      <BlockFormNetlify {...mapBlockFormNetlifyToProps(block)} />
+                    </Grid>
+                  );
+                case key === 'btnBlockMui':
+                  return (
+                    <Grid {...col}>
+                      <ConditionalButton {...mapMuiBtnToProps(block)} />
+                    </Grid>
+                  );
+                case key === 'testimonialGrid':
+                  return (
+                    <Grid {...col}>
+                      <TestimonialGrid
+                        hasSectionHeading={!!heading}
+                        hasSectionSubheading={!!subheading}
+                        hasSectionFooter={!!footer}
+                        hasSectionSubtitle={!!subtitle}
+                        headingColor={headingColor}
+                        subheadingColor={subheadingColor}
+                        subtitleColor={subtitleColor}
+                        footerColor={footerColor}
+                        {...mapTestimonialGridToProps(block)}
+                      />
+                    </Grid>
+                  );
+                default:
+                  return <div> Block still under development</div>;
+              }
+            };
+            return <React.Fragment key={_key}>{blockSelector(_type)}</React.Fragment>;
+          })}
+        </Grid>
         <StructuredSectionFooter
           footer={footer}
           footerColor={footerColor}

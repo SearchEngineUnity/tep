@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import Tile1 from '../tiles/TileImageRecSqr';
 import Tile2 from '../tiles/TileImageCircle';
 import Tile3 from '../tiles/TileImageTitleBorder';
@@ -61,7 +61,7 @@ function GridFlex({
         subheadingColor={subheadingColor}
         subtitleColor={subtitleColor}
       />
-      <Grid container spacing={5}>
+      <Grid container spacing={5} sx={{ width: '100%', padding: '20px 0px' }}>
         {tiles.map((tile) => {
           const tileSelector = (key) => {
             switch (key) {
@@ -128,7 +128,7 @@ function GridFlex({
           };
 
           return (
-            <Grid item key={tile._key} {...col}>
+            <Grid key={tile._key} {...col}>
               {tileSelector(tileOption)}
             </Grid>
           );

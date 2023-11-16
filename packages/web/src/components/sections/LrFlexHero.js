@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import ImgBlock from '../blocks/FluidImgBlock';
 import Video from '../portableText/insertable/Video';
 import SectionBlock from '../blocks/HeroSectionBlock';
@@ -60,7 +60,7 @@ function LrFlexHero({
           subtitleColor={subtitleColor}
           align={headerAlignment}
         />
-        <Grid container justifyContent="center" alignItems={blockAlignment} spacing={6}>
+        <Grid container justifyContent="center" alignItems={blockAlignment} spacing={5}>
           {blocks.map((block, index) => {
             const col = lrColCalculator(colArr[index]);
             const { _type, _key } = block;
@@ -149,7 +149,6 @@ function LrFlexHero({
             };
             return (
               <Grid
-                item
                 {...col}
                 key={block._key}
                 sx={[

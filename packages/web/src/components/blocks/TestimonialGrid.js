@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import Tile1 from '../testimonialTiles/TestimonialImage';
@@ -54,7 +54,7 @@ function TestimonialGrid({
         subheadingColor={subheadingColor}
         subtitleColor={subtitleColor}
       />
-      <Grid container spacing={3}>
+      <Grid container spacing={5}>
         {testimonialList.map((testimonial) => {
           const tileSelector = (key) => {
             switch (key) {
@@ -67,7 +67,7 @@ function TestimonialGrid({
             }
           };
           return (
-            <Grid item key={testimonial._id} {...col}>
+            <Grid key={testimonial._id} {...col}>
               {tileSelector(tileOption)}
             </Grid>
           );

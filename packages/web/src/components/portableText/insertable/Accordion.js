@@ -11,7 +11,7 @@ export default function Accordion({ accordionSet }) {
     <>
       {accordionSet.map((item) => (
         <MuiAccordion
-          key={item._Key}
+          key={item._key}
           disableGutters
           square
           sx={{
@@ -19,13 +19,16 @@ export default function Accordion({ accordionSet }) {
             paddingY: '1rem',
             borderBottom: (theme) => `solid 1px ${theme.palette.primary.main}`,
             '&:before': { height: '0px' },
+            '&:first-of-type': {
+              paddingTop: 0,
+            },
           }}
         >
           <AccordionSummary
             expandIcon={<ExpandMoreIcon sx={{ color: 'primary.main' }} />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-            sx={{ paddingX: 0 }}
+            aria-controls={`panel${item._key}-content`}
+            id={`panel${item._key}-header`}
+            sx={{ paddingX: '0px' }}
           >
             <Typography component="p" variant="h3" sx={{ color: 'primary.main' }}>
               {item.title}
@@ -33,8 +36,8 @@ export default function Accordion({ accordionSet }) {
           </AccordionSummary>
           <AccordionDetails
             sx={{
-              paddingX: 0,
-              paddingY: '1rem',
+              paddingX: '0px',
+              paddingY: '12px',
             }}
           >
             <AccordionText blocks={item.text} />

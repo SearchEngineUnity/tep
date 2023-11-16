@@ -1561,7 +1561,7 @@ function StructuredPage({ data, location }) {
               return <StackHero key={section._key} {...mapStackSectionToProps(section)} />;
 
             case 'cta':
-              return <Cta />;
+              return <Cta key={section._key} />;
 
             default:
               return <div>Still under development</div>;
