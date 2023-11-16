@@ -49,8 +49,8 @@ function GridFlex({
 
   return (
     <Grid container spacing={5} sx={{ padding: '0px' }}>
-      <Grid xs={12}>
-        {(heading || subheading || subtitle) && (
+      {(heading || subheading || subtitle) && (
+        <Grid xs={12}>
           <StructuredSectionHeader
             heading={heading}
             subheading={subheading}
@@ -63,8 +63,8 @@ function GridFlex({
             subheadingColor={subheadingColor}
             subtitleColor={subtitleColor}
           />
-        )}
-      </Grid>
+        </Grid>
+      )}
       {tiles.map((tile) => {
         const tileSelector = (key) => {
           switch (key) {
