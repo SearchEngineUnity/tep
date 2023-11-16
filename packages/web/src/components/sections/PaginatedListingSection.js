@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import StructuredSectionFooter from './StructuredSectionFooter';
 import StructuredSectionHeader from './StructuredSectionHeader';
 import SectionOuterWrapper from './SectionOuterWrapper';
@@ -55,9 +55,9 @@ function PaginatedListingSection({
           subtitleColor={subtitleColor}
           align={headerAlignment}
         />
-        <Grid container spacing={6}>
+        <Grid container spacing={5}>
           {listingItems.map((item) => (
-            <Grid item key={item._key} {...col}>
+            <Grid key={item._key} {...col}>
               <TileImageLeft {...item} />
             </Grid>
           ))}

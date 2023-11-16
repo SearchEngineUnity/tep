@@ -1,5 +1,5 @@
 import React from 'react';
-import Grid from '@mui/material/Grid';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import ProductCardGridPtTile from '../portableText/insertable/SmartGrid/ProductCardGridPtTile';
@@ -58,7 +58,7 @@ function SmartGridBlock({
         subheadingColor={subheadingColor}
         subtitleColor={subtitleColor}
       />
-      <Grid container spacing={3}>
+      <Grid container spacing={5} sx={{ width: '100%', padding: '20px 0px' }}>
         {tiles.map((tile) => {
           const { _key, _type } = tile;
 
@@ -84,7 +84,7 @@ function SmartGridBlock({
           };
 
           return (
-            <Grid item key={_key} {...col}>
+            <Grid key={_key} {...col}>
               {tileSelector(_type)}
             </Grid>
           );

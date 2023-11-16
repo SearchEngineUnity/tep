@@ -61,7 +61,7 @@ function TepFooter() {
           style={{ paddingLeft: '16px', paddingRight: '16px' }}
         >
           <Grid container spacing={2}>
-            <Grid item xs={12} lg={6}>
+            <Grid xs={12} lg={6}>
               <MenuHeading component="p">CONTACT INFO</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>
@@ -88,7 +88,7 @@ function TepFooter() {
               </Box>
               <br />
               <Grid container spacing={3}>
-                <Grid item>
+                <Grid>
                   <a
                     href="https://www.facebook.com/TorontoEpoxy"
                     target="_blank"
@@ -97,7 +97,7 @@ function TepFooter() {
                     <img src={facebook} alt="facebook" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
-                <Grid item>
+                <Grid>
                   <a
                     href="https://www.twitter.com/TorontoEpoxy"
                     target="_blank"
@@ -106,7 +106,7 @@ function TepFooter() {
                     <img src={twitter} alt="twitter" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
-                <Grid item>
+                <Grid>
                   <a
                     href="https://www.linkedin.com/company/the-city-painters"
                     target="_blank"
@@ -115,7 +115,7 @@ function TepFooter() {
                     <img src={linkedIn} alt="linkedin" width="48" height="48" loading="lazy" />
                   </a>
                 </Grid>
-                <Grid item>
+                <Grid>
                   <a
                     href="https://homestars.com/companies/2795419-the-city-painters?service_area=1857483"
                     target="_blank"
@@ -126,7 +126,7 @@ function TepFooter() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid xs={12} sm={6} lg={3}>
               <MenuHeading component="p">INDUSTRIES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>
@@ -176,7 +176,7 @@ function TepFooter() {
                 </li>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={6} lg={3}>
+            <Grid xs={12} sm={6} lg={3}>
               <MenuHeading component="p">FLOORING SERVICES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>

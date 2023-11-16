@@ -22,6 +22,7 @@ export default function TileBorderSmImageTopTitleText({ image, alt, title, text 
           border: (theme) => `solid 4px ${theme.palette.primary.main}`,
           position: 'relative',
           padding: '54px 24px 24px',
+          width: '100%',
         }}
       >
         <GatsbyImage
