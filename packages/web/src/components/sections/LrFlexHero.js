@@ -51,16 +51,20 @@ function LrFlexHero({
   return (
     <SectionOuterWrapper idTag={idTag} designSettings={designSettings} isHero>
       <SectionInnerWrapper designSettings={designSettings}>
-        <HeroSectionHeader
-          heading={heading}
-          subheading={subheading}
-          subtitle={subtitle}
-          headingColor={headingColor}
-          subheadingColor={subheadingColor}
-          subtitleColor={subtitleColor}
-          align={headerAlignment}
-        />
         <Grid container justifyContent="center" alignItems={blockAlignment} spacing={5}>
+          {(heading || subheading || subtitle) && (
+            <Grid xs={12}>
+              <HeroSectionHeader
+                heading={heading}
+                subheading={subheading}
+                subtitle={subtitle}
+                headingColor={headingColor}
+                subheadingColor={subheadingColor}
+                subtitleColor={subtitleColor}
+                align={headerAlignment}
+              />
+            </Grid>
+          )}
           {blocks.map((block, index) => {
             const col = lrColCalculator(colArr[index]);
             const { _type, _key } = block;
@@ -160,8 +164,16 @@ function LrFlexHero({
               </Grid>
             );
           })}
+          {footer && (
+            <Grid xs={12}>
+              <HeroSectionFooter
+                footer={footer}
+                footerColor={footerColor}
+                align={footerAlignment}
+              />
+            </Grid>
+          )}
         </Grid>
-        <HeroSectionFooter footer={footer} footerColor={footerColor} align={footerAlignment} />
       </SectionInnerWrapper>
     </SectionOuterWrapper>
   );

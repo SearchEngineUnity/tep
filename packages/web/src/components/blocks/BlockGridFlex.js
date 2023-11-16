@@ -48,99 +48,105 @@ function GridFlex({
   const col = colCalculate(layout);
 
   return (
-    <>
-      <StructuredSectionHeader
-        heading={heading}
-        subheading={subheading}
-        subtitle={subtitle}
-        align={headerAlignment}
-        hasSectionHeading={hasSectionHeading}
-        hasSectionSubheading={hasSectionSubheading}
-        hasSectionSubtitle={hasSectionSubtitle}
-        headingColor={headingColor}
-        subheadingColor={subheadingColor}
-        subtitleColor={subtitleColor}
-      />
-      <Grid container spacing={5} sx={{ width: '100%', padding: '20px 0px' }}>
-        {tiles.map((tile) => {
-          const tileSelector = (key) => {
-            switch (key) {
-              case '1':
-                return <Tile1 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
-              case '2':
-                return <Tile2 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
-              case '3':
-                return (
-                  <Tile3
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                  />
-                );
-              case '4':
-                return (
-                  <Tile4
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                    text={tile.text}
-                  />
-                );
-              case '5':
-                return (
-                  <Tile5
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                    text={tile.text}
-                  />
-                );
-              case '6':
-                return (
-                  <Tile6
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                  />
-                );
-              case '7':
-                return (
-                  <Tile7
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                    text={tile.text}
-                    subtitle={tile.subtitle}
-                  />
-                );
-              case '8':
-                return (
-                  <Tile8
-                    {...mapFluidImgToProps(tile.tileImage)}
-                    link={tile.link[0]}
-                    title={tile.title}
-                    text={tile.text}
-                  />
-                );
-              default:
-                return <div> Tile still under development</div>;
-            }
-          };
-
-          return (
-            <Grid key={tile._key} {...col}>
-              {tileSelector(tileOption)}
-            </Grid>
-          );
-        })}
+    <Grid container spacing={5} sx={{ padding: '0px' }}>
+      <Grid xs={12}>
+        {(heading || subheading || subtitle) && (
+          <StructuredSectionHeader
+            heading={heading}
+            subheading={subheading}
+            subtitle={subtitle}
+            align={headerAlignment}
+            hasSectionHeading={hasSectionHeading}
+            hasSectionSubheading={hasSectionSubheading}
+            hasSectionSubtitle={hasSectionSubtitle}
+            headingColor={headingColor}
+            subheadingColor={subheadingColor}
+            subtitleColor={subtitleColor}
+          />
+        )}
       </Grid>
-      <StructuredSectionFooter
-        footer={footer}
-        footerColor={footerColor}
-        align={footerAlignment}
-        hasSectionFooter={hasSectionFooter}
-      />
-    </>
+      {tiles.map((tile) => {
+        const tileSelector = (key) => {
+          switch (key) {
+            case '1':
+              return <Tile1 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
+            case '2':
+              return <Tile2 {...mapFluidImgToProps(tile.tileImage)} link={tile.link[0]} />;
+            case '3':
+              return (
+                <Tile3
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                />
+              );
+            case '4':
+              return (
+                <Tile4
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                  text={tile.text}
+                />
+              );
+            case '5':
+              return (
+                <Tile5
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                  text={tile.text}
+                />
+              );
+            case '6':
+              return (
+                <Tile6
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                />
+              );
+            case '7':
+              return (
+                <Tile7
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                  text={tile.text}
+                  subtitle={tile.subtitle}
+                />
+              );
+            case '8':
+              return (
+                <Tile8
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
+                  text={tile.text}
+                />
+              );
+            default:
+              return <div> Tile still under development</div>;
+          }
+        };
+
+        return (
+          <Grid key={tile._key} {...col}>
+            {tileSelector(tileOption)}
+          </Grid>
+        );
+      })}
+      {footer && (
+        <Grid xs={12}>
+          <StructuredSectionFooter
+            footer={footer}
+            footerColor={footerColor}
+            align={footerAlignment}
+            hasSectionFooter={hasSectionFooter}
+          />
+        </Grid>
+      )}
+    </Grid>
   );
 }
 

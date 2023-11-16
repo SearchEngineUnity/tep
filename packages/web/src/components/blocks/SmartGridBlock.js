@@ -45,58 +45,64 @@ function SmartGridBlock({
   const col = colCalculate(layout);
 
   return (
-    <>
-      <StructuredSectionHeader
-        heading={heading}
-        subheading={subheading}
-        subtitle={subtitle}
-        align={headerAlignment}
-        hasSectionHeading={hasSectionHeading}
-        hasSectionSubheading={hasSectionSubheading}
-        hasSectionSubtitle={hasSectionSubtitle}
-        headingColor={headingColor}
-        subheadingColor={subheadingColor}
-        subtitleColor={subtitleColor}
-      />
-      <Grid container spacing={5} sx={{ width: '100%', padding: '20px 0px' }}>
-        {tiles.map((tile) => {
-          const { _key, _type } = tile;
+    <Grid container spacing={5} sx={{ padding: '0px' }}>
+      {(heading || subheading || subtitle) && (
+        <Grid xs={12}>
+          <StructuredSectionHeader
+            heading={heading}
+            subheading={subheading}
+            subtitle={subtitle}
+            align={headerAlignment}
+            hasSectionHeading={hasSectionHeading}
+            hasSectionSubheading={hasSectionSubheading}
+            hasSectionSubtitle={hasSectionSubtitle}
+            headingColor={headingColor}
+            subheadingColor={subheadingColor}
+            subtitleColor={subtitleColor}
+          />
+        </Grid>
+      )}
+      {tiles.map((tile) => {
+        const { _key, _type } = tile;
 
-          const tileSelector = (key) => {
-            switch (true) {
-              case key === 'productCardGridPtTile':
-                return <ProductCardGridPtTile {...tile} />;
-              case key === 'smartGridPtTile':
-                return <PtTile blocks={tile.content} />;
-              case key === 'illustration':
-                return <Illustration illustration={tile} />;
-              case key === 'smartUnorderedList':
-                return <SmartUnorderedList {...tile} />;
-              case key === 'clickableImage':
-                return <ClickableImage {...tile} />;
-              case key === 'video':
-                return <Video {...mapVideoToProps(tile)} />;
-              case key === 'btnBlockMui':
-                return <ConditionalButton {...mapMuiBtnToProps(tile)} />;
-              default:
-                return <div> Tile still under development</div>;
-            }
-          };
+        const tileSelector = (key) => {
+          switch (true) {
+            case key === 'productCardGridPtTile':
+              return <ProductCardGridPtTile {...tile} />;
+            case key === 'smartGridPtTile':
+              return <PtTile blocks={tile.content} />;
+            case key === 'illustration':
+              return <Illustration illustration={tile} />;
+            case key === 'smartUnorderedList':
+              return <SmartUnorderedList {...tile} />;
+            case key === 'clickableImage':
+              return <ClickableImage {...tile} />;
+            case key === 'video':
+              return <Video {...mapVideoToProps(tile)} />;
+            case key === 'btnBlockMui':
+              return <ConditionalButton {...mapMuiBtnToProps(tile)} />;
+            default:
+              return <div> Tile still under development</div>;
+          }
+        };
 
-          return (
-            <Grid key={_key} {...col}>
-              {tileSelector(_type)}
-            </Grid>
-          );
-        })}
-      </Grid>
-      <StructuredSectionFooter
-        footer={footer}
-        footerColor={footerColor}
-        align={footerAlignment}
-        hasSectionFooter={hasSectionFooter}
-      />
-    </>
+        return (
+          <Grid key={_key} {...col}>
+            {tileSelector(_type)}
+          </Grid>
+        );
+      })}
+      {footer && (
+        <Grid xs={12}>
+          <StructuredSectionFooter
+            footer={footer}
+            footerColor={footerColor}
+            align={footerAlignment}
+            hasSectionFooter={hasSectionFooter}
+          />
+        </Grid>
+      )}
+    </Grid>
   );
 }
 

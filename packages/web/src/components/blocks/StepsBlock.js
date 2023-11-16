@@ -1,6 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
+import Typography from '@mui/material/Typography';
 import TextBlock from '../portableText/serializer/FullIndentSerializer';
 
 function StepsBlock({ steps }) {
@@ -12,6 +12,7 @@ function StepsBlock({ steps }) {
         sx={{
           listStyle: 'none',
           padding: 0,
+          margin: 0,
           display: 'none',
           '@container (min-width: 600px)': {
             display: 'block',
@@ -70,6 +71,7 @@ function StepsBlock({ steps }) {
         sx={{
           listStyle: 'none',
           padding: 0,
+          margin: 0,
           display: 'none',
           '@container (max-width: 600px)': {
             display: 'block',
@@ -83,13 +85,16 @@ function StepsBlock({ steps }) {
             sx={{
               display: 'flex',
               gap: '1.875rem',
+              padding: '24px 0',
+              '&:first-of-type': {
+                paddingTop: '0',
+              },
+              '&:last-of-type': {
+                paddingBottom: '0',
+              },
             }}
           >
-            <Box
-              sx={{
-                padding: '24px 0',
-              }}
-            >
+            <Box>
               <Box
                 sx={{
                   display: 'flex',

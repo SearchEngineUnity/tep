@@ -1,5 +1,6 @@
 import React from 'react';
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import SectionTextBlock from '../portableText/serializer/FullIndentSerializer';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
@@ -23,29 +24,41 @@ function SectionBlock({
   footerColor,
 }) {
   return (
-    <>
-      <StructuredSectionHeader
-        heading={heading}
-        subheading={subheading}
-        subtitle={subtitle}
-        align={headerAlignment}
-        hasSectionHeading={hasSectionHeading}
-        hasSectionSubheading={hasSectionSubheading}
-        hasSectionSubtitle={hasSectionSubtitle}
-        headingColor={headingColor}
-        subheadingColor={subheadingColor}
-        subtitleColor={subtitleColor}
-      />
-      <Box sx={{ textAlign: textAlignment }}>
-        <SectionTextBlock blocks={sectionText} />
-      </Box>
-      <StructuredSectionFooter
-        footer={footer}
-        footerColor={footerColor}
-        align={footerAlignment}
-        hasSectionFooter={hasSectionFooter}
-      />
-    </>
+    <Grid container spacing={5} direction="column" sx={{ padding: '0px' }}>
+      {(heading || subheading || subtitle) && (
+        <Grid xs={12}>
+          <StructuredSectionHeader
+            heading={heading}
+            subheading={subheading}
+            subtitle={subtitle}
+            align={headerAlignment}
+            hasSectionHeading={hasSectionHeading}
+            hasSectionSubheading={hasSectionSubheading}
+            hasSectionSubtitle={hasSectionSubtitle}
+            headingColor={headingColor}
+            subheadingColor={subheadingColor}
+            subtitleColor={subtitleColor}
+          />
+        </Grid>
+      )}
+      {sectionText && (
+        <Grid xs={12}>
+          <Box sx={{ textAlign: textAlignment }}>
+            <SectionTextBlock blocks={sectionText} />
+          </Box>
+        </Grid>
+      )}
+      {footer && (
+        <Grid xs={12}>
+          <StructuredSectionFooter
+            footer={footer}
+            footerColor={footerColor}
+            align={footerAlignment}
+            hasSectionFooter={hasSectionFooter}
+          />
+        </Grid>
+      )}
+    </Grid>
   );
 }
 export default SectionBlock;
