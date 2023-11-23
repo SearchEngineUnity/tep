@@ -4,6 +4,7 @@ import MainNav from '../components/navs/headerElements/MainNav';
 import TepFooter from '../components/navs/footerElements/TepFooter';
 import { useLayout } from '../hooks/useLayout';
 import { mapSeoToProps } from '../lib/mapToProps';
+import ContactUsTag from '../components/navs/footerElements/ContactUsTag';
 // import Search from '../components/search';
 
 const searchIndices = [{ name: `tep`, title: `tep` }];
@@ -18,6 +19,7 @@ export default function MyLayout({ children, location, type, data, heroImage }) 
       </header> */}
       {mainNav && <MainNav location={location} />}
       {children}
+      <ContactUsTag />
       <TepFooter />
     </>
   );
