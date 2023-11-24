@@ -31,7 +31,10 @@ export const query = graphql`
           _key
           _type
           button {
-            text
+            _key
+            _type
+            idTag
+            btnAlignment
             link {
               ... on SanityJumpLink {
                 _key
@@ -61,6 +64,63 @@ export const query = graphql`
                 _type
                 newTab
                 href
+              }
+            }
+            text
+            design {
+              bgImage {
+                asset {
+                  url
+                }
+              }
+              typography {
+                fontFamily
+                fontWeight
+                fontSize
+                lineHeight
+                letterSpacing
+              }
+              settings {
+                border
+                disableElevation
+                disableFocusRipple
+                disableRipple
+                fullWidth
+                variant
+                padding
+                borderRadius
+              }
+              colors {
+                contrastText {
+                  color {
+                    rgb {
+                      r
+                      g
+                      b
+                      a
+                    }
+                  }
+                }
+                dark {
+                  color {
+                    rgb {
+                      r
+                      g
+                      b
+                      a
+                    }
+                  }
+                }
+                main {
+                  color {
+                    rgb {
+                      r
+                      g
+                      b
+                      a
+                    }
+                  }
+                }
               }
             }
           }
@@ -157,12 +217,12 @@ export const query = graphql`
             }
           }
           heading
+          headingAlignment
+          imageAlignment
           idTag
-          logo {
-            label
-            logo {
-              _rawAsset(resolveReferences: { maxDepth: 1 })
-            }
+          heroImage {
+            alt
+            _rawAsset(resolveReferences: { maxDepth: 1 })
           }
           video {
             asset {
@@ -357,6 +417,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -764,6 +825,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -1108,6 +1170,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -1479,6 +1542,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple

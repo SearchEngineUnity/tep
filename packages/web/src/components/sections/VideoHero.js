@@ -6,9 +6,20 @@ import ConditionalButton from '../buttons/ConditionalButton';
 import SectionInnerWrapper from './SectionInnerWrapper';
 import { determineColor } from '../../lib/helperFunctions';
 import sanityConfig from '../../lib/sanityConfig';
+import { mapMuiBtnToProps } from '../../lib/mapToProps';
 
-function VideoHero({ idTag, heading, button, logoAlt, logoImage, videoUrl, designSettings }) {
-  const imageData = getGatsbyImageData(logoImage, {}, sanityConfig);
+function VideoHero({
+  idTag,
+  heading,
+  headingAlignment,
+  button,
+  imageAlt,
+  image,
+  imageAlignment,
+  videoUrl,
+  designSettings,
+}) {
+  const imageData = getGatsbyImageData(image, {}, sanityConfig);
   const headingColor = determineColor(designSettings?.heading?.color) || 'inherit';
   const backgroundColor = determineColor(designSettings?.background?.color) || 'primary.main';
   const desktopPadding = designSettings?.outerPadding?.desktopPadding;
@@ -18,6 +29,7 @@ function VideoHero({ idTag, heading, button, logoAlt, logoImage, videoUrl, desig
 
   return (
     <Box
+      component="header"
       id={idTag}
       sx={{
         py: 5,
@@ -30,35 +42,37 @@ function VideoHero({ idTag, heading, button, logoAlt, logoImage, videoUrl, desig
         alignItems: 'flex-end',
       }}
     >
-      <Box
-        sx={{
-          height: '100%',
-          objectFit: 'cover',
-          position: 'absolute',
-          top: '0',
-          left: '0',
-          zIndex: '-1',
-          width: '100vw',
-          backgroundColor,
-        }}
-      >
+      {videoUrl && (
         <Box
-          component="video"
-          autoPlay
-          muted
-          loop
-          playsInline
           sx={{
             height: '100%',
             objectFit: 'cover',
-            width: '100%',
-            overflowClipMargin: 'content-box',
-            overflow: 'clip',
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            zIndex: '-1',
+            width: '100vw',
+            backgroundColor,
           }}
         >
-          <source src={videoUrl} type="video/mp4" />
+          <Box
+            component="video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            sx={{
+              height: '100%',
+              objectFit: 'cover',
+              width: '100%',
+              overflowClipMargin: 'content-box',
+              overflow: 'clip',
+            }}
+          >
+            <source src={videoUrl} type="video/mp4" />
+          </Box>
         </Box>
-      </Box>
+      )}
       <Box
         sx={
           ([
@@ -75,43 +89,26 @@ function VideoHero({ idTag, heading, button, logoAlt, logoImage, videoUrl, desig
         }
       >
         <SectionInnerWrapper designSettings={designSettings}>
-          <GatsbyImage
-            image={imageData}
-            loading="eager"
-            objectFit="contain"
-            alt={logoAlt}
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-          />
-          <Box
-            component="h1"
-            textAlign="center"
-            sx={{
-              color: headingColor,
-              fontSize: { xl: '48px', md: '36px', xs: '24px' },
-              fontWeight: 600,
-              py: '0.25em',
-            }}
-          >
-            {heading}
-          </Box>
-          <ConditionalButton
-            {...button}
-            disableElevation
-            disableFocusRipple
-            disableRipple
-            borderRadius="4px"
-            alignment="center"
-            typography={{
-              fontWeight: 900,
-              fontSize: '20px',
-              lineHeight: '1.2',
-            }}
-            padding="12px 24px"
-            border="solid 2px"
-          />
+          {image && (
+            <Box sx={{ display: 'flex', justifyContent: imageAlignment }}>
+              <GatsbyImage image={imageData} loading="eager" objectFit="contain" alt={imageAlt} />
+            </Box>
+          )}
+          {heading && (
+            <Box
+              component="h1"
+              textAlign={headingAlignment}
+              sx={{
+                color: headingColor,
+                fontSize: { xl: '48px', md: '36px', xs: '24px' },
+                fontWeight: 600,
+                py: '0.25em',
+              }}
+            >
+              {heading}
+            </Box>
+          )}
+          {button.text && <ConditionalButton {...mapMuiBtnToProps(button)} />}
         </SectionInnerWrapper>
       </Box>
     </Box>

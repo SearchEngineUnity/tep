@@ -267,6 +267,7 @@ export function mapMuiBtnToProps({ idTag, btnAlignment, link, text, design }) {
     disableRipple: design?.settings?.disableRipple,
     fullWidth: design?.settings?.fullWidth,
     borderRadius: design?.settings?.borderRadius,
+    border: design?.settings?.border,
     padding: design?.settings?.padding,
     link,
     colors: design?.colors,
@@ -284,6 +285,7 @@ export function mapMuiBtnSubmitToProps({ settings, colors, typography, bgImage }
     disableRipple: settings?.disableRipple,
     fullWidth: settings?.fullWidth,
     borderRadius: settings?.borderRadius,
+    border: settings?.border,
     padding: settings?.padding,
     colors,
     typography,
@@ -418,15 +420,25 @@ export function mapVideoToProps({ idTag, url }) {
   };
 }
 
-export function mapVideoHeroToProps({ button, designSettings, heading, idTag, logo, video }) {
+export function mapVideoHeroToProps({
+  button,
+  designSettings,
+  heading,
+  headingAlignment,
+  idTag,
+  heroImage,
+  imageAlignment,
+  video,
+}) {
   return {
     idTag,
     heading,
     button,
-    logoAlt: logo?.label,
-    logoImage: logo?.logo?._rawAsset,
+    imageAlt: heroImage?.alt,
+    image: heroImage?._rawAsset,
     videoUrl: video?.asset?._rawAsset?.url,
+    headingAlignment,
+    imageAlignment,
     designSettings,
-    logo,
   };
 }
