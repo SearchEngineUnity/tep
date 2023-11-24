@@ -200,6 +200,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -597,6 +598,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -931,6 +933,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
@@ -1292,6 +1295,7 @@ export const query = graphql`
                   letterSpacing
                 }
                 settings {
+                  border
                   disableElevation
                   disableFocusRipple
                   disableRipple
