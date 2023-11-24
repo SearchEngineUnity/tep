@@ -1,5 +1,6 @@
 export { default as accordionItem } from './accordionItem';
 export { default as brandItem } from './brandItem';
+export { default as btn } from './btn';
 export { default as btnSettingsMui } from './btnSettingsMui';
 export { default as clickableImageImage } from './clickableImageImage';
 export { default as fbShareMetaPack } from './fbShareMetaPack';

@@ -417,3 +417,16 @@ export function mapVideoToProps({ idTag, url }) {
     url,
   };
 }
+
+export function mapVideoHeroToProps({ button, designSettings, heading, idTag, logo, video }) {
+  return {
+    idTag,
+    heading,
+    button,
+    logoAlt: logo?.label,
+    logoImage: logo?.logo?._rawAsset,
+    videoUrl: video?.asset?._rawAsset?.url,
+    designSettings,
+    logo,
+  };
+}

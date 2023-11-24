@@ -1,12 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../containers/layout';
+import VideoHero from '../components/sections/VideoHero';
 import LrHero from '../components/sections/LrFlexHero';
 import LrFlex from '../components/sections/StructuredLrFlex';
 import StackFlex from '../components/sections/StackFlex';
 import StackHero from '../components/sections/StackHero';
 import Cta from '../components/sections/Cta';
-import { mapLrHeroToProps, mapLrFlexToProps, mapStackSectionToProps } from '../lib/mapToProps';
+import {
+  mapLrHeroToProps,
+  mapLrFlexToProps,
+  mapStackSectionToProps,
+  mapVideoHeroToProps,
+} from '../lib/mapToProps';
 
 const type = 'page';
 
@@ -20,6 +26,149 @@ export const query = graphql`
         ... on SanityCta {
           _key
           _type
+        }
+        ... on SanityVideoHero {
+          _key
+          _type
+          button {
+            text
+            link {
+              ... on SanityJumpLink {
+                _key
+                _type
+                hashId
+              }
+              ... on SanityAffiliateLink {
+                _key
+                _type
+                href
+              }
+              ... on SanityExternalLink {
+                _key
+                _type
+                href
+                newTab
+                noreferrer
+              }
+              ... on SanityInternalGlobal {
+                _key
+                _type
+                href
+                newTab
+              }
+              ... on SanityInternalLocal {
+                _key
+                _type
+                newTab
+                href
+              }
+            }
+          }
+          designSettings {
+            outerPadding: _rawOuterPadding
+            innerPadding: _rawInnerPadding
+            borderRadius
+            caption {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            background {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            bgImage {
+              asset {
+                url
+              }
+            }
+            bleed
+            repeat
+            footer {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            foreground {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            heading {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            subheading {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            link {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+            subtitle {
+              color {
+                rgb {
+                  r
+                  g
+                  b
+                  a
+                }
+              }
+            }
+          }
+          heading
+          idTag
+          logo {
+            label
+            logo {
+              _rawAsset(resolveReferences: { maxDepth: 1 })
+            }
+          }
+          video {
+            asset {
+              _rawAsset(resolveReferences: { maxDepth: 1 })
+            }
+          }
         }
         ... on SanityLrHero {
           _key
@@ -1548,6 +1697,8 @@ function StructuredPage({ data, location }) {
         {data.page.sections.map((section) => {
           const { _type } = section;
           switch (_type) {
+            case 'videoHero':
+              return <VideoHero key={section._key} {...mapVideoHeroToProps(section)} />;
             case 'lrHero':
               return <LrHero key={section._key} {...mapLrHeroToProps(section)} />;
 
