@@ -2,38 +2,40 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import { getGatsbyImageData } from 'gatsby-source-sanity';
-import { GatsbyImage } from 'gatsby-plugin-image';
-import sanityConfig from '../../lib/sanityConfig';
+import Paper from '@mui/material/Paper';
 import ConditionalCardActionArea from '../cardActionArea/ConditionalCardActionArea';
 
-function TileImageBackgroundTitle({ image, alt, link, title }) {
-  const imageData = getGatsbyImageData(
-    image,
-    {
-      layout: 'constrained',
-    },
-    sanityConfig,
-  );
+function TileImageBackgroundTitle({ image, link, title }) {
+  const bgImage = image.url;
 
   return (
-    <Card elevation={link ? 8 : 0} sx={{ height: '100%' }}>
-      <ConditionalCardActionArea link={link}>
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-          <GatsbyImage
-            objectFit="contain"
-            image={imageData}
-            alt={alt || ''}
-            style={{ marginLeft: 'auto', marginRight: 'auto' }}
-          />
+    <ConditionalCardActionArea link={link}>
+      <Box
+        sx={{
+          height: '380px',
+          width: '380px',
+          backgroundImage: { sx: 'none', sm: `url(${bgImage})` },
+          borderRadius: '0px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box
+          sx={{
+            border: '#406CCB solid 2px',
+            backgroundColor: 'white',
+            fontSize: '20px',
+            fontWeight: 700,
+            textAlign: 'center',
+            py: 2,
+            width: '280px',
+          }}
+        >
+          {title}
         </Box>
-        <Box sx={{ py: 2 }}>
-          <Box sx={{ fontSize: '20px', fontWeight: 400, textAlign: 'center' }}>
-            <div>{title}</div>
-          </Box>
-        </Box>
-      </ConditionalCardActionArea>
-    </Card>
+      </Box>
+    </ConditionalCardActionArea>
   );
 }
 

@@ -128,7 +128,7 @@ function GridFlex({
               );
             case '9':
               return (
-                <Tile3
+                <Tile9
                   {...mapFluidImgToProps(tile.tileImage)}
                   link={tile.link[0]}
                   title={tile.title}
