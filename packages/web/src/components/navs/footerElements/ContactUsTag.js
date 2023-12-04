@@ -20,8 +20,9 @@ const Inner = styled.div`
   text-align: center;
   width: 120px;
   height: 42px;
-  background: rgb(169, 169, 169);
-  background: rgba(200, 0, 0, 0.5);
+  background-color: #406ccb;
+  // background: rgb(169, 169, 169);
+  // background: rgba(200, 0, 0, 0.5);
   margintop: 60px;
   margin-right: -42px;
   padding-top: 5px;
