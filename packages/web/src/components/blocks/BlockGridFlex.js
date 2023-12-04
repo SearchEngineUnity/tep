@@ -8,6 +8,7 @@ import Tile5 from '../tiles/TileSmImageTitleText';
 import Tile6 from '../tiles/TileImageTitle';
 import Tile7 from '../tiles/TileImageTitleSubtitleTextListing';
 import Tile8 from '../tiles/TileBorderSmImageTopTitleText';
+import Tile9 from '../tiles/TileImageBackgroundTitle';
 
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
@@ -123,6 +124,14 @@ function GridFlex({
                   link={tile.link[0]}
                   title={tile.title}
                   text={tile.text}
+                />
+              );
+            case '9':
+              return (
+                <Tile3
+                  {...mapFluidImgToProps(tile.tileImage)}
+                  link={tile.link[0]}
+                  title={tile.title}
                 />
               );
             default:
