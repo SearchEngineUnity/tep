@@ -48,6 +48,7 @@ export default {
           { title: 'Image and Title', value: '6' },
           { title: 'Image then Title Subtitle and Text', value: '7' },
           { title: 'Bordered Small Image Top and Title then Text', value: '8' },
+          { title: 'Background Image with Title', value: '9' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -137,6 +138,11 @@ export default {
           return {
             title: heading || subheading || 'Flex Grid',
             subtitle: 'Grid: Bordered Small Image Top and Title then Text',
+          };
+        case '9':
+          return {
+            title: heading || subheading || 'Flex Grid',
+            subtitle: 'Grid: Image and Title',
           };
         default:
           return { title: 'Error' };
