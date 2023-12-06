@@ -2,7 +2,7 @@ import { CgQuoteO } from 'react-icons/cg';
 
 export default {
   name: 'testimonialGrid',
-  title: 'Testimonial Grid',
+  title: 'Testimonial Block',
   type: 'object',
   icon: CgQuoteO,
   fieldsets: [
@@ -105,6 +105,11 @@ export default {
         case '2':
           return {
             title: heading || subheading || 'Testimonial Grid',
+            subtitle: 'display: Plain Testimonial',
+          };
+        case '3':
+          return {
+            title: heading || subheading || 'Testimonial Slider',
             subtitle: 'display: Plain Testimonial',
           };
         default:
