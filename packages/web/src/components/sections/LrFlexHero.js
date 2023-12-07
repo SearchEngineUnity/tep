@@ -6,7 +6,7 @@ import SectionBlock from '../blocks/HeroSectionBlock';
 import ConditionalButton from '../buttons/ConditionalButton';
 import GridFlex from '../blocks/BlockGridFlex';
 import BlockFormNetlify from '../blocks/BlockFormNetlify';
-import TestimonialGrid from '../blocks/TestimonialGrid';
+import TestimonialBlock from '../blocks/TestimonialBlock';
 import ClickableImage from '../portableText/insertable/ClickableImage';
 import SmartGridBlock from '../blocks/SmartGridBlock';
 import AccordionBlock from '../portableText/insertable/Accordion';
@@ -17,7 +17,7 @@ import {
   mapMuiBtnToProps,
   mapGridFlexToProps,
   mapBlockFormNetlifyToProps,
-  mapTestimonialGridToProps,
+  mapTestimonialBlockToProps,
   mapClickableImageToProps,
   mapSmartGridBlockToProps,
   mapVideoToProps,
@@ -132,9 +132,9 @@ function LrFlexHero({
                   return <ClickableImage {...mapClickableImageToProps(block)} />;
                 case key === 'btnBlockMui':
                   return <ConditionalButton {...mapMuiBtnToProps(block)} />;
-                case key === 'testimonialGrid':
+                case key === 'testimonialBlock':
                   return (
-                    <TestimonialGrid
+                    <TestimonialBlock
                       key={_key}
                       hasSectionHeading={!!heading}
                       hasSectionSubheading={!!subheading}
@@ -144,7 +144,7 @@ function LrFlexHero({
                       subheadingColor={subheadingColor}
                       subtitleColor={subtitleColor}
                       footerColor={footerColor}
-                      {...mapTestimonialGridToProps(block)}
+                      {...mapTestimonialBlockToProps(block)}
                     />
                   );
                 default:

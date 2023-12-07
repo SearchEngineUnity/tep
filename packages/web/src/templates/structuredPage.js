@@ -258,7 +258,7 @@ export const query = graphql`
               headerAlignment
               footerAlignment
             }
-            ... on SanityTestimonialGrid {
+            ... on SanityTestimonialBlock {
               _key
               _type
               header {
@@ -637,7 +637,7 @@ export const query = graphql`
               headerAlignment
               footerAlignment
             }
-            ... on SanityTestimonialGrid {
+            ... on SanityTestimonialBlock {
               _key
               _type
               header {
@@ -1012,7 +1012,7 @@ export const query = graphql`
               headerAlignment
               footerAlignment
             }
-            ... on SanityTestimonialGrid {
+            ... on SanityTestimonialBlock {
               _key
               _type
               header {
@@ -1384,7 +1384,7 @@ export const query = graphql`
               headerAlignment
               footerAlignment
             }
-            ... on SanityTestimonialGrid {
+            ... on SanityTestimonialBlock {
               _key
               _type
               header {

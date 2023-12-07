@@ -341,7 +341,7 @@ export function mapBlockFormNetlifyToProps({
   };
 }
 
-export function mapTestimonialGridToProps({
+export function mapTestimonialBlockToProps({
   header,
   _rawFooter,
   headerAlignment,
