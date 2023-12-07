@@ -41,7 +41,6 @@ export default {
         list: [
           { title: 'Testimonial with Image', value: '1' },
           { title: 'Plain Testimonial', value: '2' },
-          { title: 'Company Testimonial', value: '3' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -111,7 +110,7 @@ export default {
         case '3':
           return {
             title: heading || subheading || 'Testimonial Slider',
-            subtitle: 'display: Company Testimonial',
+            subtitle: 'display: Plain Testimonial',
           };
         default:
           return { title: 'Error' };
