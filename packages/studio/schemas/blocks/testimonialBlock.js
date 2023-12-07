@@ -1,7 +1,7 @@
 import { CgQuoteO } from 'react-icons/cg';
 
 export default {
-  name: 'testimonialGrid',
+  name: 'testimonialBlock',
   title: 'Testimonial Block',
   type: 'object',
   icon: CgQuoteO,
@@ -41,6 +41,7 @@ export default {
         list: [
           { title: 'Testimonial with Image', value: '1' },
           { title: 'Plain Testimonial', value: '2' },
+          { title: 'Company Testimonial', value: '3' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
@@ -110,7 +111,7 @@ export default {
         case '3':
           return {
             title: heading || subheading || 'Testimonial Slider',
-            subtitle: 'display: Plain Testimonial',
+            subtitle: 'display: Company Testimonial',
           };
         default:
           return { title: 'Error' };
