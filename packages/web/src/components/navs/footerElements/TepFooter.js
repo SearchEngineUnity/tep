@@ -25,15 +25,15 @@ const MenuText = styled(Box)({
   textDecoration: 'none',
   fontWeight: 500,
   display: 'flex',
-  alignItems: 'center',
-  lineHeight: 2,
-  margin: 0,
+  // alignItems: 'center',
+  lineHeight: 1.4,
+  margin: '0 0 16px 0',
 });
 
 const MenuLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   fontWeight: 500,
-  lineHeight: 2,
+  lineHeight: 1.4,
   color: '#f1f1f1',
   '&:hover, &:focus, &:active': {
     color: theme.palette.primary.main,
@@ -66,20 +66,19 @@ function TepFooter() {
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <li>
                   <MenuText component="p">
-                    <LocationOnIcon color="primary" />
-                    &nbsp;&nbsp;1202 - 2111 Lakeshore West, Toronto, ON, M8V4B2
+                    <LocationOnIcon color="primary" sx={{ mr: '8px' }} />
+                    1202 - 2111 Lakeshore West, Toronto, ON, M8V4B2
                   </MenuText>
                 </li>
                 <li>
                   <MenuText component="p">
-                    <PhoneIcon color="primary" />
-                    &nbsp;&nbsp;647-580-9479
+                    <PhoneIcon color="primary" sx={{ mr: '8px' }} />
+                    647-580-9479
                   </MenuText>
                 </li>
                 <li>
                   <MenuText component="p">
-                    <MailOutlineIcon color="primary" />
-                    &nbsp;&nbsp;
+                    <MailOutlineIcon color="primary" sx={{ mr: '8px' }} />
                     <MenuLink href="mailto:info@thecitypainters.com">
                       contact@torontoepoxy.com
                     </MenuLink>
