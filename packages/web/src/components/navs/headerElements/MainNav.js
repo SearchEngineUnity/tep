@@ -15,8 +15,6 @@ import { useMainNav } from '../../../hooks/useMainNav';
 export default function MainNav({ location }) {
   const { menu, contactInfo } = useMainNav();
 
-  console.log(menu);
-
   if (menu) {
     return (
       <>

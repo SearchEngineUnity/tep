@@ -8,9 +8,7 @@ function NavBrand({ url, brandGroup, alt }) {
   return (
     <>
       {brandGroup.map((group) => {
-        console.log(group);
         const { type, brand, _key, maxHeight, maxWidth } = group;
-        const height = group.height || 48;
 
         const image = brand.logo._rawAsset;
 
