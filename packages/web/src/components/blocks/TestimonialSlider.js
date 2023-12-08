@@ -36,14 +36,14 @@ function TestimonialSlider({ testimonialList, layout, tileOption }) {
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
-        height: '400px',
         width: '100%',
-        marginTop: '40px',
+        py: '20px',
+        height: { lg: '280px', md: '400px', xs: 'auto' },
       }}
     >
-      <IconButton onClick={handlePrevPage} sx={{ margin: 5 }} disabled={currentPage === 0}>
+      <IconButton onClick={handlePrevPage} disabled={currentPage === 0}>
         {/* this is the button that will go to the previous page you can change these icons to whatever you wish */}
-        <NavigateBeforeIcon />
+        <NavigateBeforeIcon sx={{ width: '70px', height: '70px' }} />
       </IconButton>
       <Box sx={{ width: '100%', height: '100%' }}>
         {/* this is the box that holds the cards and the slide animation,
@@ -84,12 +84,9 @@ function TestimonialSlider({ testimonialList, layout, tileOption }) {
       </Box>
       <IconButton
         onClick={handleNextPage}
-        sx={{
-          margin: 5,
-        }}
         disabled={currentPage >= Math.ceil((testimonialList.length || 0) / cardsPerPage) - 1}
       >
-        <NavigateNextIcon />
+        <NavigateNextIcon sx={{ width: '70px', height: '70px' }} />
       </IconButton>
     </Box>
   );
