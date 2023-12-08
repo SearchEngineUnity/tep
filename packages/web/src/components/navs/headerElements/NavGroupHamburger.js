@@ -22,7 +22,7 @@ function NavGroupHamburger({ navGroup, index }) {
   };
   return (
     <>
-      {index === 0 ? null : <Divider />}
+      {index === 0 ? null : <Divider sx={{ borderColor: 'common.white' }} />}
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <ListItemButton onClick={handleClickCollapse}>
           <ListItemText primary={navGroup.title} />
@@ -33,12 +33,14 @@ function NavGroupHamburger({ navGroup, index }) {
         {navGroup.group.map(({ icon, title: itemTitle, nav: itemNav, _key: itemKey }) => (
           <List component="div" disablePadding key={itemKey}>
             <ListItem
-              sx={{ paddingLeft: 4 }}
+              sx={{ paddingLeft: 5 }}
               onClick={() => handleClickSubNavMenu(itemNav.slug.current)}
             >
-              <ListItemIcon sx={{ color: 'common.white' }}>
-                <Icon>{icon}</Icon>
-              </ListItemIcon>
+              {icon && (
+                <ListItemIcon sx={{ color: 'common.white' }}>
+                  <Icon>{icon}</Icon>
+                </ListItemIcon>
+              )}
               <ListItemText primary={itemTitle} />
             </ListItem>
           </List>

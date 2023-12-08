@@ -28,6 +28,18 @@ export default {
       title: 'Logo Height in pixels',
       type: 'number',
     },
+    {
+      name: 'maxHeight',
+      type: 'number',
+      title: 'Image Max Height',
+      description: `You can enter a height in pixels. If the image's native height is smaller it will be used instead.`,
+    },
+    {
+      name: 'maxWidth',
+      type: 'number',
+      title: 'Image Max Width',
+      description: `You can enter a width in pixels. If the image's native width is smaller it will be used instead.`,
+    },
   ],
   preview: {
     select: {
