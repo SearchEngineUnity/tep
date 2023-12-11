@@ -1,7 +1,5 @@
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
-import StructuredSectionHeader from '../sections/StructuredSectionHeader';
-import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 import Tile1 from '../testimonialTiles/TestimonialImage';
 import Tile2 from '../testimonialTiles/TestimonialPlain';
 import { mapTestimonialListToProps } from '../../lib/mapToProps';
