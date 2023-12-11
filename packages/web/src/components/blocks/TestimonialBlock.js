@@ -1,7 +1,8 @@
 import React from 'react';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import TestimonialGrid from './TestimonialGrid';
-import TestimonialSilder from './TestimonialSlider';
+import TestimonialSlider from './TestimonialSlider';
+import TestimonialCarousel from './TestimonialCarousel';
 import StructuredSectionHeader from '../sections/StructuredSectionHeader';
 import StructuredSectionFooter from '../sections/StructuredSectionFooter';
 
@@ -27,7 +28,7 @@ function TestimonialBlock(props) {
   const typeSelector = {
     1: TestimonialGrid,
     2: TestimonialGrid,
-    3: TestimonialSilder,
+    3: TestimonialSlider,
   };
 
   const TestimonialDisplay = typeSelector[tileOption];
@@ -50,7 +51,9 @@ function TestimonialBlock(props) {
           />
         </Grid>
       )}
-      <TestimonialDisplay {...props} />
+      <Grid xs={12}>
+        <TestimonialDisplay {...props} />
+      </Grid>
       {footer && (
         <Grid xs={12}>
           <StructuredSectionFooter
