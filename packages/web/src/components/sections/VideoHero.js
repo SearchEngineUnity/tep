@@ -42,19 +42,19 @@ function VideoHero({
         alignItems: 'flex-end',
       }}
     >
-      {videoUrl && (
-        <Box
-          sx={{
-            height: '100%',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            zIndex: '-1',
-            width: '100vw',
-            backgroundColor,
-          }}
-        >
+      <Box
+        sx={{
+          height: '100%',
+          objectFit: 'cover',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          zIndex: '-1',
+          width: '100vw',
+          backgroundColor,
+        }}
+      >
+        {videoUrl && (
           <Box
             component="video"
             autoPlay
@@ -71,8 +71,8 @@ function VideoHero({
           >
             <source src={videoUrl} type="video/mp4" />
           </Box>
-        </Box>
-      )}
+        )}
+      </Box>
       <Box
         sx={
           ([
