@@ -36,7 +36,7 @@ function VideoHero({
         width: '100%',
         position: 'relative',
         zIndex: '0',
-        minHeight: { lg: '700px', md: '500px', sm: '400px', xs: '100vw' },
+        minHeight: { lg: '700px', md: '500px', sm: '400px', xs: '350px' },
         display: 'flex',
         flexDirection: 'stack',
         alignItems: 'flex-end',
@@ -91,7 +91,9 @@ function VideoHero({
         <SectionInnerWrapper designSettings={designSettings}>
           {image && (
             <Box sx={{ display: 'flex', justifyContent: imageAlignment }}>
-              <GatsbyImage image={imageData} loading="eager" objectFit="contain" alt={imageAlt} />
+              <Box sx={{ maxWidth: { xs: '100%', sm: '80%' } }}>
+                <GatsbyImage image={imageData} loading="eager" objectFit="contain" alt={imageAlt} />
+              </Box>
             </Box>
           )}
           {heading && (
