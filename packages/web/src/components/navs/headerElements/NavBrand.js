@@ -64,7 +64,7 @@ function NavBrand({ url, brandGroup, alt }) {
               <Box
                 sx={{
                   display: { xs: 'none', sm: 'flex', md: 'flex', lg: 'none', xl: 'none' },
-                  justifyContent: 'center',
+                  justifyContent: { sm: 'center', md: 'flex-start' },
                 }}
                 key={_key}
                 role="none"
