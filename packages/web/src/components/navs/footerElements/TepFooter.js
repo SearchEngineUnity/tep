@@ -35,8 +35,8 @@ const MenuLink = styled(Link)(({ theme }) => ({
   fontWeight: 500,
   lineHeight: 1.4,
   color: '#f1f1f1',
-  '&:hover, &:focus, &:active': {
-    color: theme.palette.primary.main,
+  '&:hover': {
+    textDecoration: 'underline',
   },
 }));
 
@@ -45,7 +45,7 @@ function TepFooter() {
     <Box component="footer">
       <Box
         sx={{
-          backgroundColor: '#332c3e',
+          backgroundColor: '#1e1e1e',
           fontFamily: 'Inter, Arial, sans-serif',
           color: '#f1f1f1',
           paddingY: '24px',
@@ -73,7 +73,7 @@ function TepFooter() {
                 <li>
                   <MenuText component="p">
                     <PhoneIcon color="primary" sx={{ mr: '8px' }} />
-                    647-580-9479
+                    <MenuLink href="tel:647-580-9479">647-580-9479</MenuLink>
                   </MenuText>
                 </li>
                 <li>
@@ -205,7 +205,7 @@ function TepFooter() {
       </Box>
       <Box
         sx={{
-          backgroundColor: '#2e2739',
+          backgroundColor: 'common.black',
           textAlign: 'left',
           fontSize: '13px',
           fontWeight: 300,
