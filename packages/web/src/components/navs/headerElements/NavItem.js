@@ -14,15 +14,15 @@ function NavItem({ url, title, isButton, location }) {
         disableElevation
         disableFocusRipple
         disableRipple
-        sx={{ px: 4, py: 2 }}
+        sx={{ padding: '12px 24px', borderRadius: '4px', display: { xs: 'none', sm: 'block' } }}
       >
-        <Typography component="span" fontSize="20px" fontWeight={900} lineHeight="normal">
+        <Typography component="span" fontWeight={900} lineHeight="normal" sx={{ fontSize: '16px' }}>
           {title}
         </Typography>
       </Button>
     );
   }
-  return url === 'testing' ? (
+  return url === '/' ? (
     <>
       <Link
         to="/"
@@ -35,7 +35,7 @@ function NavItem({ url, title, isButton, location }) {
             fontSize: { xl: '24px', lg: '20px' },
             lineHeight: 'normal',
           },
-          `/${url}` === location.pathname
+          location.pathname === `/`
             ? {
                 color: 'primary.main',
                 fontWeight: 900,
@@ -57,7 +57,7 @@ function NavItem({ url, title, isButton, location }) {
             fontSize: { xl: '24px', lg: '20px' },
             lineHeight: 'normal',
           },
-          `/${url}` === location.pathname
+          location.pathname === `/`
             ? {
                 color: 'primary.main',
               }

@@ -36,25 +36,25 @@ function VideoHero({
         width: '100%',
         position: 'relative',
         zIndex: '0',
-        minHeight: { lg: '700px', md: '500px', sm: '400px', xs: '100vw' },
+        minHeight: { lg: '700px', md: '500px', sm: '400px', xs: '350px' },
         display: 'flex',
         flexDirection: 'stack',
         alignItems: 'flex-end',
       }}
     >
-      {videoUrl && (
-        <Box
-          sx={{
-            height: '100%',
-            objectFit: 'cover',
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            zIndex: '-1',
-            width: '100vw',
-            backgroundColor,
-          }}
-        >
+      <Box
+        sx={{
+          height: '100%',
+          objectFit: 'cover',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          zIndex: '-1',
+          width: '100vw',
+          backgroundColor,
+        }}
+      >
+        {videoUrl && (
           <Box
             component="video"
             autoPlay
@@ -71,8 +71,8 @@ function VideoHero({
           >
             <source src={videoUrl} type="video/mp4" />
           </Box>
-        </Box>
-      )}
+        )}
+      </Box>
       <Box
         sx={
           ([
@@ -91,7 +91,9 @@ function VideoHero({
         <SectionInnerWrapper designSettings={designSettings}>
           {image && (
             <Box sx={{ display: 'flex', justifyContent: imageAlignment }}>
-              <GatsbyImage image={imageData} loading="eager" objectFit="contain" alt={imageAlt} />
+              <Box sx={{ maxWidth: { xs: '100%', sm: '80%' } }}>
+                <GatsbyImage image={imageData} loading="eager" objectFit="contain" alt={imageAlt} />
+              </Box>
             </Box>
           )}
           {heading && (

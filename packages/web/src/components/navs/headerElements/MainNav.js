@@ -46,8 +46,8 @@ export default function MainNav({ location }) {
                 <Box
                   sx={{
                     display: {
-                      xs: menuIndex === 0 ? 'block' : 'none',
-                      sm: menuIndex === 0 ? 'block' : 'none',
+                      xs: 'none',
+                      sm: 'none',
                       md: 'block',
                       lg: 'block',
                       xl: 'block',
@@ -60,9 +60,9 @@ export default function MainNav({ location }) {
                     sx={{
                       display: 'flex',
                       flexWrap: 'wrap',
-                      gap: '24px',
+                      gap: '40px',
                       pt: '16px',
-                      justifyContent: menuIndex === 0 ? 'center' : 'space-between',
+                      justifyContent: 'space-between',
                     }}
                     disableGutters
                     role="menubar"
@@ -89,10 +89,7 @@ export default function MainNav({ location }) {
                           );
                         case 'navBrand':
                           return (
-                            <Box
-                              key={groupKey}
-                              sx={{ flexGrow: 1, flexBasis: { xs: '100%', lg: 1 } }}
-                            >
+                            <Box key={groupKey} sx={{ flexShrink: 1, flexGrow: 1, flexBasis: 1 }}>
                               <NavBrand {...mapNavBrandToProps(group)} url={contactInfo.homePage} />
                             </Box>
                           );

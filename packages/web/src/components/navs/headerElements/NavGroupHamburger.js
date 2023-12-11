@@ -12,7 +12,11 @@ import ListItemText from '@mui/material/ListItemText';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
-function NavGroupHamburger({ navGroup, index }) {
+function NavGroupHamburger({ navGroup, index, location }) {
+  console.log(navGroup);
+  const pathname = location.pathname.substring(1);
+  const paths = navGroup.group.map((x) => x?.nav?.slug?.current);
+  const matchesSubPath = paths.includes(pathname);
   const [collapse, setCollapse] = React.useState(true);
   const handleClickCollapse = () => {
     setCollapse(!collapse);
@@ -25,16 +29,27 @@ function NavGroupHamburger({ navGroup, index }) {
       {index === 0 ? null : <Divider sx={{ borderColor: 'common.white' }} />}
       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
         <ListItemButton onClick={handleClickCollapse}>
-          <ListItemText primary={navGroup.title} />
+          <ListItemText
+            primary={navGroup.title}
+            primaryTypographyProps={{
+              sx: {
+                fontWeight: matchesSubPath ? 900 : 400,
+              },
+            }}
+          />
           {collapse ? <ExpandMore /> : <ExpandLess />}
         </ListItemButton>
       </Box>
       <Collapse in={!collapse} timeout="auto" unmountOnExit>
-        {navGroup.group.map(({ icon, title: itemTitle, nav: itemNav, _key: itemKey }) => (
-          <List component="div" disablePadding key={itemKey}>
-            <ListItem
-              sx={{ paddingLeft: 5 }}
+        <List component="div" disablePadding>
+          {navGroup.group.map(({ icon, title: itemTitle, nav: itemNav, _key: itemKey }) => (
+            <ListItemButton
+              sx={{
+                paddingLeft: 5,
+                bgcolor: pathname === itemNav.slug.current ? 'rgba(0, 0, 0, 0.2)' : 'transparent',
+              }}
               onClick={() => handleClickSubNavMenu(itemNav.slug.current)}
+              key={itemKey}
             >
               {icon && (
                 <ListItemIcon sx={{ color: 'common.white' }}>
@@ -42,9 +57,9 @@ function NavGroupHamburger({ navGroup, index }) {
                 </ListItemIcon>
               )}
               <ListItemText primary={itemTitle} />
-            </ListItem>
-          </List>
-        ))}
+            </ListItemButton>
+          ))}
+        </List>
       </Collapse>
     </>
   );
