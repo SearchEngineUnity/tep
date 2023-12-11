@@ -22,8 +22,6 @@ function NavItem({ url, title, isButton, location }) {
       </Button>
     );
   }
-
-  console.log(location.pathname);
   return url === '/' ? (
     <>
       <Link
