@@ -262,27 +262,27 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
           {bottomMenu.map((group, index) => {
             const { _type, title, nav: groupNav, _key } = group;
             switch (_type) {
-              case 'navItem':
+              case 'navItem': {
+                const slug = groupNav.slug.current === '/' ? '' : groupNav.slug.current;
                 return (
                   <React.Fragment key={_key}>
                     {index === 0 ? null : <Divider sx={{ borderColor: 'common.white' }} />}
                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                       <ListItemButton
-                        onClick={() => handleClickSubNavMenu(groupNav.slug.current)}
-                        selected={location.pathname === `/${groupNav.slug.current}`}
+                        onClick={() => handleClickSubNavMenu(slug)}
+                        selected={location.pathname === `/${slug}`}
                       >
                         <ListItemText
                           primary={title}
                           primaryTypographyProps={
-                            location.pathname === `/${groupNav.slug.current}`
-                              ? { sx: { fontWeight: 'bold' } }
-                              : {}
+                            location.pathname === `/${slug}` ? { sx: { fontWeight: 900 } } : {}
                           }
                         />
                       </ListItemButton>
                     </Box>
                   </React.Fragment>
                 );
+              }
               case 'navGroup':
                 return <NavGroup key={_key} navGroup={group} index={index} location={location} />;
 
