@@ -72,7 +72,18 @@ function Cta() {
           >
             CONTACT US TODAY FOR A FREE EPOXY QUOTE
           </Typography>
-          <Typography paragraph variant="h3" sx={{ textAlign: 'center' }}>
+          <Typography
+            component="a"
+            paragraph
+            variant="h3"
+            href="tel:647-580-9479"
+            sx={{
+              textAlign: 'center',
+              display: 'block',
+              color: 'common.white',
+              textDecoration: 'none',
+            }}
+          >
             Call us at 647-580-9479
           </Typography>
           <ThemeProvider theme={(theme) => btnTheme(theme)}>
