@@ -22,7 +22,9 @@ function NavItem({ url, title, isButton, location }) {
       </Button>
     );
   }
-  return url === 'testing' ? (
+
+  console.log(location.pathname);
+  return url === '/' ? (
     <>
       <Link
         to="/"
@@ -35,7 +37,7 @@ function NavItem({ url, title, isButton, location }) {
             fontSize: { xl: '24px', lg: '20px' },
             lineHeight: 'normal',
           },
-          `/${url}` === location.pathname
+          location.pathname === `/`
             ? {
                 color: 'primary.main',
                 fontWeight: 900,
@@ -57,7 +59,7 @@ function NavItem({ url, title, isButton, location }) {
             fontSize: { xl: '24px', lg: '20px' },
             lineHeight: 'normal',
           },
-          `/${url}` === location.pathname
+          location.pathname === `/`
             ? {
                 color: 'primary.main',
               }
