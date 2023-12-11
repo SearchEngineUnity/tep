@@ -30,10 +30,14 @@ const MenuText = styled(Box)({
   margin: '0 0 16px 0',
 });
 
+const MenuItem = styled('li')({
+  marginBottom: '8px',
+});
+
 const MenuLink = styled(Link)(({ theme }) => ({
   textDecoration: 'none',
   fontWeight: 500,
-  lineHeight: 1.4,
+  lineHeight: 'normal',
   color: '#f1f1f1',
   '&:hover': {
     textDecoration: 'underline',
@@ -61,29 +65,29 @@ function TepFooter() {
           style={{ paddingLeft: '16px', paddingRight: '16px' }}
         >
           <Grid container spacing={2}>
-            <Grid xs={12} lg={6}>
+            <Grid xs={12} md={6} lg={6}>
               <MenuHeading component="p">CONTACT INFO</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
-                <li>
+                <MenuItem>
                   <MenuText component="p">
                     <LocationOnIcon color="primary" sx={{ mr: '8px' }} />
                     1202 - 2111 Lakeshore West, Toronto, ON, M8V4B2
                   </MenuText>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuText component="p">
                     <PhoneIcon color="primary" sx={{ mr: '8px' }} />
                     <MenuLink href="tel:647-580-9479">647-580-9479</MenuLink>
                   </MenuText>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuText component="p">
                     <MailOutlineIcon color="primary" sx={{ mr: '8px' }} />
                     <MenuLink href="mailto:info@thecitypainters.com">
                       contact@torontoepoxy.com
                     </MenuLink>
                   </MenuText>
-                </li>
+                </MenuItem>
               </Box>
               <br />
               <Grid container spacing={3}>
@@ -125,79 +129,79 @@ function TepFooter() {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid xs={12} sm={6} lg={3}>
+            <Grid xs={12} sm={6} md={3} lg={3}>
               <MenuHeading component="p">INDUSTRIES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
-                <li>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Industrial Buildings
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Institutional Buildings
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Retail and Showroom
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Residential Complex
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Hotel and Hospitality
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Kitchen and Restaurant
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Airports and Hangars
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Parking Garages
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Smart Centers
                   </MenuLink>
-                </li>
+                </MenuItem>
               </Box>
             </Grid>
-            <Grid xs={12} sm={6} lg={3}>
+            <Grid xs={12} sm={6} md={3} lg={3}>
               <MenuHeading component="p">FLOORING SERVICES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
-                <li>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Epoxy Floor Installation
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Epoxy Floor Patching and Repair
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Concrete Polishing
                   </MenuLink>
-                </li>
-                <li>
+                </MenuItem>
+                <MenuItem>
                   <MenuLink to="#" target="_blank">
                     Concrete Restoration
                   </MenuLink>
-                </li>
+                </MenuItem>
               </Box>
             </Grid>
           </Grid>
