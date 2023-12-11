@@ -27,12 +27,21 @@ function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
   const minMaxWidth = Math.min(...widthArray);
 
   return (
-    <Card square elevation={0} sx={{ display: 'flex', alignItems: 'center' }}>
+    <Card
+      square
+      elevation={0}
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        height: { lg: '260px', md: '216px', sm: '330px', xs: '600px' },
+        width: '100%',
+      }}
+    >
       <Box
         sx={{
           display: { xs: 'none', sm: 'block' },
           width: { lg: '200px', md: '188px', sm: '176px', xs: '0px' },
-          flex: '1 0 auto',
+          flex: '0 0',
           p: 2,
         }}
       >
@@ -87,7 +96,7 @@ function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
       <Box
         sx={{ height: '100%', borderLeft: (theme) => `3px solid ${theme.palette.primary.main}` }}
       />
-      <Box sx={{ padding: 2 }}>
+      <Box sx={{ padding: 2, flex: '1 1 auto' }}>
         <StaticImage src="../../images/quotes.png" alt="" height={27} width={44} loading="lazy" />
         <Typography
           variant="body1"
