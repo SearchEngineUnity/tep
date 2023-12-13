@@ -22,6 +22,7 @@ function VideoHero({
   const imageData = getGatsbyImageData(image, {}, sanityConfig);
   const headingColor = determineColor(designSettings?.heading?.color) || 'inherit';
   const backgroundColor = determineColor(designSettings?.background?.color) || 'primary.main';
+  const backgroundImage = designSettings?.bgImage?.asset?.url;
   const desktopPadding = designSettings?.outerPadding?.desktopPadding;
   const tabletPadding = designSettings?.outerPadding?.tabletPadding;
   const tabletMobilePadding = designSettings?.outerPadding?.tabletMobilePadding;
@@ -51,6 +52,10 @@ function VideoHero({
           left: '0',
           zIndex: '-1',
           width: '100vw',
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
           backgroundColor,
         }}
       >

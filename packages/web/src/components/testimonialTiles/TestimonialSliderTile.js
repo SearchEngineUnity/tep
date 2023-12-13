@@ -40,7 +40,7 @@ function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
       <Box
         sx={{
           display: { xs: 'none', sm: 'block' },
-          width: { lg: '200px', md: '188px', sm: '176px', xs: '0px' },
+          flexBasis: { lg: '280px', md: '188px', sm: '176px', xs: '0px' },
           flex: '0 0',
           p: 2,
         }}

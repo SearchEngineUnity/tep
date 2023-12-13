@@ -74,7 +74,6 @@ export default {
       },
       fieldset: 'presentation',
       initialValue: 'flex-start',
-      validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'designSettings',

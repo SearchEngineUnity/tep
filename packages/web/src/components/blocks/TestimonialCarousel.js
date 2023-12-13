@@ -1,10 +1,14 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { useTheme } from '@mui/material';
 import CompanyTile from '../testimonialTiles/TestimonialSliderTile';
 import { mapTestimonialListToProps } from '../../lib/mapToProps';
 
 function TestimonialCarousel({ testimonialList }) {
+  const theme = useTheme();
+
   return (
     <Carousel
       autoplay
@@ -14,6 +18,12 @@ function TestimonialCarousel({ testimonialList }) {
       swipe
       fullHeightHover
       interval={6000}
+      activeIndicatorIconButtonProps={{
+        style: {
+          color: theme.palette.primary.main,
+        },
+      }}
+      IndicatorIcon={<FiberManualRecordIcon sx={{ fontSize: { md: '36px', xs: '28px' } }} />}
     >
       {testimonialList.map((testimonial) => (
         <Box
