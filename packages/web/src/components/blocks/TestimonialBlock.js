@@ -29,6 +29,7 @@ function TestimonialBlock(props) {
     1: TestimonialGrid,
     2: TestimonialGrid,
     3: TestimonialSlider,
+    4: TestimonialCarousel,
   };
 
   const TestimonialDisplay = typeSelector[tileOption];

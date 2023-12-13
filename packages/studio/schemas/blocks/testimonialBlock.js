@@ -39,15 +39,17 @@ export default {
       fieldset: 'presentation',
       options: {
         list: [
-          { title: 'Testimonial with Image', value: '1' },
-          { title: 'Plain Testimonial', value: '2' },
+          { title: 'Testimonial with Image using Grid', value: '1' },
+          { title: 'Plain Testimonial using Grid', value: '2' },
+          { title: 'Company Testimonial using Slider', value: '3' },
+          { title: 'Company Testimonial using Carousel', value: '4' },
         ],
       },
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
     {
       name: 'layout',
-      title: 'Number of tiles in a row',
+      title: 'Number of tiles in a row (only applies if using Grid)',
       description:
         'Please enter in the format of value/value/value/value for desktop/tablet/tablet-mobile/mobile. Accepted values are 1, 2, 3, 4, 6, 12.',
       type: 'string',
@@ -110,7 +112,12 @@ export default {
         case '3':
           return {
             title: heading || subheading || 'Testimonial Slider',
-            subtitle: 'display: Plain Testimonial',
+            subtitle: 'display: Company Testimonial',
+          };
+        case '4':
+          return {
+            title: heading || subheading || 'Testimonial Carousel',
+            subtitle: 'display: Company Testimonial',
           };
         default:
           return { title: 'Error' };
