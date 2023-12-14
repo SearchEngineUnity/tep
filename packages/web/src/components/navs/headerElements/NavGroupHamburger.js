@@ -5,7 +5,6 @@ import Collapse from '@mui/material/Collapse';
 import Divider from '@mui/material/Divider';
 import Icon from '@mui/material/Icon';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
@@ -13,7 +12,6 @@ import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 
 function NavGroupHamburger({ navGroup, index, location }) {
-  console.log(navGroup);
   const pathname = location.pathname.substring(1);
   const paths = navGroup.group.map((x) => x?.nav?.slug?.current);
   const matchesSubPath = paths.includes(pathname);
