@@ -6,7 +6,7 @@ import Slide from '@mui/material/Slide';
 import Stack from '@mui/material/Stack';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import IconButton from '@mui/material/IconButton';
-import CompanyTile from '../testimonialTiles/TestimonialSliderTile';
+import CompanyTile from '../testimonialTiles/CompanyTestimonial';
 import { mapTestimonialListToProps } from '../../lib/mapToProps';
 
 function TestimonialSlider({ testimonialList }) {

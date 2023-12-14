@@ -7,7 +7,7 @@ import { getGatsbyImageData } from 'gatsby-source-sanity';
 import { GatsbyImage, StaticImage } from 'gatsby-plugin-image';
 import sanityConfig from '../../lib/sanityConfig';
 
-function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
+function CompanyTestimonial({ image, alt, name, text, role, company }) {
   const imageData = getGatsbyImageData(
     image,
     {
@@ -151,4 +151,4 @@ function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
   );
 }
 
-export default TileImageTitleTextBase;
+export default CompanyTestimonial;

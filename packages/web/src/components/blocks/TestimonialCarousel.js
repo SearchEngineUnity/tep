@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Carousel from 'react-material-ui-carousel';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { useTheme } from '@mui/material';
-import CompanyTile from '../testimonialTiles/TestimonialSliderTile';
+import CompanyTile from '../testimonialTiles/CompanyTestimonial';
 import { mapTestimonialListToProps } from '../../lib/mapToProps';
 
 function TestimonialCarousel({ testimonialList }) {
