@@ -18,12 +18,18 @@ function TestimonialCarousel({ testimonialList }) {
       swipe
       fullHeightHover
       interval={6000}
+      indicatorIconButtonProps={{
+        style: {
+          padding: '8px',
+          color: 'rgba(0, 0, 0, 0.54)',
+        },
+      }}
       activeIndicatorIconButtonProps={{
         style: {
           color: theme.palette.primary.main,
         },
       }}
-      IndicatorIcon={<FiberManualRecordIcon sx={{ fontSize: { md: '36px', xs: '28px' } }} />}
+      IndicatorIcon={<FiberManualRecordIcon sx={{ fontSize: '24px' }} />}
     >
       {testimonialList.map((testimonial) => (
         <Box
