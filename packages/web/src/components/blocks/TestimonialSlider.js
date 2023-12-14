@@ -33,7 +33,6 @@ function TestimonialSlider({ testimonialList }) {
   };
 
   return (
-    //  outer box that holds the carousel and the buttons
     <>
       {/* outer box that holds the carousel and the buttons */}
       <Box
@@ -44,7 +43,6 @@ function TestimonialSlider({ testimonialList }) {
           alignContent: 'center',
           justifyContent: 'center',
           width: '100%',
-          // height: { lg: '260px', md: '216px', sm: '330px', xs: '600px' },
         }}
       >
         <IconButton onClick={handlePrevPage} sx={{ display: { xs: 'none', md: 'block' } }}>

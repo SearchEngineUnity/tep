@@ -38,7 +38,6 @@ function TestimonialCarousel({ testimonialList }) {
             width: { xs: '100%', md: 'calc(100% - 152px)' },
             marginLeft: 'auto',
             marginRight: 'auto',
-            // height: { lg: '260px', md: '216px', sm: '330px', xs: '512px' },
           }}
         >
           <CompanyTile {...mapTestimonialListToProps(testimonial)} />
