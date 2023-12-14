@@ -49,9 +49,7 @@ function TestimonialSlider({ testimonialList }) {
       >
         <IconButton onClick={handlePrevPage} sx={{ display: { xs: 'none', md: 'block' } }}>
           {/* this is the button that will go to the previous page you can change these icons to whatever you wish */}
-          <NavigateBeforeIcon
-            sx={{ width: { xs: '24px', md: '70px' }, height: { xs: '24px', md: '70px' } }}
-          />
+          <NavigateBeforeIcon sx={{ width: '60px', height: '60px' }} />
         </IconButton>
         <Box sx={{ width: '100%', height: '100%' }}>
           {/* this is the box that holds the cards and the slide animation,
@@ -91,21 +89,13 @@ function TestimonialSlider({ testimonialList }) {
           ))}
         </Box>
         <IconButton onClick={handleNextPage} sx={{ display: { xs: 'none', md: 'block' } }}>
-          <NavigateNextIcon
-            sx={{ width: { xs: '24px', md: '70px' }, height: { xs: '24px', md: '70px' } }}
-          />
+          <NavigateNextIcon sx={{ width: '60px', height: '60px' }} />
         </IconButton>
       </Box>
       <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
         {testimonialList.map((item, index) => {
           return (
-            <IconButton
-              key={item._key}
-              onClick={() => setCurrentPage(index)}
-              disableFocusRipple
-              disableRipple
-              disableTouchRipple
-            >
+            <IconButton key={item._key} onClick={() => setCurrentPage(index)}>
               <FiberManualRecordIcon
                 size="large"
                 sx={{ color: index === currentPage ? 'primary.main' : 'inherit' }}
