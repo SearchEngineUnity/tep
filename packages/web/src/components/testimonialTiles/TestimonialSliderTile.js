@@ -33,7 +33,7 @@ function TileImageTitleTextBase({ image, alt, name, text, role, company }) {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        height: { lg: '260px', md: '216px', sm: '330px', xs: '600px' },
+        height: { md: '220px', sm: '316px', xs: '512px' },
         width: '100%',
       }}
     >
