@@ -108,8 +108,10 @@ function VideoHero({
               sx={{
                 color: headingColor,
                 fontSize: { xl: '48px', md: '36px', xs: '24px' },
+                lineHeight: 'normal',
                 fontWeight: 600,
                 py: '0.25em',
+                textTransform: 'uppercase',
               }}
             >
               {heading}

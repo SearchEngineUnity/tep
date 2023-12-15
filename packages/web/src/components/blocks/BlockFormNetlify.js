@@ -231,7 +231,14 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
 
   return (
     <ThemeProvider theme={(theme) => createTheme(deepmerge(theme, componentTheme))}>
-      <Box sx={{ boxShadow: 5, p: 4, bgcolor: 'background.paper' }}>
+      <Box
+        sx={{
+          border: (theme) => `1px solid ${theme.palette.common.black}`,
+          borderRadius: '4px',
+          p: 4,
+          bgcolor: 'background.paper',
+        }}
+      >
         <Box sx={{ textAlign: titleAlignment, color: determineColor(labelColor.color) }}>
           <Typography variant={headingLevel} sx={{ marginBottom: 4 }}>
             {heading}
@@ -399,6 +406,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
                       minRows={input.rows}
                       placeholder={input.placeholderText}
                       onBlur={(e) => fieldValidation(e.currentTarget)}
+                      inputProps={{ sx: { padding: 0 } }}
                     />
                     <FormHelperText error={!!errorMsgs[input.id]} id={`${input.id}-helper-text`}>
                       {errorMsgs[input.id] ? errorMsgs[input.id] : input.helperText}

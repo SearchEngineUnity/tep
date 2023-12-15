@@ -33,7 +33,7 @@ function CompanyTestimonial({ image, alt, name, text, role, company }) {
       sx={{
         display: 'flex',
         alignItems: 'center',
-        height: { md: '220px', sm: '316px', xs: '512px' },
+        height: { md: '220px', sm: '316px', xs: '490px' },
         width: '100%',
       }}
     >
