@@ -38,7 +38,11 @@ function StructuredSectionHeader({
           </Typography>
         )}
         {!hasSectionSubheading && subheading && (
-          <Typography variant="h2" gutterBottom sx={{ color: subheadingColor }}>
+          <Typography
+            variant="h2"
+            gutterBottom
+            sx={{ color: subheadingColor, textTransform: 'uppercase' }}
+          >
             {subheading}
           </Typography>
         )}
