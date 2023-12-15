@@ -399,6 +399,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
                       minRows={input.rows}
                       placeholder={input.placeholderText}
                       onBlur={(e) => fieldValidation(e.currentTarget)}
+                      inputProps={{ sx: { padding: 0 } }}
                     />
                     <FormHelperText error={!!errorMsgs[input.id]} id={`${input.id}-helper-text`}>
                       {errorMsgs[input.id] ? errorMsgs[input.id] : input.helperText}
