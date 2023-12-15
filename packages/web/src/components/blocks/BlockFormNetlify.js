@@ -248,7 +248,8 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
         <form
           name={name}
           method="POST"
-          data-netlify="true"
+          // eslint-disable-next-line react/no-unknown-property
+          netlify
           // eslint-disable-next-line react/no-unknown-property
           netlify-honeypot="bot-field"
           noValidate

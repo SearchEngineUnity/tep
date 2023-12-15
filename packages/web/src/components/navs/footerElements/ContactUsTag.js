@@ -7,8 +7,6 @@ const Outer = styled.div`
   right: 0;
   bottom: 0;
   height: 250px;
-  margin-left: -3px;
-  margin-bottom: -3px;
   display: block;
   z-index: 998;
 `;
@@ -23,7 +21,7 @@ const Inner = styled.div`
   background-color: #406ccb;
   // background: rgb(169, 169, 169);
   // background: rgba(200, 0, 0, 0.5);
-  margintop: 60px;
+  margin-top: 60px;
   margin-right: -42px;
   padding-top: 5px;
   border-radius: 3px;
