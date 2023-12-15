@@ -49,7 +49,7 @@ function GridFlex({
   const col = colCalculate(layout);
 
   return (
-    <Grid container spacing={5} sx={{ padding: '0px' }}>
+    <Grid container spacing={5} sx={{ padding: '0px' }} justifyContent="center">
       {(heading || subheading || subtitle) && (
         <Grid xs={12}>
           <StructuredSectionHeader
