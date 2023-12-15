@@ -231,7 +231,14 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
 
   return (
     <ThemeProvider theme={(theme) => createTheme(deepmerge(theme, componentTheme))}>
-      <Box sx={{ boxShadow: 5, p: 4, bgcolor: 'background.paper' }}>
+      <Box
+        sx={{
+          border: (theme) => `1px solid ${theme.palette.common.black}`,
+          borderRadius: '4px',
+          p: 4,
+          bgcolor: 'background.paper',
+        }}
+      >
         <Box sx={{ textAlign: titleAlignment, color: determineColor(labelColor.color) }}>
           <Typography variant={headingLevel} sx={{ marginBottom: 4 }}>
             {heading}
