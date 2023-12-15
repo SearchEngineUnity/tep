@@ -48,7 +48,7 @@ function SectionOuterWrapper({ idTag, designSettings, children, isHero }) {
         },
         bgImage &&
           bleed && {
-            backgroundImage: { sx: 'none', sm: `url(${bgImage})` },
+            backgroundImage: `url(${bgImage})`,
           },
         repeat && { backgroundRepeat: 'repeat' },
       ]}
