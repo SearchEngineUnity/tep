@@ -27,6 +27,8 @@ const Inner = styled.div`
   margin-right: -42px;
   padding-top: 5px;
   border-radius: 3px;
+  border: solid 1px;
+  border-color: 000;
   transform: rotate(270deg);
 `;
 const Tag = styled(Link)`
