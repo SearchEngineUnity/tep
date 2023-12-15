@@ -30,7 +30,11 @@ const serializers = {
         <br />
       );
     },
-    h2: ({ value, children }) => <PTHeadingTypography variant="h2">{children}</PTHeadingTypography>,
+    h2: ({ value, children }) => (
+      <PTHeadingTypography variant="h2" sx={{ textTransform: 'uppercase' }}>
+        {children}
+      </PTHeadingTypography>
+    ),
     h3: ({ value, children }) => (
       <PTHeadingTypography
         variant="h3"

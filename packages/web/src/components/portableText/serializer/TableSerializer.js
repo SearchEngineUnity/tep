@@ -29,6 +29,7 @@ const serializers = {
     },
     h2: ({ value, children }) => (
       <PTHeadingTypography
+        sx={{ textTransform: 'uppercase' }}
         variant="h3"
         component="h2"
         id={

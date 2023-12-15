@@ -32,6 +32,7 @@ const serializers = {
     },
     h2: ({ value, children }) => (
       <PTHeadingTypography
+        sx={{ textTransform: 'uppercase' }}
         variant="h2"
         id={
           value.markDefs.length !== 0

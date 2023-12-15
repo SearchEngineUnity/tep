@@ -29,6 +29,7 @@ function StructuredSectionHeader({
             sx={{
               color: headingColor,
               paddingBottom: '12px',
+              textTransform: 'uppercase',
               borderBottom: (theme) => `3px solid ${theme.palette.primary.main}`,
             }}
           >
