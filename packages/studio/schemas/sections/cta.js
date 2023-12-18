@@ -8,6 +8,14 @@ export default {
   description: 'A pre-designed CTA will appear on page. Dismiss to continue.',
   fields: [
     {
+      name: 'idTag',
+      title: 'ID',
+      type: 'string',
+      validation: (Rule) => [Rule.required().error('Field is required')],
+      description:
+        'Add ID to the selected string. Please only use alphanumeric characters and hypen and do not start the string with a number.',
+    },
+    {
       name: 'cta',
       title: 'CTA',
       type: 'string',

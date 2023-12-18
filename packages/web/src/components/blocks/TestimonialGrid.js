@@ -21,7 +21,7 @@ function TestimonialGrid({ testimonialList, layout, tileOption }) {
   const col = colCalculate(layout);
 
   return (
-    <>
+    <Grid container>
       {testimonialList.map((testimonial) => {
         const tileSelector = (key) => {
           switch (key) {
@@ -39,7 +39,7 @@ function TestimonialGrid({ testimonialList, layout, tileOption }) {
           </Grid>
         );
       })}
-    </>
+    </Grid>
   );
 }
 
