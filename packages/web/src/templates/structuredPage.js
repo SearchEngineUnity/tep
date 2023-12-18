@@ -26,6 +26,7 @@ export const query = graphql`
         ... on SanityCta {
           _key
           _type
+          idTag
         }
         ... on SanityVideoHero {
           _key
@@ -1776,7 +1777,7 @@ function StructuredPage({ data, location }) {
               return <StackHero key={section._key} {...mapStackSectionToProps(section)} />;
 
             case 'cta':
-              return <Cta key={section._key} />;
+              return <Cta key={section._key} id={section.idTag} />;
 
             default:
               return <div>Still under development</div>;

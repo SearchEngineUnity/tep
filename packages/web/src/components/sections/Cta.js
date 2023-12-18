@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Button } from 'gatsby-theme-material-ui';
 
-function Cta() {
+function Cta({ id }) {
   const btnTheme = (theme) =>
     createTheme({
       palette: {
@@ -31,6 +31,8 @@ function Cta() {
 
   return (
     <Box
+      component="section"
+      id={id}
       sx={[
         (theme) => ({
           padding: {
