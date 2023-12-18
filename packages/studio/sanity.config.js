@@ -5,7 +5,6 @@ import { media, mediaAssetSource } from 'sanity-plugin-media';
 import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/dashboard';
 import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify';
 import { colorInput } from '@sanity/color-input';
-import { gatsbyWidget } from './schemas/components/widgets/gatsbyPreviewWidget';
 import { sanityLimitWidget } from './schemas/components/widgets/sanityLimitWidget';
 import { schemaTypes } from './schemas';
 import deskStructure from './deskStructure';
@@ -28,25 +27,13 @@ export default defineConfig({
           title: 'My Netlify deploys',
           sites: [
             {
-              title: 'Site Builder V2',
+              title: 'TEP',
               apiId: 'e978dfee-c169-45df-9cea-aa427232a7f8',
-              buildHookId: '63e28e14258d2d0fddde9ef4',
+              buildHookId: '65805e087a739857001d30d0',
               name: 'tep',
             },
           ],
           layout: { width: 'small', height: 'small' },
-        }),
-        gatsbyWidget({
-          site: {
-            title: 'tep Preview',
-            name: 'tep-preview',
-            id: 'tep-preview',
-            organizationId: 'd7d268c0-3157-4cab-a651-e456e34643bb',
-            url: 'https://preview-tep.gatsbyjs.io',
-            adminUrl:
-              'https://www.gatsbyjs.com/dashboard/d7d268c0-3157-4cab-a651-e456e34643bb/sites/b3aea1e1-5265-4f8e-a477-52211e5bdb3c/cmsPreview',
-            buildHookId: 'b3aea1e1-5265-4f8e-a477-52211e5bdb3c',
-          },
         }),
         sanityLimitWidget({ projectId: 'ed2r2yff' }),
         projectUsersWidget(),
