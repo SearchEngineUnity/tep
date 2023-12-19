@@ -51,7 +51,7 @@ function VideoHero({
           top: '0',
           left: '0',
           zIndex: '-1',
-          width: '100vw',
+          width: '100%',
           backgroundPosition: 'center center',
           backgroundRepeat: 'no-repeat',
           backgroundImage: `url(${backgroundImage})`,
