@@ -37,7 +37,6 @@ function TileImageBackgroundTitle({ image, link, title }) {
               textAlign: 'center',
               p: 2,
               width: '100%',
-              wordBreak: 'break-all',
             }}
           >
             {title}
