@@ -1,14 +1,14 @@
-import { BiChevronDownSquare } from 'react-icons/bi';
+import { MdNumbers } from 'react-icons/md';
 
 export default {
-  name: 'step',
-  title: 'Step',
+  name: 'stepItem',
+  title: 'Step Item',
   type: 'object',
-  icon: BiChevronDownSquare,
+  icon: MdNumbers,
   fields: [
     {
       name: 'title',
-      title: 'Step title',
+      title: 'Step Title',
       type: 'string',
       validation: (Rule) => [Rule.required().error('Field is required')],
     },
