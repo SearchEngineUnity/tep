@@ -39,9 +39,10 @@ function MainNavHamburger({ topMenu, bottomMenu, brandUrl, location }) {
   };
 
   return (
-    <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+    <Box sx={{ display: { xs: 'block', md: 'none' } }} component="header">
       <AppBar
         component="nav"
+        aria-label="main navigation header"
         elevation={0}
         sx={{
           position: 'relative',
