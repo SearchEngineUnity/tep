@@ -66,6 +66,9 @@ function NavGroup({ title, subGroup, location, position }) {
             fontSize: { xl: '24px', lg: '20px' },
             py: 1.5,
             lineHeight: 'normal',
+            '&:hover': {
+              cursor: 'pointer',
+            },
           },
           matchesSubPath
             ? {
@@ -123,7 +126,7 @@ function NavGroup({ title, subGroup, location, position }) {
                     to={`/${nav.slug.current}`}
                     sx={{
                       my: 1,
-                      py: 2,
+                      py: 1,
                       px: 1,
                       '&.Mui-selected': {
                         background: '#F1F1F1',
