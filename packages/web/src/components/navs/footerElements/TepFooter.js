@@ -133,49 +133,39 @@ function TepFooter() {
               <MenuHeading component="p">INDUSTRIES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
+                  <MenuLink to="/solutions/industrial-epoxy-flooring">
                     Industrial Buildings
                   </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
+                  <MenuLink to="/solutions/institutional-building-epoxy-floor">
                     Institutional Buildings
                   </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Retail and Showroom
-                  </MenuLink>
+                  <MenuLink to="/solutions/retail-epoxy-flooring">Retail & Showroom</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
+                  <MenuLink to="/solutions/epoxy-flooring-residential-complex">
                     Residential Complex
                   </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Hotel and Hospitality
+                  <MenuLink to="/solutions/hotel-epoxy-flooring">Hotel and Hospitality</MenuLink>
+                </MenuItem>
+                <MenuItem>
+                  <MenuLink to="/solutions/epoxy-commercial-kitchen-restaurant-floor">
+                    Kitchen & Restaurant
                   </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Kitchen and Restaurant
-                  </MenuLink>
+                  <MenuLink to="/solutions/epoxy-aircraft-hangar">Airports & Hangars</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Airports and Hangars
-                  </MenuLink>
+                  <MenuLink to="/solutions/epoxy-parking-floor">Parking Garages</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Parking Garages
-                  </MenuLink>
-                </MenuItem>
-                <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Smart Centers
-                  </MenuLink>
+                  <MenuLink to="/solutions/epoxy-smart-centres">Smart Centers</MenuLink>
                 </MenuItem>
               </Box>
             </Grid>
@@ -183,24 +173,16 @@ function TepFooter() {
               <MenuHeading component="p">FLOORING SERVICES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Epoxy Floor Installation
-                  </MenuLink>
+                  <MenuLink to="#">Epoxy Floor Installation</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Epoxy Floor Patching and Repair
-                  </MenuLink>
+                  <MenuLink to="#">Epoxy Floor Patching and Repair</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Concrete Polishing
-                  </MenuLink>
+                  <MenuLink to="#">Concrete Polishing</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#" target="_blank">
-                    Concrete Restoration
-                  </MenuLink>
+                  <MenuLink to="#">Concrete Restoration</MenuLink>
                 </MenuItem>
               </Box>
             </Grid>
