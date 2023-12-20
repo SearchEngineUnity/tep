@@ -28,7 +28,7 @@ export default defineConfig({
           sites: [
             {
               title: 'TEP',
-              apiId: 'e978dfee-c169-45df-9cea-aa427232a7f8',
+              apiId: '9ead4fb3-14ea-4e69-919c-510ced2c9c76',
               buildHookId: '65805e087a739857001d30d0',
               name: 'tep',
             },
