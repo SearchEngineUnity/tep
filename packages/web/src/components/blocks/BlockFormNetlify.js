@@ -40,6 +40,8 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
 
   const { formFields, name, subject, thankYou, submitBtn } = form;
 
+  console.log(form);
+
   const componentTheme = {
     palette: {
       primary: {
@@ -207,7 +209,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
           'form-name': thisForm.getAttribute('name'),
           'bot-field': thisForm.elements['bot-field'].value,
           // eslint-disable-next-line dot-notation
-          subject: thisForm.elements['subject'].value,
+          // subject: thisForm.elements['subject'].value,
           ...state,
         }),
       })
@@ -268,7 +270,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
           {success && <p>{thankYou}</p>}
 
           <input type="hidden" name="form-name" value={name} />
-          <input type="hidden" name="subject" value={subject} />
+          {/* <input type="hidden" name="subject" value={subject} /> */}
           {formFields.map((input) => {
             const { _type, _key } = input;
 
