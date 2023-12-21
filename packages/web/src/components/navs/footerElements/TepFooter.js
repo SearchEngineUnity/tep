@@ -151,7 +151,7 @@ function TepFooter() {
                   </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="/solutions/hotel-epoxy-flooring">Hotel and Hospitality</MenuLink>
+                  <MenuLink to="/solutions/hotel-epoxy-flooring">Hotel & Hospitality</MenuLink>
                 </MenuItem>
                 <MenuItem>
                   <MenuLink to="/solutions/epoxy-commercial-kitchen-restaurant-floor">
@@ -173,16 +173,18 @@ function TepFooter() {
               <MenuHeading component="p">FLOORING SERVICES</MenuHeading>
               <Box component="ul" sx={{ listStyleType: 'none', paddingLeft: 0 }}>
                 <MenuItem>
-                  <MenuLink to="#">Epoxy Floor Installation</MenuLink>
+                  <MenuLink to="/services/epoxy-floor-installation">
+                    Epoxy Floor Installation
+                  </MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#">Epoxy Floor Patching and Repair</MenuLink>
+                  <MenuLink to="/services/epoxy-floor-repair">Epoxy Floor Repair</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#">Concrete Polishing</MenuLink>
+                  <MenuLink to="/services/polished-concrete">Polished Concrete</MenuLink>
                 </MenuItem>
                 <MenuItem>
-                  <MenuLink to="#">Concrete Restoration</MenuLink>
+                  <MenuLink to="/services/concrete-repair">Concrete Repair & Restoration</MenuLink>
                 </MenuItem>
               </Box>
             </Grid>
@@ -218,7 +220,7 @@ function TepFooter() {
                 fontSize: '13px',
                 color: '#f1f1f1',
                 '&:hover, &:focus, &:active': {
-                  color: (theme) => theme.palette.primary.main,
+                  textDecoration: 'underline',
                 },
               }}
             >
