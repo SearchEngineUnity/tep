@@ -204,7 +204,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          // 'form-name': thisForm.getAttribute('name'),
+          'form-name': thisForm.getAttribute('name'),
           'bot-field': thisForm.elements['bot-field'].value,
           // eslint-disable-next-line dot-notation
           // subject: thisForm.elements['subject'].value,
@@ -267,8 +267,8 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
 
           {success && <p>{thankYou}</p>}
 
-          {/* <input type="hidden" name="form-name" value={name} />
-          <input type="hidden" name="subject" value={subject} /> */}
+          <input type="hidden" name="form-name" value={name} />
+          {/* <input type="hidden" name="subject" value={subject} /> */}
           {formFields.map((input) => {
             const { _type, _key } = input;
 
