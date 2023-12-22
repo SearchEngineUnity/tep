@@ -265,8 +265,6 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
             </label>
           </Box>
 
-          {success && <p>{thankYou}</p>}
-
           <input type="hidden" name="form-name" value={name} />
           {/* <input type="hidden" name="subject" value={subject} /> */}
           {formFields.map((input) => {
@@ -447,6 +445,7 @@ function FormNetlify({ titleAlignment, heading, headingLevel, form, style }) {
                 return <div key="form-default">Form Field not Created</div>;
             }
           })}
+          {success && <p className="thank-you-message">{thankYou}</p>}
           <Box sx={{ textAlign: btnAlignment }}>
             <ButtonSubmit
               type="submit"
