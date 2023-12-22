@@ -35,13 +35,13 @@ module.exports = {
         queries: require('./src/utils/algolia-queries'),
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-google-tagmanager',
-    //   options: {
-    //     id: 'GTM-5GLG7DW',
-    //     enableWebVitalsTracking: true,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-N498W2H',
+        enableWebVitalsTracking: true,
+      },
+    },
     {
       resolve: `gatsby-theme-material-ui`,
       options: {
