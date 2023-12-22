@@ -45,7 +45,7 @@ const Tag = styled(Link)`
 function ContactUsTag() {
   return (
     <Outer>
-      <Tag to="/contact-us" target="_blank" rel="noopener noreferrer">
+      <Tag to="/contact-us" target="_blank" rel="noopener noreferrer" className="contact-us-tag">
         <Inner>Contact Us</Inner>
       </Tag>
     </Outer>

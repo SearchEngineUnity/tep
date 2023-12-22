@@ -45,6 +45,7 @@ function NavPhone({ text, number }) {
           color="inherit"
           underline="none"
           role="menuitem"
+          className="nav-phone"
         >
           {number}
         </StyledLink>
