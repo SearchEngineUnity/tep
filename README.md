@@ -8,16 +8,15 @@
 
 ### Node/NPM versions
 
-* node v18.13.0
-* npm v8.19.3
+* node v20.11.1
 
 ### Install
 
 1. Git clone project
 2. Install Lerna `npm install -g lerna@6.6.2` 
-3. Install Sanity cli `npm install -g @sanity/cli@3.12.2`
+3. Install Sanity cli `npm install -g @sanity/cli@3.55.0`
 4. Install Gatsby cli `npm install -g gatsby-cli@5.6.0`
-5. Run `npm install --legacy-peer-deps` from the root folder of the repo. This should install npms in both packages (studio + web).
+5. Run `npm install` from the root folder of the repo. This should install npms in both packages (studio + web).
 
 ### Run Sanity CMS locally
 
@@ -25,8 +24,8 @@
 
 1. `cd packages/studio` from root
 2. Log into Sanity account if opening the studio for the first time by typing `sanity login` and follow the prompts
-3. Start the Sanity Studio in develope mode with the command `sanity dev`
-4. If you have incorrect redential you should logout using `sanity logout` and repeat from step 2
+3. Start the Sanity Studio in develop mode with the command `sanity dev`
+4. If you have incorrect credential you should logout using `sanity logout` and repeat from step 2
 5. Access Sanity development server on `localhost:3333`
 
 ### Run Gatsby locally
