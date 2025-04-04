@@ -97,7 +97,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={facebook} alt="facebook" width="48" height="48" loading="lazy" />
+                    <img src={facebook} alt="facebook" width="40" height="40" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid>
@@ -106,7 +106,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={twitter} alt="twitter" width="48" height="48" loading="lazy" />
+                    <img src={twitter} alt="twitter" width="40" height="40" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid>
@@ -115,7 +115,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={linkedIn} alt="linkedin" width="48" height="48" loading="lazy" />
+                    <img src={linkedIn} alt="linkedin" width="40" height="40" loading="lazy" />
                   </a>
                 </Grid>
                 <Grid>
@@ -124,7 +124,7 @@ function TepFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img src={homeStars} alt="homestars" width="48" height="48" loading="lazy" />
+                    <img src={homeStars} alt="homestars" width="40" height="40" loading="lazy" />
                   </a>
                 </Grid>
               </Grid>
